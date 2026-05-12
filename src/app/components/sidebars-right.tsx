@@ -146,6 +146,21 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
         </div>
       </div>
 
+      <div className="lg:hidden relative rounded-2xl overflow-hidden p-4 ec-quick-match-card" style={{ boxShadow: "var(--ec-shadow-card)" }}>
+        <div className="relative">
+          <div className="flex items-center gap-2 mb-2">
+            <Zap className="w-4 h-4 ec-quick-match-zap" />
+            <span className="ec-quick-match-text tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "11px" }}>PLAY INSTANTLY</span>
+          </div>
+          <div className="ec-quick-match-text mb-3 leading-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "20px" }}>
+            No download for browser play.<br />Desktop recommended.
+          </div>
+          <button onClick={() => { vibrate(12); onPlay?.(); }} className="w-full py-3 rounded-xl ec-quick-match-btn hover:scale-[1.02] active:scale-95 transition-transform tracking-widest cursor-pointer min-h-[48px]" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
+            PLAY COBB CAN MOVE →
+          </button>
+        </div>
+      </div>
+
       <div className="relative rounded-2xl border ec-border ec-surface backdrop-blur p-5 hud-corners" style={{ boxShadow: "var(--ec-shadow-card)" }}>
         <span className="hud-c1" /><span className="hud-c2" />
         <div className="flex items-center gap-2 mb-4">

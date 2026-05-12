@@ -9,7 +9,6 @@ import { ContentProvider, useContent } from "./components/content-store";
 import { SchemaJsonLd } from "./components/schema-jsonld";
 import { ThemeProvider } from "./components/theme-store";
 import { MobileTabBar } from "./components/mobile-tabbar";
-import { OnboardingModal } from "./components/onboarding";
 import { Toaster } from "./components/ui/sonner";
 import { SeoHead } from "./components/seo-head";
 
@@ -118,7 +117,7 @@ function AppShell() {
 
         <MobileTabBar active={view} onChange={goView} onPlay={triggerPlay} />
 
-        <OnboardingModal />
+
         <Toaster />
       </div>
     </>

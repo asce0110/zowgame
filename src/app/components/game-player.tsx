@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Maximize2, Minimize2, RotateCw, Share2, AlertTriangle, Info, X, Check, ExternalLink } from "lucide-react";
+import { Maximize2, Minimize2, RotateCw, Share2, AlertTriangle, Info, X, Check } from "lucide-react";
 
 type Status = "loading" | "playing" | "error";
 
@@ -146,7 +146,6 @@ export function GamePlayer({ src, title, onExit }: { src: string; title: string;
           <div className="w-px h-5 bg-white/10 mx-1" />
           <ControlBtn icon={shared ? Check : Share2} label={shared ? "Copied!" : "Share"} onClick={handleShare} success={shared} />
           <ControlBtn icon={Info} label="Info" onClick={() => setShowInfo((s) => !s)} active={showInfo} />
-          <ControlBtn icon={ExternalLink} label="Open in new tab" onClick={() => window.open(src, "_blank", "noopener,noreferrer")} />
         </div>
       </div>
 

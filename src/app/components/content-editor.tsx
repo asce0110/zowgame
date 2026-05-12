@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Lock, Save, RotateCcw, Plus, Trash2, Gamepad2, Search, FileText, HelpCircle, Eye, Check, Bell, ArrowUp, ArrowDown, LogOut } from "lucide-react";
+import { Lock, Save, RotateCcw, Plus, Trash2, Gamepad2, Search, FileText, HelpCircle, Eye, Check, Bell, ArrowUp, ArrowDown, LogOut, Download, Copy } from "lucide-react";
 import { useContent, SiteContent, NotificationItem } from "./content-store";
+import { serializeContentModule } from "../data/content-serializer";
 
 const ADMIN_PASSWORD = (import.meta as any).env?.VITE_ADMIN_PASSWORD ?? "";
 const UNLOCK_KEY = "nexus-editor-unlocked-v1";
@@ -74,6 +75,10 @@ export function ContentEditor() {
   const [draft, setDraft] = useState<SiteContent>(content);
   const [tab, setTab] = useState<"game" | "seo" | "about" | "faq" | "notifications">("game");
   const [saved, setSaved] = useState(false);
+  const [exported, setExported] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [savedToFile, setSavedToFile] = useState(false);
+  const [saveFileError, setSaveFileError] = useState("");
 
   useEffect(() => {
     if (unlocked) setDraft(content);
@@ -99,6 +104,47 @@ export function ContentEditor() {
     setSaved(true);
     setTimeout(() => setSaved(false), 1800);
   };
+
+  const exportSource = serializeContentModule("../data/cobb-can-move-content", "DEFAULT_CONTENT", draft);
+
+  const downloadSource = () => {
+    const blob = new Blob([exportSource], { type: "text/typescript;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "cobb-can-move-content.ts";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    setExported(true);
+    setTimeout(() => setExported(false), 1800);
+  };
+
+  const copySource = async () => {
+    try {
+      await navigator.clipboard.writeText(exportSource);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {}
+  };
+
+  const saveToCodeFile = async () => {
+    setSaveFileError("");
+    try {
+      const res = await fetch("http://127.0.0.1:41751/__save-content", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content: draft }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data?.ok) throw new Error(data?.error || "Save failed");
+      setSavedToFile(true);
+      setTimeout(() => setSavedToFile(false), 1800);
+    } catch (err) {
+      setSaveFileError(String(err));
+    }
+  };
   const handleReset = () => {
     if (confirm("确定要将所有内容恢复为默认值吗?这将清除你已保存的修改。")) {
       reset();
@@ -119,7 +165,7 @@ export function ContentEditor() {
             编辑<span className="bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">首页内容</span>
           </h1>
           <p className="text-white/50 mt-2" style={{ fontFamily: "Rajdhani", fontSize: "14px" }}>
-            所有修改会保存到浏览器本地存储,并实时应用到网站。
+            所有修改会先保存到浏览器本地存储并实时应用。若要真正写进代码仓库，请使用下方的“导出代码文件”或“复制代码”操作覆盖 <code className="text-fuchsia-300 px-1.5 py-0.5 rounded bg-white/5">src/app/data/cobb-can-move-content.ts</code>。
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -131,6 +177,18 @@ export function ContentEditor() {
             <RotateCcw className="w-3.5 h-3.5" />
             重置
           </button>
+          <button onClick={copySource} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}>
+            {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+            {copied ? "已复制" : "复制代码"}
+          </button>
+          <button onClick={downloadSource} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}>
+            {exported ? <Check className="w-3.5 h-3.5" /> : <Download className="w-3.5 h-3.5" />}
+            {exported ? "已导出" : "导出代码文件"}
+          </button>
+          <button onClick={saveToCodeFile} className="px-4 py-2.5 rounded-xl bg-white/5 border border-cyan-500/30 text-cyan-300 hover:text-white hover:bg-cyan-500/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}>
+            {savedToFile ? <Check className="w-3.5 h-3.5" /> : <Save className="w-3.5 h-3.5" />}
+            {savedToFile ? "已写入代码" : "保存到代码文件"}
+          </button>
           <button
             onClick={save}
             disabled={!dirty}
@@ -141,8 +199,25 @@ export function ContentEditor() {
             }`}
             style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}
           >
-            {saved ? <><Check className="w-4 h-4" /> 已保存</> : <><Save className="w-4 h-4" /> 保存修改</>}
+            {saved ? <><Check className="w-4 h-4" /> 已保存草稿</> : <><Save className="w-4 h-4" /> 保存草稿</>}
           </button>
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4 flex items-start gap-3">
+        <FileText className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+        <div className="text-white/70" style={{ fontFamily: "Rajdhani", fontSize: "14px", lineHeight: 1.65 }}>
+          <div className="text-white mb-1" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "13px" }}>如何真正保存到代码里</div>
+          本地编辑完成后，推荐先点 <strong className="text-white">保存到代码文件</strong>。这会调用本地开发保存服务并直接覆盖
+          <code className="text-fuchsia-300 px-1.5 py-0.5 rounded bg-white/5 mx-1">src/app/data/cobb-can-move-content.ts</code>
+          。如果保存服务没有启动，也可以使用 <strong className="text-white">导出代码文件</strong> 或 <strong className="text-white">复制代码</strong> 手动覆盖该文件。
+          {saveFileError && (
+            <div className="mt-2 text-rose-300" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>
+              保存到代码文件失败：{saveFileError}
+              <br />
+              请先在另一个终端运行 <code className="px-1 py-0.5 rounded bg-white/5">npm run dev:content-save</code>
+            </div>
+          )}
         </div>
       </div>
 

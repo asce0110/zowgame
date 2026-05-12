@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "dev:content-save": "node scripts/content-save-server.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
