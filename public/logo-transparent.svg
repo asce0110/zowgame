@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#17214b"/>
+      <stop offset="45%" stop-color="#080a19"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </radialGradient>
+    <linearGradient id="zgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="16%" stop-color="#ff2bd6"/>
+      <stop offset="100%" stop-color="#a300ff"/>
+    </linearGradient>
+    <linearGradient id="cgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="28%" stop-color="#24f6ff"/>
+      <stop offset="100%" stop-color="#008cff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <g opacity=".42">
+    <path d="M512 44V940" stroke="#ff2bd6"/>
+    <path d="M142 366H890" stroke="#24f6ff"/>
+    <path d="M160 505C220 130 690 75 875 285" fill="none" stroke="#ff2bd6" stroke-width="7"/>
+    <path d="M610 800C810 785 912 630 932 500" fill="none" stroke="#24f6ff" stroke-width="8"/>
+  </g>
+  <g opacity=".5">
+    <rect x="355" y="300" width="28" height="225" fill="#24f6ff"/>
+    <rect x="395" y="245" width="45" height="280" fill="#ff2bd6"/>
+    <rect x="462" y="205" width="34" height="320" fill="#24f6ff"/>
+    <rect x="525" y="255" width="56" height="270" fill="#ff2bd6"/>
+    <rect x="612" y="180" width="36" height="345" fill="#24f6ff"/>
+    <rect x="670" y="295" width="42" height="230" fill="#ff2bd6"/>
+  </g>
+  <g filter="url(#glow)">
+    <polygon points="142,366 510,320 548,362 205,426 118,407" fill="url(#zgrad)"/>
+    <polygon points="483,358 583,391 236,736 109,777 381,486" fill="url(#zgrad)"/>
+    <polygon points="177,681 523,635 551,711 91,798 128,736" fill="url(#zgrad)"/>
+    <circle cx="525" cy="550" r="108" fill="none" stroke="#24f6ff" stroke-width="38"/>
+    <path d="M650 705L695 472L750 676L815 430L875 700L943 514" fill="none" stroke="url(#cgrad)" stroke-width="48" stroke-linejoin="round" stroke-linecap="round"/>
+    <polygon points="901,500 970,428 930,548" fill="#24f6ff"/>
+  </g>
+  <text x="512" y="870" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="36" letter-spacing="22" fill="#dffcff">ZOWGAME</text>
+</svg>

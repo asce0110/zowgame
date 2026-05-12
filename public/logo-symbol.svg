@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#17214b"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </radialGradient>
+    <linearGradient id="zgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="18%" stop-color="#ff2bd6"/>
+      <stop offset="100%" stop-color="#9a00ff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <path d="M145 520C185 210 630 90 875 325" fill="none" stroke="#ff2bd6" stroke-width="11"/>
+  <path d="M190 735C480 875 760 775 900 500" fill="none" stroke="#24f6ff" stroke-width="12"/>
+  <g filter="url(#glow)">
+    <polygon points="226,238 782,194 735,326 304,360 210,326" fill="url(#zgrad)"/>
+    <polygon points="710,303 823,344 391,806 220,832 568,450" fill="url(#zgrad)"/>
+    <polygon points="290,688 792,630 836,768 202,842 244,724" fill="url(#zgrad)"/>
+    <path d="M245 794L788 224" stroke="#24f6ff" stroke-width="17"/>
+  </g>
+</svg>
