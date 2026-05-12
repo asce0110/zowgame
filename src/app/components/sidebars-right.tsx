@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Zap, Radio, Download, Keyboard, Gamepad2 } from "lucide-react";
 import { vibrate } from "../lib/haptics";
 import { usePresence } from "../lib/presence";
+import { trackEvent } from "../lib/analytics";
 
 const livePulses = [
   { icon: "🎮", text: "Keyboard and gamepad both supported", weight: "normal" },
@@ -138,7 +139,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
               <div className="ec-quick-match-text mb-3 leading-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "22px" }}>
                 No download for browser play.<br />Desktop recommended.
               </div>
-              <button onClick={() => { vibrate(12); onPlay?.(); }} className="w-full py-3 rounded-xl ec-quick-match-btn hover:scale-[1.02] active:scale-95 transition-transform tracking-widest cursor-pointer min-h-[44px]" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
+              <button onClick={() => { vibrate(12); trackEvent("play_click", { location: "floating_card", game: "cobb_can_move" }); onPlay?.(); }} className="w-full py-3 rounded-xl ec-quick-match-btn hover:scale-[1.02] active:scale-95 transition-transform tracking-widest cursor-pointer min-h-[44px]" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
                 PLAY COBB CAN MOVE →
               </button>
             </div>
@@ -155,7 +156,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
           <div className="ec-quick-match-text mb-3 leading-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "20px" }}>
             No download for browser play.<br />Desktop recommended.
           </div>
-          <button onClick={() => { vibrate(12); onPlay?.(); }} className="w-full py-3 rounded-xl ec-quick-match-btn hover:scale-[1.02] active:scale-95 transition-transform tracking-widest cursor-pointer min-h-[48px]" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
+          <button onClick={() => { vibrate(12); trackEvent("play_click", { location: "mobile_quick_card", game: "cobb_can_move" }); onPlay?.(); }} className="w-full py-3 rounded-xl ec-quick-match-btn hover:scale-[1.02] active:scale-95 transition-transform tracking-widest cursor-pointer min-h-[48px]" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
             PLAY COBB CAN MOVE →
           </button>
         </div>

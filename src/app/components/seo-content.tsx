@@ -198,7 +198,13 @@ export function SeoContent() {
             return (
               <div key={f.q} className="rounded-xl border ec-hairline overflow-hidden" style={{ background: "var(--ec-input-bg)" }}>
                 <button
-                  onClick={() => setOpenFaq(isOpen ? null : i)}
+                  onClick={() => {
+                    const nextOpen = isOpen ? null : i;
+                    setOpenFaq(nextOpen);
+                    if (nextOpen !== null) {
+                      trackEvent("faq_expand", { question: f.q, index: i + 1, section: "cobb_can_move_faq" });
+                    }
+                  }}
                   className="w-full flex items-center justify-between gap-4 p-5 text-left ec-hover-surface transition-colors cursor-pointer"
                 >
                   <h3 className="ec-text" style={{ fontFamily: "Rajdhani", fontWeight: 600, fontSize: "16px" }}>{f.q}</h3>

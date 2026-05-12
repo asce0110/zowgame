@@ -5,6 +5,7 @@ import { GamePlayer } from "./game-player";
 import { TrailerModal } from "./trailer-modal";
 import { usePresence } from "../lib/presence";
 import { vibrate } from "../lib/haptics";
+import { trackEvent } from "../lib/analytics";
 
 export function Hero({ onPlayRef }: { onPlayRef?: (fn: () => void) => void }) {
   const { content } = useContent();
@@ -26,6 +27,7 @@ export function Hero({ onPlayRef }: { onPlayRef?: (fn: () => void) => void }) {
 
   const handlePlay = () => {
     vibrate(15);
+    trackEvent("play_click", { location: "hero", game: "cobb_can_move" });
     setPlaying(true);
   };
 
@@ -136,7 +138,11 @@ export function Hero({ onPlayRef }: { onPlayRef?: (fn: () => void) => void }) {
               </span>
             </button>
             <button
-              onClick={() => { vibrate(8); setTrailerOpen(true); }}
+              onClick={() => {
+                vibrate(8);
+                trackEvent("trailer_open", { location: "hero", game: "cobb_can_move" });
+                setTrailerOpen(true);
+              }}
               className="px-6 py-4 sm:py-5 rounded-xl border ec-border-strong backdrop-blur ec-surface ec-text ec-hover-surface transition-all flex items-center justify-center gap-3 tracking-widest min-h-[48px] cursor-pointer"
               style={{ fontFamily: "Orbitron", fontWeight: 500, fontSize: "13px" }}
             >

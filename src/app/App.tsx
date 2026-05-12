@@ -11,6 +11,7 @@ import { ThemeProvider } from "./components/theme-store";
 import { MobileTabBar } from "./components/mobile-tabbar";
 import { Toaster } from "./components/ui/sonner";
 import { SeoHead } from "./components/seo-head";
+import { trackEvent } from "./lib/analytics";
 
 function PlaceholderPage({ title, kicker, line }: { title: string; kicker: string; line: string }) {
   return (
@@ -49,6 +50,7 @@ function AppShell() {
 
   const goView = (v: ActiveView) => {
     if (v === "how-to-play" || v === "about") {
+      trackEvent("guide_nav_click", { location: "sidebar", target: v });
       setView("home");
       const targetId = v === "how-to-play" ? "how-to-play-section" : "about-section";
       requestAnimationFrame(() => {
