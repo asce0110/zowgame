@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Maximize2, Minimize2, RotateCw, Share2, AlertTriangle, Info, X, Check } from "lucide-react";
+import { Maximize2, Minimize2, RotateCw, Share2, AlertTriangle, Info, X, Check, PanelTopOpen } from "lucide-react";
 
 type Status = "loading" | "playing" | "error";
 
-export function GamePlayer({ src, title, onExit }: { src: string; title: string; onExit: () => void }) {
+export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: string; title: string; onExit: () => void; onFocusModeChange?: (focused: boolean) => void }) {
   const [status, setStatus] = useState<Status>("loading");
   const [fullscreen, setFullscreen] = useState(false);
+  const [focusMode, setFocusMode] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [shared, setShared] = useState(false);
   const [reloadKey, setReloadKey] = useState(0);
@@ -50,7 +51,13 @@ export function GamePlayer({ src, title, onExit }: { src: string; title: string;
         e.preventDefault();
       }
 
-      if (key === "Escape" && !document.fullscreenElement) onExit();
+      if (key === "Escape" && !document.fullscreenElement) {
+        if (focusMode) {
+          setFocusMode(false);
+          return;
+        }
+        onExit();
+      }
       else if (lower === "f") toggleFullscreen();
       else if (lower === "r" && !isMovementKey) setReloadKey((k) => k + 1);
     };
@@ -62,20 +69,22 @@ export function GamePlayer({ src, title, onExit }: { src: string; title: string;
   useEffect(() => {
     if (status !== "playing") return;
 
-    const htmlOverflow = document.documentElement.style.overflow;
-    const bodyOverflow = document.body.style.overflow;
-    const bodyTouchAction = document.body.style.touchAction;
-
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    document.body.style.touchAction = "none";
-
-    return () => {
-      document.documentElement.style.overflow = htmlOverflow;
-      document.body.style.overflow = bodyOverflow;
-      document.body.style.touchAction = bodyTouchAction;
+    const onWheel = (e: WheelEvent) => {
+      if (!wrapperRef.current) return;
+      const target = e.target as Node | null;
+      if (target && wrapperRef.current.contains(target)) {
+        e.preventDefault();
+      }
     };
+
+    window.addEventListener("wheel", onWheel, { passive: false });
+    return () => window.removeEventListener("wheel", onWheel);
   }, [status]);
+
+  useEffect(() => {
+    onFocusModeChange?.(focusMode);
+    return () => onFocusModeChange?.(false);
+  }, [focusMode, onFocusModeChange]);
 
   const toggleFullscreen = async () => {
     try {
@@ -105,7 +114,11 @@ export function GamePlayer({ src, title, onExit }: { src: string; title: string;
   return (
     <div
       ref={wrapperRef}
-      className={fullscreen && !document.fullscreenElement ? "fixed inset-0 z-[100] overflow-hidden border-0 ec-surface-strong" : "relative h-[460px] sm:h-[560px] lg:h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden border ec-border ec-surface-strong"}
+      className={fullscreen && !document.fullscreenElement
+        ? "fixed inset-0 z-[100] overflow-hidden border-0 ec-surface-strong"
+        : focusMode
+          ? "fixed inset-x-6 top-6 bottom-6 z-[110] overflow-hidden rounded-2xl border ec-border-brand ec-surface-strong"
+          : "relative h-[460px] sm:h-[560px] lg:h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden border ec-border ec-surface-strong"}
       style={{ boxShadow: "var(--ec-shadow-card)" }}
       onMouseMove={bumpControls}
     >
@@ -169,6 +182,7 @@ export function GamePlayer({ src, title, onExit }: { src: string; title: string;
 
       <div className={`absolute bottom-4 left-1/2 -translate-x-1/2 z-20 transition-all duration-300 ${controlsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}>
         <div className="flex items-center gap-1 px-2 py-1.5 rounded-xl bg-black/65 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+          <ControlBtn icon={PanelTopOpen} label={focusMode ? "Exit Focus Mode" : "Focus Mode"} onClick={() => setFocusMode((v) => !v)} active={focusMode} />
           <ControlBtn icon={RotateCw} label="Reload" onClick={() => setReloadKey((k) => k + 1)} />
           <div className="w-px h-5 bg-white/10 mx-1" />
           <ControlBtn icon={shared ? Check : Share2} label={shared ? "Copied!" : "Share"} onClick={handleShare} success={shared} />

@@ -7,7 +7,7 @@ import { usePresence } from "../lib/presence";
 import { vibrate } from "../lib/haptics";
 import { trackEvent } from "../lib/analytics";
 
-export function Hero({ onPlayRef }: { onPlayRef?: (fn: () => void) => void }) {
+export function Hero({ onPlayRef, onExitRef, onPlayingChange, onFocusModeChange }: { onPlayRef?: (fn: () => void) => void; onExitRef?: (fn: () => void) => void; onPlayingChange?: (playing: boolean) => void; onFocusModeChange?: (focused: boolean) => void }) {
   const { content } = useContent();
   const { inGame: players } = usePresence();
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
@@ -35,11 +35,19 @@ export function Hero({ onPlayRef }: { onPlayRef?: (fn: () => void) => void }) {
     if (onPlayRef) onPlayRef(handlePlay);
   }, [onPlayRef, content.title, content.coverImg, content.genre]);
 
+  useEffect(() => {
+    if (onExitRef) onExitRef(() => setPlaying(false));
+  }, [onExitRef]);
+
+  useEffect(() => {
+    onPlayingChange?.(playing);
+  }, [playing, onPlayingChange]);
+
   if (playing) {
     return (
       <div className="animate-[fadeIn_0.4s_ease]">
         <style>{`@keyframes fadeIn { from { opacity: 0; transform: scale(0.98) } to { opacity: 1; transform: scale(1) } }`}</style>
-        <GamePlayer src={content.iframeUrl} title={content.title} onExit={() => setPlaying(false)} />
+        <GamePlayer src={content.iframeUrl} title={content.title} onExit={() => setPlaying(false)} onFocusModeChange={onFocusModeChange} />
       </div>
     );
   }

@@ -28,10 +28,14 @@ type ActiveView = "home" | "how-to-play" | "about" | "admin";
 
 function AppShell() {
   const [view, setView] = useState<ActiveView>("home");
+  const [isGamePlaying, setIsGamePlaying] = useState(false);
+  const [isGameFocused, setIsGameFocused] = useState(false);
   const playRef = useRef<(() => void) | null>(null);
+  const exitGameRef = useRef<(() => void) | null>(null);
   const { content } = useContent();
 
   const registerPlay = useCallback((fn: () => void) => { playRef.current = fn; }, []);
+  const registerExit = useCallback((fn: () => void) => { exitGameRef.current = fn; }, []);
 
   const triggerPlay = () => {
     if (view !== "home") {
@@ -51,12 +55,15 @@ function AppShell() {
   const goView = (v: ActiveView) => {
     if (v === "how-to-play" || v === "about") {
       trackEvent("guide_nav_click", { location: "sidebar", target: v });
+      if (isGamePlaying) {
+        exitGameRef.current?.();
+      }
       setView("home");
       const targetId = v === "how-to-play" ? "how-to-play-section" : "about-section";
       requestAnimationFrame(() => {
         setTimeout(() => {
           document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 60);
+        }, isGamePlaying ? 220 : 60);
       });
       return;
     }
@@ -73,7 +80,7 @@ function AppShell() {
         keywords={content.seoKeywords}
       />
 
-      <div className="eclipse-app min-h-screen w-full relative overflow-x-hidden" style={{ fontFamily: "Rajdhani, sans-serif" }}>
+      <div className={`eclipse-app min-h-screen w-full relative overflow-x-hidden ${isGameFocused ? "game-focus-active" : ""}`} style={{ fontFamily: "Rajdhani, sans-serif" }}>
         <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ opacity: "var(--ec-blob-opacity, 1)" }}>
           <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-fuchsia-600/20 blur-[120px]" />
           <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full bg-cyan-500/15 blur-[120px]" />
@@ -83,16 +90,22 @@ function AppShell() {
           <div className="absolute inset-0 ec-grid-overlay" style={{ backgroundSize: "80px 80px" }} />
         </div>
 
+        {isGameFocused && <div className="game-focus-overlay" aria-hidden="true" />}
+
         <div className="relative flex">
           <Sidebar active={view} onChange={goView} />
 
           <main className="flex-1 px-4 sm:px-6 lg:px-10 py-5 sm:py-8 min-w-0 pb-24 lg:pb-8">
-            <TopBar />
+            <div className="game-focus-exempt">
+              <TopBar />
+            </div>
 
             {view === "home" ? (
               <div className="flex flex-col lg:flex-row gap-6 items-start">
                 <div className="flex-1 min-w-0 flex flex-col gap-8 sm:gap-10 order-2 lg:order-1">
-                  <Hero onPlayRef={registerPlay} />
+                  <div className="game-focus-exempt">
+                    <Hero onPlayRef={registerPlay} onExitRef={registerExit} onPlayingChange={setIsGamePlaying} onFocusModeChange={setIsGameFocused} />
+                  </div>
                   <SeoContent />
                 </div>
                 <div className="order-1 lg:order-2 lg:sticky lg:top-6 self-start">

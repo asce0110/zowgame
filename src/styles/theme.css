@@ -417,6 +417,29 @@ html.theme-light .group\/btn {
   box-shadow: var(--ec-glow-orange) !important;
 }
 
+/* Focus mode — blur and dim the surrounding shell while keeping the game player crisp */
+.game-focus-active main > :not(.game-focus-exempt) {
+  filter: blur(8px);
+  opacity: 0.22;
+  pointer-events: none;
+  user-select: none;
+  transition: filter 220ms ease, opacity 220ms ease;
+}
+
+.game-focus-active .game-focus-exempt {
+  position: relative;
+  z-index: 120;
+}
+
+.game-focus-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  background: rgba(2, 0, 8, 0.36);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
 /* ========== Layout chrome ========== */
 .eclipse-app {
   background: var(--ec-bg);
