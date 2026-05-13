@@ -39,16 +39,43 @@ export function GamePlayer({ src, title, onExit }: { src: string; title: string;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      const tag = (e.target as HTMLElement)?.tagName;
+      const tag = (e.target as HTMLElement | null)?.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA") return;
-      if (e.key === "Escape" && !document.fullscreenElement) onExit();
-      else if (e.key === "f" || e.key === "F") toggleFullscreen();
-      else if (e.key === "m" || e.key === "M") setMuted((m) => !m);
-      else if (e.key === "r" || e.key === "R") setReloadKey((k) => k + 1);
+
+      const key = e.key;
+      const lower = key.toLowerCase();
+      const isMovementKey = ["arrowup", "arrowdown", "arrowleft", "arrowright", " ", "spacebar"].includes(lower) || ["w", "a", "s", "d", "e", "q", "r", " "].includes(lower);
+
+      if (status === "playing" && isMovementKey) {
+        e.preventDefault();
+      }
+
+      if (key === "Escape" && !document.fullscreenElement) onExit();
+      else if (lower === "f") toggleFullscreen();
+      else if (lower === "r" && !isMovementKey) setReloadKey((k) => k + 1);
     };
-    window.addEventListener("keydown", onKey);
+
+    window.addEventListener("keydown", onKey, { passive: false });
     return () => window.removeEventListener("keydown", onKey);
-  }, [onExit]);
+  }, [onExit, status]);
+
+  useEffect(() => {
+    if (status !== "playing") return;
+
+    const htmlOverflow = document.documentElement.style.overflow;
+    const bodyOverflow = document.body.style.overflow;
+    const bodyTouchAction = document.body.style.touchAction;
+
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+
+    return () => {
+      document.documentElement.style.overflow = htmlOverflow;
+      document.body.style.overflow = bodyOverflow;
+      document.body.style.touchAction = bodyTouchAction;
+    };
+  }, [status]);
 
   const toggleFullscreen = async () => {
     try {
@@ -163,7 +190,7 @@ export function GamePlayer({ src, title, onExit }: { src: string; title: string;
             <div className="flex justify-between"><span className="text-white/40">R</span><span>Reload</span></div>
             <div className="flex justify-between"><span className="text-white/40">ESC</span><span>Exit</span></div>
             <div className="pt-2 border-t border-white/10 text-white/50 leading-relaxed">
-              This embed is loaded from an external game host. Reload and open-in-new-tab controls are provided, but direct audio control is not exposed by the outer page.
+              While the game is active, movement keys are trapped so the page does not scroll underneath the iframe.
             </div>
           </div>
         </div>
