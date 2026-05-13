@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Maximize2, Minimize2, RotateCw, Share2, AlertTriangle, Info, X, Check, PanelTopOpen } from "lucide-react";
 
 type Status = "loading" | "playing" | "error";
@@ -57,14 +58,13 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
           return;
         }
         onExit();
-      }
-      else if (lower === "f") toggleFullscreen();
+      } else if (lower === "f") toggleFullscreen();
       else if (lower === "r" && !isMovementKey) setReloadKey((k) => k + 1);
     };
 
     window.addEventListener("keydown", onKey, { passive: false });
     return () => window.removeEventListener("keydown", onKey);
-  }, [onExit, status]);
+  }, [onExit, status, focusMode]);
 
   useEffect(() => {
     if (status !== "playing") return;
@@ -111,14 +111,10 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
     } catch {}
   };
 
-  return (
+  const shell = (
     <div
       ref={wrapperRef}
-      className={fullscreen && !document.fullscreenElement
-        ? "fixed inset-0 z-[100] overflow-hidden border-0 ec-surface-strong"
-        : focusMode
-          ? "fixed inset-x-6 top-6 bottom-6 z-[110] overflow-hidden rounded-2xl border ec-border-brand ec-surface-strong"
-          : "relative h-[460px] sm:h-[560px] lg:h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden border ec-border ec-surface-strong"}
+      className={fullscreen && !document.fullscreenElement ? "fixed inset-0 z-[130] overflow-hidden border-0 ec-surface-strong" : focusMode ? "w-full h-full overflow-hidden rounded-2xl border ec-border-brand ec-surface-strong" : "relative h-[460px] sm:h-[560px] lg:h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden border ec-border ec-surface-strong"}
       style={{ boxShadow: "var(--ec-shadow-card)" }}
       onMouseMove={bumpControls}
     >
@@ -175,7 +171,7 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
         <button onClick={toggleFullscreen} className="w-10 h-10 rounded-lg bg-black/55 backdrop-blur-md border border-white/15 text-white/85 hover:text-white hover:bg-black/75 transition-colors flex items-center justify-center cursor-pointer" title="Fullscreen (F)">
           {fullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
         </button>
-        <button onClick={onExit} className="w-10 h-10 rounded-lg bg-black/55 backdrop-blur-md border border-white/15 text-white/85 hover:text-rose-300 hover:bg-rose-500/10 hover:border-rose-500/40 transition-colors flex items-center justify-center cursor-pointer" title="Exit (Esc)">
+        <button onClick={() => { setFocusMode(false); onExit(); }} className="w-10 h-10 rounded-lg bg-black/55 backdrop-blur-md border border-white/15 text-white/85 hover:text-rose-300 hover:bg-rose-500/10 hover:border-rose-500/40 transition-colors flex items-center justify-center cursor-pointer" title="Exit (Esc)">
           <X className="w-4 h-4" />
         </button>
       </div>
@@ -202,15 +198,28 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
           <div className="grid grid-cols-1 gap-2 text-white/70" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
             <div className="flex justify-between"><span className="text-white/40">F</span><span>Fullscreen</span></div>
             <div className="flex justify-between"><span className="text-white/40">R</span><span>Reload</span></div>
-            <div className="flex justify-between"><span className="text-white/40">ESC</span><span>Exit</span></div>
+            <div className="flex justify-between"><span className="text-white/40">ESC</span><span>Exit / Leave Focus</span></div>
             <div className="pt-2 border-t border-white/10 text-white/50 leading-relaxed">
-              While the game is active, movement keys are trapped so the page does not scroll underneath the iframe.
+              Focus Mode enlarges the game and softens the rest of the page without forcing browser fullscreen.
             </div>
           </div>
         </div>
       )}
     </div>
   );
+
+  if (focusMode) {
+    return createPortal(
+      <div className="fixed inset-0 z-[130] flex items-center justify-center pointer-events-none">
+        <div className="pointer-events-auto w-[min(94vw,1400px)] h-[min(84vh,820px)]">
+          {shell}
+        </div>
+      </div>,
+      document.body,
+    );
+  }
+
+  return shell;
 }
 
 function ControlBtn({

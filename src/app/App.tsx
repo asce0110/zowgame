@@ -92,7 +92,7 @@ function AppShell() {
 
         {isGameFocused && <div className="game-focus-overlay" aria-hidden="true" />}
 
-        <div className="relative flex">
+        <div className={`relative flex ${isGameFocused ? "z-[104]" : ""}`}>
           <Sidebar active={view} onChange={goView} />
 
           <main className="flex-1 px-4 sm:px-6 lg:px-10 py-5 sm:py-8 min-w-0 pb-24 lg:pb-8">
@@ -103,7 +103,7 @@ function AppShell() {
             {view === "home" ? (
               <div className="flex flex-col lg:flex-row gap-6 items-start">
                 <div className="flex-1 min-w-0 flex flex-col gap-8 sm:gap-10 order-2 lg:order-1">
-                  <div className="game-focus-exempt">
+                  <div className={`game-focus-exempt ${isGameFocused ? "relative z-[130]" : ""}`}>
                     <Hero onPlayRef={registerPlay} onExitRef={registerExit} onPlayingChange={setIsGamePlaying} onFocusModeChange={setIsGameFocused} />
                   </div>
                   <SeoContent />
