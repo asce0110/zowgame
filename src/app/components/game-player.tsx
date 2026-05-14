@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Maximize2, Minimize2, RotateCw, Share2, AlertTriangle, Info, X, Check, PanelTopOpen } from "lucide-react";
+import { shouldLockPageScrollForGameKey } from "../lib/game-input";
 
 type Status = "loading" | "playing" | "error";
 
@@ -14,6 +15,7 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
   const [controlsVisible, setControlsVisible] = useState(true);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const idleTimer = useRef<number | undefined>(undefined);
+  const scrollLockRef = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     setStatus("loading");
@@ -40,17 +42,23 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
   }, []);
 
   useEffect(() => {
+    const isEditableTarget = (target: EventTarget | null) => {
+      const element = target as HTMLElement | null;
+      if (!element) return false;
+      return element.tagName === "INPUT" || element.tagName === "TEXTAREA" || element.isContentEditable;
+    };
+
+    const lockPageScroll = (e: KeyboardEvent) => {
+      if (!isEditableTarget(e.target) && shouldLockPageScrollForGameKey(e.key)) {
+        e.preventDefault();
+      }
+    };
+
     const onKey = (e: KeyboardEvent) => {
-      const tag = (e.target as HTMLElement | null)?.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      if (isEditableTarget(e.target)) return;
 
       const key = e.key;
       const lower = key.toLowerCase();
-      const isMovementKey = ["arrowup", "arrowdown", "arrowleft", "arrowright", " ", "spacebar"].includes(lower) || ["w", "a", "s", "d", "e", "q", "r", " "].includes(lower);
-
-      if (status === "playing" && isMovementKey) {
-        e.preventDefault();
-      }
 
       if (key === "Escape" && !document.fullscreenElement) {
         if (focusMode) {
@@ -59,32 +67,65 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
         }
         onExit();
       } else if (lower === "f") toggleFullscreen();
-      else if (lower === "r" && !isMovementKey) setReloadKey((k) => k + 1);
     };
 
+    window.addEventListener("keydown", lockPageScroll, { capture: true, passive: false });
     window.addEventListener("keydown", onKey, { passive: false });
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onExit, status, focusMode]);
+    return () => {
+      window.removeEventListener("keydown", lockPageScroll, { capture: true });
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onExit, focusMode]);
 
   useEffect(() => {
-    if (status !== "playing") return;
+    if (status !== "playing") {
+      if (scrollLockRef.current) {
+        window.scrollTo(scrollLockRef.current.x, scrollLockRef.current.y);
+        scrollLockRef.current = null;
+      }
+      return;
+    }
 
-    const onWheel = (e: WheelEvent) => {
-      if (!wrapperRef.current) return;
-      const target = e.target as Node | null;
-      if (target && wrapperRef.current.contains(target)) {
-        e.preventDefault();
+    scrollLockRef.current = { x: window.scrollX, y: window.scrollY };
+
+    const keepPosition = () => {
+      if (!scrollLockRef.current) return;
+      if (window.scrollX !== scrollLockRef.current.x || window.scrollY !== scrollLockRef.current.y) {
+        window.scrollTo(scrollLockRef.current.x, scrollLockRef.current.y);
       }
     };
 
-    window.addEventListener("wheel", onWheel, { passive: false });
-    return () => window.removeEventListener("wheel", onWheel);
-  }, [status]);
+    const onWheel = (e: WheelEvent) => {
+      const target = e.target as Node | null;
+      if (target && wrapperRef.current?.contains(target)) {
+        e.preventDefault();
+      }
+      keepPosition();
+    };
 
-  useEffect(() => {
-    onFocusModeChange?.(focusMode);
-    return () => onFocusModeChange?.(false);
-  }, [focusMode, onFocusModeChange]);
+    const onScroll = () => keepPosition();
+    const onTouchMove = (e: TouchEvent) => {
+      const target = e.target as Node | null;
+      if (target && wrapperRef.current?.contains(target)) {
+        e.preventDefault();
+      }
+      keepPosition();
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("touchmove", onTouchMove);
+      if (scrollLockRef.current) {
+        window.scrollTo(scrollLockRef.current.x, scrollLockRef.current.y);
+        scrollLockRef.current = null;
+      }
+    };
+  }, [status]);
 
   const toggleFullscreen = async () => {
     try {
