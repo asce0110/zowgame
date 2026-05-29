@@ -18,19 +18,19 @@ export function TrailerModal({ url, title, onClose }: { url: string; title: stri
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-8 animate-[fadeIn_0.2s_ease]"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-900/80 p-4 sm:p-8 animate-[fadeIn_0.2s_ease]"
       onClick={onClose}
     >
       <style>{`@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }`}</style>
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 w-11 h-11 rounded-lg bg-black/60 border border-white/15 text-white/80 hover:text-white hover:bg-black/80 flex items-center justify-center"
+        className="absolute top-4 right-4 w-10 h-10 rounded-lg bg-white text-slate-700 hover:bg-slate-100 flex items-center justify-center shadow-md"
         aria-label="Close trailer"
       >
         <X className="w-5 h-5" />
       </button>
       <div
-        className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden border border-fuchsia-500/30 shadow-[0_0_80px_rgba(217,70,239,0.4)]"
+        className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <iframe
