@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { Play, X, Clock } from "lucide-react";
 import { vibrate } from "../lib/haptics";

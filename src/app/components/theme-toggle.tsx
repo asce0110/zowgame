@@ -1,3 +1,4 @@
+"use client";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "./theme-store";
 import { vibrate } from "../lib/haptics";

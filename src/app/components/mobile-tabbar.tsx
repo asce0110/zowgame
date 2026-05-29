@@ -1,3 +1,4 @@
+"use client";
 import { Home, Gamepad2, BookOpen } from "lucide-react";
 import { vibrate } from "../lib/haptics";
 

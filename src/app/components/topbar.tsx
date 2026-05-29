@@ -1,3 +1,4 @@
+"use client";
 import { Bell, X, Eye, EyeOff, ExternalLink } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useContent, NotificationItem } from "./content-store";

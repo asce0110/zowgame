@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import Link from "next/link";
 import { Play, Search, Globe, ArrowRight, Sparkles, BookOpen } from "lucide-react";
 import { SeoHead } from "./components/seo-head";
 import { trackEvent } from "./lib/analytics";
@@ -25,14 +26,14 @@ export function HomePage() {
 
         <main className="relative px-4 sm:px-6 lg:px-10 py-10 sm:py-14 max-w-[1320px] mx-auto">
           <header className="flex items-center justify-between gap-4 mb-10 sm:mb-16">
-            <Link to="/" className="group flex items-center gap-3 cursor-pointer" aria-label="Go to homepage">
+            <Link href="/" className="group flex items-center gap-3 cursor-pointer" aria-label="Go to homepage">
               <img src="/logo-symbol.svg" alt="ZOWGAME" className="w-11 h-11 transition-transform duration-200 group-hover:scale-105" />
               <div>
                 <div className="ec-text tracking-[0.3em]" style={{ fontFamily: "Orbitron", fontWeight: 800, fontSize: "18px" }}>ZOWGAME</div>
                 <div className="ec-text-faint tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>FREE BROWSER GAMES</div>
               </div>
             </Link>
-            <Link to="/cobb-can-move/" onClick={() => trackEvent("featured_game_click", { location: "home_header", game: "cobb_can_move" })} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl ec-surface border ec-border ec-text hover:ec-hover-surface transition-colors" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
+            <Link href="/cobb-can-move/" onClick={() => trackEvent("featured_game_click", { location: "home_header", game: "cobb_can_move" })} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl ec-surface border ec-border ec-text hover:ec-hover-surface transition-colors" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
               OPEN FEATURED GAME
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -51,11 +52,11 @@ export function HomePage() {
                 ZowGame brings you focused browser game pages that launch quickly, explain the controls clearly, and help you start playing without downloads or confusing setup.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link to="/cobb-can-move/" onClick={() => trackEvent("play_click", { location: "home_hero", game: "cobb_can_move" })} className="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-orange-500 via-fuchsia-500 to-cyan-400 text-white hover:scale-[1.02] active:scale-95 transition-transform" style={{ fontFamily: "Orbitron", fontWeight: 800, fontSize: "14px", boxShadow: "var(--ec-glow-orange)" }}>
+                <Link href="/cobb-can-move/" onClick={() => trackEvent("play_click", { location: "home_hero", game: "cobb_can_move" })} className="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-orange-500 via-fuchsia-500 to-cyan-400 text-white hover:scale-[1.02] active:scale-95 transition-transform" style={{ fontFamily: "Orbitron", fontWeight: 800, fontSize: "14px", boxShadow: "var(--ec-glow-orange)" }}>
                   <Play className="w-5 h-5 fill-white" />
                   PLAY COBB CAN MOVE
                 </Link>
-                <Link to="/cobb-can-move/" onClick={() => trackEvent("guide_nav_click", { location: "home_hero", target: "game_guide" })} className="inline-flex items-center gap-3 px-6 py-4 rounded-xl ec-surface border ec-border ec-text hover:ec-hover-surface transition-colors" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>
+                <Link href="/cobb-can-move/" onClick={() => trackEvent("guide_nav_click", { location: "home_hero", target: "game_guide" })} className="inline-flex items-center gap-3 px-6 py-4 rounded-xl ec-surface border ec-border ec-text hover:ec-hover-surface transition-colors" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>
                   <BookOpen className="w-5 h-5" />
                   VIEW GAME GUIDE
                 </Link>
@@ -73,7 +74,7 @@ export function HomePage() {
                 <p className="ec-text-muted mt-2" style={{ fontSize: "15px", lineHeight: 1.6 }}>
                   A tense pixel horror game where you explore a dark dungeon, collect coal, keep the light alive, and survive Cobb as the rules change.
                 </p>
-                <Link to="/cobb-can-move/" onClick={() => trackEvent("featured_game_click", { location: "home_featured_card", game: "cobb_can_move" })} className="inline-flex items-center gap-2 mt-4 text-fuchsia-500 hover:text-fuchsia-400 transition-colors" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
+                <Link href="/cobb-can-move/" onClick={() => trackEvent("featured_game_click", { location: "home_featured_card", game: "cobb_can_move" })} className="inline-flex items-center gap-2 mt-4 text-fuchsia-500 hover:text-fuchsia-400 transition-colors" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
                   PLAY NOW
                   <ArrowRight className="w-4 h-4" />
                 </Link>

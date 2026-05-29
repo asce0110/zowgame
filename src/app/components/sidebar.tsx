@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import Link from "next/link";
 import { Home, BookOpen, Info, ShieldAlert } from "lucide-react";
 
 export type ViewId = "home" | "how-to-play" | "about" | "admin";
@@ -14,7 +15,7 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
   return (
     <aside className="hidden lg:flex w-[88px] hover:w-[240px] transition-all duration-300 ease-out h-screen sticky top-0 ec-surface-strong backdrop-blur-xl border-r ec-border-brand flex-col group/sidebar z-40 shrink-0">
       <div className="px-6 py-7 border-b ec-hairline">
-        <Link to="/" className="flex items-center gap-3 cursor-pointer group/logo" aria-label="Go to homepage">
+        <Link href="/" className="flex items-center gap-3 cursor-pointer group/logo" aria-label="Go to homepage">
           <div className="relative shrink-0">
             <img src="/logo-symbol.svg" alt="ZOWGAME" width={40} height={40} className="w-10 h-10 drop-shadow-[0_0_14px_rgba(217,70,239,0.55)] transition-transform duration-200 group-hover/logo:scale-105" />
             <div className="absolute inset-0 rounded-lg bg-fuchsia-500 blur-lg opacity-30 -z-10" />

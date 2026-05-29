@@ -1,3 +1,4 @@
+"use client";
 import { useCallback, useRef, useState } from "react";
 import { Sidebar } from "./components/sidebar";
 import { TopBar } from "./components/topbar";

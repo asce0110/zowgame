@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Maximize2, Minimize2, RotateCw, Share2, AlertTriangle, Info, X, Check, PanelTopOpen } from "lucide-react";

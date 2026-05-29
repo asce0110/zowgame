@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { X, ChevronRight, Zap, Keyboard, HelpCircle } from "lucide-react";
 import { vibrate } from "../lib/haptics";

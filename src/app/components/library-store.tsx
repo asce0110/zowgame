@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useCallback, useContext, useEffect, useState, ReactNode } from "react";
 
 export type LibraryGame = {

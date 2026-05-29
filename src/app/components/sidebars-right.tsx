@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { Zap, Radio, Download, Keyboard, Gamepad2 } from "lucide-react";
 import { vibrate } from "../lib/haptics";

@@ -1,3 +1,4 @@
+"use client";
 import { Play, X, Heart } from "lucide-react";
 import { useLibrary } from "./library-store";
 import { vibrate } from "../lib/haptics";
