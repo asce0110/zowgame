@@ -12,10 +12,10 @@ import { SchemaJsonLd } from "./components/schema-jsonld";
 
 function PlaceholderPage({ title, kicker, line }: { title: string; kicker: string; line: string }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-16 text-center">
-      <div className="text-slate-500 tracking-[0.3em] mb-3 font-mono text-xs">// {kicker}</div>
-      <h2 className="text-slate-900 tracking-tight mb-3 font-semibold text-4xl">{title}</h2>
-      <p className="text-slate-600 max-w-xl mx-auto">{line}</p>
+    <div className="rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur p-16 text-center">
+      <div className="text-indigo-400 tracking-[0.3em] mb-3 font-mono text-xs">// {kicker}</div>
+      <h2 className="text-white tracking-tight mb-3 font-semibold text-4xl">{title}</h2>
+      <p className="text-slate-400 max-w-xl mx-auto">{line}</p>
     </div>
   );
 }
@@ -26,7 +26,13 @@ export default function AppShell() {
   return (
     <ContentProvider>
       <SchemaJsonLd />
-      <div className="min-h-screen w-full bg-slate-50 text-slate-900 relative overflow-x-hidden">
+      <div className="min-h-screen w-full bg-slate-950 text-slate-100 relative overflow-x-hidden">
+        {/* Ambient background glow — subtle, anchored to top */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-40 left-1/4 w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-[140px]" />
+          <div className="absolute -top-20 right-0 w-[400px] h-[400px] rounded-full bg-violet-700/8 blur-[120px]" />
+        </div>
+
         <div className="relative flex">
           <Sidebar active={view} onChange={setView} />
           <main className="flex-1 px-4 sm:px-6 lg:px-10 py-5 sm:py-8 min-w-0">
@@ -48,10 +54,10 @@ export default function AppShell() {
             ) : (
               <PlaceholderPage title="ABOUT" kicker="THE TEAM" line="Learn more about the team behind the game." />
             )}
-            <footer className="mt-16 pt-8 border-t border-slate-200 flex items-center justify-between text-slate-500 text-sm">
+            <footer className="mt-16 pt-8 border-t border-slate-800 flex items-center justify-between text-slate-500 text-sm">
               <span>© {new Date().getFullYear()} Gaming Website. All rights reserved.</span>
               <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
                 Online
               </span>
             </footer>

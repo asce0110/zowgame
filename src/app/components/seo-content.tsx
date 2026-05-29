@@ -43,15 +43,15 @@ function SectionHeader({ kicker, title, icon: Icon }: { kicker: string; title: s
   return (
     <div className="mb-6">
       <div className="flex items-center gap-2 mb-2">
-        <Icon className="w-4 h-4 text-indigo-600" />
-        <span className="text-indigo-600 uppercase tracking-wider text-xs font-semibold">{kicker}</span>
+        <Icon className="w-4 h-4 text-indigo-400" />
+        <span className="text-indigo-400 uppercase tracking-wider text-xs font-semibold">{kicker}</span>
       </div>
-      <h2 className="text-slate-900 text-2xl font-bold">{title}</h2>
+      <h2 className="text-white text-2xl font-bold">{title}</h2>
     </div>
   );
 }
 
-const cardCls = "rounded-2xl border border-slate-200 bg-white p-8 shadow-sm";
+const cardCls = "relative rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur p-8 shadow-xl shadow-slate-950/30";
 
 export function SeoContent() {
   const { content } = useContent();
@@ -59,80 +59,76 @@ export function SeoContent() {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* About */}
       <article className={cardCls}>
         <SectionHeader kicker="Overview" title={`About ${content.title}`} icon={Lightbulb} />
-        <div className="flex flex-col gap-4 text-slate-700 max-w-4xl leading-relaxed">
+        <div className="flex flex-col gap-4 text-slate-300 max-w-4xl leading-relaxed">
           {content.about.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
       </article>
 
-      {/* How to Play */}
       <article className={cardCls}>
         <SectionHeader kicker="Controls" title="How to Play Eclipse Protocol" icon={Keyboard} />
-        <p className="text-slate-600 max-w-3xl mb-6 leading-relaxed">
+        <p className="text-slate-400 max-w-3xl mb-6 leading-relaxed">
           Eclipse Protocol uses a standard FPS control scheme that will feel immediately familiar to anyone who has played Apex, Fortnite, or Call of Duty. The full keyboard and mouse layout is below — touch controls on mobile use a virtual stick and tap-to-shoot, and gamepads are auto-detected.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {controls.map((c) => (
-            <div key={c.keys.join("+")} className="flex items-start gap-3 p-4 rounded-lg bg-slate-50 border border-slate-100">
+            <div key={c.keys.join("+")} className="flex items-start gap-3 p-4 rounded-lg bg-slate-950/50 border border-slate-800 hover:border-indigo-500/30 transition-colors">
               <div className="flex gap-1 shrink-0">
                 {c.keys.map((k) => (
-                  <kbd key={k} className="px-2 py-1 rounded-md bg-white border border-slate-200 text-slate-700 text-xs font-mono min-w-[32px] text-center shadow-sm">
+                  <kbd key={k} className="px-2 py-1 rounded-md bg-slate-900 border border-slate-700 text-slate-200 text-xs font-mono min-w-[32px] text-center shadow-inner">
                     {k}
                   </kbd>
                 ))}
               </div>
-              <span className="text-slate-700 text-sm leading-snug">{c.action}</span>
+              <span className="text-slate-300 text-sm leading-snug">{c.action}</span>
             </div>
           ))}
         </div>
-        <div className="mt-6 flex items-start gap-3 p-4 rounded-lg bg-indigo-50 border border-indigo-100">
-          <Mouse className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
-          <span className="text-slate-700 text-sm leading-relaxed">
-            <strong className="text-slate-900">Tip:</strong> Lower your mouse DPI to around 800 and pair it with a 2.5–3.5 in-game sensitivity. Most pros play in this range because it lets you use full arm movement for tracking.
+        <div className="mt-6 flex items-start gap-3 p-4 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
+          <Mouse className="w-5 h-5 text-indigo-300 shrink-0 mt-0.5" />
+          <span className="text-slate-300 text-sm leading-relaxed">
+            <strong className="text-white">Tip:</strong> Lower your mouse DPI to around 800 and pair it with a 2.5–3.5 in-game sensitivity. Most pros play in this range because it lets you use full arm movement for tracking.
           </span>
         </div>
       </article>
 
-      {/* Tips */}
       <article className={cardCls}>
         <SectionHeader kicker="Strategy" title="Tips & Tricks for Winning" icon={Lightbulb} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {tips.map((t, i) => (
-            <section key={t.title} className="p-5 rounded-lg bg-slate-50 border border-slate-100 hover:border-indigo-200 hover:bg-white transition-colors">
+            <section key={t.title} className="p-5 rounded-lg bg-slate-950/50 border border-slate-800 hover:border-indigo-500/40 hover:bg-slate-900/70 transition-all hover:-translate-y-0.5">
               <div className="flex items-start gap-3 mb-2">
-                <div className="w-7 h-7 rounded-md bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0 font-semibold text-xs">
+                <div className="w-7 h-7 rounded-md bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/30 text-indigo-300 flex items-center justify-center shrink-0 font-semibold text-xs">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="text-slate-900 font-semibold">{t.title}</h3>
+                <h3 className="text-white font-semibold">{t.title}</h3>
               </div>
-              <p className="text-slate-600 ml-10 text-sm leading-relaxed">{t.body}</p>
+              <p className="text-slate-400 ml-10 text-sm leading-relaxed">{t.body}</p>
             </section>
           ))}
         </div>
       </article>
 
-      {/* FAQ */}
       <article className={cardCls}>
         <SectionHeader kicker="FAQ" title="Frequently Asked Questions" icon={HelpCircle} />
         <div className="flex flex-col gap-2 max-w-4xl">
           {content.faqs.map((f, i) => {
             const isOpen = openFaq === i;
             return (
-              <div key={f.q} className="rounded-lg border border-slate-200 bg-white overflow-hidden">
+              <div key={f.q} className="rounded-lg border border-slate-800 bg-slate-950/40 overflow-hidden hover:border-slate-700 transition-colors">
                 <button
                   onClick={() => setOpenFaq(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-slate-900/60 transition-colors"
                 >
-                  <h3 className="text-slate-900 font-medium">{f.q}</h3>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform ${isOpen ? "rotate-180 text-indigo-600" : ""}`} />
+                  <h3 className="text-slate-100 font-medium">{f.q}</h3>
+                  <ChevronDown className={`w-5 h-5 text-slate-500 shrink-0 transition-transform ${isOpen ? "rotate-180 text-indigo-400" : ""}`} />
                 </button>
                 {isOpen && (
                   <div className="px-5 pb-5 -mt-1">
-                    <p className="text-slate-600 leading-relaxed">{f.a}</p>
+                    <p className="text-slate-400 leading-relaxed">{f.a}</p>
                   </div>
                 )}
               </div>
@@ -141,59 +137,57 @@ export function SeoContent() {
         </div>
       </article>
 
-      {/* Reviews */}
       <article className={cardCls}>
         <SectionHeader kicker="Reviews" title="What Players Are Saying" icon={MessageSquare} />
-        <div className="flex items-center gap-6 mb-6 p-5 rounded-lg bg-amber-50 border border-amber-100">
+        <div className="flex items-center gap-6 mb-6 p-5 rounded-lg bg-gradient-to-r from-amber-500/10 to-transparent border border-amber-500/20">
           <div>
-            <div className="text-amber-600 text-4xl font-bold">9.4</div>
-            <div className="text-amber-700 text-xs uppercase tracking-wider">out of 10</div>
+            <div className="text-amber-300 text-4xl font-bold">9.4</div>
+            <div className="text-amber-400/80 text-xs uppercase tracking-wider">out of 10</div>
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-1 mb-1">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
+                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <p className="text-slate-700 text-sm">
-              Based on <strong className="text-slate-900">12,847</strong> verified player reviews. 94% recommend it to a friend.
+            <p className="text-slate-300 text-sm">
+              Based on <strong className="text-white">12,847</strong> verified player reviews. 94% recommend it to a friend.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {reviews.map((r) => (
-            <section key={r.name} className="p-5 rounded-lg bg-slate-50 border border-slate-100">
+            <section key={r.name} className="p-5 rounded-lg bg-slate-950/50 border border-slate-800 hover:border-slate-700 transition-colors">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-semibold">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/30 text-indigo-300 flex items-center justify-center font-semibold">
                     {r.name[0]}
                   </div>
                   <div>
-                    <div className="text-slate-900 font-medium text-sm">{r.name}</div>
-                    <div className="text-slate-400 text-xs">{r.date}</div>
+                    <div className="text-white font-medium text-sm">{r.name}</div>
+                    <div className="text-slate-500 text-xs">{r.date}</div>
                   </div>
                 </div>
                 <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className={`w-3 h-3 ${i < r.rating ? "fill-amber-500 text-amber-500" : "text-slate-200"}`} />
+                    <Star key={i} className={`w-3 h-3 ${i < r.rating ? "fill-amber-400 text-amber-400" : "text-slate-700"}`} />
                   ))}
                 </div>
               </div>
-              <p className="text-slate-700 text-sm leading-relaxed">{r.body}</p>
+              <p className="text-slate-300 text-sm leading-relaxed">{r.body}</p>
             </section>
           ))}
         </div>
       </article>
 
-      {/* Related */}
       <article className={cardCls}>
         <SectionHeader kicker="Related" title="You May Also Like" icon={ArrowRight} />
-        <p className="text-slate-600 max-w-3xl mb-6 leading-relaxed">
-          If you enjoy <strong className="text-slate-900">Eclipse Protocol</strong>, you'll probably love these other free browser games we've curated. All of them launch instantly with no download required.
+        <p className="text-slate-400 max-w-3xl mb-6 leading-relaxed">
+          If you enjoy <strong className="text-white">Eclipse Protocol</strong>, you'll probably love these other free browser games we've curated. All of them launch instantly with no download required.
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {related.map((g) => (
-            <a key={g.title} href="#" className="group rounded-lg overflow-hidden border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-md transition-all hover:-translate-y-0.5">
+            <a key={g.title} href="#" className="group rounded-lg overflow-hidden border border-slate-800 bg-slate-950/50 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all hover:-translate-y-0.5">
               <div className="relative h-32 overflow-hidden">
                 <img
                   src={g.img.includes("unsplash.com") ? `${g.img}&fm=avif` : g.img}
@@ -204,10 +198,11 @@ export function SeoContent() {
                   decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
               </div>
               <div className="p-3">
-                <div className="text-indigo-600 text-xs uppercase tracking-wider font-semibold mb-1">{g.genre}</div>
-                <h3 className="text-slate-900 font-semibold">{g.title}</h3>
+                <div className="text-indigo-400 text-xs uppercase tracking-wider font-semibold mb-1">{g.genre}</div>
+                <h3 className="text-white font-semibold">{g.title}</h3>
               </div>
             </a>
           ))}

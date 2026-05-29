@@ -47,22 +47,21 @@ export function ActivityPanel() {
 
   return (
     <aside className="w-full lg:w-[340px] shrink-0 flex flex-col gap-5">
-      {/* HAPPENING NOW */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur p-5 shadow-xl shadow-slate-950/30">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <span className="relative flex w-2 h-2">
-              <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-60" />
-              <span className="relative rounded-full w-2 h-2 bg-emerald-500" />
+              <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-60" />
+              <span className="relative rounded-full w-2 h-2 bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
             </span>
-            <span className="text-slate-900 font-semibold text-sm">Happening Now</span>
+            <span className="text-white font-semibold text-sm">Happening Now</span>
           </div>
-          <span className="text-slate-500 tabular-nums text-xs">
+          <span className="text-slate-400 tabular-nums text-xs">
             {onlineNow.toLocaleString()} online
           </span>
         </div>
 
-        <div className="h-14 relative overflow-hidden rounded-lg bg-slate-50 border border-slate-100">
+        <div className="h-14 relative overflow-hidden rounded-lg bg-slate-950/60 border border-slate-800">
           {livePulses.map((p, i) => (
             <div
               key={i}
@@ -73,7 +72,7 @@ export function ActivityPanel() {
               }}
             >
               <span className="text-xl">{p.icon}</span>
-              <span className="flex-1 truncate text-slate-700 text-sm">{p.text}</span>
+              <span className="flex-1 truncate text-slate-200 text-sm">{p.text}</span>
             </div>
           ))}
         </div>
@@ -82,7 +81,7 @@ export function ActivityPanel() {
           {Array.from({ length: 24 }).map((_, i) => (
             <div
               key={i}
-              className="flex-1 rounded-sm bg-indigo-200"
+              className="flex-1 rounded-sm bg-gradient-to-t from-indigo-500/30 to-indigo-400/80"
               style={{
                 height: `${30 + ((i * 37 + pulseIdx * 13) % 70)}%`,
                 transition: "height 0.7s ease",
@@ -92,29 +91,31 @@ export function ActivityPanel() {
         </div>
       </div>
 
-      {/* QUICK MATCH CTA */}
-      <div className="rounded-2xl p-5 bg-gradient-to-br from-indigo-600 to-violet-700 shadow-md shadow-indigo-200">
-        <div className="flex items-center gap-2 mb-2">
-          <Zap className="w-4 h-4 text-amber-300 fill-amber-300" />
-          <span className="text-white/90 text-xs font-medium">Ready in 12 seconds</span>
+      <div className="relative rounded-2xl p-5 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800 shadow-xl shadow-indigo-900/50 overflow-hidden">
+        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-violet-400/20 blur-2xl" />
+        <div className="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-indigo-300/20 blur-2xl" />
+        <div className="relative">
+          <div className="flex items-center gap-2 mb-2">
+            <Zap className="w-4 h-4 text-amber-300 fill-amber-300" />
+            <span className="text-white/90 text-xs font-medium">Ready in 12 seconds</span>
+          </div>
+          <div className="text-white mb-4 leading-tight text-xl font-semibold">
+            Skip the menu.<br />Drop straight in.
+          </div>
+          <button className="w-full py-2.5 rounded-lg bg-white text-indigo-700 hover:bg-indigo-50 transition-colors flex items-center justify-center gap-2 font-semibold text-sm shadow-md">
+            Quick Match
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
-        <div className="text-white mb-4 leading-tight text-xl font-semibold">
-          Skip the menu.<br />Drop straight in.
-        </div>
-        <button className="w-full py-2.5 rounded-lg bg-white text-indigo-700 hover:bg-indigo-50 transition-colors flex items-center justify-center gap-2 font-semibold text-sm">
-          Quick Match
-          <ArrowRight className="w-4 h-4" />
-        </button>
       </div>
 
-      {/* AMBIENT TICKER */}
-      <div className="px-3 py-2 rounded-lg border border-slate-200 bg-white h-9 relative overflow-hidden flex items-center">
-        <Radio className="w-3 h-3 text-emerald-500 shrink-0 mr-2" />
+      <div className="px-3 py-2 rounded-lg border border-slate-800 bg-slate-900/60 backdrop-blur h-9 relative overflow-hidden flex items-center">
+        <Radio className="w-3 h-3 text-emerald-400 shrink-0 mr-2" />
         <div className="flex-1 relative h-5">
           {ambient.map((a, i) => (
             <div
               key={i}
-              className="absolute inset-0 text-slate-500 truncate transition-all duration-700 text-xs flex items-center"
+              className="absolute inset-0 text-slate-400 truncate transition-all duration-700 text-xs flex items-center"
               style={{
                 opacity: i === ambientIdx ? 1 : 0,
                 transform: `translateY(${i === ambientIdx ? 0 : 8}px)`,

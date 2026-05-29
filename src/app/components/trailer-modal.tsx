@@ -18,13 +18,13 @@ export function TrailerModal({ url, title, onClose }: { url: string; title: stri
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-900/80 p-4 sm:p-8 animate-[fadeIn_0.2s_ease]"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-950/90 backdrop-blur p-4 sm:p-8 animate-[fadeIn_0.2s_ease]"
       onClick={onClose}
     >
       <style>{`@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }`}</style>
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 w-10 h-10 rounded-lg bg-white text-slate-700 hover:bg-slate-100 flex items-center justify-center shadow-md"
+        className="absolute top-4 right-4 w-10 h-10 rounded-lg bg-slate-900/90 backdrop-blur border border-slate-700 text-slate-200 hover:bg-slate-800 flex items-center justify-center shadow-lg"
         aria-label="Close trailer"
       >
         <X className="w-5 h-5" />
