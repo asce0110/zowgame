@@ -1,3 +1,5 @@
+"use client";
+
 import { Users, Gamepad2, DollarSign, Activity, AlertTriangle, Server, Shield, Ban, CheckCircle2, XCircle } from "lucide-react";
 import { useState } from "react";
 

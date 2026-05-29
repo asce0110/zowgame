@@ -1,3 +1,5 @@
+"use client";
+
 import { Trophy, Clock, Target, Flame, TrendingUp, Award, Gamepad2, Calendar } from "lucide-react";
 
 const recentGames = [

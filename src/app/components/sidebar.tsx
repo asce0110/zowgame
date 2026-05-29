@@ -1,3 +1,5 @@
+"use client";
+
 import { Home, BookOpen, Info, ShieldAlert } from "lucide-react";
 
 export type ViewId = "home" | "how-to-play" | "about" | "admin";

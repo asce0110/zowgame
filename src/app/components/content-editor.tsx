@@ -1,50 +1,8 @@
+"use client";
+
 import { useState } from "react";
-import { Lock, Save, RotateCcw, Plus, Trash2, Gamepad2, Search, FileText, HelpCircle, Eye, Check } from "lucide-react";
+import { Save, RotateCcw, Plus, Trash2, Gamepad2, Search, FileText, HelpCircle, Eye, Check } from "lucide-react";
 import { useContent, SiteContent } from "./content-store";
-
-const ADMIN_PASSWORD = "demo";
-
-function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
-  const [pw, setPw] = useState("");
-  const [error, setError] = useState(false);
-  return (
-    <div className="max-w-md mx-auto mt-20 rounded-2xl border border-rose-500/30 bg-[#0f0020]/80 p-8 backdrop-blur">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-fuchsia-600 flex items-center justify-center">
-          <Lock className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <div className="text-rose-300 tracking-[0.3em]" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>// CLEARANCE Ω</div>
-          <h2 className="text-white tracking-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "24px" }}>CONTENT EDITOR</h2>
-        </div>
-      </div>
-      <p className="text-white/60 mb-6" style={{ fontFamily: "Rajdhani", fontSize: "14px" }}>
-        Enter the editor password to access the content management interface. Hint: <code className="text-fuchsia-300 px-1.5 py-0.5 rounded bg-white/5" style={{ fontFamily: "JetBrains Mono" }}>demo</code>
-      </p>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (pw === ADMIN_PASSWORD) onUnlock();
-          else { setError(true); setTimeout(() => setError(false), 1500); }
-        }}
-        className="flex flex-col gap-3"
-      >
-        <input
-          type="password"
-          value={pw}
-          onChange={(e) => setPw(e.target.value)}
-          placeholder="PASSWORD"
-          autoFocus
-          className={`w-full px-4 py-3 rounded-xl bg-white/5 border tracking-widest text-white placeholder:text-white/30 focus:outline-none transition-all ${error ? "border-rose-500 animate-pulse" : "border-white/10 focus:border-fuchsia-500/50"}`}
-          style={{ fontFamily: "JetBrains Mono", fontSize: "13px" }}
-        />
-        <button type="submit" className="px-4 py-3 rounded-xl bg-gradient-to-r from-rose-500 to-fuchsia-600 text-white tracking-widest hover:scale-[1.01] active:scale-95 transition-transform" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}>
-          UNLOCK EDITOR
-        </button>
-      </form>
-    </div>
-  );
-}
 
 function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
@@ -63,14 +21,9 @@ const inputStyle = { fontFamily: "Rajdhani", fontSize: "14px" } as const;
 
 export function ContentEditor() {
   const { content, setContent, reset } = useContent();
-  const [unlocked, setUnlocked] = useState(false);
   const [draft, setDraft] = useState<SiteContent>(content);
   const [tab, setTab] = useState<"game" | "seo" | "about" | "faq">("game");
   const [saved, setSaved] = useState(false);
-
-  if (!unlocked) {
-    return <PasswordGate onUnlock={() => { setUnlocked(true); setDraft(content); }} />;
-  }
 
   const dirty = JSON.stringify(draft) !== JSON.stringify(content);
   const update = <K extends keyof SiteContent>(k: K, v: SiteContent[K]) => setDraft({ ...draft, [k]: v });

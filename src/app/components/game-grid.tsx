@@ -1,3 +1,5 @@
+"use client";
+
 import { Play, Star, Users } from "lucide-react";
 
 const games = [

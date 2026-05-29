@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { Maximize2, Minimize2, RotateCw, Volume2, VolumeX, Share2, AlertTriangle, Info, X, Check } from "lucide-react";
 

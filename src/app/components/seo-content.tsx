@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Keyboard, Mouse, Lightbulb, HelpCircle, MessageSquare, ChevronDown, Star, ArrowRight } from "lucide-react";
 import { useContent } from "./content-store";

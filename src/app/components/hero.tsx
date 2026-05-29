@@ -1,3 +1,5 @@
+"use client";
+
 import { Play, Users, Star, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useContent } from "./content-store";
