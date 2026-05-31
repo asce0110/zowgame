@@ -1,6 +1,7 @@
 "use client";
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { DEFAULT_CONTENT } from "../data/cobb-can-move-content";
+import type { GameRecord } from "../data/games";
 
 export type FaqItem = { q: string; a: string };
 
@@ -37,51 +38,40 @@ const STORAGE_KEY = "nexus-site-content-v1";
 
 type Ctx = {
   content: SiteContent;
+  game: GameRecord;
   setContent: (c: SiteContent) => void;
   reset: () => void;
 };
 
 const ContentContext = createContext<Ctx | null>(null);
 
-export function ContentProvider({ children }: { children: ReactNode }) {
+export function ContentProvider({ children, game }: { children: ReactNode; game: GameRecord }) {
   const [content, setContentState] = useState<SiteContent>(() => {
+    if (game.slug !== "cobb-can-move") return game.content;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) return { ...DEFAULT_CONTENT, ...JSON.parse(raw) };
     } catch {}
-    return DEFAULT_CONTENT;
+    return game.content;
   });
-
-  useEffect(() => {
-    document.title = content.seoTitle;
-    const setMeta = (name: string, val: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", val);
-    };
-    setMeta("description", content.seoDescription);
-    setMeta("keywords", content.seoKeywords);
-  }, [content.seoTitle, content.seoDescription, content.seoKeywords]);
 
   const setContent = (c: SiteContent) => {
     setContentState(c);
+    if (game.slug !== "cobb-can-move") return;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
     } catch {}
   };
 
   const reset = () => {
-    setContentState(DEFAULT_CONTENT);
+    setContentState(game.content);
+    if (game.slug !== "cobb-can-move") return;
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
   };
 
-  return <ContentContext.Provider value={{ content, setContent, reset }}>{children}</ContentContext.Provider>;
+  return <ContentContext.Provider value={{ content, game, setContent, reset }}>{children}</ContentContext.Provider>;
 }
 
 export function useContent() {

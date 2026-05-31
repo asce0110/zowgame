@@ -1,9 +1,9 @@
 "use client";
-import { Bell, X, Eye, EyeOff, ExternalLink } from "lucide-react";
+import { Bell, X, Eye, EyeOff } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useContent, NotificationItem } from "./content-store";
 import { usePresence } from "../lib/presence";
-import { ThemeToggle } from "./theme-toggle";
+import { useTheme } from "./theme-store";
 
 const toneRing: Record<NotificationItem["tone"], string> = {
   fuchsia: "border-fuchsia-500/30 bg-fuchsia-500/10 text-fuchsia-500 dark:text-fuchsia-300",
@@ -16,10 +16,12 @@ const toneRing: Record<NotificationItem["tone"], string> = {
 const READ_KEY = "nexus-notifications-read-v1";
 
 export function TopBar() {
-  const { content } = useContent();
+  const { content, game } = useContent();
   const { total: online } = usePresence();
+  const { darkVariant, toggleDarkVariant } = useTheme();
   const [open, setOpen] = useState(false);
   const popRef = useRef<HTMLDivElement | null>(null);
+  const isPortal = darkVariant === "portal";
 
   const [readIds, setReadIds] = useState<string[]>(() => {
     try {
@@ -63,30 +65,24 @@ export function TopBar() {
     });
   };
 
-  const [rmOn, setRmOn] = useState<boolean>(() => {
-    try { return localStorage.getItem("eclipse-rm") === "1"; } catch { return false; }
-  });
-  useEffect(() => {
-    document.documentElement.classList.toggle("rm-on", rmOn);
-    try { localStorage.setItem("eclipse-rm", rmOn ? "1" : "0"); } catch {}
-  }, [rmOn]);
-
   return (
     <header className="flex items-center gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 flex-wrap">
       <div className="flex-1 min-w-[240px] rounded-2xl border ec-border-brand ec-surface px-4 py-3 sm:px-5 sm:py-4 hud-corners" style={{ boxShadow: "var(--ec-shadow-card)" }}>
         <span className="hud-c1" /><span className="hud-c2" />
         <div className="flex items-center justify-between gap-4">
           <div>
-            <div className="text-fuchsia-500 tracking-[0.3em] mb-1" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>// OFFICIAL SOURCE + PLAY PAGE</div>
-            <div className="ec-text" style={{ fontFamily: "Orbitron", fontWeight: 800, fontSize: "18px" }}>COBB CAN MOVE</div>
-            <div className="ec-text-muted" style={{ fontFamily: "Rajdhani", fontSize: "13px" }}>Browser play, controls, rules, FAQ, and download intent coverage.</div>
+            <div className="text-fuchsia-500 tracking-[0.3em] mb-1" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{game.topBarEyebrow}</div>
+            <div className="ec-text" style={{ fontFamily: "Orbitron", fontWeight: 800, fontSize: "18px" }}>{game.topBarTitle}</div>
+            <div className="ec-text-muted" style={{ fontFamily: "Rajdhani", fontSize: "13px" }}>{game.topBarDescription}</div>
           </div>
         </div>
       </div>
 
-      <div className="hidden md:flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-fuchsia-500/10 via-purple-500/10 to-cyan-500/10 border ec-border-brand">
+      <div className="hidden md:flex items-center gap-3 px-4 py-2.5 rounded-xl border ec-border-brand ec-playing-now-chip">
         <div className="flex flex-col leading-tight">
-          <span className="ec-text-faint tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>PLAYING NOW</span>
+          <span className="ec-text-faint tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>
+            {game.activityHeading ?? "PLAYING NOW"}
+          </span>
           <span className="ec-text tabular-nums tracking-wider" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "13px" }}>
             {online.toLocaleString()} <span className="ec-text-faint" style={{ fontSize: "10px" }}>active</span>
           </span>
@@ -97,15 +93,13 @@ export function TopBar() {
         </span>
       </div>
 
-      <ThemeToggle />
-
       <button
-        onClick={() => setRmOn((v) => !v)}
-        aria-label={rmOn ? "Enable motion" : "Reduce motion"}
-        title={rmOn ? "Motion reduced — click to enable" : "Reduce motion"}
+        onClick={toggleDarkVariant}
+        aria-label={isPortal ? "Switch to cyberpunk dark theme" : "Switch to calmer dark theme"}
+        title={isPortal ? "Switch to cyberpunk dark theme" : "Switch to calmer dark theme"}
         className="hidden sm:flex p-3 rounded-xl border ec-surface ec-border ec-text-muted hover:ec-text transition-colors cursor-pointer min-h-[44px] min-w-[44px] items-center justify-center ec-hover-surface"
       >
-        {rmOn ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+        {isPortal ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
       </button>
 
       <div className="relative" ref={popRef}>
@@ -117,7 +111,7 @@ export function TopBar() {
         >
           <Bell className="w-4 h-4" />
           {unreadCount > 0 && (
-            <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-fuchsia-500 text-white tabular-nums flex items-center justify-center shadow-[0_0_10px_rgba(217,70,239,0.7)]" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
+            <span className="ec-notification-badge absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full text-white tabular-nums flex items-center justify-center" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
               {unreadCount}
             </span>
           )}
@@ -153,7 +147,7 @@ export function TopBar() {
               )}
             </div>
             <div className="px-4 py-2.5 border-t ec-border ec-text-faint tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>
-              Content is aligned to public search intent and official itch.io distribution.
+              {game.notificationFooter}
             </div>
           </div>
         )}

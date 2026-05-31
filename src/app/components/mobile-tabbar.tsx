@@ -1,15 +1,10 @@
 "use client";
 import { Home, Gamepad2, BookOpen } from "lucide-react";
 import { vibrate } from "../lib/haptics";
+import { useContent } from "./content-store";
 
-type AppView = "home" | "how-to-play" | "about" | "admin";
+type AppView = "home" | "how-to-play" | "about";
 type Tab = { id: AppView | "play"; label: string; icon: any; accent: string };
-
-const tabs: Tab[] = [
-  { id: "home", label: "Home", icon: Home, accent: "text-fuchsia-500" },
-  { id: "play", label: "Play", icon: Gamepad2, accent: "text-cyan-500" },
-  { id: "how-to-play", label: "Guide", icon: BookOpen, accent: "text-violet-500" },
-];
 
 export function MobileTabBar({
   active,
@@ -20,6 +15,15 @@ export function MobileTabBar({
   onChange: (v: AppView) => void;
   onPlay: () => void;
 }) {
+  const { game } = useContent();
+  const playLabel = game.accessMode === "download" ? "Source" : "Play";
+
+  const tabs: Tab[] = [
+    { id: "home", label: "Home", icon: Home, accent: "text-fuchsia-500" },
+    { id: "play", label: playLabel, icon: Gamepad2, accent: "text-cyan-500" },
+    { id: "how-to-play", label: "Guide", icon: BookOpen, accent: "text-violet-500" },
+  ];
+
   const handle = (id: Tab["id"]) => {
     vibrate(8);
     if (id === "play") return onPlay();
@@ -44,8 +48,8 @@ export function MobileTabBar({
                 }`}
               >
                 {isBig ? (
-                  <span className="relative -mt-7 w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 via-fuchsia-500 to-cyan-400 flex items-center justify-center shadow-[0_0_24px_rgba(255,107,26,0.55)] ring-4 ring-[rgba(6,0,15,0.55)]">
-                    <span className="absolute inset-0 rounded-full bg-fuchsia-500 blur-md opacity-50 -z-10" />
+                  <span className="ec-mobile-play-pill relative -mt-7 w-14 h-14 rounded-full flex items-center justify-center ring-4">
+                    <span className="ec-mobile-play-glow absolute inset-0 rounded-full -z-10" />
                     <Icon className="w-5 h-5 text-white" />
                   </span>
                 ) : (

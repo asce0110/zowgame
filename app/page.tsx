@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import { HomePage } from "../src/app/HomePage";
+import { getPublishedGames } from "../src/app/data/games";
+
+const games = getPublishedGames();
+const featuredGame = games[0];
 
 export const metadata: Metadata = {
   title: "ZowGame - Play Free Browser Games Online",
   description:
-    "Play fast, free browser games on ZowGame. Start with Cobb Can Move, a tense pixel horror game you can launch instantly online.",
+    `Play fast, free browser games on ZowGame. Featured now: ${featuredGame.shortTitle}, plus focused browser game pages with guides, controls, and instant-play access.`,
   keywords: [
     "ZowGame",
     "free browser games",
     "online games",
     "play games online",
-    "horror browser games",
-    "Cobb Can Move",
+    ...featuredGame.keywords,
   ],
   alternates: { canonical: "https://zowgame.com/" },
 };

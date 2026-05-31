@@ -1,17 +1,20 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, Info, ShieldAlert } from "lucide-react";
+import { Home, BookOpen, Info } from "lucide-react";
+import { useContent } from "./content-store";
 
-export type ViewId = "home" | "how-to-play" | "about" | "admin";
+export type ViewId = "home" | "how-to-play" | "about";
 export type SidebarView = ViewId;
 
 const items: { id: SidebarView; icon: any; label: string; tint?: string }[] = [
-  { id: "home", icon: Home, label: "Play", tint: "text-fuchsia-400" },
+  { id: "home", icon: Home, label: "Home", tint: "text-fuchsia-400" },
   { id: "how-to-play", icon: BookOpen, label: "How to Play", tint: "text-cyan-400" },
   { id: "about", icon: Info, label: "About", tint: "text-violet-400" },
 ];
 
 export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (v: SidebarView) => void }) {
+  const { game } = useContent();
+
   return (
     <aside className="hidden lg:flex w-[88px] hover:w-[240px] transition-all duration-300 ease-out h-screen sticky top-0 ec-surface-strong backdrop-blur-xl border-r ec-border-brand flex-col group/sidebar z-40 shrink-0">
       <div className="px-6 py-7 border-b ec-hairline">
@@ -22,7 +25,7 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
           </div>
           <div className="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-300 whitespace-nowrap overflow-hidden">
             <div className="ec-text tracking-[0.3em]" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>ZOWGAME</div>
-            <div className="text-fuchsia-500/80 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>COBB CAN MOVE</div>
+            <div className="ec-brand-kicker tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>{game.shortTitle.toUpperCase()}</div>
           </div>
         </Link>
       </div>
@@ -47,20 +50,6 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
           );
         })}
       </nav>
-
-      <div className="p-4 border-t ec-hairline">
-        <button
-          onClick={() => onChange("admin")}
-          className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl transition-all cursor-pointer ${
-            active === "admin" ? "bg-rose-500/15 text-rose-500" : "ec-text-dim hover:text-rose-500 hover:bg-rose-500/5"
-          }`}
-          style={{ fontFamily: "Rajdhani", fontWeight: 600 }}
-        >
-          <ShieldAlert className="w-5 h-5 shrink-0" />
-          <span className="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-300 whitespace-nowrap tracking-wider flex-1 text-left">Editor</span>
-          <span className="opacity-0 group-hover/sidebar:opacity-100 transition-opacity px-1.5 py-0.5 rounded bg-rose-500/20 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "8px" }}>Ω</span>
-        </button>
-      </div>
     </aside>
   );
 }

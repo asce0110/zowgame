@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 type PresenceListener = (total: number, inGame: number) => void;
 
 const listeners = new Set<PresenceListener>();
-let total = 12_847;
-let inGame = computeInGame(total);
+const INITIAL_TOTAL = 12_847;
+const INITIAL_IN_GAME = 8_015;
+let total = INITIAL_TOTAL;
+let inGame = INITIAL_IN_GAME;
 let timer: ReturnType<typeof setInterval> | null = null;
 
 function computeInGame(t: number) {
@@ -25,9 +27,10 @@ function ensureTimer() {
 }
 
 export function usePresence() {
-  const [snap, setSnap] = useState({ total, inGame });
+  const [snap, setSnap] = useState({ total: INITIAL_TOTAL, inGame: INITIAL_IN_GAME });
 
   useEffect(() => {
+    setSnap({ total, inGame });
     ensureTimer();
     const l: PresenceListener = (t, ig) => setSnap({ total: t, inGame: ig });
     listeners.add(l);

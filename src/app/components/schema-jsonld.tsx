@@ -1,91 +1,96 @@
-"use client";
-import { useEffect } from "react";
-import { useContent } from "./content-store";
+import { GameRecord } from "../data/games";
 
-const SCRIPT_ID = "nexus-schema-jsonld";
+export function SchemaJsonLd({ game }: { game: GameRecord }) {
+  const ratingValue = parseFloat(game.content.rating) || 0;
+  const pageUrl = `https://zowgame.com${game.canonicalPath}`;
+  const isDownloadGuide = game.accessMode === "download";
 
-export function SchemaJsonLd() {
-  const { content } = useContent();
-
-  useEffect(() => {
-    const url = typeof window !== "undefined" ? window.location.href : "";
-    const ratingValue = parseFloat(content.rating) || 0;
-
-    const videoGame = {
-      "@context": "https://schema.org",
-      "@type": "VideoGame",
-      name: content.title,
-      description: content.seoDescription,
-      genre: ["Survival Horror", "Roguelite", "Pixel Art"],
-      url,
-      image: content.coverImg,
-      applicationCategory: "Game",
-      operatingSystem: ["Web Browser", "Windows"],
-      gamePlatform: ["Web Browser", "PC"],
-      playMode: "SinglePlayer",
-      author: {
-        "@type": "Person",
-        name: "abho",
-      },
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue,
-        bestRating: 5,
-        worstRating: 1,
-        ratingCount: 142,
-      },
-      keywords: content.seoKeywords,
-    };
-
-    const faqPage = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: content.faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: f.a,
+  const videoGame = {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    name: game.content.title,
+    description: game.content.seoDescription,
+    genre: game.schema.genre,
+    url: pageUrl,
+    image: game.content.coverImg || `https://zowgame.com${game.ogImage}`,
+    applicationCategory: "Game",
+    operatingSystem: game.schema.operatingSystems,
+    gamePlatform: game.schema.platforms,
+    playMode: game.schema.playMode,
+    author: game.schema.developer.includes(",")
+      ? game.schema.developer.split(",").map((name) => ({
+          "@type": "Organization",
+          name: name.trim(),
+        }))
+      : {
+          "@type": "Person",
+          name: game.schema.developer,
         },
-      })),
-    };
+    offers: {
+      "@type": "Offer",
+      price: game.schema.price,
+      priceCurrency: game.schema.priceCurrency,
+      availability: "https://schema.org/InStock",
+      url: isDownloadGuide && game.externalSourceUrl ? game.externalSourceUrl : pageUrl,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue,
+      bestRating: 5,
+      worstRating: 1,
+      ratingCount: game.schema.ratingCount,
+    },
+    keywords: game.keywords.join(", "),
+  };
 
-    const breadcrumb = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://zowgame.com/",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Cobb Can Move",
-          item: "https://zowgame.com/cobb-can-move/",
-        },
-      ],
-    };
+  const webPage = isDownloadGuide
+    ? {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: game.content.seoTitle,
+        url: pageUrl,
+        description: game.content.seoDescription,
+        about: game.content.title,
+      }
+    : null;
 
-    const payload = JSON.stringify([videoGame, faqPage, breadcrumb]);
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: game.content.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.a,
+      },
+    })),
+  };
 
-    let script = document.getElementById(SCRIPT_ID) as HTMLScriptElement | null;
-    if (!script) {
-      script = document.createElement("script");
-      script.id = SCRIPT_ID;
-      script.type = "application/ld+json";
-      document.head.appendChild(script);
-    }
-    script.textContent = payload;
-  }, [content]);
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://zowgame.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: game.shortTitle,
+        item: pageUrl,
+      },
+    ],
+  };
 
-  return null;
+  return (
+    <script
+      id={`schema-${game.slug}`}
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify([videoGame, ...(webPage ? [webPage] : []), faqPage, breadcrumb]) }}
+    />
+  );
 }
