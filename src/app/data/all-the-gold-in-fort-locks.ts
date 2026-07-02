@@ -95,7 +95,7 @@ export const allTheGoldInFortLocksGame: GameRecord = {
     description: "A puzzle game where doors act as portals to nested, overlapping rooms.",
     coverImg: "https://img.zowgame.com/all-the-gold-in-fort-locks/keyframe_008.webp",
     iframeUrl: "https://itch.io/embed/4721907",
-    trailerUrl: "https://img.zowgame.com/all-the-gold-in-fort-locks/Video%201080P.mp4",
+    trailerUrl: "https://www.youtube.com/watch?v=-BCO_WLSfCI",
     rating: "4.8",
     avgSession: "60",
     seoTitle: "All The Gold In Fort Locks — Free Puzzle Game",

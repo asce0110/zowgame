@@ -69,10 +69,8 @@ export default async function WalkthroughPage({ params }: { params: Promise<{ sl
       {isFortLocks ? (
         <>
           <SubSection title="Full Walkthrough Video">
-            <div className="rounded-xl border-2 border-border overflow-hidden bg-black">
-              <video src="https://img.zowgame.com/all-the-gold-in-fort-locks/Video%201080P.mp4" controls className="w-full" poster="https://img.zowgame.com/all-the-gold-in-fort-locks/keyframe_008.webp" preload="metadata">
-                Your browser does not support the video tag.
-              </video>
+            <div className="rounded-xl border-2 border-border overflow-hidden bg-black aspect-video">
+              <iframe src="https://www.youtube.com/embed/-BCO_WLSfCI" className="w-full h-full" allowFullScreen title="Walkthrough video" />
             </div>
             <p className="mt-3 text-sm text-muted-foreground">Full 12-minute walkthrough covering all 6 key stages. Use the timeline to jump to specific puzzles.</p>
           </SubSection>

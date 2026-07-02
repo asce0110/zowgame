@@ -1,7 +1,6 @@
 {
   "framework": "nextjs",
   "redirects": [
-    { "source": "/", "destination": "/games/dont-sleep-with-the-fishes/", "permanent": true },
     { "source": "/guide/", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
     { "source": "/guide", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
     { "source": "/items/", "destination": "/games/dont-sleep-with-the-fishes/items/", "permanent": true },
