@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Keyboard, Lightbulb, HelpCircle, MessageSquare, ChevronDown, Star, BookOpen, Package, Flag, MessageCircle } from "lucide-react";
+import { Keyboard, Lightbulb, HelpCircle, MessageSquare, ChevronDown, Star, BookOpen, Package, Flag, MessageCircle, Zap, Users, Trophy, Monitor } from "lucide-react";
 import { useContent } from "./content-store";
 import { trackEvent } from "../lib/analytics";
 
@@ -31,17 +31,22 @@ export function SeoContent() {
       {game.slug === "dont-sleep-with-the-fishes" && (
         <div className="rounded-2xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_#24312c]">
           <h3 className="font-['Fredoka'] text-lg font-black mb-4">Explore {game.shortTitle} Guides</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
             {[
-              { label: "Beginner Guide", href: `${game.canonicalPath}guide/`, icon: BookOpen, desc: "Controls & walkthrough" },
-              { label: "Items & Events", href: `${game.canonicalPath}items/`, icon: Package, desc: "35+ items catalog" },
-              { label: "All Endings", href: `${game.canonicalPath}endings/`, icon: Flag, desc: "12+ ending routes" },
-              { label: "FAQ", href: `${game.canonicalPath}faq/`, icon: MessageCircle, desc: "Steam & platforms" },
-            ].map(({ label, href, icon: Icon, desc }) => (
-              <Link key={label} href={href} className="group rounded-xl border-2 border-border bg-input-background p-4 text-center transition hover:border-foreground hover:shadow-[3px_3px_0_#24312c]">
-                <Icon className="w-5 h-5 mx-auto mb-2 text-primary group-hover:text-accent transition-colors" />
-                <p className="font-['Fredoka'] text-sm font-black text-foreground">{label}</p>
-                <p className="font-mono text-[9px] font-extrabold uppercase tracking-[.12em] text-muted-foreground mt-1">{desc}</p>
+              { label: "Guide", href: `${game.canonicalPath}guide/`, icon: BookOpen },
+              { label: "Walkthrough", href: `${game.canonicalPath}walkthrough/`, icon: Zap },
+              { label: "Items", href: `${game.canonicalPath}items/`, icon: Package },
+              { label: "Events", href: `${game.canonicalPath}events/`, icon: Zap },
+              { label: "Characters", href: `${game.canonicalPath}characters/`, icon: Users },
+              { label: "Endings", href: `${game.canonicalPath}endings/`, icon: Flag },
+              { label: "Tips", href: `${game.canonicalPath}tips-tricks/`, icon: Lightbulb },
+              { label: "Achievements", href: `${game.canonicalPath}achievements/`, icon: Trophy },
+              { label: "Steam", href: `${game.canonicalPath}steam/`, icon: Monitor },
+              { label: "FAQ", href: `${game.canonicalPath}faq/`, icon: MessageCircle },
+            ].map(({ label, href, icon: Icon }, i) => (
+              <Link key={label} href={href} className={`group rounded-xl border-2 border-border p-3 text-center transition hover:-translate-y-0.5 hover:border-foreground hover:shadow-[2px_2px_0_#24312c] ${i % 2 === 0 ? "bg-input-background" : "bg-secondary/30"}`}>
+                <Icon className="w-4 h-4 mx-auto mb-1.5 text-primary group-hover:text-accent transition-colors" />
+                <p className="font-['Fredoka'] text-xs font-black text-foreground">{label}</p>
               </Link>
             ))}
           </div>

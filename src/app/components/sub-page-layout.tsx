@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { BookOpen, Package, Zap, Flag, HelpCircle, Home } from "lucide-react";
 
 export function SubPageLayout({
   gameTitle,
@@ -15,11 +16,17 @@ export function SubPageLayout({
   children: ReactNode;
 }) {
   const wikiLinks = [
-    { label: "Overview", href: gamePath },
-    { label: "Guide", href: `${gamePath}guide/` },
-    { label: "Items & Events", href: `${gamePath}items/` },
-    { label: "Endings", href: `${gamePath}endings/` },
-    { label: "FAQ", href: `${gamePath}faq/` },
+    { label: "Overview", href: gamePath, icon: Home },
+    { label: "Guide", href: `${gamePath}guide/`, icon: BookOpen },
+    { label: "Walkthrough", href: `${gamePath}walkthrough/`, icon: Zap },
+    { label: "Items", href: `${gamePath}items/`, icon: Package },
+    { label: "Events", href: `${gamePath}events/`, icon: Zap },
+    { label: "Characters", href: `${gamePath}characters/`, icon: Home },
+    { label: "Endings", href: `${gamePath}endings/`, icon: Flag },
+    { label: "Tips", href: `${gamePath}tips-tricks/`, icon: Zap },
+    { label: "Achievements", href: `${gamePath}achievements/`, icon: Flag },
+    { label: "Steam", href: `${gamePath}steam/`, icon: Zap },
+    { label: "FAQ", href: `${gamePath}faq/`, icon: HelpCircle },
   ];
 
   const isActive = (href: string) => {
@@ -55,18 +62,18 @@ export function SubPageLayout({
 
       {/* Sticky sub-nav */}
       <nav className="sticky top-0 z-30 border-b-2 border-foreground bg-card overflow-x-auto">
-        <div className="flex gap-1.5 px-6 lg:px-12 py-3">
-          {wikiLinks.map(({ label, href }) => (
+        <div className="flex gap-1.5 px-4 lg:px-12 py-2.5">
+          {wikiLinks.map(({ label, href, icon: Icon }) => (
             <Link
               key={label}
               href={href}
-              className={`shrink-0 px-5 py-2 rounded-full border-2 font-extrabold text-xs transition ${
+              className={`shrink-0 px-3.5 py-2 rounded-full border-2 font-extrabold text-xs transition flex items-center gap-1.5 ${
                 isActive(href)
                   ? "border-foreground bg-foreground text-background shadow-[2px_2px_0_#24312c]"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-foreground hover:shadow-[2px_2px_0_#24312c]"
               }`}
             >
-              {label}
+              <Icon className="w-3.5 h-3.5" />{label}
             </Link>
           ))}
         </div>
@@ -85,21 +92,29 @@ export function SubPageLayout({
               <span className="w-8 h-8 rounded-full border-2 border-foreground bg-accent flex items-center justify-center text-accent-foreground font-black text-sm">?</span>
               <p className="font-['Fredoka'] text-2xl font-black">More {gameTitle} Guides</p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {wikiLinks.filter((l) => l.label !== "Overview").map(({ label, href }, i) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+              {wikiLinks.filter((l) => l.label !== "Overview").map(({ label, href }, i) => {
+                const colors = [
+                  "bg-accent text-accent-foreground",
+                  "bg-primary text-primary-foreground",
+                  "bg-[#c39a2f] text-foreground",
+                  "bg-[#6c4f8f] text-white",
+                  "bg-[#315f9f] text-white",
+                  "bg-card text-foreground",
+                  "bg-[#984c38] text-white",
+                  "bg-[#2f7a90] text-white",
+                  "bg-[#517a35] text-white",
+                  "bg-secondary text-secondary-foreground",
+                ];
+                return (
                 <Link
                   key={label}
                   href={href}
-                  className={`rounded-xl border-2 border-foreground px-4 py-4 text-sm font-extrabold text-center transition shadow-[3px_3px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] ${
-                    i === 0 ? "bg-accent text-accent-foreground" :
-                    i === 1 ? "bg-primary text-primary-foreground" :
-                    i === 2 ? "bg-[#c39a2f] text-foreground" :
-                    "bg-card text-foreground"
-                  }`}
+                  className={`rounded-xl border-2 border-foreground px-4 py-3 text-sm font-extrabold text-center transition shadow-[3px_3px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] ${colors[i % colors.length]}`}
                 >
                   {label}
                 </Link>
-              ))}
+              );})}
             </div>
           </div>
 
@@ -144,6 +159,13 @@ export function SubPageLayout({
               className="block w-full rounded-2xl border-2 border-foreground bg-accent text-accent-foreground p-4 text-center font-extrabold shadow-[4px_4px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0_#24312c] transition-all -rotate-[0.5deg]"
             >
               ← Back to Game Overview
+            </Link>
+
+            <Link
+              href={`${gamePath}changelog/`}
+              className="block w-full rounded-2xl border-2 border-foreground bg-card p-3 text-center font-extrabold text-sm text-muted-foreground hover:text-foreground hover:bg-secondary shadow-[2px_2px_0_#24312c] transition-all"
+            >
+              Changelog
             </Link>
 
             {/* Quick tip card */}

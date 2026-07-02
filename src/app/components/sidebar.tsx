@@ -57,28 +57,14 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
             <div className="hidden md:block md:mt-4">
               <p className="font-mono text-[9px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4">Wiki Pages</p>
               <div className="grid gap-1">
-                {[["Guide", `${game.canonicalPath}guide/`],["Items", `${game.canonicalPath}items/`],["Endings", `${game.canonicalPath}endings/`],["FAQ", `${game.canonicalPath}faq/`]].map(([label, href]) => (
+                {[["Guide", `${game.canonicalPath}guide/`],["Walkthrough", `${game.canonicalPath}walkthrough/`],["Items", `${game.canonicalPath}items/`],["Events", `${game.canonicalPath}events/`],["Endings", `${game.canonicalPath}endings/`],["FAQ", `${game.canonicalPath}faq/`]].map(([label, href]) => (
                   <Link key={label} href={href} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground">{label}</Link>
                 ))}
-              </div>
-            </div>
-          )}
-          {game.changelog && game.changelog.length > 0 && (
-            <div className="hidden md:block md:mt-4">
-              <p className="font-mono text-[9px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4 flex items-center gap-1.5">
-                <GitCommit className="w-3 h-3 text-accent" /> Changelog
-              </p>
-              <div className="grid gap-1">
-                {game.changelog.map((entry) => (
-                  <button key={entry.version} onClick={() => setChangelogEntry(entry)}
-                    className="flex flex-col rounded-xl border-2 border-transparent px-4 py-2 hover:border-foreground hover:bg-secondary transition cursor-pointer text-left w-full">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] font-extrabold text-accent">{entry.version}</span>
-                      <span className="font-mono text-[9px] text-muted-foreground tracking-[.12em]">{entry.date}</span>
-                    </div>
-                    <span className="text-[11px] font-bold text-muted-foreground leading-tight mt-0.5">{entry.summary}</span>
+                {game.changelog && game.changelog.length > 0 && (
+                  <button onClick={() => setChangelogEntry(game.changelog || null)} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground cursor-pointer w-full text-left">
+                    <GitCommit className="w-4 h-4 text-accent" /> Changelog
                   </button>
-                ))}
+                )}
               </div>
             </div>
           )}
