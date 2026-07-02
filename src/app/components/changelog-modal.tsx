@@ -31,9 +31,7 @@ export function ChangelogModal({ entry, onClose }: { entry: GameChangelogEntry; 
               </div>
             ))}
           </div>
-        ) : (
-          <p className="text-muted-foreground text-sm font-bold">Full changelog not available. Check the official itch.io or Steam page for details.</p>
-        )}
+        ) : null}
       </div>
     </div>
   );

@@ -81,14 +81,14 @@ function AppShell() {
   return (
     <div className={`min-h-screen w-full relative overflow-x-hidden bg-background ${isGameFocused ? "game-focus-active" : ""}`} style={{ fontFamily: "Nunito, sans-serif" }}>
       {/* Background pattern — matching homepage */}
-      <div className="pointer-events-none fixed inset-0 [background:radial-gradient(circle_at_18%_18%,rgba(255,246,220,.95)_0_14%,transparent_32%),linear-gradient(115deg,transparent_0_52%,rgba(31,111,91,.12)_52%_100%),linear-gradient(rgba(36,49,44,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(36,49,44,.07)_1px,transparent_1px)] [background-size:auto,auto,34px_34px,34px_34px]" />
+      <div className="pointer-events-none fixed inset-0 [background:linear-gradient(rgba(36,49,44,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(36,49,44,.03)_1px,transparent_1px)] [background-size:40px_40px]" />
 
       {isGameFocused && <div className="game-focus-overlay" aria-hidden="true" />}
 
       <div className={`relative flex ${isGameFocused ? "z-[104]" : ""}`}>
         <Sidebar active={view} onChange={goView} />
 
-        <main className="flex-1 px-4 sm:px-6 py-5 sm:py-8 min-w-0 pb-24 lg:pb-8 md:pl-[300px]">
+        <main className="flex-1 px-4 sm:px-6 py-5 sm:py-8 min-w-0 pb-24 lg:pb-8 md:pl-[268px]">
           {view === "home" ? (
             <div className="flex flex-col lg:flex-row gap-6 items-start">
               <div className="flex-1 min-w-0 flex flex-col gap-8 sm:gap-10 order-2 lg:order-1">

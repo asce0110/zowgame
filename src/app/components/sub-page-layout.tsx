@@ -8,14 +8,16 @@ export function SubPageLayout({
   pageTitle,
   pageDescription,
   children,
+  wikiLinks: customWikiLinks,
 }: {
   gameTitle: string;
   gamePath: string;
   pageTitle: string;
   pageDescription: string;
   children: ReactNode;
+  wikiLinks?: { label: string; href: string; icon: any }[];
 }) {
-  const wikiLinks = [
+  const defaultWikiLinks = [
     { label: "Overview", href: gamePath, icon: Home },
     { label: "Guide", href: `${gamePath}guide/`, icon: BookOpen },
     { label: "Walkthrough", href: `${gamePath}walkthrough/`, icon: Zap },
@@ -28,6 +30,8 @@ export function SubPageLayout({
     { label: "Steam", href: `${gamePath}steam/`, icon: Zap },
     { label: "FAQ", href: `${gamePath}faq/`, icon: HelpCircle },
   ];
+
+  const wikiLinks = customWikiLinks || defaultWikiLinks;
 
   const isActive = (href: string) => {
     const slug = pageTitle.toLowerCase().replace(/\s+/g, "-");
@@ -161,12 +165,14 @@ export function SubPageLayout({
               ← Back to Game Overview
             </Link>
 
-            <Link
-              href={`${gamePath}changelog/`}
-              className="block w-full rounded-2xl border-2 border-foreground bg-card p-3 text-center font-extrabold text-sm text-muted-foreground hover:text-foreground hover:bg-secondary shadow-[2px_2px_0_#24312c] transition-all"
-            >
-              Changelog
-            </Link>
+            {gamePath.includes("dont-sleep-with-the-fishes") && (
+              <Link
+                href={`${gamePath}changelog/`}
+                className="block w-full rounded-2xl border-2 border-foreground bg-card p-3 text-center font-extrabold text-sm text-muted-foreground hover:text-foreground hover:bg-secondary shadow-[2px_2px_0_#24312c] transition-all"
+              >
+                Changelog
+              </Link>
+            )}
 
             {/* Quick tip card */}
             <div className="rounded-2xl border-2 border-foreground bg-[#fff1c8] p-4 shadow-[3px_3px_0_#24312c] rotate-[1deg]">

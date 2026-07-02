@@ -16,6 +16,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zowgame.com/games/all-the-gold-in-fort-locks/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zowgame.com/games/all-the-gold-in-fort-locks/walkthrough/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://zowgame.com/games/dont-sleep-with-the-fishes/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

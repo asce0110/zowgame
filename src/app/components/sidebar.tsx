@@ -26,7 +26,7 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
 
   return (
     <>
-      <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border-2 border-foreground bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[248px]">
+      <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border-2 border-foreground bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[220px]">
         <div className="flex h-16 items-center justify-between px-4 md:h-full md:flex-col md:items-stretch md:justify-start md:p-5">
           <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-ring/40" aria-label="Back to homepage">
             <span className="grid h-11 w-11 shrink-0 rotate-[-6deg] place-items-center rounded-2xl border-2 border-foreground bg-accent text-accent-foreground shadow-[3px_3px_0_#24312c] overflow-hidden">
@@ -61,10 +61,20 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
                   <Link key={label} href={href} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground">{label}</Link>
                 ))}
                 {game.changelog && game.changelog.length > 0 && (
-                  <button onClick={() => setChangelogEntry(game.changelog || null)} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground cursor-pointer w-full text-left">
+                  <Link href={`${game.canonicalPath}changelog/`} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground cursor-pointer w-full text-left">
                     <GitCommit className="w-4 h-4 text-accent" /> Changelog
-                  </button>
+                  </Link>
                 )}
+              </div>
+            </div>
+          )}
+          {game.slug === "all-the-gold-in-fort-locks" && (
+            <div className="hidden md:block md:mt-4">
+              <p className="font-mono text-[9px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4">Guide</p>
+              <div className="grid gap-1">
+                {[["Walkthrough", `${game.canonicalPath}walkthrough/`]].map(([label, href]) => (
+                  <Link key={label} href={href} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground">{label}</Link>
+                ))}
               </div>
             </div>
           )}

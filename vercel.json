@@ -1,3 +1,28 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    { "source": "/", "destination": "/games/dont-sleep-with-the-fishes/", "permanent": true },
+    { "source": "/guide/", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/guide", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/items/", "destination": "/games/dont-sleep-with-the-fishes/items/", "permanent": true },
+    { "source": "/items", "destination": "/games/dont-sleep-with-the-fishes/items/", "permanent": true },
+    { "source": "/events/", "destination": "/games/dont-sleep-with-the-fishes/events/", "permanent": true },
+    { "source": "/events", "destination": "/games/dont-sleep-with-the-fishes/events/", "permanent": true },
+    { "source": "/endings/", "destination": "/games/dont-sleep-with-the-fishes/endings/", "permanent": true },
+    { "source": "/endings", "destination": "/games/dont-sleep-with-the-fishes/endings/", "permanent": true },
+    { "source": "/faq/", "destination": "/games/dont-sleep-with-the-fishes/faq/", "permanent": true },
+    { "source": "/faq", "destination": "/games/dont-sleep-with-the-fishes/faq/", "permanent": true },
+    { "source": "/walkthrough/", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/walkthrough", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/characters/", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/characters", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/achievements/", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/achievements", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/tips/", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/tips", "destination": "/games/dont-sleep-with-the-fishes/guide/", "permanent": true },
+    { "source": "/steam/", "destination": "/games/dont-sleep-with-the-fishes/faq/", "permanent": true },
+    { "source": "/steam", "destination": "/games/dont-sleep-with-the-fishes/faq/", "permanent": true },
+    { "source": "/中文/", "destination": "/games/dont-sleep-with-the-fishes/", "permanent": true },
+    { "source": "/中文", "destination": "/games/dont-sleep-with-the-fishes/", "permanent": true }
+  ]
 }

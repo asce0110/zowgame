@@ -1,5 +1,6 @@
 import type { SiteContent } from "../components/content-store";
 import { dontSleepWithTheFishesGame } from "./dont-sleep-with-the-fishes";
+import { allTheGoldInFortLocksGame } from "./all-the-gold-in-fort-locks";
 
 export type GameFaqItem = {
   q: string;
@@ -404,6 +405,7 @@ export const GAMES: GameRecord[] = [
     ],
   },
   dontSleepWithTheFishesGame,
+  allTheGoldInFortLocksGame,
 ];
 export function getGameBySlug(slug: string) {
   return GAMES.find((game) => game.slug === slug);

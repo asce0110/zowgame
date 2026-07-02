@@ -65,8 +65,6 @@ function buildCardGames(games: GameRecord[]): CardGame[] {
   }));
 }
 
-const categories = ["All", "Horror", "Puzzle", "Arcade", "Roguelite", "Strategy"];
-
 function GameCard({ game: g, compact = false }: { game: CardGame; compact?: boolean }) {
   const Icon = g.icon;
   const cardRef = useRef<HTMLAnchorElement>(null);
@@ -132,37 +130,6 @@ export function HomePage() {
   const rawGames = getPublishedGames();
   const cardGames = useMemo(() => buildCardGames(rawGames), [rawGames]);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("All");
-  const fullTitle = "A playable arcade with guidebook depth.";
-  const [typewriterText, setTypewriterText] = useState(fullTitle);
-
-  useEffect(() => {
-    let i = 0;
-    let deleting = false;
-    let timeout: ReturnType<typeof setTimeout>;
-
-    const tick = () => {
-      if (!deleting) {
-        i++;
-        setTypewriterText(fullTitle.slice(0, i));
-        if (i >= fullTitle.length) {
-          timeout = setTimeout(() => { deleting = true; tick(); }, 3000);
-          return;
-        }
-      } else {
-        i--;
-        setTypewriterText(fullTitle.slice(0, i));
-        if (i <= 0) {
-          timeout = setTimeout(() => { deleting = false; tick(); }, 2000);
-          return;
-        }
-      }
-      timeout = setTimeout(tick, deleting ? 50 : 100);
-    };
-
-    timeout = setTimeout(tick, 180);
-    return () => clearTimeout(timeout);
-  }, []);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -171,26 +138,21 @@ export function HomePage() {
     const badge = root.querySelector("[data-anime='badge']") as HTMLElement;
     const title = root.querySelector("[data-anime='title']") as HTMLElement;
     const desc = root.querySelector("[data-anime='desc']") as HTMLElement;
-    const stats = root.querySelectorAll("[data-anime='stat']");
     const featuredBoard = root.querySelector("[data-anime='featured']") as HTMLElement;
 
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    tl.fromTo(badge, { scale: 0, rotate: 6, opacity: 0 }, { scale: 1, rotate: -2, opacity: 1, duration: 0.5, ease: "back.out(2)" });
-    tl.fromTo(title, { y: 32, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.12);
-    tl.fromTo(desc, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 0.28);
-    tl.fromTo(stats, { y: 40, opacity: 0, scale: 0.8 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, stagger: 0.08, ease: "back.out(2)" }, 0.46);
-    tl.fromTo(featuredBoard, { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6 }, 0.58);
+    tl.fromTo(title, { y: 32, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 });
+    tl.fromTo(desc, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 0.12);
+    tl.fromTo(featuredBoard, { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6 }, 0.28);
 
     return () => { tl.kill(); };
   }, []);
-  const visibleGames = useMemo(() => {
-    return activeCategory === "All" ? cardGames : cardGames.filter((g) => g.genre.toLowerCase().includes(activeCategory.toLowerCase()) || g.title.toLowerCase().includes(activeCategory.toLowerCase()));
-  }, [activeCategory, cardGames]);
+  const visibleGames = cardGames;
 
   const updates = useMemo(() => [
     { title: "Survival Guide", body: "Cobb Can Move — controls, rules, coal routes, and furnace strategy.", href: "/games/cobb-can-move/#how-to-play-section", bg: "bg-accent text-accent-foreground", img: cardGames[0]?.image },
     { title: "Items & Endings", body: "Don't Sleep With The Fishes — 35+ items, 12+ endings, crew guide.", href: "/games/dont-sleep-with-the-fishes/items/", bg: "bg-primary text-primary-foreground", img: cardGames[1]?.image },
-    { title: "How to Play", body: "Controls, walkthrough, FAQ, and event counters for every game in the collection.", href: "#discover", bg: "bg-[#c39a2f] text-foreground" },
+    { title: "Puzzle Walkthrough", body: "All The Gold In Fort Locks — 6 key stages, developer solutions, and full video guide.", href: "/games/all-the-gold-in-fort-locks/walkthrough/", bg: "bg-[#c39a2f] text-foreground", img: cardGames[2]?.image },
   ], [cardGames]);
 
   return (
@@ -200,9 +162,9 @@ export function HomePage() {
       {/* Skip to main content — accessibility */}
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:rounded-xl focus:border-2 focus:border-foreground focus:bg-accent focus:text-accent-foreground focus:px-4 focus:py-2 focus:font-extrabold focus:shadow-[3px_3px_0_#24312c]">Skip to main content</a>
 
-      <div className="pointer-events-none fixed inset-0 [background:radial-gradient(circle_at_18%_18%,rgba(255,246,220,.95)_0_14%,transparent_32%),linear-gradient(115deg,transparent_0_52%,rgba(31,111,91,.12)_52%_100%),linear-gradient(rgba(36,49,44,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(36,49,44,.07)_1px,transparent_1px)] [background-size:auto,auto,34px_34px,34px_34px]" />
+      <div className="pointer-events-none fixed inset-0 [background:linear-gradient(rgba(36,49,44,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(36,49,44,.03)_1px,transparent_1px)] [background-size:40px_40px]" />
 
-      <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border-2 border-foreground bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[248px]">
+      <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border-2 border-foreground bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[220px]">
         <div className="flex h-16 items-center justify-between px-4 md:h-full md:flex-col md:items-stretch md:justify-start md:p-5">
           <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-ring/40">
             <span className="grid h-11 w-11 rotate-[-6deg] place-items-center rounded-2xl border-2 border-foreground bg-accent text-accent-foreground shadow-[3px_3px_0_#24312c] overflow-hidden"><img src="/logo-symbol.svg" alt="ZowGame" className="h-full w-full scale-125" /></span>
@@ -230,63 +192,82 @@ export function HomePage() {
         )}
       </aside>
 
-      <section className="relative mx-auto grid w-full gap-6 px-4 pb-8 pt-8 md:px-6 md:pl-[300px] lg:grid-cols-[1.05fr_.95fr]" ref={heroRef}>
-        <div className="relative z-10 rounded-[2rem] border-2 border-foreground bg-card/85 p-6 shadow-[8px_8px_0_#24312c] md:p-8" id="main-content">
-          <div className="mb-5 inline-flex rotate-[-2deg] items-center gap-2 rounded-full border-2 border-foreground bg-accent text-accent-foreground px-4 py-2 font-mono text-xs font-extrabold uppercase tracking-[.18em] shadow-[3px_3px_0_#24312c]" data-anime="badge"><Sparkles className="h-4 w-4" /> Browser game shelf</div>
-          <h1 className="font-['Fredoka'] text-5xl font-black leading-[.88] tracking-[-.035em] md:text-7xl min-h-[1.8em]" data-anime="title">{typewriterText}<span className="animate-pulse text-accent">|</span></h1>
-          <p className="mt-6 max-w-lg text-lg font-bold leading-relaxed text-muted-foreground" data-anime="desc">Quick-to-open browser games + wiki notes where you need them. No installs, just play.</p>
-          <div className="mt-8 grid grid-cols-3 gap-3">
-            {[[String(cardGames.length), "Games"], [String(cardGames.filter((g) => g.status === "PLAY").length), "Playable"], [String(cardGames.filter((g) => g.status === "GUIDE").length), "Guides"]].map(([n, l]) => (
-              <div key={l} className="rounded-2xl border-2 border-foreground bg-background p-5 shadow-[3px_3px_0_#24312c]" data-anime="stat"><p className="font-['Fredoka'] text-5xl font-black">{n}</p><p className="font-mono text-[10px] font-black uppercase tracking-[.18em] text-muted-foreground mt-1">{l}</p></div>
+      <section className="relative mx-auto grid w-full gap-6 px-4 pb-8 pt-8 md:px-6 md:pl-[268px] lg:grid-cols-[.75fr_1.25fr]" ref={heroRef}>
+        <div className="relative z-10 rounded-[2rem] border-2 border-foreground shadow-[8px_8px_0_#24312c] md:p-8 flex flex-col justify-center overflow-hidden -rotate-[0.5deg]" id="main-content" style={{ background: "linear-gradient(to bottom, #FDFBF7 0%, #f9f5ec 100%)" }}>
+          {/* Notebook ruled lines */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: "repeating-linear-gradient(transparent, transparent 31px, rgba(36,49,44,0.08) 31px, rgba(36,49,44,0.08) 32px)",
+            backgroundSize: "100% 32px",
+          }} />
+          {/* Red margin line */}
+          <div className="absolute left-14 top-0 bottom-0 w-px bg-accent/30 pointer-events-none" />
+          {/* Spiral binding holes */}
+          <div className="absolute left-3 top-4 bottom-4 flex flex-col justify-between pointer-events-none">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="w-6 h-5 rounded-full border-2 border-foreground/20 bg-background" />
             ))}
           </div>
-          <div className="mt-6">
-            <a href="#discover" className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-2xl border-2 border-foreground bg-primary px-6 font-black text-primary-foreground shadow-[4px_4px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] transition text-base">
-              Browse Games ↓
-            </a>
+          <div className="relative pl-12 py-6 pr-6">
+            <h1 className="font-['Fredoka'] text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.92] tracking-tight" data-anime="title">Free Browser Games + Survival Guides</h1>
+            <p className="mt-4 text-base font-bold leading-relaxed text-muted-foreground" data-anime="desc">Quick-to-open browser games + wiki notes. No installs, just play.</p>
+            <div className="mt-6">
+              <a href="#discover" className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-2xl border-2 border-foreground bg-primary px-6 font-black text-primary-foreground shadow-[4px_4px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] transition text-base">
+                Browse Games ↓
+              </a>
+            </div>
           </div>
         </div>
-        <div id="featured" className="relative rounded-[2rem] border-2 border-foreground shadow-[8px_8px_0_#24312c] overflow-hidden min-h-[420px]" data-anime="featured">
-          {cardGames[0]?.image && (
-            <img src={cardGames[0].image} alt={cardGames[0].title} className="absolute inset-0 w-full h-full object-cover" />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-            <div>
-              <p className="font-mono text-[10px] font-black uppercase tracking-[.2em] text-yellow-300 mb-2">Top Pick</p>
-              <h2 className="font-['Fredoka'] text-3xl sm:text-4xl font-black text-white leading-none">{cardGames[0]?.title}</h2>
+        <div className="flex gap-6">
+          <div id="featured" className="relative rounded-[2rem] border-2 border-foreground shadow-[8px_8px_0_#24312c] overflow-hidden flex-1" data-anime="featured">
+            {cardGames[0]?.image && (
+              <img src={cardGames[0].image} alt={cardGames[0].title} className="absolute inset-0 w-full h-full object-cover" />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-between gap-4">
+              <div>
+                <p className="font-mono text-[10px] font-black uppercase tracking-[.2em] text-yellow-300 mb-1">Top Pick</p>
+                <h2 className="font-['Fredoka'] text-2xl sm:text-3xl font-black text-white leading-none">{cardGames[0]?.title}</h2>
+              </div>
+              <Link
+                href={cardGames[0]?.href ?? "#"}
+                onClick={() => trackEvent("play_click", { location: "home_featured", game: cardGames[0]?.title.toLowerCase().replace(/\s+/g, "-") ?? "" })}
+                className="shrink-0 inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl border-2 border-foreground bg-primary px-5 font-black text-primary-foreground shadow-[3px_3px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] transition text-sm"
+              >
+                <Play className="h-4 w-4 fill-current" /> Play
+              </Link>
             </div>
-            <Link
-              href={cardGames[0]?.href ?? "#"}
-              onClick={() => trackEvent("play_click", { location: "home_featured", game: cardGames[0]?.title.toLowerCase().replace(/\s+/g, "-") ?? "" })}
-              className="shrink-0 inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-2xl border-2 border-foreground bg-primary px-6 font-black text-primary-foreground shadow-[4px_4px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] transition"
-            >
-              <Play className="h-5 w-5 fill-current" /> Play now
-            </Link>
           </div>
+          {cardGames.length > 1 && (
+            <div className="flex flex-col gap-4 w-44 shrink-0">
+              {cardGames.slice(1, 3).map((g) => (
+                <Link key={g.title} href={g.href} className="relative rounded-2xl border-2 border-foreground shadow-[5px_5px_0_#24312c] overflow-hidden h-36 group">
+                  {g.image && <img src={g.image} alt={g.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />}
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-4">
+                    <p className="font-['Fredoka'] text-lg font-black text-white leading-none">{g.title}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      <section id="discover" className="relative mx-auto w-full px-4 py-8 md:pl-[300px] md:pr-6" aria-labelledby="discover-heading">
+      <section id="discover" className="relative mx-auto w-full px-4 py-8 md:pl-[268px] md:pr-6" aria-labelledby="discover-heading">
         <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div><p className="font-mono text-xs font-black uppercase tracking-[.22em] text-accent">Discover games</p><h2 id="discover-heading" className="font-['Fredoka'] text-5xl font-black">Many small cards, fast scanning.</h2></div>
-          <div className="flex gap-2 overflow-x-auto pb-1">
-            {categories.map((cat) => (
-              <button key={cat} onClick={() => setActiveCategory(cat)} className={`min-h-11 shrink-0 cursor-pointer rounded-full border-2 border-foreground px-4 font-black shadow-[2px_2px_0_#24312c] transition ${activeCategory === cat ? "bg-primary text-primary-foreground" : "bg-card hover:bg-secondary"}`}>{cat}</button>
-            ))}
-          </div>
         </div>
         <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {visibleGames.map((g) => <GameCard key={g.title} game={g} />)}
         </div>
       </section>
 
-      <section id="guides" className="relative mx-auto grid w-full gap-5 px-4 py-10 md:pl-[300px] md:pr-6 lg:grid-cols-[.85fr_1.15fr]" aria-labelledby="guides-heading">
+      <section id="guides" className="relative mx-auto grid w-full gap-5 px-4 py-10 md:pl-[268px] md:pr-6 lg:grid-cols-[.85fr_1.15fr]" aria-labelledby="guides-heading">
         <div className="rounded-[1.8rem] border-2 border-foreground bg-primary p-6 text-primary-foreground shadow-[6px_6px_0_#24312c]"><p className="font-mono text-xs font-black uppercase tracking-[.22em] opacity-80">Wiki supports play</p><h2 id="guides-heading" className="mt-3 font-['Fredoka'] text-4xl font-black leading-none">Guides are attached to games, not replacing games.</h2><p className="mt-4 text-lg font-bold leading-8 text-white/80">Cards lead with playability and genre; guide labels appear as helpful metadata: routes, endings, controls, items.</p></div>
         <div className="grid gap-3 sm:grid-cols-3">
           {updates.map(({ title, body, href, bg, img }, i) => (
               <Link key={title} href={href} className={`group relative rounded-[1.4rem] border-2 border-foreground shadow-[4px_4px_0_#24312c] transition hover:-translate-y-1 hover:shadow-[6px_6px_0_#24312c] cursor-pointer block overflow-hidden ${i === 0 ? "rotate-[-1deg]" : i === 1 ? "rotate-[1deg]" : "rotate-[1.5deg]"}`}>
-                {img && <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />}
+                {img && <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-65 transition-opacity" />}
                 <div className={`relative p-5 ${img ? "bg-gradient-to-t from-black/60 to-transparent min-h-[140px] flex flex-col justify-end" : bg}`}>
                   <span className="inline-block rounded-full border-2 border-foreground bg-card px-3 py-0.5 font-mono text-[9px] font-black uppercase tracking-[.18em] text-foreground mb-3 w-fit">Guide {i + 1}</span>
                   <p className={`font-['Fredoka'] text-2xl font-black leading-tight ${img ? "text-white" : ""}`}>{title}</p>
@@ -297,12 +278,12 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="relative mx-auto w-full px-4 py-10 md:pl-[300px] md:pr-6">
+      <section className="relative mx-auto w-full px-4 py-10 md:pl-[268px] md:pr-6">
         <div className="grid grid-cols-3 gap-4">
           {[
             [String(cardGames.length), "Total Games", Gamepad2],
             [String(cardGames.filter((g: CardGame) => g.status === "PLAY").length), "Play in Browser", Play],
-            [String(cardGames.filter((g: CardGame) => g.status === "GUIDE").length), "With Guides", BookOpen],
+            [String(cardGames.length), "With Guides", BookOpen],
           ].map(([n, l, Icon]) => (
             <div key={l as string} className="rounded-2xl border-2 border-foreground bg-card p-6 text-center shadow-[4px_4px_0_#24312c]">
               <Icon className="w-6 h-6 mx-auto mb-2 text-accent" />
@@ -313,7 +294,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="relative mx-auto w-full px-4 py-10 md:pl-[300px] md:pr-6">
+      <section className="relative mx-auto w-full px-4 py-10 md:pl-[268px] md:pr-6">
         <div className="rounded-[1.8rem] border-2 border-foreground bg-card p-8 shadow-[5px_5px_0_#24312c]">
           <h2 className="font-['Fredoka'] text-3xl font-black mb-4">About ZowGame</h2>
           <div className="text-muted-foreground font-bold leading-relaxed space-y-3" style={{ fontSize: "15px" }}>
@@ -323,7 +304,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <footer className="relative mx-auto w-full px-4 pb-28 pt-6 md:pb-10 md:pl-[300px] md:pr-6">
+      <footer className="relative mx-auto w-full px-4 pb-28 pt-6 md:pb-10 md:pl-[268px] md:pr-6">
         <div className="flex flex-col gap-4 rounded-[1.7rem] border-2 border-foreground bg-secondary p-6 font-black shadow-[5px_5px_0_#24312c] md:flex-row md:items-center md:justify-between">
           <span>© 2026 ZowGame — game aggregation first, wiki where useful.</span>
           <span className="flex items-center gap-4">
