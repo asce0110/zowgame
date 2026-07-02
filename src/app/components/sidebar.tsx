@@ -34,7 +34,7 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
             </span>
             <span className="hidden sm:block">
               <span className="block font-['Space_Grotesk'] text-[13px] font-bold leading-none">{game.shortTitle}</span>
-              <span className="font-mono text-[9px] font-extrabold uppercase tracking-[.2em] text-accent">← Back to home</span>
+              <span className="font-mono text-[10px] font-extrabold uppercase tracking-[.2em] text-accent">← Back to home</span>
             </span>
           </Link>
           <nav className="hidden md:mt-10 md:grid md:gap-3" aria-label="Game page navigation">
@@ -55,7 +55,7 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
           </nav>
           {game.slug === "dont-sleep-with-the-fishes" && (
             <div className="hidden md:block md:mt-4">
-              <p className="font-mono text-[9px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4">Wiki Pages</p>
+              <p className="font-mono text-[10px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4">Wiki Pages</p>
               <div className="grid gap-1">
                 {[["Guide", `${game.canonicalPath}guide/`],["Walkthrough", `${game.canonicalPath}walkthrough/`],["Items", `${game.canonicalPath}items/`],["Events", `${game.canonicalPath}events/`],["Endings", `${game.canonicalPath}endings/`],["FAQ", `${game.canonicalPath}faq/`]].map(([label, href]) => (
                   <Link key={label} href={href} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground">{label}</Link>
@@ -70,7 +70,7 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
           )}
           {game.slug === "all-the-gold-in-fort-locks" && (
             <div className="hidden md:block md:mt-4">
-              <p className="font-mono text-[9px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4">Guide</p>
+              <p className="font-mono text-[10px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4">Guide</p>
               <div className="grid gap-1">
                 {[["Walkthrough", `${game.canonicalPath}walkthrough/`]].map(([label, href]) => (
                   <Link key={label} href={href} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground">{label}</Link>
