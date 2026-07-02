@@ -40,7 +40,7 @@ export function AdminDashboard() {
             <Shield className="w-4 h-4 text-fuchsia-400" />
             <span className="text-fuchsia-400 tracking-[0.3em]" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// ADMIN CONSOLE · CLEARANCE Ω</span>
           </div>
-          <h1 className="text-white tracking-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "48px" }}>
+          <h1 className="text-white tracking-tight" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "48px" }}>
             COMMAND <span className="bg-gradient-to-r from-rose-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">CENTER</span>
           </h1>
         </div>
@@ -68,7 +68,7 @@ export function AdminDashboard() {
                     <Icon className="w-5 h-5 text-white" />
                   </div>
                 </div>
-                <div className="text-white mb-1" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "30px" }}>{s.value}</div>
+                <div className="text-white mb-1" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "30px" }}>{s.value}</div>
                 <div className="text-white/40 tracking-widest mb-2" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{s.label}</div>
                 <div className="text-emerald-400 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{s.trend}</div>
               </div>
@@ -82,7 +82,7 @@ export function AdminDashboard() {
         <div className="col-span-2 rounded-2xl border border-white/10 bg-[#0f0020]/60 p-6">
           <div className="flex items-center justify-between mb-5">
             <div>
-              <h3 className="text-white tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>CONCURRENT PLAYERS</h3>
+              <h3 className="text-white tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "14px" }}>CONCURRENT PLAYERS</h3>
               <div className="text-white/40 tracking-widest mt-1" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>LAST 24 HOURS · UPDATED 4s AGO</div>
             </div>
             <div className="flex gap-2">
@@ -111,7 +111,7 @@ export function AdminDashboard() {
         <div className="rounded-2xl border border-white/10 bg-[#0f0020]/60 p-6">
           <div className="flex items-center gap-2 mb-5">
             <Server className="w-4 h-4 text-cyan-400" />
-            <h3 className="text-white tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>SERVER FLEET</h3>
+            <h3 className="text-white tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "14px" }}>SERVER FLEET</h3>
           </div>
           <div className="flex flex-col gap-3">
             {servers.map((s) => (
@@ -146,7 +146,7 @@ export function AdminDashboard() {
                 key={t.id}
                 onClick={() => setTab(t.id)}
                 className={`px-6 py-4 flex items-center gap-2 tracking-widest border-b-2 transition-colors ${isActive ? "text-white border-fuchsia-500" : "text-white/40 border-transparent hover:text-white/70"}`}
-                style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}
+                style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "12px" }}
               >
                 <Icon className="w-4 h-4" />
                 {t.label}
@@ -164,11 +164,11 @@ export function AdminDashboard() {
               <div key={u.id} className="grid grid-cols-[120px_1fr_1fr_80px_120px_140px_120px] gap-4 px-6 py-4 border-b border-white/5 items-center hover:bg-white/[0.02]">
                 <span className="text-white/50" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>{u.id}</span>
                 <div>
-                  <div className="text-white" style={{ fontFamily: "Rajdhani", fontWeight: 600, fontSize: "14px" }}>{u.name}</div>
+                  <div className="text-white" style={{ fontFamily: "Nunito", fontWeight: 600, fontSize: "14px" }}>{u.name}</div>
                   {u.flag && <div className="text-rose-400 tracking-wider" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>⚠ {u.flag}</div>}
                 </div>
                 <span className="text-white/60 truncate" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>{u.email}</span>
-                <span className="text-white" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "13px" }}>{u.level}</span>
+                <span className="text-white" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "13px" }}>{u.level}</span>
                 <span className={`px-2 py-1 rounded inline-block tracking-widest w-fit ${
                   u.status === "ACTIVE" ? "bg-emerald-500/15 text-emerald-400" :
                   u.status === "FLAGGED" ? "bg-yellow-500/15 text-yellow-400" :
@@ -197,9 +197,9 @@ export function AdminDashboard() {
             {reports.map((r) => (
               <div key={r.id} className="grid grid-cols-[120px_1fr_1fr_2fr_100px_120px_120px] gap-4 px-6 py-4 border-b border-white/5 items-center hover:bg-white/[0.02]">
                 <span className="text-white/50" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>{r.id}</span>
-                <span className="text-cyan-400" style={{ fontFamily: "Rajdhani", fontWeight: 600, fontSize: "13px" }}>{r.reporter}</span>
-                <span className="text-rose-400" style={{ fontFamily: "Rajdhani", fontWeight: 600, fontSize: "13px" }}>{r.target}</span>
-                <span className="text-white/70" style={{ fontFamily: "Rajdhani", fontSize: "13px" }}>{r.reason}</span>
+                <span className="text-cyan-400" style={{ fontFamily: "Nunito", fontWeight: 600, fontSize: "13px" }}>{r.reporter}</span>
+                <span className="text-rose-400" style={{ fontFamily: "Nunito", fontWeight: 600, fontSize: "13px" }}>{r.target}</span>
+                <span className="text-white/70" style={{ fontFamily: "Nunito", fontSize: "13px" }}>{r.reason}</span>
                 <span className={`px-2 py-1 rounded inline-block tracking-widest w-fit ${
                   r.severity === "HIGH" ? "bg-rose-500/15 text-rose-400" :
                   r.severity === "MED" ? "bg-yellow-500/15 text-yellow-400" :

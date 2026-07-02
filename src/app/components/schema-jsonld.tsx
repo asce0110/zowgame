@@ -40,7 +40,6 @@ export function SchemaJsonLd({ game }: { game: GameRecord }) {
       worstRating: 1,
       ratingCount: game.schema.ratingCount,
     },
-    keywords: game.keywords.join(", "),
   };
 
   const webPage = isDownloadGuide

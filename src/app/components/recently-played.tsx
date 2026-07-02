@@ -23,28 +23,27 @@ export function RecentlyPlayedStrip({ onPlayGame }: { onPlayGame: (id: string) =
     <section className="mb-8 sm:mb-10">
       <div className="flex items-end justify-between mb-4">
         <div>
-          <div className="text-orange-500 tracking-[0.3em] mb-1" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>// RECENTLY PLAYED</div>
-          <h2 className="ec-text tracking-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "22px" }}>
+          <div className="text-accent tracking-[0.3em] mb-1 font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>// RECENTLY PLAYED</div>
+          <h2 className="text-foreground tracking-tight" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "22px" }}>
             Continue where you left off
           </h2>
         </div>
         <button
           onClick={() => { vibrate(6); clearRecent(); }}
-          className="ec-text-faint hover:ec-text tracking-widest transition-colors cursor-pointer"
+          className="text-muted-foreground hover:text-foreground tracking-widest transition-colors cursor-pointer font-extrabold"
           style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}
         >
           CLEAR ALL
         </button>
       </div>
 
-      <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-2 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-thin">
+      <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-2 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
         {recent.map((g) => {
           const fav = isFavorite(g.id);
           return (
             <div
               key={g.id}
-              className="group relative shrink-0 w-[220px] sm:w-[240px] snap-start rounded-xl overflow-hidden border ec-border hover:ec-border-brand ec-surface-elevated transition-colors"
-              style={{ boxShadow: "var(--ec-shadow-card)" }}
+              className="group relative shrink-0 w-[220px] sm:w-[240px] snap-start rounded-xl overflow-hidden border-2 border-foreground bg-card transition-all shadow-[4px_4px_0_#24312c] hover:shadow-[6px_6px_0_#24312c]"
             >
               <button
                 onClick={() => { vibrate(10); onPlayGame(g.id); }}
@@ -59,24 +58,24 @@ export function RecentlyPlayedStrip({ onPlayGame }: { onPlayGame: (id: string) =
                     decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--ec-surface-elevated), transparent)" }} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
 
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-cyan-400 flex items-center justify-center shadow-[0_0_24px_rgba(217,70,239,0.6)]">
-                      <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+                    <div className="w-12 h-12 rounded-full bg-primary border-2 border-foreground flex items-center justify-center shadow-[3px_3px_0_#24312c]">
+                      <Play className="w-5 h-5 text-primary-foreground fill-primary-foreground ml-0.5" />
                     </div>
                   </div>
 
                   {g.genre && (
-                    <span className="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-black/60 backdrop-blur border border-white/10 text-white/90 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>
+                    <span className="absolute top-2 left-2 px-1.5 py-0.5 rounded border-2 border-foreground bg-card text-foreground tracking-widest font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>
                       {g.genre}
                     </span>
                   )}
                 </div>
 
                 <div className="p-3">
-                  <h3 className="ec-text truncate" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "13px" }}>{g.title}</h3>
-                  <div className="ec-text-faint tabular-nums" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
+                  <h3 className="text-foreground truncate" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "13px" }}>{g.title}</h3>
+                  <div className="text-muted-foreground tabular-nums font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
                     {timeAgo(g.playedAt)}
                   </div>
                 </div>
@@ -85,19 +84,19 @@ export function RecentlyPlayedStrip({ onPlayGame }: { onPlayGame: (id: string) =
               <button
                 onClick={(e) => { e.stopPropagation(); vibrate(6); toggleFavorite({ id: g.id, title: g.title, img: g.img, genre: g.genre }); }}
                 aria-label={fav ? "Remove from favorites" : "Add to favorites"}
-                className={`absolute top-2 right-2 w-8 h-8 rounded-full backdrop-blur border flex items-center justify-center transition-all cursor-pointer ${
+                className={`absolute top-2 right-2 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all cursor-pointer ${
                   fav
-                    ? "bg-rose-500/30 border-rose-400/60 text-rose-300"
-                    : "bg-black/60 border-white/15 text-white/70 hover:text-white hover:bg-black/80"
+                    ? "bg-accent/20 border-accent text-accent shadow-[2px_2px_0_#24312c]"
+                    : "bg-card border-foreground text-muted-foreground hover:text-foreground"
                 }`}
               >
-                <Heart className={`w-3.5 h-3.5 ${fav ? "fill-rose-300" : ""}`} />
+                <Heart className={`w-3.5 h-3.5 ${fav ? "fill-accent" : ""}`} />
               </button>
 
               <button
                 onClick={() => { vibrate(4); removeRecent(g.id); }}
                 aria-label={`Remove ${g.title} from recently played`}
-                className="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-black/60 backdrop-blur border border-white/10 text-white/50 hover:text-white opacity-0 group-hover:opacity-100 transition-all cursor-pointer flex items-center justify-center"
+                className="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-card border-2 border-foreground text-muted-foreground hover:text-destructive opacity-0 group-hover:opacity-100 transition-all cursor-pointer flex items-center justify-center"
               >
                 <X className="w-3 h-3" />
               </button>

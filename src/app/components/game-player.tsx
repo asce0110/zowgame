@@ -156,42 +156,48 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
   const shell = (
     <div
       ref={wrapperRef}
-      className={fullscreen && !document.fullscreenElement ? "fixed inset-0 z-[130] overflow-hidden border-0 ec-surface-strong" : focusMode ? "w-full h-full overflow-hidden rounded-2xl border ec-border-brand ec-surface-strong" : "relative h-[460px] sm:h-[560px] lg:h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden border ec-border ec-surface-strong"}
-      style={{ boxShadow: "var(--ec-shadow-card)" }}
+      className={
+        fullscreen && !document.fullscreenElement
+          ? "fixed inset-0 z-[130] overflow-hidden border-0 bg-card"
+          : focusMode
+            ? "w-full h-full overflow-hidden rounded-2xl border-2 border-foreground bg-card"
+            : "relative h-[460px] sm:h-[560px] lg:h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-foreground bg-card shadow-[5px_5px_0_#24312c]"
+      }
       onMouseMove={bumpControls}
     >
       {status === "loading" && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 ec-surface-strong">
-          <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(217,70,239,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.18) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400 to-transparent animate-[scanline_2s_linear_infinite]" />
-          <style>{`@keyframes scanline { 0% { transform: translateY(0) } 100% { transform: translateY(640px) } }`}</style>
+        <div className="absolute inset-0 flex items-center justify-center z-10 bg-card">
+          <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
+            backgroundImage: "radial-gradient(circle, #24312c 1px, transparent 1px)",
+            backgroundSize: "15px 15px",
+          }} />
           <div className="relative text-center">
-            <div className="text-fuchsia-500 tracking-[0.4em] mb-3 animate-pulse" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// LOADING GAME</div>
-            <div className="ec-text tracking-tight mb-6" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "44px" }}>{title}</div>
+            <div className="text-primary tracking-[0.4em] mb-3 animate-pulse font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// LOADING GAME</div>
+            <div className="text-foreground tracking-tight mb-6" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "44px" }}>{title}</div>
             <div className="flex items-center justify-center gap-1.5">
               {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className="w-2 h-2 rounded-full bg-fuchsia-400" style={{ animation: `pulse 1.2s ${i * 0.15}s ease-in-out infinite` }} />
+                <span key={i} className="w-2 h-2 rounded-full bg-primary" style={{ animation: `pulse 1.2s ${i * 0.15}s ease-in-out infinite` }} />
               ))}
             </div>
-            <div className="ec-text-faint mt-6 tracking-widest tabular-nums" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>ESTABLISHING CONNECTION...</div>
+            <div className="text-muted-foreground mt-6 tracking-widest tabular-nums font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>ESTABLISHING CONNECTION...</div>
           </div>
         </div>
       )}
 
       {status === "error" && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 ec-surface-strong">
+        <div className="absolute inset-0 flex items-center justify-center z-10 bg-card">
           <div className="text-center max-w-md px-6">
-            <div className="w-16 h-16 rounded-2xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center mx-auto mb-5">
-              <AlertTriangle className="w-7 h-7 text-rose-500 dark:text-rose-400" />
+            <div className="w-16 h-16 rounded-2xl bg-destructive/15 border-2 border-destructive/40 flex items-center justify-center mx-auto mb-5 shadow-[3px_3px_0_#24312c]">
+              <AlertTriangle className="w-7 h-7 text-destructive" />
             </div>
-            <div className="text-rose-500 tracking-[0.4em] mb-2" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// CONNECTION FAILED</div>
-            <div className="ec-text tracking-tight mb-3" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "28px" }}>Game failed to load</div>
-            <p className="ec-text-muted mb-6" style={{ fontFamily: "Rajdhani", fontSize: "15px" }}>The game iframe couldn't be reached. Check your connection or try again in a moment.</p>
+            <div className="text-destructive tracking-[0.4em] mb-2 font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// CONNECTION FAILED</div>
+            <div className="text-foreground tracking-tight mb-3" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "28px" }}>Game failed to load</div>
+            <p className="text-muted-foreground mb-6 font-bold" style={{ fontSize: "15px" }}>The game iframe couldn't be reached. Check your connection or try again in a moment.</p>
             <div className="flex gap-3 justify-center">
-              <button onClick={() => setReloadKey((k) => k + 1)} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-transform cursor-pointer" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px", boxShadow: "var(--ec-glow-fuchsia)" }}>
+              <button onClick={() => setReloadKey((k) => k + 1)} className="px-5 py-2.5 rounded-xl border-2 border-foreground bg-primary text-primary-foreground font-black tracking-widest flex items-center gap-2 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] shadow-[3px_3px_0_#24312c] transition-all cursor-pointer" style={{ fontFamily: "Nunito", fontSize: "12px" }}>
                 <RotateCw className="w-4 h-4" /> TRY AGAIN
               </button>
-              <button onClick={onExit} className="px-5 py-2.5 rounded-xl border ec-border-strong ec-text-muted hover:ec-text ec-hover-surface tracking-widest flex items-center gap-2 cursor-pointer" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "12px" }}>
+              <button onClick={onExit} className="px-5 py-2.5 rounded-xl border-2 border-foreground bg-card text-foreground font-extrabold tracking-widest flex items-center gap-2 hover:bg-secondary transition-colors shadow-[3px_3px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] cursor-pointer" style={{ fontFamily: "Nunito", fontSize: "12px" }}>
                 BACK
               </button>
             </div>
@@ -236,7 +242,7 @@ export function GamePlayer({ src, title, onExit, onFocusModeChange }: { src: str
               <X className="w-3.5 h-3.5" />
             </button>
           </div>
-          <div className="text-white mb-2" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>{title}</div>
+          <div className="text-white mb-2" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "14px" }}>{title}</div>
           <div className="grid grid-cols-1 gap-2 text-white/70" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
             <div className="flex justify-between"><span className="text-white/40">F</span><span>Fullscreen</span></div>
             <div className="flex justify-between"><span className="text-white/40">R</span><span>Reload</span></div>

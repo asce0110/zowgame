@@ -35,36 +35,33 @@ export function WelcomeBackBanner({ onPlay }: { onPlay: () => void }) {
   if (!visible) return null;
 
   return (
-    <div className="relative rounded-2xl border ec-border-strong ec-surface backdrop-blur p-4 sm:p-5 mb-6 sm:mb-8 hud-corners overflow-hidden" style={{ animation: "ntfIn 360ms cubic-bezier(0.16,1,0.3,1) both", boxShadow: "var(--ec-shadow-card)" }}>
-      <span className="hud-c1" /><span className="hud-c2" />
-      <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-cyan-500/10 blur-3xl" style={{ opacity: "var(--ec-blob-opacity, 1)" }} />
-
+    <div className="relative rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 mb-6 sm:mb-8 overflow-hidden shadow-[5px_5px_0_#24312c]" style={{ animation: "ntfIn 360ms cubic-bezier(0.16,1,0.3,1) both" }}>
       <div className="relative flex items-center gap-3 sm:gap-4">
-        <div className="hidden sm:flex w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 to-fuchsia-500 items-center justify-center shadow-[0_0_18px_rgba(34,211,238,0.5)]">
-          <Clock className="w-5 h-5 text-white" />
+        <div className="hidden sm:flex w-11 h-11 rounded-xl border-2 border-foreground bg-primary items-center justify-center shadow-[2px_2px_0_#24312c]">
+          <Clock className="w-5 h-5 text-primary-foreground" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-cyan-500 tracking-[0.3em]" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>// CONTINUE PLAYING</span>
-            <span className="ec-text-faint tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>· last played {agoText}</span>
+            <span className="text-primary tracking-[0.3em] font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>// CONTINUE PLAYING</span>
+            <span className="text-muted-foreground tracking-widest font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>· last played {agoText}</span>
           </div>
-          <div className="ec-text truncate" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "16px" }}>
+          <div className="text-foreground truncate" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "16px" }}>
             Jump back into Cobb Can Move instantly.
           </div>
         </div>
 
-        <button onClick={() => { vibrate(10); onPlay(); }} className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white tracking-widest hover:scale-[1.03] active:scale-95 transition-transform min-h-[44px] cursor-pointer" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "11px", boxShadow: "var(--ec-glow-fuchsia)" }}>
-          <Play className="w-3.5 h-3.5 fill-white" />
+        <button onClick={() => { vibrate(10); onPlay(); }} className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-foreground bg-primary text-primary-foreground font-black tracking-widest hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] shadow-[3px_3px_0_#24312c] transition-all min-h-[44px] cursor-pointer" style={{ fontFamily: "Nunito", fontSize: "11px" }}>
+          <Play className="w-3.5 h-3.5 fill-primary-foreground" />
           CONTINUE
         </button>
 
-        <button onClick={() => setVisible(false)} aria-label="Dismiss" className="p-2 rounded-md ec-text-faint hover:ec-text ec-hover-surface transition-colors cursor-pointer">
+        <button onClick={() => setVisible(false)} aria-label="Dismiss" className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors cursor-pointer">
           <X className="w-4 h-4" />
         </button>
       </div>
 
-      <button onClick={() => { vibrate(10); onPlay(); }} className="sm:hidden mt-3 w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white tracking-widest active:scale-95 transition-transform min-h-[48px] cursor-pointer" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px", boxShadow: "var(--ec-glow-fuchsia)" }}>
-        <Play className="w-4 h-4 fill-white" />
+      <button onClick={() => { vibrate(10); onPlay(); }} className="sm:hidden mt-3 w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-foreground bg-primary text-primary-foreground font-black tracking-widest active:scale-95 transition-transform min-h-[48px] shadow-[3px_3px_0_#24312c] cursor-pointer" style={{ fontFamily: "Nunito", fontSize: "12px" }}>
+        <Play className="w-4 h-4 fill-primary-foreground" />
         CONTINUE PLAYING
       </button>
     </div>

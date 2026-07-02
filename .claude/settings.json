@@ -92,7 +92,11 @@
       "Bash(curl -s -X POST \"http://127.0.0.1:8787/sessions\" -H \"content-type: application/json\" -d '{\"workspaceRoot\":\"D:/AI/Gamingwebsitedesign\",\"title\":\"Live Kie test 2\"}')",
       "Bash(curl -s -X POST \"http://127.0.0.1:8787/sessions/174a8b4f-875a-4c27-ad54-d4fb56362eec/messages\" -H \"content-type: application/json\" -d '{\"message\":\"Read AGENT.md and summarize the main coding constraints for this workspace.\"}')",
       "Bash(curl -s -X POST \"http://127.0.0.1:8787/sessions\" -H \"content-type: application/json\" -d '{\"workspaceRoot\":\"D:/AI/Gamingwebsitedesign\",\"title\":\"Live Kie test 3\"}')",
-      "Bash(curl -s -X POST \"http://127.0.0.1:8787/sessions/edd137c8-3359-4814-9a5f-8d1da447f12e/messages\" -H \"content-type: application/json\" -d '{\"message\":\"Read AGENT.md and summarize the main coding constraints for this workspace.\"}')"
+      "Bash(curl -s -X POST \"http://127.0.0.1:8787/sessions/edd137c8-3359-4814-9a5f-8d1da447f12e/messages\" -H \"content-type: application/json\" -d '{\"message\":\"Read AGENT.md and summarize the main coding constraints for this workspace.\"}')",
+      "Bash(git stash *)",
+      "Bash(pnpm view *)",
+      "Bash(pnpm add *)",
+      "Bash(pnpm run *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Administrator\\.understand-anything\\repo\\understand-anything-plugin\\skills\\understand",

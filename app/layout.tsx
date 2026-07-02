@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#06000f",
+  themeColor: "#f8e9c4",
   width: "device-width",
   initialScale: 1,
 };
@@ -39,7 +39,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body style={{ background: "#06000f", margin: 0, minHeight: "100%" }}>
+      <body className="bg-background text-foreground m-0 min-h-screen">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CKQ5TM1XTP"
           strategy="afterInteractive"

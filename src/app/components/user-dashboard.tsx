@@ -28,10 +28,10 @@ export function UserDashboard() {
     <div className="flex flex-col gap-8">
       <div>
         <div className="text-cyan-400 tracking-[0.3em] mb-2" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// PLAYER CONSOLE</div>
-        <h1 className="text-white tracking-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "48px" }}>
+        <h1 className="text-white tracking-tight" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "48px" }}>
           WELCOME BACK, <span className="bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">KAIROSx9</span>
         </h1>
-        <p className="text-white/50 mt-2" style={{ fontFamily: "Rajdhani", fontSize: "16px" }}>You have 3 active tournaments and 12 unread messages</p>
+        <p className="text-white/50 mt-2" style={{ fontFamily: "Nunito", fontSize: "16px" }}>You have 3 active tournaments and 12 unread messages</p>
       </div>
 
       {/* Stats row */}
@@ -53,7 +53,7 @@ export function UserDashboard() {
                   </div>
                   <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>{s.trend}</span>
                 </div>
-                <div className="text-white mb-1" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "32px" }}>{s.value}</div>
+                <div className="text-white mb-1" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "32px" }}>{s.value}</div>
                 <div className="text-white/40 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{s.label}</div>
               </div>
             </div>
@@ -67,7 +67,7 @@ export function UserDashboard() {
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-2">
               <Gamepad2 className="w-4 h-4 text-fuchsia-400" />
-              <h3 className="text-white tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>RECENT MATCHES</h3>
+              <h3 className="text-white tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "14px" }}>RECENT MATCHES</h3>
             </div>
             <button className="text-white/50 hover:text-white tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>VIEW ALL →</button>
           </div>
@@ -76,11 +76,11 @@ export function UserDashboard() {
               <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
                 <div className={`w-1 self-stretch rounded-full bg-gradient-to-b ${g.color}`} />
                 <div className="flex-1">
-                  <div className="text-white" style={{ fontFamily: "Rajdhani", fontWeight: 600, fontSize: "15px" }}>{g.title}</div>
+                  <div className="text-white" style={{ fontFamily: "Nunito", fontWeight: 600, fontSize: "15px" }}>{g.title}</div>
                   <div className="text-white/40 tracking-wider" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{g.date} · {g.time}</div>
                 </div>
                 <div className="text-white/60" style={{ fontFamily: "JetBrains Mono", fontSize: "12px" }}>{g.kd}</div>
-                <div className={`px-3 py-1 rounded-md bg-gradient-to-r ${g.color} text-white tracking-widest`} style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "10px" }}>
+                <div className={`px-3 py-1 rounded-md bg-gradient-to-r ${g.color} text-white tracking-widest`} style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "10px" }}>
                   {g.result}
                 </div>
               </div>
@@ -90,19 +90,19 @@ export function UserDashboard() {
 
         {/* Friends */}
         <div className="rounded-2xl border border-white/10 bg-[#0f0020]/60 p-6">
-          <h3 className="text-white tracking-widest mb-5" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>FRIENDS · {friends.filter(f => f.online).length} ONLINE</h3>
+          <h3 className="text-white tracking-widest mb-5" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "14px" }}>FRIENDS · {friends.filter(f => f.online).length} ONLINE</h3>
           <div className="flex flex-col gap-3">
             {friends.map((f) => (
               <div key={f.name} className="flex items-center gap-3">
                 <div className="relative">
                   <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-fuchsia-600 to-cyan-500 p-[1.5px]">
-                    <div className="w-full h-full rounded-lg bg-[#0f0020] flex items-center justify-center text-white" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "11px" }}>{f.name[0]}</div>
+                    <div className="w-full h-full rounded-lg bg-[#0f0020] flex items-center justify-center text-white" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "11px" }}>{f.name[0]}</div>
                   </div>
                   <span className={`absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full border-2 border-[#0f0020] ${f.online ? "bg-emerald-400" : "bg-zinc-600"}`} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-white truncate" style={{ fontFamily: "Rajdhani", fontWeight: 600, fontSize: "13px" }}>{f.name}</div>
-                  <div className={`truncate ${f.online ? "text-cyan-400" : "text-white/30"}`} style={{ fontFamily: "Rajdhani", fontSize: "11px" }}>{f.status}</div>
+                  <div className="text-white truncate" style={{ fontFamily: "Nunito", fontWeight: 600, fontSize: "13px" }}>{f.name}</div>
+                  <div className={`truncate ${f.online ? "text-cyan-400" : "text-white/30"}`} style={{ fontFamily: "Nunito", fontSize: "11px" }}>{f.status}</div>
                 </div>
               </div>
             ))}
@@ -115,7 +115,7 @@ export function UserDashboard() {
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-2">
             <Award className="w-4 h-4 text-yellow-400" />
-            <h3 className="text-white tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>ACHIEVEMENTS IN PROGRESS</h3>
+            <h3 className="text-white tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "14px" }}>ACHIEVEMENTS IN PROGRESS</h3>
           </div>
           <span className="text-white/40 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>34 / 120 UNLOCKED</span>
         </div>
@@ -129,8 +129,8 @@ export function UserDashboard() {
                     <Icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-white truncate" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "13px" }}>{a.name}</div>
-                    <div className="text-white/40 truncate" style={{ fontFamily: "Rajdhani", fontSize: "11px" }}>{a.desc}</div>
+                    <div className="text-white truncate" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "13px" }}>{a.name}</div>
+                    <div className="text-white/40 truncate" style={{ fontFamily: "Nunito", fontSize: "11px" }}>{a.desc}</div>
                   </div>
                 </div>
                 <div className="h-1.5 rounded-full bg-white/5 overflow-hidden mb-1">

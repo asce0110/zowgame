@@ -1,55 +1,117 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, Info } from "lucide-react";
+import { Home, BookOpen, Info, ArrowLeft, Menu, X, GitCommit } from "lucide-react";
 import { useContent } from "./content-store";
+import { ChangelogModal } from "./changelog-modal";
 
 export type ViewId = "home" | "how-to-play" | "about";
 export type SidebarView = ViewId;
 
-const items: { id: SidebarView; icon: any; label: string; tint?: string }[] = [
-  { id: "home", icon: Home, label: "Home", tint: "text-fuchsia-400" },
-  { id: "how-to-play", icon: BookOpen, label: "How to Play", tint: "text-cyan-400" },
-  { id: "about", icon: Info, label: "About", tint: "text-violet-400" },
+const items: { id: SidebarView; icon: any; label: string }[] = [
+  { id: "home", icon: Home, label: "Game" },
+  { id: "how-to-play", icon: BookOpen, label: "How to Play" },
+  { id: "about", icon: Info, label: "About" },
 ];
 
 export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (v: SidebarView) => void }) {
   const { game } = useContent();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [changelogEntry, setChangelogEntry] = useState<any>(null);
+
+  const handleNav = (v: SidebarView) => {
+    setMenuOpen(false);
+    setTimeout(() => onChange(v), 50);
+  };
 
   return (
-    <aside className="hidden lg:flex w-[88px] hover:w-[240px] transition-all duration-300 ease-out h-screen sticky top-0 ec-surface-strong backdrop-blur-xl border-r ec-border-brand flex-col group/sidebar z-40 shrink-0">
-      <div className="px-6 py-7 border-b ec-hairline">
-        <Link href="/" className="flex items-center gap-3 cursor-pointer group/logo" aria-label="Go to homepage">
-          <div className="relative shrink-0">
-            <img src="/logo-symbol.svg" alt="ZOWGAME" width={40} height={40} className="w-10 h-10 drop-shadow-[0_0_14px_rgba(217,70,239,0.55)] transition-transform duration-200 group-hover/logo:scale-105" />
-            <div className="absolute inset-0 rounded-lg bg-fuchsia-500 blur-lg opacity-30 -z-10" />
+    <>
+      <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border-2 border-foreground bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[248px]">
+        <div className="flex h-16 items-center justify-between px-4 md:h-full md:flex-col md:items-stretch md:justify-start md:p-5">
+          <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-ring/40" aria-label="Back to homepage">
+            <span className="grid h-11 w-11 shrink-0 rotate-[-6deg] place-items-center rounded-2xl border-2 border-foreground bg-accent text-accent-foreground shadow-[3px_3px_0_#24312c] overflow-hidden">
+              <img src="/logo-symbol.svg" alt="ZowGame" className="h-full w-full scale-125" />
+            </span>
+            <span className="hidden sm:block">
+              <span className="block font-['Space_Grotesk'] text-[13px] font-bold leading-none">{game.shortTitle}</span>
+              <span className="font-mono text-[9px] font-extrabold uppercase tracking-[.2em] text-accent">← Back to home</span>
+            </span>
+          </Link>
+          <nav className="hidden md:mt-10 md:grid md:gap-3" aria-label="Game page navigation">
+            {items.map((item) => {
+              const Icon = item.icon;
+              const isActive = active === item.id;
+              return (
+                <button key={item.id} onClick={() => onChange(item.id)}
+                  className={`group flex min-h-12 items-center gap-3 rounded-2xl border-2 px-4 text-left font-extrabold transition focus:outline-none focus:ring-4 focus:ring-ring/40 cursor-pointer ${
+                    isActive ? "border-foreground bg-secondary shadow-[2px_2px_0_#24312c]" : "border-transparent hover:border-foreground hover:bg-secondary hover:shadow-[3px_3px_0_#24312c]"
+                  }`}
+                  style={{ fontFamily: "Nunito" }}>
+                  <Icon className="h-5 w-5 text-primary transition group-hover:rotate-[-8deg]" />
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
+          {game.slug === "dont-sleep-with-the-fishes" && (
+            <div className="hidden md:block md:mt-4">
+              <p className="font-mono text-[9px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4">Wiki Pages</p>
+              <div className="grid gap-1">
+                {[["Guide", `${game.canonicalPath}guide/`],["Items", `${game.canonicalPath}items/`],["Endings", `${game.canonicalPath}endings/`],["FAQ", `${game.canonicalPath}faq/`]].map(([label, href]) => (
+                  <Link key={label} href={href} className="flex min-h-10 items-center gap-3 rounded-xl border-2 border-transparent px-4 text-sm font-extrabold transition hover:border-foreground hover:bg-secondary hover:shadow-[2px_2px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40 text-muted-foreground hover:text-foreground">{label}</Link>
+                ))}
+              </div>
+            </div>
+          )}
+          {game.changelog && game.changelog.length > 0 && (
+            <div className="hidden md:block md:mt-4">
+              <p className="font-mono text-[9px] font-black uppercase tracking-[.18em] text-muted-foreground mb-2 px-4 flex items-center gap-1.5">
+                <GitCommit className="w-3 h-3 text-accent" /> Changelog
+              </p>
+              <div className="grid gap-1">
+                {game.changelog.map((entry) => (
+                  <button key={entry.version} onClick={() => setChangelogEntry(entry)}
+                    className="flex flex-col rounded-xl border-2 border-transparent px-4 py-2 hover:border-foreground hover:bg-secondary transition cursor-pointer text-left w-full">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-[10px] font-extrabold text-accent">{entry.version}</span>
+                      <span className="font-mono text-[9px] text-muted-foreground tracking-[.12em]">{entry.date}</span>
+                    </div>
+                    <span className="text-[11px] font-bold text-muted-foreground leading-tight mt-0.5">{entry.summary}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          <div className="hidden md:mt-auto md:block">
+            <div className="rotate-[-1deg] rounded-2xl border-2 border-foreground bg-secondary p-4 shadow-[4px_4px_0_#24312c]">
+              <p className="font-mono text-[10px] font-black uppercase tracking-[.18em] text-accent">{game.accessMode === "download" ? "Download" : "Browser"}</p>
+              <p className="mt-2 font-['Space_Grotesk'] text-lg font-bold leading-none">{game.accessMode === "download" ? "Official source guide" : "Play instantly online"}</p>
+            </div>
+            <Link href="/" className="mt-4 inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 font-extrabold text-primary-foreground shadow-[3px_3px_0_#24312c] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40">
+              <ArrowLeft className="h-4 w-4" /> All Games
+            </Link>
           </div>
-          <div className="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-300 whitespace-nowrap overflow-hidden">
-            <div className="ec-text tracking-[0.3em]" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "14px" }}>ZOWGAME</div>
-            <div className="ec-brand-kicker tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>{game.shortTitle.toUpperCase()}</div>
+          <button aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)} className="grid h-11 w-11 place-items-center rounded-xl border-2 border-foreground bg-secondary md:hidden">
+            {menuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+        {menuOpen && (
+          <div className="grid gap-2 border-t-2 border-foreground p-4 md:hidden">
+            {items.map((item) => {
+              const Icon = item.icon;
+              const isActive = active === item.id;
+              return (
+                <button key={item.id} onClick={() => handleNav(item.id)}
+                  className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-left font-extrabold cursor-pointer ${isActive ? "border-foreground bg-secondary shadow-[2px_2px_0_#24312c]" : "border-foreground bg-secondary"}`}
+                  style={{ fontFamily: "Nunito" }}>
+                  <Icon className="h-5 w-5 text-primary" /> {item.label}
+                </button>
+              );
+            })}
           </div>
-        </Link>
-      </div>
-
-      <nav className="flex-1 py-6 px-4 flex flex-col gap-2">
-        {items.map((item) => {
-          const Icon = item.icon;
-          const isActive = active === item.id;
-          return (
-            <button
-              key={item.id}
-              onClick={() => onChange(item.id)}
-              className={`relative flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer ${
-                isActive ? "ec-surface ec-text" : "ec-text-faint hover:ec-text ec-hover-surface"
-              }`}
-              style={{ fontFamily: "Rajdhani", fontWeight: 600 }}
-            >
-              {isActive && <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-7 rounded-r-full bg-current ${item.tint}`} />}
-              <Icon className={`w-5 h-5 shrink-0 ${isActive && item.tint ? item.tint : ""}`} />
-              <span className="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-300 whitespace-nowrap tracking-wider flex-1 text-left">{item.label}</span>
-            </button>
-          );
-        })}
-      </nav>
-    </aside>
+        )}
+      </aside>
+      {changelogEntry && <ChangelogModal entry={changelogEntry} onClose={() => setChangelogEntry(null)} />}
+    </>
   );
 }

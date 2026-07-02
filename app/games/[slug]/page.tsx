@@ -7,14 +7,14 @@ export function generateStaticParams() {
   return getPublishedGames().map((game) => ({ slug: game.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const game = getGameBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const game = getGameBySlug(slug);
   if (!game) return {};
 
   return {
     title: game.content.seoTitle,
     description: game.content.seoDescription,
-    keywords: game.keywords,
     alternates: { canonical: `https://zowgame.com${game.canonicalPath}` },
     openGraph: {
       title: game.content.seoTitle,
@@ -32,8 +32,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function GamePage({ params }: { params: { slug: string } }) {
-  const game = getGameBySlug(params.slug);
+export default async function GamePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const game = getGameBySlug(slug);
   if (!game) notFound();
   return <App game={game} />;
 }

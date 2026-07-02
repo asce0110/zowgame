@@ -14,25 +14,24 @@ const Toaster = (props: ToasterProps) => {
         unstyled: true,
         classNames: {
           toast:
-            "pointer-events-auto relative w-full sm:w-[360px] flex items-start gap-3 p-4 pr-3 rounded-xl border ec-border-brand ec-surface-strong backdrop-blur-xl overflow-hidden isolate",
-          title: "ec-text tracking-wider [font-family:Orbitron,sans-serif] font-bold text-[14px] leading-tight",
-          description: "ec-text-muted mt-1 leading-relaxed",
-          icon: "shrink-0 mt-0.5 text-fuchsia-500",
+            "pointer-events-auto relative w-full sm:w-[360px] flex items-start gap-3 p-4 pr-3 rounded-xl border-2 border-foreground bg-card overflow-hidden isolate shadow-[4px_4px_0_#24312c]",
+          title: "text-foreground tracking-wider font-extrabold text-[14px] leading-tight",
+          description: "text-muted-foreground mt-1 leading-relaxed font-bold",
+          icon: "shrink-0 mt-0.5 text-accent",
           actionButton:
-            "ml-auto shrink-0 px-3 py-1.5 rounded-md bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white tracking-widest hover:scale-[1.03] active:scale-95 transition-transform cursor-pointer",
+            "ml-auto shrink-0 px-3 py-1.5 rounded-md border-2 border-foreground bg-primary text-primary-foreground font-black tracking-widest hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] shadow-[2px_2px_0_#24312c] transition-all cursor-pointer",
           cancelButton:
-            "px-2.5 py-1 rounded-md ec-surface ec-text-faint hover:ec-text ec-hover-surface tracking-widest cursor-pointer",
+            "px-2.5 py-1 rounded-md border-2 border-foreground bg-card text-muted-foreground hover:text-foreground font-extrabold tracking-widest cursor-pointer",
           closeButton:
-            "absolute top-2 right-2 size-6 rounded-md ec-surface ec-hover-surface ec-text-faint hover:ec-text border ec-border transition-colors cursor-pointer",
-          success: "border-emerald-400/50",
+            "absolute top-2 right-2 size-6 rounded-md bg-card border-2 border-foreground text-muted-foreground hover:text-foreground transition-colors cursor-pointer",
+          success: "border-emerald-500/50",
           error: "border-rose-500/50",
           info: "border-cyan-400/50",
           warning: "border-amber-400/50",
         },
         style: {
-          fontFamily: "Rajdhani, sans-serif",
+          fontFamily: "Nunito, sans-serif",
           fontSize: "14px",
-          boxShadow: "var(--ec-shadow-card)",
         },
       }}
       style={

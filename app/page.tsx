@@ -1,24 +1,47 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { HomePage } from "../src/app/HomePage";
-import { getPublishedGames } from "../src/app/data/games";
 
-const games = getPublishedGames();
-const featuredGame = games[0];
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ZowGame",
+  url: "https://zowgame.com",
+  description: "Curated browser game portal with guides. Play free online games instantly, no downloads required.",
+  sameAs: [],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ZowGame",
+  url: "https://zowgame.com",
+  description: "Play free browser games online. Survival horror, puzzle, arcade, and roguelite games with guides and instant-play access.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://zowgame.com/#discover",
+    "query-input": "required name=search_term",
+  },
+};
 
 export const metadata: Metadata = {
-  title: "ZowGame - Play Free Browser Games Online",
+  title: "Play Free Browser Games Online | ZowGame",
   description:
-    `Play fast, free browser games on ZowGame. Featured now: ${featuredGame.shortTitle}, plus focused browser game pages with guides, controls, and instant-play access.`,
-  keywords: [
-    "ZowGame",
-    "free browser games",
-    "online games",
-    "play games online",
-    ...featuredGame.keywords,
-  ],
+    "Play free browser games instantly on ZowGame. Survival horror, puzzle, arcade — every game includes controls, guides, and tips. No download needed.",
   alternates: { canonical: "https://zowgame.com/" },
 };
 
 export default function Page() {
-  return <HomePage />;
+  return (
+    <>
+      <Script
+        id="schema-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([organizationSchema, websiteSchema]),
+        }}
+      />
+      <HomePage />
+    </>
+  );
 }

@@ -1,4 +1,5 @@
 import type { SiteContent } from "../components/content-store";
+import { dontSleepWithTheFishesGame } from "./dont-sleep-with-the-fishes";
 
 export type GameFaqItem = {
   q: string;
@@ -113,7 +114,7 @@ const cobbContent: SiteContent = {
   avgSession: "18",
   seoTitle: "Cobb Can Move - Play Online Free in Browser",
   seoDescription:
-    "Play Cobb Can Move online for free in your browser. Explore a dark pixel dungeon, collect coal, keep the light alive, and survive Cobb as the rules change every level.",
+    "Play Cobb Can Move online free — survive a dark pixel dungeon, collect coal, keep the furnace lit, escape Cobb as rules change every level. No download.",
   seoKeywords:
     "Cobb Can Move, play Cobb Can Move online, free horror browser game, pixel horror game, roguelite browser game, play Cobb Can Move free",
   about: [
@@ -175,61 +176,6 @@ const cobbContent: SiteContent = {
   ],
 };
 
-const excuseMeSirContent: SiteContent = {
-  title: "EXCUSE ME SIR",
-  subtitle:
-    "Learn what Excuse Me Sir actually is, why the horror demo is trending again, and where to safely download the official Windows and macOS release.",
-  genre: "HORROR DEMO · POINT-AND-CLICK · DOWNLOAD GUIDE",
-  description:
-    "A discovery page for the real Excuse Me Sir horror demo, its official itch.io source, cancellation status, and meme-related search interest.",
-  coverImg: "/excuse-me-sir.jpg",
-  iframeUrl: "",
-  trailerUrl: "",
-  rating: "4.3",
-  avgSession: "07",
-  seoTitle: "Excuse Me Sir Game - Download Demo, Meme Meaning & How to Play",
-  seoDescription:
-    "Excuse Me Sir is a creepy point-and-click horror demo for Windows and macOS. Learn where to download it safely, why it was canceled, and why the name is trending again as a meme.",
-  seoKeywords:
-    "excuse me sir game, excuse me sir download, excuse me sir itch.io, is excuse me sir a real game, excuse me sir meme, excuse me sir billy butcher",
-  about: [
-    "Excuse Me Sir is a short, surreal point-and-click horror demo created by Airdorf and TorpleDook, featuring Molly Moonn. The official release is distributed through itch.io and is available as a downloadable demo for Windows and macOS.",
-    "Unlike playable browser titles on ZowGame, this page exists to help users understand what the game is, where the official source lives, and why search traffic for the phrase keeps spiking again.",
-    "The project is no longer in active development, but the demo remains available. Search interest also overlaps with a separate meme trend, so this page separates the actual horror game from unrelated viral edits.",
-  ],
-  faqs: [
-    {
-      q: "Is Excuse Me Sir free?",
-      a: "Yes, the official itch.io page currently offers the demo as a free download.",
-    },
-    {
-      q: "What platforms support Excuse Me Sir?",
-      a: "The official demo is available for Windows and macOS.",
-    },
-    {
-      q: "Is Excuse Me Sir canceled?",
-      a: "Yes. The official itch.io page lists the project status as canceled.",
-    },
-    {
-      q: "Can I play Excuse Me Sir on mobile?",
-      a: "There is no official mobile version listed on the main itch.io page.",
-    },
-    {
-      q: "Is ZowGame the official site?",
-      a: "No. This page is an unofficial guide that links to the official itch.io download page.",
-    },
-  ],
-  notifications: [
-    {
-      id: "excuse-1",
-      title: "Excuse Me Sir is a download-first horror demo. Use the official itch.io source for the real files.",
-      body: "This page is a guide, not a browser-play embed. The official listing is the safest source for the demo and current project status.",
-      tag: "Guide Notes",
-      tone: "amber",
-      time: "now",
-    },
-  ],
-};
 
 export const GAMES: GameRecord[] = [
   {
@@ -416,166 +362,49 @@ export const GAMES: GameRecord[] = [
     activityCountLabel: "PLAYING NOW",
     quickActionEyebrow: "PLAY INSTANTLY",
     quickActionTitle: "No download for browser play.<br />Desktop recommended.",
+    changelog: [
+      {
+        version: "v1.7",
+        date: "2026-05-19",
+        summary: "Smell nerf, pursuit acceleration nerf, rock stun bug fix.",
+        details: [
+          { label: "Tweaks", items: [
+            "Nerfed \"Cobb can smell\" (less frequent sniffs, less persistence when smelled at close range).",
+            "Nerfed Cobb's acceleration when in pursuit for a long time, slightly.",
+          ]},
+          { label: "Fixes", items: [
+            "Fixed rocks sometimes not stunning Cobb when in pursuit.",
+          ]},
+        ],
+      },
+      {
+        version: "v1.6",
+        date: "2026-05-16",
+        summary: "Rocks stun Cobb, coal spawn balancing, international keyboard support, duplicate fix, multiple bug fixes.",
+        details: [
+          { label: "New", items: [
+            "Rocks can now stun Cobb with a direct hit for a short period of time.",
+            "Rocks actually sound loud now, so it's more obvious they make noise.",
+            "International keyboard layouts such as AZERTY should feel more comfortable to use.",
+          ]},
+          { label: "Tweaks", items: [
+            "Coal is less likely to spawn right next to the furnace.",
+            "Cobb will get slightly faster if in pursuit for a long time.",
+            "Cobb's random wandering state is faster in larger maps.",
+            "Cobb takes larger steps when \"reach\" is active, but with less speed.",
+          ]},
+          { label: "Fixes", items: [
+            "Duplicates push each other, fixing the issue of them basically merging back into one Cobb.",
+            "Fixed Cobb not killing after grabbing player sometimes, again.",
+            "Blast furnace in ending has a larger hitbox to prevent getting lost behind it.",
+            "Fixed some rendering issues with some text/sprites.",
+          ]},
+        ],
+      },
+    ],
   },
-  {
-    slug: "excuse-me-sir",
-    shortTitle: "Excuse Me Sir",
-    canonicalPath: "/games/excuse-me-sir/",
-    ogImage: "/og-image.png",
-    cardImage: "/excuse-me-sir-cover.jpg",
-    keywords: [
-      "excuse me sir game",
-      "excuse me sir download",
-      "excuse me sir itch.io",
-      "is excuse me sir a real game",
-      "excuse me sir meme",
-      "excuse me sir billy butcher",
-      "point and click horror demo",
-      "airdorf excuse me sir",
-    ],
-    heroBadges: ["DOWNLOAD DEMO", "UNOFFICIAL GUIDE", "WINDOWS + macOS"],
-    primaryCtaLabel: "OPEN OFFICIAL DEMO PAGE",
-    secondaryCtaLabel: "BACK TO HOME",
-    accessMode: "download",
-    externalSourceUrl: "https://airdorf.itch.io/excuse-me-sir",
-    topBarEyebrow: "// DISCOVERY PAGE + OFFICIAL SOURCE",
-    topBarTitle: "EXCUSE ME SIR",
-    topBarDescription: "Official source guidance, platform info, cancellation status, and search-intent coverage.",
-    notificationFooter: "This page does not host files and points users to the official itch.io listing.",
-    guideTitle: "How to Get Excuse Me Sir Safely",
-    guideIntro:
-      "Excuse Me Sir is a short horror demo distributed as a download, not an instant-play browser game. The goal of this page is to help users identify the real game, understand its status, and reach the official source without confusing it with unrelated meme traffic.",
-    objectiveTitle: "What This Page Helps You Do",
-    objectiveBody:
-      "Confirm that Excuse Me Sir is a real downloadable horror demo, check which platforms it supports, understand that the project is canceled, and use the official itch.io page if you want the original Windows or macOS files.",
-    guideSteps: [
-      {
-        title: "Confirm you are looking at the real game.",
-        body: "Excuse Me Sir is an indie horror demo by Airdorf and TorpleDook, not just a viral phrase or meme caption.",
-      },
-      {
-        title: "Use the official itch.io page.",
-        body: "The official listing is the safest place to verify the project status and download the original demo files.",
-      },
-      {
-        title: "Choose the correct platform build.",
-        body: "The public demo is listed for Windows and macOS rather than browser play or mobile devices.",
-      },
-      {
-        title: "Expect a short demo, not a full release.",
-        body: "The project was canceled, so this page should be treated as a preservation and discovery guide for the released demo.",
-      },
-      {
-        title: "Avoid third-party reposts.",
-        body: "If a random mirror or bundle claims to host the files, use the official source instead of downloading from unknown reuploads.",
-      },
-    ],
-    controlsHeading: "Excuse Me Sir Quick Facts",
-    controlsTable: [
-      { label: "Access", value: "Download from official itch.io page" },
-      { label: "Platforms", value: "Windows and macOS" },
-      { label: "Browser Play", value: "Not officially supported" },
-      { label: "Project Status", value: "Canceled demo" },
-    ],
-    ruleHeading: "What Makes Excuse Me Sir Different",
-    ruleBody:
-      "Excuse Me Sir is not an always-on browser game like Cobb Can Move. It is a short, surreal point-and-click horror demo with FMV-style imagery and multiple endings, so the most important guidance is where to download it safely and how to separate the game from the unrelated meme trend around the same phrase.",
-    tipsHeading: "Before You Download Excuse Me Sir",
-    tipsIntro:
-      "Most confusion around Excuse Me Sir comes from mixed search intent. Some users want the actual horror demo, while others are following meme traffic. Use these checks to make sure you end up on the real source page.",
-    tipsOutro:
-      "If you only remember one thing, remember this: use the official itch.io page and treat anything else as unverified. This page is here to help with discovery, not to mirror or redistribute the files.",
-    tips: [
-      {
-        title: "Use the Official Source",
-        body: "Open the official itch.io page instead of downloading from reposted file sites or random mirrors.",
-      },
-      {
-        title: "Do Not Expect Browser Play",
-        body: "Excuse Me Sir is a download-first demo, so a page promising instant browser play is probably misleading.",
-      },
-      {
-        title: "Check Platform Support First",
-        body: "The listed demo targets Windows and macOS, which matters if you found the page from mobile search results.",
-      },
-      {
-        title: "Understand the Project Status",
-        body: "The demo remains available, but the project is canceled, so do not expect an actively updated full release.",
-      },
-      {
-        title: "Separate Game from Meme Traffic",
-        body: "If you came from Billy Butcher or The Boys edits, know that those posts are unrelated to the actual horror game.",
-      },
-    ],
-    reviewsHeading: "What Players Notice First",
-    reviewsSummary:
-      "These summary notes reflect the demo's reputation in public discussion: unsettling presentation, surreal tone, and curiosity driven by renewed search traffic.",
-    reviews: [
-      {
-        name: "Discovery Note 1",
-        date: "Recent",
-        rating: 4,
-        body: "Most people notice the strange FMV-style horror atmosphere first. It feels more like a surreal cursed discovery than a traditional jump-scare game.",
-      },
-      {
-        name: "Discovery Note 2",
-        date: "Recent",
-        rating: 4,
-        body: "The biggest challenge is not how to beat it. It is figuring out which page is official and which search results are just meme spillover.",
-      },
-      {
-        name: "Discovery Note 3",
-        date: "Recent",
-        rating: 4,
-        body: "Once you know it is a short canceled demo, the page makes more sense. It is a real game, just not a full live-service release.",
-      },
-      {
-        name: "Discovery Note 4",
-        date: "Recent",
-        rating: 4,
-        body: "The name trends because of meme overlap, but the real value here is having a clean route to the official itch.io listing.",
-      },
-    ],
-    quickFactsHeading: "SOURCE SNAPSHOT",
-    quickFacts: [
-      { label: "Source", value: "Official itch.io page by Airdorf" },
-      { label: "Format", value: "Downloadable horror demo" },
-      { label: "Platforms", value: "Windows + macOS" },
-    ],
-    ambientMessages: [
-      "Official source: airdorf.itch.io/excuse-me-sir",
-      "This page is an unofficial guide and does not host files",
-      "Windows and macOS are the listed demo platforms",
-      "Search traffic overlaps with a separate meme trend",
-      "Use the official itch.io page to verify status and files",
-    ],
-    livePulses: [
-      { icon: "🧷", text: "Official source points to itch.io, not browser embed play", weight: "normal" },
-      { icon: "💾", text: "Download-first demo for Windows and macOS", weight: "hot" },
-      { icon: "🕯️", text: "Short surreal horror demo with strong cult-search interest", weight: "normal" },
-      { icon: "⚠️", text: "Project is canceled, but the demo remains available", weight: "epic" },
-      { icon: "🔎", text: "Meme traffic and game traffic overlap for this title", weight: "hot" },
-    ],
-    schema: {
-      developer: "Airdorf, TorpleDook",
-      genre: ["Horror", "Point-and-click", "Indie"],
-      operatingSystems: ["Windows", "macOS"],
-      platforms: ["PC", "macOS"],
-      playMode: "SinglePlayer",
-      price: "0",
-      priceCurrency: "USD",
-      ratingCount: 12,
-    },
-    content: excuseMeSirContent,
-    footerTagline: "© 2026 ZOWGAME // UNOFFICIAL GAME DISCOVERY GUIDE",
-    footerStatus: "OFFICIAL DOWNLOAD SOURCE · NO FILE HOSTING",
-    activityHeading: "DISCOVERY NOW",
-    activityCountLabel: "SEARCH INTEREST",
-    quickActionEyebrow: "OFFICIAL SOURCE",
-    quickActionTitle: "Use the official itch.io page.<br />This guide does not host files.",
-  },
+  dontSleepWithTheFishesGame,
 ];
-
 export function getGameBySlug(slug: string) {
   return GAMES.find((game) => game.slug === slug);
 }

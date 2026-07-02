@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useRef, useState } from "react";
+import Link from "next/link";
 import { Sidebar } from "./components/sidebar";
-import { TopBar } from "./components/topbar";
 import { Hero } from "./components/hero";
 import { ActivityPanel } from "./components/sidebars-right";
 import { SeoContent } from "./components/seo-content";
@@ -15,11 +15,10 @@ import type { GameRecord } from "./data/games";
 
 function PlaceholderPage({ title, kicker, line }: { title: string; kicker: string; line: string }) {
   return (
-    <div className="relative rounded-2xl border ec-border-brand ec-surface p-10 sm:p-16 text-center hud-corners">
-      <span className="hud-c1" /><span className="hud-c2" />
-      <div className="text-[var(--ec-accent-orange)] tracking-[0.3em] mb-3" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// {kicker}</div>
-      <h2 className="ec-text tracking-tight mb-3 text-[34px] sm:text-[48px]" style={{ fontFamily: "Orbitron", fontWeight: 900 }}>{title}</h2>
-      <p className="ec-text-faint max-w-xl mx-auto" style={{ fontFamily: "Rajdhani", fontSize: "16px" }}>{line}</p>
+    <div className="relative rounded-[2rem] border-2 border-foreground bg-card p-10 sm:p-16 text-center shadow-[6px_6px_0_#24312c]">
+      <div className="text-muted-foreground tracking-[0.3em] mb-3" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// {kicker}</div>
+      <h2 className="text-foreground tracking-tight mb-3 text-[34px] sm:text-[48px]" style={{ fontFamily: "Fredoka", fontWeight: 900 }}>{title}</h2>
+      <p className="text-muted-foreground max-w-xl mx-auto" style={{ fontFamily: "Nunito", fontSize: "16px" }}>{line}</p>
     </div>
   );
 }
@@ -80,26 +79,16 @@ function AppShell() {
   };
 
   return (
-    <div className={`eclipse-app min-h-screen w-full relative overflow-x-hidden ${isGameFocused ? "game-focus-active" : ""}`} style={{ fontFamily: "Rajdhani, sans-serif" }}>
-      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ opacity: "var(--ec-blob-opacity, 1)" }}>
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-fuchsia-600/20 blur-[120px]" />
-        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full bg-cyan-500/15 blur-[120px]" />
-        <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] rounded-full bg-orange-600/10 blur-[120px]" />
-        <div className="hidden md:block absolute -right-[280px] top-[180px] w-[680px] h-[680px] eclipse-ring" aria-hidden="true" style={{ opacity: "var(--ec-eclipse-ring-opacity)" }} />
-        <div className="hidden md:block absolute -left-[220px] -bottom-[220px] w-[520px] h-[520px] eclipse-ring" aria-hidden="true" style={{ opacity: "var(--ec-eclipse-ring-2-opacity)", animationDuration: "90s", animationDirection: "reverse" }} />
-        <div className="absolute inset-0 ec-grid-overlay" style={{ backgroundSize: "80px 80px" }} />
-      </div>
+    <div className={`min-h-screen w-full relative overflow-x-hidden bg-background ${isGameFocused ? "game-focus-active" : ""}`} style={{ fontFamily: "Nunito, sans-serif" }}>
+      {/* Background pattern — matching homepage */}
+      <div className="pointer-events-none fixed inset-0 [background:radial-gradient(circle_at_18%_18%,rgba(255,246,220,.95)_0_14%,transparent_32%),linear-gradient(115deg,transparent_0_52%,rgba(31,111,91,.12)_52%_100%),linear-gradient(rgba(36,49,44,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(36,49,44,.07)_1px,transparent_1px)] [background-size:auto,auto,34px_34px,34px_34px]" />
 
       {isGameFocused && <div className="game-focus-overlay" aria-hidden="true" />}
 
       <div className={`relative flex ${isGameFocused ? "z-[104]" : ""}`}>
         <Sidebar active={view} onChange={goView} />
 
-        <main className="flex-1 px-4 sm:px-6 lg:px-10 py-5 sm:py-8 min-w-0 pb-24 lg:pb-8">
-          <div className="game-focus-exempt">
-            <TopBar />
-          </div>
-
+        <main className="flex-1 px-4 sm:px-6 py-5 sm:py-8 min-w-0 pb-24 lg:pb-8 md:pl-[300px]">
           {view === "home" ? (
             <div className="flex flex-col lg:flex-row gap-6 items-start">
               <div className="flex-1 min-w-0 flex flex-col gap-8 sm:gap-10 order-2 lg:order-1">
@@ -118,11 +107,15 @@ function AppShell() {
             <PlaceholderPage title="ABOUT" kicker="SOURCE" line={game.accessMode === "download" ? `${game.shortTitle} is covered here as a discovery and official-source guide with platform info, FAQ coverage, and download intent support.` : `${game.shortTitle} is featured here with browser-play guidance, controls, FAQ coverage, and discovery content.`} />
           )}
 
-          <footer className="mt-16 pt-8 border-t ec-border flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between ec-text-dim tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
+          <footer className="mt-16 pt-8 border-t-2 border-border flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-muted-foreground tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
             <span>{game.footerTagline ?? `© 2026 ${game.content.title} // FAN LANDING PAGE FOR DISCOVERY`}</span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              {game.footerStatus ?? "PLAY IN BROWSER · DESKTOP RECOMMENDED"}
+            <span className="flex items-center gap-4">
+              <Link href="/" className="hover:text-foreground transition-colors">← HOME</Link>
+              <Link href="/privacy" className="hover:text-foreground transition-colors">PRIVACY</Link>
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                {game.footerStatus ?? "PLAY IN BROWSER · DESKTOP RECOMMENDED"}
+              </span>
             </span>
           </footer>
         </main>

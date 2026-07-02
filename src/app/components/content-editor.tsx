@@ -8,7 +8,7 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
   return (
     <label className="flex flex-col gap-2">
       <span className="flex items-center justify-between">
-        <span className="text-white/80 tracking-widest" style={{ fontFamily: "Rajdhani", fontWeight: 600, fontSize: "12px" }}>{label}</span>
+        <span className="text-foreground tracking-widest font-bold" style={{ fontSize: "12px" }}>{label}</span>
         {hint && <span className="text-white/30" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{hint}</span>}
       </span>
       {children}
@@ -17,7 +17,7 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
 }
 
 const inputCls = "w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-fuchsia-500/50 transition-colors";
-const inputStyle = { fontFamily: "Rajdhani", fontSize: "14px" } as const;
+const inputStyle = { fontFamily: "Nunito", fontSize: "14px" } as const;
 
 export function ContentEditor() {
   const { content, setContent, reset } = useContent();
@@ -98,27 +98,27 @@ export function ContentEditor() {
             <FileText className="w-4 h-4 text-fuchsia-400" />
             <span className="text-fuchsia-400 tracking-[0.3em]" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// 内容编辑器</span>
           </div>
-          <h1 className="text-white tracking-tight" style={{ fontFamily: "Orbitron", fontWeight: 900, fontSize: "44px" }}>
+          <h1 className="text-white tracking-tight" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "44px" }}>
             编辑<span className="bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">首页内容</span>
           </h1>
-          <p className="text-white/50 mt-2" style={{ fontFamily: "Rajdhani", fontSize: "14px" }}>
+          <p className="text-white/50 mt-2" style={{ fontFamily: "Nunito", fontSize: "14px" }}>
             所有修改会先保存到浏览器本地存储并实时应用。若要真正写进代码仓库，请使用下方的“导出代码文件”或“复制代码”操作覆盖 <code className="text-fuchsia-300 px-1.5 py-0.5 rounded bg-white/5">src/app/data/cobb-can-move-content.ts</code>。
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <button onClick={handleReset} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}>
+          <button onClick={handleReset} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "11px" }}>
             <RotateCcw className="w-3.5 h-3.5" />
             重置
           </button>
-          <button onClick={copySource} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}>
+          <button onClick={copySource} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "11px" }}>
             {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
             {copied ? "已复制" : "复制代码"}
           </button>
-          <button onClick={downloadSource} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}>
+          <button onClick={downloadSource} className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "11px" }}>
             {exported ? <Check className="w-3.5 h-3.5" /> : <Download className="w-3.5 h-3.5" />}
             {exported ? "已导出" : "导出代码文件"}
           </button>
-          <button onClick={saveToCodeFile} className="px-4 py-2.5 rounded-xl bg-white/5 border border-cyan-500/30 text-cyan-300 hover:text-white hover:bg-cyan-500/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}>
+          <button onClick={saveToCodeFile} className="px-4 py-2.5 rounded-xl bg-white/5 border border-cyan-500/30 text-cyan-300 hover:text-white hover:bg-cyan-500/10 transition-colors flex items-center gap-2 tracking-widest" style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "11px" }}>
             {savedToFile ? <Check className="w-3.5 h-3.5" /> : <Save className="w-3.5 h-3.5" />}
             {savedToFile ? "已写入代码" : "保存到代码文件"}
           </button>
@@ -130,7 +130,7 @@ export function ContentEditor() {
               dirty ? "bg-gradient-to-r from-fuchsia-500 to-cyan-500 hover:scale-[1.02] active:scale-95 shadow-[0_0_30px_rgba(217,70,239,0.4)]" :
               "bg-white/10 text-white/40 cursor-not-allowed"
             }`}
-            style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "12px" }}
+            style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "12px" }}
           >
             {saved ? <><Check className="w-4 h-4" /> 已保存草稿</> : <><Save className="w-4 h-4" /> 保存草稿</>}
           </button>
@@ -139,8 +139,8 @@ export function ContentEditor() {
 
       <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4 flex items-start gap-3">
         <FileText className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-        <div className="text-white/70" style={{ fontFamily: "Rajdhani", fontSize: "14px", lineHeight: 1.65 }}>
-          <div className="text-white mb-1" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "13px" }}>如何真正保存到代码里</div>
+        <div className="text-white/70" style={{ fontFamily: "Nunito", fontSize: "14px", lineHeight: 1.65 }}>
+          <div className="text-white mb-1" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "13px" }}>如何真正保存到代码里</div>
           本地编辑完成后，推荐先点 <strong className="text-white">保存到代码文件</strong>。这会调用本地开发保存服务并直接覆盖
           <code className="text-fuchsia-300 px-1.5 py-0.5 rounded bg-white/5 mx-1">src/app/data/cobb-can-move-content.ts</code>
           。如果保存服务没有启动，也可以使用 <strong className="text-white">导出代码文件</strong> 或 <strong className="text-white">复制代码</strong> 手动覆盖该文件。
@@ -170,7 +170,7 @@ export function ContentEditor() {
               key={t.id}
               onClick={() => setTab(t.id)}
               className={`px-5 py-3 flex items-center gap-2 tracking-widest border-b-2 transition-colors ${isActive ? "text-white border-fuchsia-500" : "text-white/40 border-transparent hover:text-white/70"}`}
-              style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "11px" }}
+              style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "11px" }}
             >
               <Icon className="w-3.5 h-3.5" />
               {t.label}
@@ -226,10 +226,10 @@ export function ContentEditor() {
           <div className="p-4 rounded-xl bg-cyan-500/5 border border-cyan-500/20 flex items-start gap-3">
             <Eye className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
             <div>
-              <div className="text-white mb-1" style={{ fontFamily: "Orbitron", fontWeight: 700, fontSize: "13px" }}>搜索结果预览</div>
-              <div className="text-blue-300 truncate" style={{ fontFamily: "Rajdhani", fontSize: "16px", fontWeight: 600 }}>{draft.seoTitle}</div>
-              <div className="text-emerald-400 text-sm" style={{ fontFamily: "Rajdhani" }}>https://yoursite.com</div>
-              <div className="text-white/60 mt-1" style={{ fontFamily: "Rajdhani", fontSize: "13px" }}>{draft.seoDescription}</div>
+              <div className="text-white mb-1" style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: "13px" }}>搜索结果预览</div>
+              <div className="text-blue-300 truncate" style={{ fontFamily: "Nunito", fontSize: "16px", fontWeight: 600 }}>{draft.seoTitle}</div>
+              <div className="text-emerald-400 text-sm" style={{ fontFamily: "Nunito" }}>https://yoursite.com</div>
+              <div className="text-white/60 mt-1" style={{ fontFamily: "Nunito", fontSize: "13px" }}>{draft.seoDescription}</div>
             </div>
           </div>
           <Field label="页面标题" hint={`${draft.seoTitle.length} 字符 · 建议 60 以内`}>
@@ -247,7 +247,7 @@ export function ContentEditor() {
       {/* ABOUT TAB */}
       {tab === "about" && (
         <div className="rounded-2xl border border-white/10 bg-[#0f0020]/60 p-6 flex flex-col gap-4">
-          <div className="text-white/50" style={{ fontFamily: "Rajdhani", fontSize: "13px" }}>
+          <div className="text-white/50" style={{ fontFamily: "Nunito", fontSize: "13px" }}>
             每个段落会显示在「关于本游戏」SEO 区块中。注意关键词密度,避免堆砌。
           </div>
           {draft.about.map((para, i) => (
@@ -274,7 +274,7 @@ export function ContentEditor() {
           <button
             onClick={() => update("about", [...draft.about, ""])}
             className="self-start px-4 py-2.5 rounded-lg border border-dashed border-white/20 text-white/60 hover:text-white hover:border-white/40 flex items-center gap-2 tracking-widest"
-            style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}
+            style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "11px" }}
           >
             <Plus className="w-4 h-4" /> 添加段落
           </button>
@@ -284,7 +284,7 @@ export function ContentEditor() {
       {/* FAQ TAB */}
       {tab === "faq" && (
         <div className="rounded-2xl border border-white/10 bg-[#0f0020]/60 p-6 flex flex-col gap-4">
-          <div className="text-white/50" style={{ fontFamily: "Rajdhani", fontSize: "13px" }}>
+          <div className="text-white/50" style={{ fontFamily: "Nunito", fontSize: "13px" }}>
             每条问答会作为首页折叠面板中的一项显示,同时输出为 Schema.org FAQPage 结构化数据。
           </div>
           {draft.faqs.map((f, i) => (
@@ -326,7 +326,7 @@ export function ContentEditor() {
           <button
             onClick={() => update("faqs", [...draft.faqs, { q: "", a: "" }])}
             className="self-start px-4 py-2.5 rounded-lg border border-dashed border-white/20 text-white/60 hover:text-white hover:border-white/40 flex items-center gap-2 tracking-widest"
-            style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}
+            style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "11px" }}
           >
             <Plus className="w-4 h-4" /> 添加问答
           </button>
@@ -336,7 +336,7 @@ export function ContentEditor() {
       {/* NOTIFICATIONS TAB */}
       {tab === "notifications" && (
         <div className="rounded-2xl border border-white/10 bg-[#0f0020]/60 p-6 flex flex-col gap-4">
-          <div className="text-white/50" style={{ fontFamily: "Rajdhani", fontSize: "13px" }}>
+          <div className="text-white/50" style={{ fontFamily: "Nunito", fontSize: "13px" }}>
             这些内容会显示在首页右上角的铃铛弹窗中。用户每打开一次铃铛会自动标记为已读,徽章数随之归零;无需管理员手动清理。删除条目即从列表中移除。
           </div>
           {draft.notifications.map((n, i) => {
@@ -415,7 +415,7 @@ export function ContentEditor() {
               ])
             }
             className="self-start px-4 py-2.5 rounded-lg border border-dashed border-white/20 text-white/60 hover:text-white hover:border-white/40 flex items-center gap-2 tracking-widest"
-            style={{ fontFamily: "Orbitron", fontWeight: 600, fontSize: "11px" }}
+            style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "11px" }}
           >
             <Plus className="w-4 h-4" /> 添加通知
           </button>
