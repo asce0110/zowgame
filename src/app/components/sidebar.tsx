@@ -28,12 +28,12 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
     <>
       <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border border-amber-700/20 bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[220px]">
         <div className="flex h-16 items-center justify-between px-4 md:h-full md:flex-col md:items-stretch md:justify-start md:p-5">
-          <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-ring/40" aria-label="Back to homepage">
-            <span className="grid h-11 w-11 shrink-0 rotate-[-6deg] place-items-center rounded-2xl border border-amber-700/20 bg-accent text-accent-foreground shadow-[0_0_25px_rgba(0,0,0,0.3)] overflow-hidden">
+          <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl logo-hover focus:outline-none focus:ring-4 focus:ring-ring/40" aria-label="Back to homepage">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-amber-700/20 bg-accent text-accent-foreground shadow-[0_0_15px_rgba(195,154,47,0.1)] overflow-hidden animate-pulse" style={{ animationDuration: "3s" }}>
               <img src="/logo-symbol.svg" alt="ZowGame" className="h-full w-full scale-125" />
             </span>
             <span className="hidden sm:block">
-              <span className="block font-['Space_Grotesk'] text-[13px] font-bold leading-none">{game.shortTitle}</span>
+              <span className="block font-['Space_Grotesk'] text-[13px] font-bold leading-none text-amber-400 animate-pulse" style={{ animationDuration: "4s" }}>{game.shortTitle}</span>
               <span className="font-mono text-[10px] font-extrabold uppercase tracking-[.2em] text-accent">← Back to home</span>
             </span>
           </Link>

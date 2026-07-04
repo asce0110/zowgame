@@ -177,9 +177,9 @@ export function HomePage() {
             <div className="h-px w-6 bg-gradient-to-r from-amber-500/20 to-transparent" /><span className="text-amber-400/40 text-[10px]">♦</span><div className="h-px w-6 bg-gradient-to-l from-amber-500/20 to-transparent" />
           </div>
         <div className="flex h-16 items-center justify-between px-4 md:h-full md:flex-col md:items-stretch md:justify-start md:p-5">
-          <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-ring/40">
-            <span className="grid h-11 w-11 place-items-center rounded-2xl border border-amber-700/20 bg-accent text-amber-50 shadow-[0_0_25px_rgba(0,0,0,0.3)] overflow-hidden"><img src="/logo-symbol.svg" alt="ZowGame" className="h-full w-full scale-125" /></span>
-            <span className="hidden sm:block"><strong className="block font-['Space_Grotesk'] text-2xl font-bold leading-none text-amber-400 drop-shadow-[0_0_8px_rgba(195,154,47,0.3)]">ZowGame</strong><span className="font-mono text-[10px] font-extrabold uppercase tracking-[.22em]">game atlas</span></span>
+          <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl logo-hover focus:outline-none focus:ring-4 focus:ring-ring/40">
+            <span className="grid h-11 w-11 place-items-center rounded-2xl border border-amber-600/30 bg-amber-500/10 shadow-[0_0_15px_rgba(195,154,47,0.1)] overflow-hidden animate-pulse" style={{ animationDuration: "3s" }}><img src="/logo-symbol.svg" alt="ZowGame" className="h-full w-full scale-125" /></span>
+            <span className="hidden sm:block"><strong className="block font-['Space_Grotesk'] text-2xl font-bold leading-none text-amber-400 animate-pulse" style={{ animationDuration: "4s" }}>ZowGame</strong><span className="font-mono text-[10px] font-extrabold uppercase tracking-[.22em]">game atlas</span></span>
           </Link>
           <nav className="hidden md:mt-10 md:grid md:gap-3" aria-label="Main navigation">
             {[{ label: "Games", href: "#discover", icon: Grid3X3 }, { label: "Top Pick", href: "#featured", icon: Play }, { label: "Guides", href: "#guides", icon: BookOpen }].map(({ label, href, icon: Icon }) => (
