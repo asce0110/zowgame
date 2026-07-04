@@ -9,24 +9,35 @@ export function ParticleBg() {
     fullScreen: { enable: true, zIndex: 0 },
     fpsLimit: 60,
     particles: {
-      number: { value: 25, density: { enable: true } },
-      color: { value: "#24312c" },
-      opacity: { value: { min: 0.04, max: 0.12 } },
-      size: { value: { min: 0.5, max: 1.5 } },
+      number: { value: 40, density: { enable: true } },
+      color: { value: ["#c39a2f", "#c64f2f", "#8a6a3f", "#e8a840"] },
+      opacity: {
+        value: { min: 0.03, max: 0.18 },
+        animation: { enable: true, speed: 0.3, sync: false, minimumValue: 0.02 },
+      },
+      size: {
+        value: { min: 1, max: 3 },
+        animation: { enable: true, speed: 0.8, sync: false, minimumValue: 0.5 },
+      },
       move: {
         enable: true,
-        speed: 0.3,
-        direction: "none" as const,
+        speed: 0.4,
+        direction: "none",
         random: true,
         straight: false,
-        outModes: { default: "bounce" as const },
+        outModes: { default: "out" },
+        drift: 0.3,
       },
-      shape: { type: "circle" },
+      shape: { type: ["circle", "triangle"] },
+      wobble: { enable: true, distance: 3, speed: 2 },
     },
     interactivity: {
       events: { onHover: { enable: true, mode: "bubble" } },
       modes: {
-        bubble: { distance: 180, size: 6, opacity: 0.15, duration: 2 },
+        bubble: {
+          distance: 200, size: 8, opacity: 0.25, duration: 2,
+          color: { value: ["#c39a2f", "#c64f2f"] },
+        },
       },
     },
     detectRetina: true,
@@ -35,9 +46,7 @@ export function ParticleBg() {
   return (
     <Particles
       id="tsparticles"
-      init={async (engine) => {
-        await loadSlim(engine);
-      }}
+      init={async (engine) => { await loadSlim(engine); }}
       options={options}
     />
   );

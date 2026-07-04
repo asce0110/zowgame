@@ -23,13 +23,13 @@ export function SeoContent() {
   const { content, game } = useContent();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const cardClass = "rounded-2xl border-2 border-foreground bg-card p-8 shadow-[5px_5px_0_#24312c]";
-  const guideCardClass = "rounded-2xl border-2 border-foreground bg-secondary/50 p-8 shadow-[5px_5px_0_#24312c]";
+  const cardClass = "rounded-2xl border border-amber-700/20 bg-card p-8 shadow-[0_0_40px_rgba(0,0,0,0.4)]";
+  const guideCardClass = "rounded-2xl border border-amber-700/20 bg-secondary/50 p-8 shadow-[0_0_40px_rgba(0,0,0,0.4)]";
 
   return (
     <div className="flex flex-col gap-12">
       {game.slug === "dont-sleep-with-the-fishes" && (
-        <div className="rounded-2xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_#24312c]">
+        <div className="rounded-2xl border border-amber-700/20 bg-card p-6 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
           <h3 className="font-['Fredoka'] text-lg font-black mb-4">Explore {game.shortTitle} Guides</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
             {[

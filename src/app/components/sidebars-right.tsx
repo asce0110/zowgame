@@ -21,7 +21,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
   return (
     <aside className="w-full lg:w-[360px] shrink-0 flex flex-col gap-5">
       {/* Quick Play Card */}
-      <div className="relative rounded-2xl overflow-hidden border-2 border-foreground bg-primary shadow-[5px_5px_0_#24312c]">
+      <div className="relative rounded-2xl overflow-hidden border border-amber-700/20 bg-primary shadow-[0_0_40px_rgba(0,0,0,0.4)]">
         <div className="p-5">
           <div className="flex items-center gap-2 mb-3">
             <Zap className="w-4 h-4 text-yellow-300" />
@@ -39,7 +39,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
                 trackEvent("play_click", { location: "side_card", game: game.slug });
                 onPlay?.();
               }}
-              className="w-full py-3 rounded-xl border-2 border-foreground bg-primary-foreground text-primary font-black hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] shadow-[3px_3px_0_#24312c] transition-all tracking-widest cursor-pointer"
+              className="w-full py-3 rounded-xl border border-amber-700/20 bg-primary-foreground text-primary font-black hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] shadow-[3px_3px_0_#24312c] transition-all tracking-widest cursor-pointer"
               style={{ fontFamily: "Nunito", fontSize: "13px" }}
             >
               {game.primaryCtaLabel} →
@@ -55,7 +55,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
       </div>
 
       {/* Quick Facts */}
-      <div className="rounded-2xl border-2 border-foreground bg-card p-5 shadow-[5px_5px_0_#24312c]">
+      <div className="rounded-2xl border border-amber-700/20 bg-card p-5 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
         <h4 className="text-foreground tracking-widest mb-4" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "14px" }}>{game.quickFactsHeading}</h4>
         <div className="flex flex-col gap-3">
           {game.quickFacts.map((fact) => (
@@ -73,7 +73,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
       <div className={`hidden lg:block transition-all duration-300 ${showSticky ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}>
         <Link
           href="/"
-          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-foreground bg-card font-extrabold text-foreground hover:bg-secondary shadow-[3px_3px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] transition-all cursor-pointer"
+          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-amber-700/20 bg-card font-extrabold text-foreground hover:bg-secondary shadow-[3px_3px_0_#24312c] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] transition-all cursor-pointer"
           style={{ fontFamily: "Nunito", fontSize: "13px" }}
         >
           <ArrowLeft className="w-4 h-4" /> Back to All Games
@@ -85,7 +85,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
 
 function StatBox({ icon: Icon, label, value, color, suffix }: { icon: any; label: string; value: string; color: string; suffix?: string }) {
   return (
-    <div className="rounded-xl border-2 border-foreground bg-card p-4 shadow-[3px_3px_0_#24312c]">
+    <div className="rounded-xl border border-amber-700/20 bg-card p-4 shadow-[3px_3px_0_#24312c]">
       <div className="flex items-center gap-1.5 mb-1">
         <Icon className={`w-3.5 h-3.5 ${color}`} />
         <span className="text-muted-foreground tracking-widest font-extrabold" style={{ fontFamily: "JetBrains Mono", fontSize: "9px" }}>{label}</span>

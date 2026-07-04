@@ -26,10 +26,10 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
 
   return (
     <>
-      <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border-2 border-foreground bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[220px]">
+      <aside className="fixed bottom-3 left-3 right-3 top-auto z-50 rounded-[1.6rem] border border-amber-700/20 bg-card/90 shadow-[5px_5px_0_#24312c] backdrop-blur md:bottom-6 md:left-6 md:right-auto md:top-6 md:w-[220px]">
         <div className="flex h-16 items-center justify-between px-4 md:h-full md:flex-col md:items-stretch md:justify-start md:p-5">
           <Link href="/" className="flex min-h-11 items-center gap-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-ring/40" aria-label="Back to homepage">
-            <span className="grid h-11 w-11 shrink-0 rotate-[-6deg] place-items-center rounded-2xl border-2 border-foreground bg-accent text-accent-foreground shadow-[3px_3px_0_#24312c] overflow-hidden">
+            <span className="grid h-11 w-11 shrink-0 rotate-[-6deg] place-items-center rounded-2xl border border-amber-700/20 bg-accent text-accent-foreground shadow-[0_0_25px_rgba(0,0,0,0.3)] overflow-hidden">
               <img src="/logo-symbol.svg" alt="ZowGame" className="h-full w-full scale-125" />
             </span>
             <span className="hidden sm:block">
@@ -44,7 +44,7 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
               return (
                 <button key={item.id} onClick={() => onChange(item.id)}
                   className={`group flex min-h-12 items-center gap-3 rounded-2xl border-2 px-4 text-left font-extrabold transition focus:outline-none focus:ring-4 focus:ring-ring/40 cursor-pointer ${
-                    isActive ? "border-foreground bg-secondary shadow-[2px_2px_0_#24312c]" : "border-transparent hover:border-foreground hover:bg-secondary hover:shadow-[3px_3px_0_#24312c]"
+                    isActive ? "border-foreground bg-secondary shadow-[2px_2px_0_#24312c]" : "border-transparent hover:border-foreground hover:bg-secondary hover:shadow-[0_0_25px_rgba(0,0,0,0.3)]"
                   }`}
                   style={{ fontFamily: "Nunito" }}>
                   <Icon className="h-5 w-5 text-primary transition group-hover:rotate-[-8deg]" />
@@ -79,20 +79,20 @@ export function Sidebar({ active, onChange }: { active: SidebarView; onChange: (
             </div>
           )}
           <div className="hidden md:mt-auto md:block">
-            <div className="rotate-[-1deg] rounded-2xl border-2 border-foreground bg-secondary p-4 shadow-[4px_4px_0_#24312c]">
+            <div className="rotate-[-1deg] rounded-2xl border border-amber-700/20 bg-secondary p-4 shadow-[0_0_30px_rgba(0,0,0,0.35)]">
               <p className="font-mono text-[10px] font-black uppercase tracking-[.18em] text-accent">{game.accessMode === "download" ? "Download" : "Browser"}</p>
               <p className="mt-2 font-['Space_Grotesk'] text-lg font-bold leading-none">{game.accessMode === "download" ? "Official source guide" : "Play instantly online"}</p>
             </div>
-            <Link href="/" className="mt-4 inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 font-extrabold text-primary-foreground shadow-[3px_3px_0_#24312c] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40">
+            <Link href="/" className="mt-4 inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-amber-700/20 bg-primary px-5 font-extrabold text-primary-foreground shadow-[0_0_25px_rgba(0,0,0,0.3)] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#24312c] focus:outline-none focus:ring-4 focus:ring-ring/40">
               <ArrowLeft className="h-4 w-4" /> All Games
             </Link>
           </div>
-          <button aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)} className="grid h-11 w-11 place-items-center rounded-xl border-2 border-foreground bg-secondary md:hidden">
+          <button aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)} className="grid h-11 w-11 place-items-center rounded-xl border border-amber-700/20 bg-secondary md:hidden">
             {menuOpen ? <X /> : <Menu />}
           </button>
         </div>
         {menuOpen && (
-          <div className="grid gap-2 border-t-2 border-foreground p-4 md:hidden">
+          <div className="grid gap-2 border-t border-foreground p-4 md:hidden">
             {items.map((item) => {
               const Icon = item.icon;
               const isActive = active === item.id;

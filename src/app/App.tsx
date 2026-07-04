@@ -15,7 +15,7 @@ import type { GameRecord } from "./data/games";
 
 function PlaceholderPage({ title, kicker, line }: { title: string; kicker: string; line: string }) {
   return (
-    <div className="relative rounded-[2rem] border-2 border-foreground bg-card p-10 sm:p-16 text-center shadow-[6px_6px_0_#24312c]">
+    <div className="relative rounded-[2rem] border border-amber-700/20 bg-card p-10 sm:p-16 text-center shadow-[0_0_50px_rgba(0,0,0,0.4)]">
       <div className="text-muted-foreground tracking-[0.3em] mb-3" style={{ fontFamily: "JetBrains Mono", fontSize: "11px" }}>// {kicker}</div>
       <h2 className="text-foreground tracking-tight mb-3 text-[34px] sm:text-[48px]" style={{ fontFamily: "Fredoka", fontWeight: 900 }}>{title}</h2>
       <p className="text-muted-foreground max-w-xl mx-auto" style={{ fontFamily: "Nunito", fontSize: "16px" }}>{line}</p>
@@ -107,7 +107,7 @@ function AppShell() {
             <PlaceholderPage title="ABOUT" kicker="SOURCE" line={game.accessMode === "download" ? `${game.shortTitle} is covered here as a discovery and official-source guide with platform info, FAQ coverage, and download intent support.` : `${game.shortTitle} is featured here with browser-play guidance, controls, FAQ coverage, and discovery content.`} />
           )}
 
-          <footer className="mt-16 pt-8 border-t-2 border-border flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-muted-foreground tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
+          <footer className="mt-16 pt-8 border-t border-amber-700/20 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-muted-foreground tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
             <span>{game.footerTagline ?? `© 2026 ${game.content.title} // FAN LANDING PAGE FOR DISCOVERY`}</span>
             <span className="flex items-center gap-4">
               <Link href="/" className="hover:text-foreground transition-colors">← HOME</Link>
