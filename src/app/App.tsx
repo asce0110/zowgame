@@ -110,6 +110,9 @@ function AppShell() {
           <footer className="mt-16 pt-8 border-t border-amber-700/20 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-muted-foreground tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>
             <span>{game.footerTagline ?? `© 2026 ${game.content.title} // FAN LANDING PAGE FOR DISCOVERY`}</span>
             <span className="flex items-center gap-4">
+              <a href="https://findly.tools/zowgame?utm_source=zowgame" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src="https://findly.tools/badges/findly-tools-badge-dark.svg" alt="Featured on Findly.tools" width="175" height="55" loading="lazy" />
+              </a>
               <Link href="/" className="hover:text-foreground transition-colors">← HOME</Link>
               <Link href="/privacy" className="hover:text-foreground transition-colors">PRIVACY</Link>
               <span className="flex items-center gap-2">

@@ -337,6 +337,9 @@ export function HomePage() {
         <div className="flex flex-col gap-4 rounded-[1.7rem] border border-amber-700/20 bg-secondary p-6 font-black shadow-[0_0_40px_rgba(0,0,0,0.4)] md:flex-row md:items-center md:justify-between">
           <span>© 2026 ZowGame — game aggregation first, wiki where useful.</span>
           <span className="flex items-center gap-4">
+            <a href="https://findly.tools/zowgame?utm_source=zowgame" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <img src="https://findly.tools/badges/findly-tools-badge-dark.svg" alt="Featured on Findly.tools" width="175" height="55" loading="lazy" />
+            </a>
             <Link href="/privacy" className="font-mono text-xs uppercase tracking-[.22em] hover:text-foreground transition-colors">Privacy</Link>
             <span className="font-mono text-xs uppercase tracking-[.22em]">Dark fantasy ✦ game atlas</span>
           </span>
