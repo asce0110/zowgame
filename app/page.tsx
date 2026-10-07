@@ -7,7 +7,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "ZowGame",
   url: "https://zowgame.com",
-  description: "Curated browser game portal with guides. Play free online games instantly, no downloads required.",
+  description: "Independent browser games and player guides, with official download links for downloadable games.",
   sameAs: [],
 };
 
@@ -16,18 +16,13 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "ZowGame",
   url: "https://zowgame.com",
-  description: "Play free browser games online. Survival horror, puzzle, arcade, and roguelite games with guides and instant-play access.",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://zowgame.com/#discover",
-    "query-input": "required name=search_term",
-  },
+  description: "Explore independent games, play browser titles, and find controls, walkthroughs, and survival guides.",
 };
 
 export const metadata: Metadata = {
-  title: "Play Free Browser Games Online | ZowGame",
+  title: "Indie Games & Player Guides",
   description:
-    "Play free browser games instantly on ZowGame. Survival horror, puzzle, arcade — every game includes controls, guides, and tips. No download needed.",
+    "Find your next indie game on ZowGame. Play browser games, explore survival guides and puzzle walkthroughs, or visit official download stores.",
   alternates: { canonical: "https://zowgame.com/" },
 };
 

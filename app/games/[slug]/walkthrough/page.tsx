@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getGameBySlug, getPublishedGames } from "../../../../src/app/data/games";
 import { SubPageLayout, SubSection, HighlightBox } from "../../../../src/app/components/sub-page-layout";
 import { BookOpen } from "lucide-react";
+import { FishesGuidePage, fishesGuideMetadata } from "../../../../src/app/components/fishes-guide-page";
 
 const WALKTHROUGH_GAMES = ["dont-sleep-with-the-fishes", "all-the-gold-in-fort-locks"];
 
@@ -12,6 +13,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "dont-sleep-with-the-fishes") return fishesGuideMetadata("walkthrough");
   const game = getGameBySlug(slug);
   if (!game) return {};
   const desc = slug === "all-the-gold-in-fort-locks"
@@ -50,14 +52,12 @@ const fortLocksStages = [
 
 /* ========== DSWTF walkthrough (simplified) ========== */
 const dswtfStages = [
-  { phase:"Phase 1: Ship Evacuation", detail:"Prioritize: Fishing Rod, Bait, Flare Gun, Anchor, Duct Tape. Food is secondary — you can fish later. Choose ONE crew member." },
-  { phase:"Phase 2: Days 1–3", detail:"Fish daily (Bait + Rod). Eat. Repair if damaged. Chat with shipmate for morale. v1.1.3: Bait only consumed on catch. Duct Tape repair is optional." },
-  { phase:"Phase 3: Days 4–10", detail:"Save Flare Gun and Flashlight for Hope events. Keep Anchor for Giant Squid/Whirlpool. Duct Tape for Eerie Melody/Leak. Track food supply closely." },
-  { phase:"Phase 4: Late Game / Rescue", detail:"Use Flare Gun during Hope events to signal. Flashlight as backup. If pursuing True Ending, investigate Heart of the Sea + Giant Squid." },
 ];
 
 export default async function WalkthroughPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "dont-sleep-with-the-fishes") return <FishesGuidePage pageKey="walkthrough" />;
+  if (!WALKTHROUGH_GAMES.includes(slug)) notFound();
   const game = getGameBySlug(slug);
   if (!game) notFound();
   const isFortLocks = slug === "all-the-gold-in-fort-locks";

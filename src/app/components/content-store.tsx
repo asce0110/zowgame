@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { DEFAULT_CONTENT } from "../data/cobb-can-move-content";
 import type { GameRecord } from "../data/games";
 
@@ -46,14 +46,14 @@ type Ctx = {
 const ContentContext = createContext<Ctx | null>(null);
 
 export function ContentProvider({ children, game }: { children: ReactNode; game: GameRecord }) {
-  const [content, setContentState] = useState<SiteContent>(() => {
-    if (game.slug !== "cobb-can-move") return game.content;
+  const [content, setContentState] = useState<SiteContent>(game.content);
+  useEffect(() => {
+    if (game.slug !== "cobb-can-move") return;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return { ...DEFAULT_CONTENT, ...JSON.parse(raw) };
+      if (raw) setContentState({ ...DEFAULT_CONTENT, ...JSON.parse(raw) });
     } catch {}
-    return game.content;
-  });
+  }, [game.slug]);
 
   const setContent = (c: SiteContent) => {
     setContentState(c);

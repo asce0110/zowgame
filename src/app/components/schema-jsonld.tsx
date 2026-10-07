@@ -12,7 +12,7 @@ export function SchemaJsonLd({ game }: { game: GameRecord }) {
     description: game.content.seoDescription,
     genre: game.schema.genre,
     url: pageUrl,
-    image: game.content.coverImg || `https://zowgame.com${game.ogImage}`,
+    image: new URL(game.content.coverImg || game.ogImage, "https://zowgame.com").href,
     applicationCategory: "Game",
     operatingSystem: game.schema.operatingSystems,
     gamePlatform: game.schema.platforms,

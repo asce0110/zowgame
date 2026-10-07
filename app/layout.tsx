@@ -5,11 +5,11 @@ import "../src/styles/index.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://zowgame.com"),
   title: {
-    default: "ZowGame - Play Free Browser Games Online",
+    default: "ZowGame - Indie Games & Player Guides",
     template: "%s | ZowGame",
   },
   description:
-    "Play fast, free browser games on ZowGame. Start with Cobb Can Move, a tense pixel horror game you can launch instantly online.",
+    "Discover independent games, play browser titles, and get unstuck with player guides and walkthroughs.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f8e9c4",
+  themeColor: "#111716",
   width: "device-width",
   initialScale: 1,
 };

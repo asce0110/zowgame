@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BookOpen, Package, Zap, Flag, HelpCircle, Home } from "lucide-react";
+import { SiteHeader } from "./site-header";
 
 export function SubPageLayout({
   gameTitle,
@@ -31,7 +32,13 @@ export function SubPageLayout({
     { label: "FAQ", href: `${gamePath}faq/`, icon: HelpCircle },
   ];
 
-  const wikiLinks = customWikiLinks || defaultWikiLinks;
+  const availableWikiLinks = gamePath.includes("dont-sleep-with-the-fishes") ? defaultWikiLinks : [
+    { label: "Overview", href: gamePath, icon: Home },
+    { label: "Guide", href: `${gamePath}guide/`, icon: BookOpen },
+    ...(gamePath.includes("all-the-gold-in-fort-locks") ? [{ label: "Walkthrough", href: `${gamePath}walkthrough/`, icon: Zap }] : []),
+    { label: "FAQ", href: `${gamePath}faq/`, icon: HelpCircle },
+  ];
+  const wikiLinks = customWikiLinks || availableWikiLinks;
 
   const isActive = (href: string) => {
     const slug = pageTitle.toLowerCase().replace(/\s+/g, "-");
@@ -39,7 +46,8 @@ export function SubPageLayout({
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "Nunito, sans-serif" }}>
+    <div className="zg-site zg-general-guide min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--zg-body)" }}>
+      <SiteHeader gameTitle={gameTitle} />
       {/* Decorative background */}
       <div className="pointer-events-none fixed inset-0 [background:linear-gradient(rgba(36,49,44,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(36,49,44,.04)_1px,transparent_1px)] [background-size:40px_40px] [mask-image:radial-gradient(ellipse_at_30%_20%,black_40%,transparent_70%)]" />
 

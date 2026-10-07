@@ -99,7 +99,16 @@ export type GameRecord = {
   activityCountLabel?: string;
   quickActionEyebrow?: string;
   quickActionTitle?: string;
+  changelog?: {
+    version: string;
+    date: string;
+    summary: string;
+    sourceUrl?: string;
+    details: { label: string; items: string[] }[];
+  }[];
 };
+
+export type GameChangelogEntry = NonNullable<GameRecord["changelog"]>[number];
 
 const cobbContent: SiteContent = {
   title: "COBB CAN MOVE",
@@ -339,12 +348,12 @@ export const GAMES: GameRecord[] = [
       "Use walls, darkness, and route changes to break pursuit",
     ],
     livePulses: [
-      { icon: "🎮", text: "Keyboard and gamepad both supported", weight: "normal" },
-      { icon: "🕯️", text: "Keep the furnace alive to survive deeper floors", weight: "hot" },
-      { icon: "👁️", text: "Some floors let Cobb see you in open sight lines", weight: "epic" },
-      { icon: "👂", text: "When Cobb can hear, movement discipline matters", weight: "hot" },
-      { icon: "🪵", text: "Collect coal, return safely, and keep moving", weight: "normal" },
-      { icon: "🧩", text: "The rule set changes every level", weight: "epic" },
+      { icon: "NOTE", text: "Keyboard and gamepad both supported", weight: "normal" },
+      { icon: "NOTE", text: "Keep the furnace alive to survive deeper floors", weight: "hot" },
+      { icon: "NOTE", text: "Some floors let Cobb see you in open sight lines", weight: "epic" },
+      { icon: "NOTE", text: "When Cobb can hear, movement discipline matters", weight: "hot" },
+      { icon: "NOTE", text: "Collect coal, return safely, and keep moving", weight: "normal" },
+      { icon: "NOTE", text: "The rule set changes every level", weight: "epic" },
     ],
     schema: {
       developer: "abho",

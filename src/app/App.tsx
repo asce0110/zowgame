@@ -12,6 +12,7 @@ import { MobileTabBar } from "./components/mobile-tabbar";
 import { Toaster } from "./components/ui/sonner";
 import { trackEvent } from "./lib/analytics";
 import type { GameRecord } from "./data/games";
+import { SiteHeader } from "./components/site-header";
 
 function PlaceholderPage({ title, kicker, line }: { title: string; kicker: string; line: string }) {
   return (
@@ -79,7 +80,8 @@ function AppShell() {
   };
 
   return (
-    <div className={`min-h-screen w-full relative overflow-x-hidden bg-background ${isGameFocused ? "game-focus-active" : ""}`} style={{ fontFamily: "Nunito, sans-serif" }}>
+    <div className={`zg-site zg-game-view min-h-screen w-full relative overflow-x-hidden bg-background ${isGameFocused ? "game-focus-active" : ""}`} data-game={game.slug} style={{ fontFamily: "var(--zg-body)" }}>
+      <SiteHeader gameTitle={game.shortTitle} />
       {/* Background pattern — matching homepage */}
       <div className="pointer-events-none fixed inset-0 [background:linear-gradient(rgba(36,49,44,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(36,49,44,.03)_1px,transparent_1px)] [background-size:40px_40px]" />
 
@@ -90,7 +92,7 @@ function AppShell() {
 
         <main className="flex-1 px-4 sm:px-6 py-5 sm:py-8 min-w-0 pb-24 lg:pb-8 md:pl-[268px]">
           {view === "home" ? (
-            <div className="flex flex-col lg:flex-row gap-6 items-start">
+            <div className="zg-game-columns flex flex-col lg:flex-row gap-6 items-start">
               <div className="flex-1 min-w-0 flex flex-col gap-8 sm:gap-10 order-2 lg:order-1">
                 <div className={`game-focus-exempt ${isGameFocused ? "relative z-[130]" : ""}`}>
                   <Hero onPlayRef={registerPlay} onExitRef={registerExit} onPlayingChange={setIsGamePlaying} onFocusModeChange={setIsGameFocused} />

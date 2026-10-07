@@ -74,9 +74,9 @@ export const allTheGoldInFortLocksGame: GameRecord = {
     "Walkthrough based on community solutions and developer hints.",
   ],
   livePulses: [
-    { icon: "🔑", text: "6 colored keys: Blue, Green, Orange, Red, Purple, Yellow.", weight: "normal" },
-    { icon: "🚪", text: "Core mechanic: Doors are portals to overlapping rooms.", weight: "hot" },
-    { icon: "🧩", text: "Red/Purple key sequence is the hardest puzzle. Order matters.", weight: "epic" },
+    { icon: "NOTE", text: "6 colored keys: Blue, Green, Orange, Red, Purple, Yellow.", weight: "normal" },
+    { icon: "NOTE", text: "Core mechanic: Doors are portals to overlapping rooms.", weight: "hot" },
+    { icon: "NOTE", text: "Red/Purple key sequence is the hardest puzzle. Order matters.", weight: "epic" },
   ],
   schema: {
     developer: "Draknek & Friends",

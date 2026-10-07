@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import App from "../../../src/app/App";
+import { FishesOverview } from "../../../src/app/components/fishes-guide-page";
 import { getGameBySlug, getPublishedGames } from "../../../src/app/data/games";
 
 export function generateStaticParams() {
@@ -36,5 +37,6 @@ export default async function GamePage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const game = getGameBySlug(slug);
   if (!game) notFound();
+  if (slug === "dont-sleep-with-the-fishes") return <FishesOverview game={game} />;
   return <App game={game} />;
 }

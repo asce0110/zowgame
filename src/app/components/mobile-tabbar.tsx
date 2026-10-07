@@ -31,7 +31,7 @@ export function MobileTabBar({
   };
 
   return (
-    <nav aria-label="Primary navigation" className="lg:hidden fixed bottom-0 left-0 right-0 z-40" style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 10px)" }}>
+    <nav aria-label="Primary navigation" className="zg-mobile-tabs lg:hidden fixed bottom-0 left-0 right-0 z-40" style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 10px)" }}>
       <div className="mx-3 mb-3 rounded-[22px] border-2 border-foreground bg-card overflow-visible shadow-[5px_5px_0_#24312c]">
         <div className="grid grid-cols-3 pt-2 pb-2">
           {tabs.map((t) => {
