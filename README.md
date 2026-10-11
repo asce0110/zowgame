@@ -1,8 +1,16 @@
 # ZowGame
 
-ZowGame is a browser game website focused on fast online play, clear game information, and helpful player guides.
+ZowGame helps players discover browser, download and tabletop games, with independent guides and links to their original creators.
 
-The site currently features **Cobb Can Move**, a pixel survival horror browser game where players explore a dark dungeon, collect coal, keep the light alive, and survive Cobb as the rules change.
+The library includes **Cobb Can Move**, **Don't Sleep With The Fishes**, **All the Gold in Fort Locks**, and MinaLima's physical **Defenders of Hogwarts** board game.
+
+## Defenders of Hogwarts player guide
+
+[Read the Defenders of Hogwarts rules and player guide](https://www.zowgame.com/games/defenders-of-hogwarts/).
+
+The guide identifies MinaLima's physical Harry Potter game and explains setup, House and Dark Arts turns, movement, resource collection and win conditions. Forty searchable answers cover common rules questions, editions, ordering and support. Printed-page references link to the official rulebook, and planning suggestions are marked as deductions from the rules rather than playtest results.
+
+Readers searching for "Harry Potter Defenders RPG game" can also check the distinction between this tabletop game and a digital RPG. Publisher availability and delivery notes are dated October 12, 2026; follow the linked official sources for current information.
 
 ## Live URLs
 
