@@ -1,6 +1,15 @@
 import { GameRecord } from "../data/games";
 
 export function SchemaJsonLd({ game }: { game: GameRecord }) {
+  if (game.accessMode === "tabletop") {
+    const pageUrl = `https://zowgame.com${game.canonicalPath}`;
+    const schema = [
+      { "@context": "https://schema.org", "@type": "Article", headline: game.content.seoTitle, description: game.content.seoDescription, url: pageUrl, ...(game.lastUpdated ? { dateModified: game.lastUpdated } : {}), image: new URL(game.cardImage || game.ogImage, "https://zowgame.com").href, author: { "@type": "Organization", name: "ZowGame", url: "https://zowgame.com/" }, about: { "@type": "Game", name: game.shortTitle, creator: { "@type": "Organization", name: game.schema.developer } } },
+      { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: game.content.faqs.map((faq) => ({ "@type": "Question", name: faq.q, acceptedAnswer: { "@type": "Answer", text: faq.a } })) },
+      { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://zowgame.com/" }, { "@type": "ListItem", position: 2, name: game.shortTitle, item: pageUrl }] },
+    ];
+    return <script id={`schema-${game.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />;
+  }
   const ratingValue = parseFloat(game.content.rating) || 0;
   const pageUrl = `https://zowgame.com${game.canonicalPath}`;
   const isDownloadGuide = game.accessMode === "download";

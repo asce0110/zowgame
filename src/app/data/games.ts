@@ -1,6 +1,7 @@
 import type { SiteContent } from "../components/content-store";
 import { dontSleepWithTheFishesGame } from "./dont-sleep-with-the-fishes";
 import { allTheGoldInFortLocksGame } from "./all-the-gold-in-fort-locks";
+import { defendersOfHogwartsGame } from "./defenders-of-hogwarts";
 
 export type GameFaqItem = {
   q: string;
@@ -61,11 +62,12 @@ export type GameRecord = {
   canonicalPath: string;
   ogImage: string;
   cardImage?: string;
+  lastUpdated?: string;
   keywords: string[];
   heroBadges: string[];
   primaryCtaLabel: string;
   secondaryCtaLabel: string;
-  accessMode?: "browser" | "download";
+  accessMode?: "browser" | "download" | "tabletop";
   externalSourceUrl?: string;
   topBarEyebrow: string;
   topBarTitle: string;
@@ -415,6 +417,7 @@ export const GAMES: GameRecord[] = [
   },
   dontSleepWithTheFishesGame,
   allTheGoldInFortLocksGame,
+  defendersOfHogwartsGame,
 ];
 export function getGameBySlug(slug: string) {
   return GAMES.find((game) => game.slug === slug);

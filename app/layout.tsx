@@ -5,11 +5,11 @@ import "../src/styles/index.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://zowgame.com"),
   title: {
-    default: "ZowGame - Indie Games & Player Guides",
+    default: "ZowGame - Games & Player Guides",
     template: "%s | ZowGame",
   },
   description:
-    "Discover independent games, play browser titles, and get unstuck with player guides and walkthroughs.",
+    "Discover browser, download and tabletop games, and get unstuck with independent player guides and walkthroughs.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

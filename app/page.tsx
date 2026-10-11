@@ -7,7 +7,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "ZowGame",
   url: "https://zowgame.com",
-  description: "Independent browser games and player guides, with official download links for downloadable games.",
+  description: "Independent game guides for browser, download and tabletop games, with links to their official creators.",
   sameAs: [],
 };
 
@@ -16,13 +16,13 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "ZowGame",
   url: "https://zowgame.com",
-  description: "Explore independent games, play browser titles, and find controls, walkthroughs, and survival guides.",
+  description: "Explore browser, download and tabletop games. Find first-session guides, walkthroughs and survival manuals.",
 };
 
 export const metadata: Metadata = {
-  title: "Indie Games & Player Guides",
+  title: "Games & Player Guides — Defenders of Hogwarts",
   description:
-    "Find your next indie game on ZowGame. Play browser games, explore survival guides and puzzle walkthroughs, or visit official download stores.",
+    "Looking for the Harry Potter Defenders RPG game? Explore MinaLima's Defenders of Hogwarts board game, browser games, survival guides and puzzle walkthroughs.",
   alternates: { canonical: "https://zowgame.com/" },
 };
 
