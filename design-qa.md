@@ -89,3 +89,50 @@ Scope: extend the selected editorial direction and existing tabletop topic into 
 Extension: add new verified questions with their direct source links in the shared data. Extend search term normalization only for real reader queries. Keep official rules, editorial deductions and dated buying information distinguishable. Re-check the source date and source links when publisher rules or availability change.
 
 2026-10-12 guide result: passed, with the existing repository type-check limitation above.
+
+## 2026-10-12 — AION 2 Steam launch stats
+
+Scope: an existing-homepage entry and `/games/aion-2/steam-launch-stats/`. The first release uses official Steam current-player, Most Played and official-announcement feeds; complete historical charts open at SteamDB. There is no local historical sampling database.
+
+Art direction: extend the portal's pine, bone and lime palette with its existing Barlow Condensed / DM Sans / JetBrains Mono pairing. The signature is a large, dated current-player reading beside separately labeled daily and historical peaks. Ruled sections, a numbered directory and restrained link/refresh feedback preserve the editorial rhythm. Shared tokens drive focus, loading, warning and surface states; motion respects reduced-motion preferences.
+
+Data and content: AppID 3393110 only. Steam/PURPLE, main game/Playtest and test/early access/global launch are explicitly distinguished. The 397,905 historical reference is attributed to SteamDB and remains dated October 5, checked October 12, 2026; it is not presented as a live all-time record or a verified first-24-hour maximum. The page includes a launch timeline, ten FAQs, source links and dated official news titles with short previews.
+
+Verification:
+
+- Final production Next build succeeded: 28 prerendered pages, the new static topic and a dynamic `/api/aion-2` route. The bundled pnpm wrapper attempted a modules purge without a TTY, so validation used the same installed Next binary directly with `ZOW_BUILD_DIR=.next-verify`, preserving the running dev server.
+- Ten server tests passed, covering cache/in-flight reuse, stale expiry/recovery, independent partial failures, absent/invalid chart entries, safe integer counts including legitimate zero, upstream HTTP/JSON failure, official news URL/source validation and empty feeds.
+- Actual local API returned 200 with ready current-player and daily-peak readings plus six official announcements. Observation time and Steam chart update time are separate. Each source uses a ten-minute process cache; a failed refresh retains its original time for up to an hour. This cache is not historical storage and does not persist across server instances.
+- HTTP HTML contains the exact topic, canonical, ten visible native FAQ details and the same ten-question FAQ schema. The sitemap includes the canonical topic. API responses use no-store and noindex headers.
+- Live browser checks confirmed the homepage entry and AION search result, existing Browser (two games), Tabletop (one game) and all-game (four games) filters, section navigation and native FAQ keyboard expansion with a visible 2 px focus outline. Both homepage and topic had no horizontal overflow at desktop, tablet and 320 px; 390 px homepage was also checked.
+- Homepage requests have a 15-second client timeout with failure/retry recovery; topic handles loading, offline, partial feeds, empty news and old readings. Network/source failure paths were verified in service tests; device-offline UI was not forced in this browser run.
+- SteamDB's standalone licensed widget displayed previously, but the actual topic iframe failed with connection reset. The final release removes the iframe and uses a direct full-history link, matching the confirmed first-release scope and avoiding a browser error panel.
+- Independent review found no P1 issues. The homepage timeout finding was corrected; the suspected narrow navigation overflow did not reproduce at 320 px. `git diff --check` passed. No dependency was added.
+- Separate final TypeScript checking reports the same three pre-existing diagnostics in `particle-bg.tsx` and `game-input.test.ts`; none reference the new feature. Repository-wide clean typing/linting is not claimed because Next currently skips those gates.
+
+Extension: add durable sampling only with an explicit storage and scheduled-collection plan. Never backfill unobserved historical points from a current-count endpoint. Keep source times, delayed/unavailable labels and statistical scope alongside future graphs; validate any third-party embed inside the actual topic before enabling it. These checks cover local validation before publication; production deployment is outside their scope.
+
+## 2026-10-12 — AION 2 update explanations and player help
+
+Scope: extend the existing stats topic so readers can understand official notices and complete common checks within ZowGame. The main keyword still targets Steam launch performance: current players, launch peak, the historical trend and release boundaries. Player troubleshooting is a supporting section after the data and news. The original art direction, fonts, tokens and large dated count remain in place.
+
+Content:
+
+- Five original, dated explanations cover six checked Steam notices: Nezekan resolved issues, transfer planning and Q&A, restrictions versus security locks, EU compensation, and new EU servers. Each has its direct source and a checked date. The six current feed headlines open their matching local explanation; future unreviewed notices keep their original source link.
+- Eight searchable help guides cover login, PC launch/crashes, Block Codes, characters after account relinking, transfer availability, transfer preparation, account review and compensation. Official facts and the editorial order of checks are distinguished. Configuration requirements, published PDT application windows, the affected EU server list and the mailed chest contents are available locally.
+- Nezekan's report is identified as resolved, not a current outage. Transfers open after the specified maintenance, not an invented midnight. The schedule retains PDT because the source's CEST/CET labels span Europe's clock change. No individual restriction reason, guaranteed repair, compensation deadline or confirmed delivery is invented.
+- A blank support checklist can be copied or selected manually if copying fails. No inquiry is submitted by the site. Account decisions and recovery stay with the official support team.
+
+Verification:
+
+- Final isolated Next production build succeeded with 28 prerendered pages. Generated HTML contains five explanations, all 18 native questions, matching 18-question FAQ schema, the canonical and the help text before hydration. Every static fragment link resolves.
+- Ten existing data-service tests passed. Actual local topic and API returned 200, with a ready dated Steam count and six official announcements.
+- Separate final repository TypeScript validation reports only the same three existing errors in `particle-bg.tsx` and `game-input.test.ts`. New feature files have no diagnostics; Next still skips full lint/type gates.
+- Live browser searches verified `I can’t log in`, `The game keeps crashing`, `I can’t find my character`, `How do I change servers?`, `Block Code 1005` and an unknown non-Latin query. The first relevant guide appears first for the crash, missing-character, transfer and Block Code cases. The empty state restores all help and focuses the input.
+- Keyboard Enter expands a guide with a visible 2 px focus outline. A news-to-transfer link clears an Accounts filter and query, restores eight guides, opens the destination and moves focus to its heading. The support-checklist copy succeeded in the browser. Clipboard-denial recovery is implemented as visible selectable text but was not forced in this run.
+- Desktop, 768 px, 390 px and 320 px layouts have no page-level horizontal overflow. Help controls measured at least 44 px. The three-column PC requirements table was replaced by labeled minimum/recommended rows below 560 px after narrow-screen inspection; labels and values remain intact. Compensation and transfer tables remain within the content width.
+- The changed homepage entry stays within a 320 px viewport and its Stats & player help link opens the actual topic. No browser page or hydration errors were observed during these checks.
+
+Extension: update the checked editorial data when an official notice changes; do not let a refreshed feed timestamp imply that manual help content was re-verified. Own historical curves still need a durable database and background scheduler. The process cache and visitor polling cannot provide historical coverage. Local validation does not establish production deployment.
+
+Publication preparation: the user requested GitHub synchronization on October 12. A fresh production build and all ten data-service tests passed; the same three existing repository TypeScript diagnostics remain. The release targets `origin/main` and requires the existing Next.js server runtime for `/api/aion-2/`.

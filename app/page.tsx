@@ -20,9 +20,9 @@ const websiteSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Games & Player Guides — Defenders of Hogwarts",
+  title: "Games, Player Guides & Steam Stats",
   description:
-    "Looking for the Harry Potter Defenders RPG game? Explore MinaLima's Defenders of Hogwarts board game, browser games, survival guides and puzzle walkthroughs.",
+    "Explore AION 2 Steam launch stats, the Harry Potter Defenders RPG game explained, browser games, survival guides and puzzle walkthroughs.",
   alternates: { canonical: "https://zowgame.com/" },
 };
 

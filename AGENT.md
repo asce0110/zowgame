@@ -4,7 +4,7 @@
 - Name: ZowGame
 - Stack: Next.js 15, React 18, TypeScript, App Router
 - Package manager: pnpm
-- Build mode: static export via `next build`
+- Build mode: Next.js server build via `next build`; most content routes are prerendered
 - Primary purpose: browser game landing pages with playable embeds, clear guides, and SEO-friendly game detail pages
 
 ## Commands
@@ -17,7 +17,7 @@
 - Homepage route is `/`
 - Game detail pages should use the shared dynamic route pattern under `/games/[slug]/`
 - Legacy routes may exist temporarily for redirects, but new game pages should not create fresh one-off top-level routes unless explicitly requested
-- Because the site uses static export, any dynamic route must support build-time generation
+- Published game content should support build-time generation where possible
 - For dynamic game pages, ensure `generateStaticParams()` covers every published game slug
 
 ## SEO Rules
@@ -43,13 +43,13 @@
 - Avoid redesigning unrelated sections when implementing focused changes
 - Prefer targeted edits over broad rewrites
 
-## Static Export Constraints
+## Runtime Constraints
 - `next.config.mjs` uses:
-  - `output: 'export'`
+  - server output (static export is disabled)
   - `trailingSlash: true`
   - `images.unoptimized: true`
-- Do not introduce features that require a server runtime unless explicitly approved
-- Be careful with App Router features that are incompatible with static export
+- The AION 2 live-data route requires a Next.js server runtime; serving only the generated HTML cannot provide its live feed
+- Keep content pages prerendered, and isolate upstream requests, caching and failure handling in API routes
 
 ## Hydration and Client-State Rules
 - Avoid SSR/client mismatches
