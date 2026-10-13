@@ -136,3 +136,32 @@ Verification:
 Extension: update the checked editorial data when an official notice changes; do not let a refreshed feed timestamp imply that manual help content was re-verified. Own historical curves still need a durable database and background scheduler. The process cache and visitor polling cannot provide historical coverage. Local validation does not establish production deployment.
 
 Publication preparation: the user requested GitHub synchronization on October 12. A fresh production build and all ten data-service tests passed; the same three existing repository TypeScript diagnostics remain. The release targets `origin/main` and requires the existing Next.js server runtime for `/api/aion-2/`.
+
+## 2026-10-12 — Krillion game and guide
+
+Scope: add a homepage entry, `/games/krillion/`, `/games/krillion/guide/` and `/games/krillion/faq/`. Original gameplay opens at krillion.io. ZowGame provides an independent rules guide, seven-step answer strategy, ten searchable FAQs, the current official prompt preview and a seven-answer score calculator. It does not provide a verified daily answer bank or a cloned playable game.
+
+Art direction: extend the portal's pine, bone and lime editorial system, using its existing Anton / Barlow Condensed / DM Sans / JetBrains Mono typography and named tokens. A real original-game screenshot accompanies an asymmetric hero. The functional signature is the depth calculator: selected answer tiers update the total points, depth and progress reading. Ruled sections, a numbered directory, restrained feedback and reduced-motion support preserve the shared rhythm. Layout breakpoints at 1100, 800 and 560 px retain the section hierarchy.
+
+Sources and boundaries:
+
+- The original home page and FAQ were checked on October 12. Daily rules are seven prompts, 25 seconds per answer and one daily attempt; 700 points yields 7,000 m. The six accepted-answer tiers are 10/15/30/60/85/100 points. Rarity is curated, not a live measure of today's player answer frequency. Creator credit uses the official pseudonym kp. No fabricated review score, user count or paid-mode price appears.
+- Only the public `/api/today` prompt summary is read. Answers and hidden question banks are not fetched. The seven prompts remain hidden until readers choose to reveal them. The page labels this as a question preview and directs answer review to the original game.
+- The upstream endpoint is not a documented stable public API. Five-minute process caching, request timeout, coalescing, a short failure backoff and explicit recovery states handle unavailable data. Stale data is allowed for at most an hour and only before the same New York game date/reset expires. It is never presented as a new day's set.
+- Reset follows America/New_York midnight, including daylight saving changes. Observation time, game date and UTC reset time are separate. The cache is not persistent history storage.
+- Original-game response headers currently restrict framing to the same origin. PlayDaily's inspected page renders its own hosted game without an iframe, with different scoring and additional modes. Its code origin and authorization were not established; no such conclusion is published on ZowGame.
+
+Verification:
+
+- Final isolated production build passed with 31 prerendered routes, including all three Krillion pages and the dynamic `/api/krillion` endpoint. No dependency was added.
+- Ten server tests passed: public-field validation, cache/in-flight reuse, stale expiry/backoff/recovery, New York midnight, UTC date boundaries, requests crossing reset, daylight saving, expired resets, malformed data and HTTP/JSON/network failures.
+- Actual browser preview retrieved Dive #89 and its seven prompts. Reveal/hide works. Seven 100-point answers produce 7,000 m / 700 points; a mixed 100/85/60/30/15/10/0 set produces 3,000 m / 300 points. Reset restores the empty selection.
+- FAQ search for spelling returns the intended question. An unknown query shows a contextual recovery state; Show all restores ten answers. Native disclosure keyboard expansion and the visible 2 px focus outline passed. Guide navigation reaches the actual guide route. Homepage search finds Krillion, and its entries use the game-and-guide CTA.
+- Actual visible-tab viewport checks at 1280, 1100, 768, 390 and 320 px show no page-level horizontal overflow. Native calculator selects measure 46 px tall. The homepage and guide also remain within the 320 px viewport. Temporary viewport overrides were reset after testing.
+- Browser error/warning logs were empty during final inspection. Service failure and reset behavior were tested; device-offline and denied-network UI were not forced in the browser.
+- Independent review confirmed canonical URLs, sitemap and visible FAQ/schema alignment. Krillion emits no aggregateRating. The metadata promises daily rules and help rather than verified daily answers. `git diff --check` passed.
+- Separate TypeScript validation reports only the same three existing diagnostics in particle-bg.tsx and game-input.test.ts. Next skips the repository type/lint gates; a fully clean repository check is not claimed.
+
+Extension: retain the official source date and explicit game/guide boundary. A locally playable practice game would require independently authored code and questions, with separate identity and scoring claims. A future daily answer service needs a verified editorial source and date discipline. These checks establish local validation; production deployment is outside their scope.
+
+Publication preparation, October 13: the user requested GitHub synchronization. A fresh isolated production build passed with 31 prerendered routes, and all 20 Krillion/AION data-service tests passed. Independent release-scope review found no blocking issue or sensitive data. Separate TypeScript validation still reports only the same three existing repository diagnostics. The target is origin/main, and the daily preview requires the existing Next.js Node server runtime.

@@ -22,7 +22,7 @@ const websiteSchema = {
 export const metadata: Metadata = {
   title: "Games, Player Guides & Steam Stats",
   description:
-    "Explore AION 2 Steam launch stats, the Harry Potter Defenders RPG game explained, browser games, survival guides and puzzle walkthroughs.",
+    "Explore Krillion daily trivia and rare-answer guides, AION 2 Steam launch stats, the Harry Potter Defenders RPG game explained, survival games and puzzle walkthroughs.",
   alternates: { canonical: "https://zowgame.com/" },
 };
 

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import App from "../../../src/app/App";
 import { FishesOverview } from "../../../src/app/components/fishes-guide-page";
 import { TabletopGamePage } from "../../../src/app/components/tabletop-game-page";
+import { KrillionGamePage, krillionMetadata } from "../../../src/app/components/krillion-game-page";
 import { getGameBySlug, getPublishedGames } from "../../../src/app/data/games";
 
 export function generateStaticParams() {
@@ -11,6 +12,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "krillion") return krillionMetadata("overview");
   const game = getGameBySlug(slug);
   if (!game) return {};
 
@@ -38,6 +40,7 @@ export default async function GamePage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const game = getGameBySlug(slug);
   if (!game) notFound();
+  if (slug === "krillion") return <KrillionGamePage />;
   if (game.accessMode === "tabletop") return <TabletopGamePage game={game} />;
   if (slug === "dont-sleep-with-the-fishes") return <FishesOverview game={game} />;
   return <App game={game} />;

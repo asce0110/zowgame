@@ -3,10 +3,12 @@ import { notFound } from "next/navigation";
 import { getGameBySlug, getPublishedGames } from "../../../../src/app/data/games";
 import { SubPageLayout, SubSection } from "../../../../src/app/components/sub-page-layout";
 import { FishesGuidePage, fishesGuideMetadata } from "../../../../src/app/components/fishes-guide-page";
+import { KrillionGamePage, krillionMetadata } from "../../../../src/app/components/krillion-game-page";
 
 export function generateStaticParams() { return getPublishedGames().filter((game) => game.accessMode !== "tabletop").map((game) => ({ slug: game.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "krillion") return krillionMetadata("guide");
   if (slug === "dont-sleep-with-the-fishes") return fishesGuideMetadata("guide");
   const game = getGameBySlug(slug);
   if (!game || game.accessMode === "tabletop") return {};
@@ -14,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "krillion") return <KrillionGamePage pageKey="guide" />;
   if (slug === "dont-sleep-with-the-fishes") return <FishesGuidePage pageKey="guide" />;
   const game = getGameBySlug(slug);
   if (!game || game.accessMode === "tabletop") notFound();

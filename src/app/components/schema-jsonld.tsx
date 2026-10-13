@@ -40,18 +40,18 @@ export function SchemaJsonLd({ game }: { game: GameRecord }) {
       price: game.schema.price,
       priceCurrency: game.schema.priceCurrency,
       availability: "https://schema.org/InStock",
-      url: isDownloadGuide && game.externalSourceUrl ? game.externalSourceUrl : pageUrl,
+      url: game.externalSourceUrl || pageUrl,
     },
-    aggregateRating: {
+    ...(ratingValue >= 1 && ratingValue <= 5 && game.schema.ratingCount > 0 ? { aggregateRating: {
       "@type": "AggregateRating",
       ratingValue,
       bestRating: 5,
       worstRating: 1,
       ratingCount: game.schema.ratingCount,
-    },
+    } } : {}),
   };
 
-  const webPage = isDownloadGuide
+  const webPage = isDownloadGuide || game.externalSourceUrl
     ? {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -98,7 +98,7 @@ export function SchemaJsonLd({ game }: { game: GameRecord }) {
     <script
       id={`schema-${game.slug}`}
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify([videoGame, ...(webPage ? [webPage] : []), faqPage, breadcrumb]) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify([videoGame, ...(webPage ? [webPage] : []), faqPage, breadcrumb]).replace(/</g, "\\u003c") }}
     />
   );
 }
