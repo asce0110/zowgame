@@ -1,4 +1,6 @@
-# Design QA — ZowGame editorial homepage
+# Design QA — ZowGame
+
+Latest review: **2026-10-17 Level Select production**, appended at the end of this file. Earlier entries are retained as historical reviews and do not describe the current homepage.
 
 Date: 2026-10-11. This report supersedes the first implementation review.
 
@@ -8,14 +10,14 @@ Selected direction 1: a game editorial desk. Charcoal/pine surfaces, bone-white 
 
 ## Current comparison evidence
 
-- Source visual truth: `C:/Users/Administrator/.codex/generated_images/01a1147b-eae2-7dd2-99d0-cbc7a1f45493/exec-e9a4bee7-0268-4bec-8159-d2a70e128716.png` (1229 × 1280).
+- Source visual truth: `local archive: exec-e9a4bee7-0268-4bec-8159-d2a70e128716.png` (1229 × 1280).
 - Implementation URL: `http://127.0.0.1:3000/`.
-- Latest browser render: `C:/Users/Administrator/.codex/visualizations/2026/10/07/01a1147b-eae2-7dd2-99d0-cbc7a1f45493/homepage-final.png` (1219 × 1562).
+- Latest browser render: `local archive: homepage-final.png` (1219 × 1562).
 - Viewport: 1229 × 1280; default all-games state; four games and all images loaded. The browser scrollbar accounts for the 10 px content-width difference.
-- Full comparison: `C:/Users/Administrator/.codex/visualizations/2026/10/07/01a1147b-eae2-7dd2-99d0-cbc7a1f45493/comparison-full.png`. Reference left, latest browser render right, equal 700 px widths.
-- Focused comparison: `C:/Users/Administrator/.codex/visualizations/2026/10/07/01a1147b-eae2-7dd2-99d0-cbc7a1f45493/comparison-hero.png`. Both features normalized to 842 px width, preserving their natural heights.
+- Full comparison: `local archive: comparison-full.png`. Reference left, latest browser render right, equal 700 px widths.
+- Focused comparison: `local archive: comparison-hero.png`. Both features normalized to 842 px width, preserving their natural heights.
 - Both combined images were opened and reviewed after the final poster refinements.
-- Latest mobile capture: 390 × 844 viewport, 380 × 3712 content. Focused evidence: `C:/Users/Administrator/.codex/visualizations/2026/10/07/01a1147b-eae2-7dd2-99d0-cbc7a1f45493/mobile-preview.png`. Tablet 768 px and small phone 320 px widths were also checked.
+- Latest mobile capture: 390 × 844 viewport, 380 × 3712 content. Focused evidence: `local archive: mobile-preview.png`. Tablet 768 px and small phone 320 px widths were also checked.
 
 ## Findings and patches
 
@@ -165,3 +167,194 @@ Verification:
 Extension: retain the official source date and explicit game/guide boundary. A locally playable practice game would require independently authored code and questions, with separate identity and scoring claims. A future daily answer service needs a verified editorial source and date discipline. These checks establish local validation; production deployment is outside their scope.
 
 Publication preparation, October 13: the user requested GitHub synchronization. A fresh isolated production build passed with 31 prerendered routes, and all 20 Krillion/AION data-service tests passed. Independent release-scope review found no blocking issue or sensitive data. Separate TypeScript validation still reports only the same three existing repository diagnostics. The target is origin/main, and the daily preview requires the existing Next.js Node server runtime.
+
+## 2026-10-14 — Hood Warfare 2 Chinese guide and official data
+
+Scope: a homepage entry, searchable catalog game and eight canonical pages under `/games/hood-warfare-2/`: overview, purchase, guide, weapons, maps, modes, news and FAQ. The Chinese player manual extends the approved ZowGame editorial design. Pine, bone and lime tokens, Anton/Barlow identity, Noto Serif SC / Noto Sans SC reading, real official game screenshots and ruled sections preserve the site narrative. The functional signature is a six-mode objective briefing; the first-match checklist saves eight steps on the same browser.
+
+Sources: Steam App 5155360, Trapstar Games only, checked October 14. All six officially described modes are covered. Four store scene descriptions do not prove a complete map list; the supermarket patch mention is not counted as a fifth map. Weapon progression and four attachment categories are explained, while full gun names, damage, TTK, unlock levels and killstreak thresholds remain unverified. Editorial practice advice is distinguished from official objectives. No first-hand playtest, review rating or complete weapon/map database is claimed. Three developer announcements have original Chinese explanations, separate checked dates and Beijing publication times.
+
+Automatic updates: one dynamic Node API synchronizes the Steam developer feed and CN app details independently. It exposes actual observation times and separate ready/stale/unavailable states. Ten-minute warm caches, one-hour stale expiry, source timeouts, coalescing and short failure backoff are tested. The shared client checks on entry, every ten minutes while visible, and on return/reconnection; it has loading, failure, empty and retry states. The hero derives the latest announcement from this feed. Price, discount, platforms, language and minimum/recommended requirements update on the purchase page. CNY integer-cent validation prevents absent prices becoming zero. This is visitor-driven synchronization, not persistent historical collection or a background scheduler. Server hosting and outbound access to Steam are required. The user chose original news synchronization and manual Chinese review: new notices retain their original title/preview and a pending-review label rather than pretend to be reviewed translations.
+
+Verification:
+
+- The isolated production build passed with 39 prerendered pages and the dynamic API. Generated HTML contains all eight canonicals, all sitemap entries, native guide content and 22 visible FAQ disclosures matching 22 schema questions. No fictional offers or aggregate ratings are emitted.
+- All 40 AION/Krillion/Hood news/Hood store service tests passed, including cache/stale recovery, source validation, partial failures, legitimate zero/unknown price distinctions and actual combined-route response statuses/headers.
+- The local combined API returned HTTP 200 with three ready official announcements and independently dated CN store fields. The purchase page displayed the returned price, discount, Windows, English and both requirement lists. Manual refresh worked and retained the real source cache time.
+- Live browser navigation checked all eight pages. Six mode controls worked with keyboard focus; the checklist restored two checked steps after reload and reset to zero. FAQ search matched voice help, unknown-query recovery restored all 22 answers, and keyboard Enter opened a native disclosure with a visible 2 px outline. Announcement links reached their matching local explanation and preserved the sticky-navigation offset.
+- Homepage search for `hood warfare 2` returned the one intended game from six. Clear restored six; the dedicated homepage entry opened the actual topic. Its desktop FPS mark did not overlap the copy. The catalog CTA now opens the overview with buying and guide entry points.
+- Actual desktop, 1100 px, 768 px, 390 px and 320 px geometry checks showed no page-level horizontal overflow. Purchase configuration panels stack on narrow screens; native screenshots confirmed readable mobile price and configuration layout. Checkbox labels measured 52 px, navigation 48 px and refresh controls 44 px. Reduced-motion and image-failure recovery are implemented. Source-failure paths were verified in service tests; device-offline UI was not forced in the browser.
+- Existing Krillion and new Hood screenshots were compared for inherited typography, palette, rule lines and button language. This is a topic extension with original Chinese layout, not a pixel clone. Temporary viewport overrides were reset before handoff.
+- Independent code review found no P1/P2 issues in provider lifecycles, late-request isolation, expiry, partial failures, metadata or keyboard behavior. During implementation, intermediate hot-reload errors were resolved after the provider/import integration. A fresh final reload retrieved the latest official announcement and produced no new browser errors or warnings.
+- TypeScript checking still reports only the same three existing diagnostics in `particle-bg.tsx` and `game-input.test.ts`. Next skips full type/lint gates; repository-wide clean typing is not claimed. No dependency was added. These are local checks, not proof of GitHub publication or production deployment.
+
+Extension: add verified weapon or map records with their direct source and version. Keep new original announcements automatic and Chinese interpretations separately dated. Durable history or unattended collection requires a separate persistence and scheduling implementation. Do not let live timestamps imply that static guide advice was rechecked.
+
+## 2026-10-14 — Hood Warfare 2 English presentation
+
+The user changed the complete Hood topic and its homepage entries to English. All eight page bodies, guide steps, mode/map/weapon descriptions, 22 FAQs, three reviewed patch summaries, navigation, image descriptions, interaction states, recovery copy and metadata now use English. HTML and structured data use `en`, with Open Graph `en_US`. Chinese font overrides were removed in favor of the existing Anton / Barlow Condensed / DM Sans system. English headlines and short navigation labels preserve the original layout. Announcement dates still retain their explicit UTC+8 scope; CN/CNY prices remain clearly labeled because this was a language change, not a region change.
+
+Verification: the final isolated production build passed with 39 prerendered pages. Generated HTML for all eight pages and the homepage contains no Chinese visitor text; canonicals remain valid, metadata/schema languages are English, and 22 FAQ disclosures match the 22-question English schema. All 20 Hood news/store service tests passed. TypeScript checking reports only the same three pre-existing repository errors, outside the Hood feature. Source files and `git diff --check` passed the final language/whitespace scan.
+
+Actual browser checks confirmed the English homepage entry and matching search result, voice-help search, native keyboard expansion, empty-result recovery and restoration of all 22 answers. The FAQ input now has a stable accessible name even when its Clear button appears. The six-mode briefing remained keyboard-operable. Current official price, region, platform, language and field-by-field configuration readings display in English. The latest official four-part version `1.0.1.4` is shown in full, correcting the previous truncation while retaining `1.0.10` support. Unreviewed announcements show an official excerpt and a pending editorial-review label; automatic retrieval labels are distinct from manual review dates.
+
+Desktop, 768 px and 320 px layouts showed no horizontal overflow. Native mobile screenshots verified navigation, the longer latest-announcement title and stacked configuration panels; refresh targets measured 44 px. A fresh loaded FAQ produced no new browser errors or warnings. Temporary viewport overrides were reset, and the English overview was left as the local preview deliverable. No source cache, request cadence, stored checklist key or external publication changed in this language pass.
+
+## 2026-10-14 — Compact homepage game-library cards
+
+The homepage library now uses section-scoped size, title, padding and gap tokens. Actual desktop cards measure 260 px high instead of 320 px; tablet cards measure 250 px instead of 295 px, and narrow cards 260 px instead of 310 px. Existing four/two/one-column layouts and the cover-image visual language remain. Descriptions show a three-line preview, and long genre labels use a single-line ellipsis; full titles, source copy and destination links remain in the document. Reduced padding and smaller headings retain the existing body-copy size and 44 px guide-link target.
+
+The final isolated build passed with 39 prerendered pages. Default desktop and 768/320 px browser checks showed no horizontal overflow. All six cards matched their intended height; narrow-screen type badges and genre labels had at least 10 px of clearance after inspection. A title link opened the actual Hood Warfare 2 page. Native before/after screenshots were compared at the same default viewport and library anchor. Viewport overrides were reset and the deliverable was positioned at `/#library`. This pass changed only library CSS and this QA record; no functional service tests were added for this style adjustment.
+
+Further size adjustment: the user requested smaller cards again. The library now uses six desktop columns, three tablet columns and two mobile columns. At the default 1280 px viewport, actual cards measure 193 × 220 px, compared with 292 × 260 px in the previous compact version. Titles use 22 px, summaries show two lines and CTA spacing is reduced while the 44 px target remains. The cards reserve top space for format badges and allow natural height growth for long titles; 320 px cards measure 130 px wide and 220–243 px high, with all badges inside their cards and at least 18 px of clearance from the copy. Full titles and links remain visible. No page overflow was observed at 1280, 768 or 320 px. The final isolated production build passed with 39 prerendered pages; before/after screenshots were compared at the same desktop library anchor and viewport overrides were reset.
+
+
+## 2026-10-17 — Quest Atlas collection redesign (current)
+
+### Art direction brief
+
+The approved direction is an illustrated player atlas: midnight navy, brass rules, rust actions and parchment reading surfaces. Fraunces supplies the book-like display voice; Manrope supplies legible controls and prose. Both variable fonts are self-hosted with their OFL licenses. Illustration is a real optimized raster masthead and coastline, with a restrained paper texture. The functional signature is the question-based route strip plus prominent search: start playing, understand rules, plan a strategy or fix a problem. Genre navigation remains a fixed taxonomy rather than a growing list of game names.
+
+Motion uses short color feedback and restrained image scaling; focus is visible, and reduced-motion removes transitions and transforms. Color, type, spacing, focus, surface, radius and timing tokens are centralized in atlas.css. This is an English site.
+
+### Visual source and comparison
+
+- Approved source: docs/design/quest-atlas-approved.png (1122 × 1402), copied from the user-approved final ImageGen option.
+- Production page: http://127.0.0.1:3000/ ; default All games state, requested viewport 1122 × 1402, all six covers loaded, local fonts confirmed loaded, one H1 and no horizontal overflow.
+- Final raw browser capture: docs/design/atlas-final-homepage.jpg (1112 × 1330). The IAB screenshot excludes the scrollbar/window area; this is a capture difference, not a claim of a 1402px screenshot.
+- Paired comparison: docs/design/atlas-final-comparison.jpg. Source left and actual page right; the source was proportionally resized to the live capture width and both top regions cropped to the same height. No rendered content was redrawn or retouched. The focused comparison is docs/design/atlas-final-comparison-focus.jpg. Both combined images were opened and reviewed after the final build.
+- Responsive captures: atlas-mobile-final.jpg (390px requested viewport), atlas-tablet-final.jpg (768px requested viewport). The 320px guide-directory layout was also measured in the browser: 310px document width and 46px filter controls, with no overflow.
+- Reading-page captures: atlas-general-guide-mobile.jpg, atlas-fishes-guide-mobile.jpg, atlas-hood-guide-desktop.jpg and atlas-aion-desktop.jpg in docs/design/. These were visually checked for readable contrast, heading rhythm, stable navigation and retained specialist tools.
+
+The navy/brass/parchment system, six-card 3 × 2 desktop grid, separate thumbnail guide list and fixed genre navigation follow the selected direction. Real Krillion screenshots and MinaLima product photography replace the concept's invented cover artwork. The wordmark, corner ornamentation and lower coastline are simpler than the raster concept; these are visible P3 fidelity differences, not a claim of pixel-identical reproduction. Functional links and longer, accurate guide titles use more vertical space than the concept's abbreviated copy.
+
+### Findings fixed
+
+- Removed fixed title heights that produced large gaps between short game titles and their guide links.
+- Reduced the update region to a short heading and three actual coverage links; removed an unintended unstyled tall list.
+- Increased small link/prose sizes and retained 44px mobile targets. Mobile genres wrap instead of presenting a page-wide horizontal scrollbar.
+- Overrode legacy CSS that hid the last header navigation link on narrow screens; Games, Guides and Updates are all visible.
+- Removed legacy general-guide rules that added accidental boxes around navs and article sections. General reading sections now use deliberate bottom rules and paper padding.
+- Added a focusable general-guide skip target; the homepage skip link was verified to focus atlas-main with a visible 3px focus outline.
+- Removed the global loading boundary after it caused invalid pagination to stream as a 200 soft 404. Invalid paths now return real 404 responses with noindex.
+- Browser testing found that a Next Link back to the same directory could retain its query-level not-found boundary. The 404 shell and recovery links now use full document navigation; clicking recovery was verified to show the real guide directory.
+- Restored AION 2 discovery in the shared search index. It is an independent data topic, uses the site's editorial thumbnail, and is not assigned a fabricated game genre or added as a seventh homepage cover card.
+- Applied the shared type and color tokens to AION 2's data page so removed web-font imports cannot leave it in the old display fallback.
+
+### SEO and functionality
+
+The homepage, game directory and guide directory are server components. Their text, cover links, GET search/filter forms and pagination anchors are present in raw HTML. Article routes retain static/server-rendered content. Small client islands cover image recovery, connection feedback and existing game-specific tools.
+
+There are six homepage games, 29 existing guide/chapter entries and one AION 2 data topic. The guide index contains 30 destinations over real 12 / 12 / 6 pagination. Harry Potter finds the four existing tabletop chapters; AION2, AION 2 and the full Steam stats term find the real data topic. Unknown queries have useful empty-state recovery. No new game facts or current-feed claims were invented by the redesign.
+
+Unfiltered directory pages are indexable, with differentiated paginated titles and self canonicals. Search/faceted variants use noindex,follow and base canonicals. Thirty-seven supported canonical URLs form the sitemap; no arbitrary fresh lastmod or unsupported routes are emitted. Robots permits crawling, JSON-LD is escaped and matches visible lists, and unverified aggregate ratings were removed. Existing guide URLs and truthful physical-tabletop identity are preserved.
+
+### Verification and limits
+
+- Final standard production build passed: 44 generated static pages, with the homepage and both directories rendered on demand. Local production preview remains on port 3000.
+- All seven Node test files passed: **69 / 69**, no failures or skipped tests, including five local HTTP not-found cases.
+- HTTP SEO audit: **299 / 299** checks, 59 requests, 46 HTML responses, 37 sitemap canonical destinations, 11 local image HEAD checks and 29 parsed JSON-LD scripts. Evidence: docs/qa/seo-http-audit-2026-10-17.json; reproducible script: docs/qa/seo-http-audit.mjs.
+- Bounded TypeScript validation passed for 26 release files with no scoped/configuration errors. Script: docs/qa/check-atlas-types.mjs. The repository's existing build configuration skips global lint/type gates; a fully clean repository-wide type check is not claimed.
+- Browser checks covered real search submission, combined genre/type filters, empty results and recovery, next-page navigation and canonical changes, loaded cover assets, mobile/tablet/320px overflow, keyboard skip navigation, readable specialist guides, and hydrated branded 404 recovery.
+- Known framework boundary: Next 15 matched-route 404 responses have a real 404 status and noindex, but their raw HTML can have an empty error body; the branded recovery UI is available after hydration. A top-level unknown URL includes the full branded server HTML. Tests and docs/qa/not-found-regression-2026-10-17.json distinguish these cases. No RSC serialization was counted as visible SSR content.
+- Raw HTTP checks do not prove JavaScript-disabled browser behavior, complete WCAG certification, upstream API correctness, rankings or indexing in Search Console. Existing live-feed behavior was preserved; this redesign does not create historical sampling storage.
+- A concurrent development/build run produced one transient prerender failure; diagnostic and subsequent standard builds completed. The final package was built with the development server stopped and verified through the production server.
+
+### Extension notes
+
+Publish a real game overview and verified chapters before adding its catalog entry. Add supported paths to the shared SEO route registry, retain source/review dates, and extend the shared tokens instead of hard-coding a new visual system. Independent data topics may be searchable without pretending to be a new game in the six-card homepage selection. Larger catalogs use directory pagination and genre filters; they do not add one sidebar item per game. Feed observation time and human editorial review time remain distinct.
+
+Current implementation result: passed, with the explicit matched-route 404 SSR limitation above.
+
+final result: passed
+
+
+---
+
+## 2026-10-17 — Level Select production acceptance
+
+### Source truth and rendered evidence
+
+Confirmed direction: the refined game-selection reference, followed by the user's explicit instruction to develop. This review compares the approved image to a running implementation; it does not substitute a fresh visual direction.
+
+- Source desktop: `docs/design/level-select-approved-desktop.png`.
+- Source long-title state: `docs/design/level-select-approved-fishes.png`.
+- Source phone: `docs/design/level-select-approved-mobile.png`.
+- Actual production: `http://127.0.0.1:3000/`, with the Don't Sleep With The Fishes state at `/?game=dont-sleep-with-the-fishes`.
+- Actual desktop: `docs/design/level-select-desktop-final.jpg`.
+- Actual long-title state: `docs/design/level-select-fishes-final.jpg`.
+- Actual phone: `docs/design/level-select-mobile-final.jpg`.
+- Tablet: `docs/design/level-select-tablet-final.jpg`.
+- Small phone: `docs/design/level-select-small-phone-final.jpg`.
+- Failure evidence: `docs/design/level-select-artwork-error.jpg`; the original artwork was restored and Retry artwork then visibly loaded it successfully.
+
+Requested desktop viewport: 1331 × 1182. The browser capture is 1321 × 1173 because its capture surface excludes scrollbar/chrome pixels. Reference and actual are normalized to the same 1321-pixel content width, preserving aspect ratio, then cropped to their common height. Default Hood and selected Fishes states are compared separately at scroll position zero, with loaded fonts and artwork. Phone viewport: 390 × 844; source normalized to 380 × 821, actual capture 380 × 822, common comparison 380 × 821. No screenshot content was retouched.
+
+The following paired inputs were created, opened and reviewed with source left / implementation right:
+
+- Full desktop: `docs/design/level-select-comparison-desktop.jpg` (2642 × 1173).
+- Long-title full desktop: `docs/design/level-select-comparison-fishes.jpg` (2642 × 1173).
+- Full phone: `docs/design/level-select-comparison-mobile.jpg` (760 × 821).
+- Focused hero, typography and controls: `docs/design/level-select-comparison-hero.jpg`.
+- Focused guide hierarchy, spacing and copy: `docs/design/level-select-comparison-guides.jpg`.
+
+### Findings and patches
+
+No actionable P0/P1/P2 findings remain after the following fixes:
+
+- [Fixed P1] A three-line game title made the Fishes scene and information panel extend over the featured-roster heading. Reduced title scale/padding and constrained the desktop grid row. Final 800-pixel measurements: hero bottom 559, artwork bottom 558, information bottom 558.13, roster top 559. At 1331 pixels the entire information panel also fits inside the hero.
+- [Fixed P2] The first brand implementation was too small, the navigation sat too far right, and category styles filled the entire selected label. Enlarged the authored wordmark, moved navigation, expanded search, and scoped directory styles so the homepage retains its lime underline.
+- [Fixed P2] Small utility text was excessively heavy because only 800/900 font files existed. Added licensed local 500/600 weights and assigned display/body roles deliberately. Guide descriptions and headings were enlarged/refined separately.
+- [Fixed P2] A cached scene could leave its loading text visible after hydration. Added an image completeness check and verified the loaded state in the production browser.
+- [Fixed P2] Native topic links initially dropped the selected game. Both native hrefs and enhanced interaction now preserve game/genre/topic state; real SSR responses verify this contract.
+- [Fixed P2] The six-slot roster compressed titles on tablets. Intermediate widths now use a contained horizontal roster showing about four slots, while phones show about two and a portion of the next slot.
+- [Fixed P2] At 320 pixels, the Hood title and overview action extended into the horizontal scrollbar area. Added the small-phone title/action treatment. Final document scrollWidth equals clientWidth, 310 pixels, and both actions fit inside their container.
+- [Fixed P2] Increased mobile artwork-overview links and the search input to at least 44 pixels. Verified navigation, three quick guides, primary/secondary actions, roster-overview links, topic controls and update links with browser rectangles. The search input is also exactly 44 pixels high.
+
+### Five fidelity surfaces
+
+- **Typography:** self-hosted Barlow Condensed supplies the heavy italic display and compact utility type, with Manrope for reading. The 500/600/800/900 weights and italic font files load successfully. The wordmark, two-line Hood title, three-line Fishes title and lower guide hierarchy reproduce the approved roles. The generated reference's unidentified display face has slightly different cap-height/width metrics; this is accepted P3 optical drift, not a claim of pixel-perfect font identity.
+- **Spacing/layout:** the desktop scene/information split, diagonal cut, joined six-slot roster, genre line, asymmetrical next-move introduction and four guide rows are present. 1331, 800, 390 and 320-pixel layouts were inspected. Mobile uses larger touch controls and a directly editable search field, so content reaches lower in the viewport than in the reference; that difference is intentional for touch access. The page has no horizontal overflow; only the roster/topic/category scrollers scroll within their own bounds.
+- **Colors/tokens:** white, near-black and lime #c7ff36 form the shared system. Muted reading text, borders, focus and status colors have explicit roles. Specialist guide surfaces and the shared shell use the same visual family; header lime is kept independent of specialist reading-link colors. No default purple gradient, parchment framing, glass UI, emoji icons or heavy background effects are introduced.
+- **Images/assets:** real existing game screenshots, cover artwork, physical board-game packaging and the red Fort Locks puzzle room are used. Optimized WebP scene/thumbnail variants retain the source imagery. The reference's enhanced portraits/clean logo panels are not fabricated as replacement game evidence; the original screenshots include their real HUD and framing. Lucide supplies consistent functional arrows/search/retry icons. The new favicon recolors the existing editable Z geometry rather than inventing an unrelated asset.
+- **Copy/content:** all displayed quick links point to existing guides or real overview sections. Physical tabletop is labelled correctly. AION 2 remains a separate news/data topic and searchable guide entry. Counts are six published games and 30 guides/topics. No fake game routes, ratings, dates, statistics or filler text were added.
+
+### Interaction and accessibility evidence
+
+- Clicked Fishes, Fort Locks and other roster choices; scene, title, number, selected state, overview and the three real quick links update together.
+- Used ArrowRight and End from focused roster choices. End reaches slot six on a phone, focuses its selector, scrolls the roster to 557 pixels, and keeps page scrollWidth at its 380-pixel clientWidth.
+- Selected Rules after selecting Fishes; Fishes remains selected and two matching published rule chapters appear. Native links reflect the same state.
+- Combined Puzzles & trivia with Rules to produce an honest empty state and a Featured recovery.
+- Submitted the header search for Harry Potter; the guide directory displayed four Defenders of Hogwarts chapters with real anchor destinations.
+- Tested a missing local scene against the running production build. The styled failure explained that guides remain available, provided a retry, and successfully loaded the restored artwork after Retry artwork was clicked. The temporary file move was completely restored.
+- Existing guide content and chapter navigation remain accessible. A real Fishes guide was opened; its white reading surface, real content, source links and navigation were verified, with no page overflow at tablet width.
+- Semantic controls, labels, meaningful alt text, native href fallback, visible focus and reduced-motion CSS are present. Reduced-motion and full-device-offline modes were inspected in source rather than browser-emulated; no broader accessibility certification is claimed.
+- The small arrow on each roster slot is a separate, labelled real overview link, with an explicit tooltip and a 44-pixel mobile target. Selecting the main cover changes the scene; clicking that arrow navigates. This intentional production affordance also exposes every game's canonical page in SSR HTML.
+
+### Technical verification and limits
+
+- Final production build succeeded; 44 pages were pre-generated and the homepage/directory requests remain SSR. Final local preview is running on port 3000.
+- 78/78 tests passed, including five live HTTP route tests; 0 failures and 0 skips. `docs/qa/level-select-tests-2026-10-17.tap`.
+- Bounded release-surface TypeScript: 28 files, 0 scoped/configuration/dependency errors. This is not a claim of a new repository-wide lint pass. `docs/qa/level-select-types-2026-10-17.json`.
+- Final local HTTP audit: 72 requests, 55 HTML responses, 37 canonical sitemap routes, 15 local image checks and 38 JSON-LD scripts. 502/502 assertions passed. `docs/qa/level-select-http-audit-2026-10-17.json`.
+- Existing matched-route Next error limitation is preserved and reported: an out-of-range guide page returns a real 404 and noindex, but its raw error HTML has no H1; client recovery content is not described as SSR markup. Ordinary 200 pages and canonical metadata are checked separately.
+- An isolated development cache wrote a corrupt generated prerender manifest during concurrent route compilation. That dev server was stopped. The final production build and full HTTP audit passed; the failed dev audit remains historical evidence, not a successful release check.
+- Existing upstream feed functionality was preserved. This layout task does not establish new claims about upstream freshness, external-service uptime, deployment, search ranking or indexing results.
+
+### Follow-up polish
+
+- P3: dedicated social-sharing artwork could later follow the new direction; existing valid sharing images remain in metadata.
+- P3: the generated reference's optical type metrics and close-up cover compositions can be refined if the user requests another visual iteration. The shipped assets remain the actual game artwork.
+
+### Implementation checklist
+
+- [x] Functional Level Select signature and curated scaling model.
+- [x] Token-based colors, typography, spacing and motion.
+- [x] Real game imagery and contextual English copy.
+- [x] SSR content, crawlable destinations and preserved canonical routes.
+- [x] Keyboard controls, focus, touch layouts and native fallback URLs.
+- [x] Loading/error/retry and honest empty states.
+- [x] Source/actual paired full and focused comparisons reviewed.
+- [x] Production preview and verification reports available.
+
+final result: passed

@@ -1,0 +1,494 @@
+TAP version 13
+# Subtest: the atlas covers the published catalog in the selected six-cover order
+ok 1 - the atlas covers the published catalog in the selected six-cover order
+  ---
+  duration_ms: 3.9611
+  type: 'test'
+  ...
+# Subtest: aliases, punctuation and separated query terms work with AND semantics
+ok 2 - aliases, punctuation and separated query terms work with AND semantics
+  ---
+  duration_ms: 1.8962
+  type: 'test'
+  ...
+# Subtest: genre, format and guide-type filters intersect rather than replace each other
+ok 3 - genre, format and guide-type filters intersect rather than replace each other
+  ---
+  duration_ms: 0.2483
+  type: 'test'
+  ...
+# Subtest: standalone AION 2 topics remain searchable without adding a seventh game or a false genre
+ok 4 - standalone AION 2 topics remain searchable without adding a seventh game or a false genre
+  ---
+  duration_ms: 2.2939
+  type: 'test'
+  ...
+# Subtest: canonical and indexing rules distinguish filters from real pagination
+ok 5 - canonical and indexing rules distinguish filters from real pagination
+  ---
+  duration_ms: 0.2313
+  type: 'test'
+  ...
+# Subtest: GET pagination preserves valid filters and generates no phantom game page
+ok 6 - GET pagination preserves valid filters and generates no phantom game page
+  ---
+  duration_ms: 0.2862
+  type: 'test'
+  ...
+# Subtest: all directory destinations are registered routes or existing tabletop chapters
+ok 7 - all directory destinations are registered routes or existing tabletop chapters
+  ---
+  duration_ms: 1.1002
+  type: 'test'
+  ...
+# Subtest: Level Select preserves the six featured games, 30 guide topics and 37 canonical pages
+ok 8 - Level Select preserves the six featured games, 30 guide topics and 37 canonical pages
+  ---
+  duration_ms: 1.104
+  type: 'test'
+  ...
+# Subtest: 100 additional catalog games do not expand or reorder the curated home roster and genre subsets
+ok 9 - 100 additional catalog games do not expand or reorder the curated home roster and genre subsets
+  ---
+  duration_ms: 0.4208
+  type: 'test'
+  ...
+# Subtest: every featured scene has three distinct real destinations belonging to that game
+ok 10 - every featured scene has three distinct real destinations belonging to that game
+  ---
+  duration_ms: 1.8797
+  type: 'test'
+  ...
+# Subtest: selected slugs are constrained to the visible genre with deterministic fallbacks
+ok 11 - selected slugs are constrained to the visible genre with deterministic fallbacks
+  ---
+  duration_ms: 0.9808
+  type: 'test'
+  ...
+# Subtest: guide types accept only the five home topics, including safe array/default parsing
+ok 12 - guide types accept only the five home topics, including safe array/default parsing
+  ---
+  duration_ms: 0.1689
+  type: 'test'
+  ...
+# Subtest: selection links preserve explicit game, genre and topic through native GET navigation
+ok 13 - selection links preserve explicit game, genre and topic through native GET navigation
+  ---
+  duration_ms: 0.2613
+  type: 'test'
+  ...
+# Subtest: featured guide order matches the approved four starting points without mutating the directory
+ok 14 - featured guide order matches the approved four starting points without mutating the directory
+  ---
+  duration_ms: 0.2582
+  type: 'test'
+  ...
+# Subtest: topic and genre guide previews contain actual matching chapters, with an honest empty result
+ok 15 - topic and genre guide previews contain actual matching chapters, with an honest empty result
+  ---
+  duration_ms: 0.6467
+  type: 'test'
+  ...
+# Subtest: home guide copy adds context without changing the underlying guide destination
+ok 16 - home guide copy adds context without changing the underlying guide destination
+  ---
+  duration_ms: 0.2126
+  type: 'test'
+  ...
+# (node:174344) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Administrator/.codex/worktrees/a5fb/Gamingwebsitedesign/src/app/lib/aion-2-server.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Administrator\\.codex\\worktrees\\a5fb\\Gamingwebsitedesign\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: independent official feeds preserve observation and source timestamps
+ok 17 - independent official feeds preserve observation and source timestamps
+  ---
+  duration_ms: 18.6912
+  type: 'test'
+  ...
+# Subtest: cached and simultaneous readers do not refresh observation time or repeat upstream requests
+ok 18 - cached and simultaneous readers do not refresh observation time or repeat upstream requests
+  ---
+  duration_ms: 1.1634
+  type: 'test'
+  ...
+# Subtest: source failures keep old readings stale for at most one hour, then permit recovery
+ok 19 - source failures keep old readings stale for at most one hour, then permit recovery
+  ---
+  duration_ms: 1.9502
+  type: 'test'
+  ...
+# Subtest: an absent chart app is unavailable while current players and news remain useful
+ok 20 - an absent chart app is unavailable while current players and news remain useful
+  ---
+  duration_ms: 0.3339
+  type: 'test'
+  ...
+# Subtest: one failed source retains its original timestamp while other sources refresh
+ok 21 - one failed source retains its original timestamp while other sources refresh
+  ---
+  duration_ms: 1.0624
+  type: 'test'
+  ...
+# Subtest: malformed chart counts or source timestamps never become a published peak
+ok 22 - malformed chart counts or source timestamps never become a published peak
+  ---
+  duration_ms: 2.3995
+  type: 'test'
+  ...
+# Subtest: only a successful safe integer player count can be displayed, including a real zero
+ok 23 - only a successful safe integer player count can be displayed, including a real zero
+  ---
+  duration_ms: 2.2116
+  type: 'test'
+  ...
+# Subtest: HTTP and invalid JSON failures return complete partial JSON instead of rejecting
+ok 24 - HTTP and invalid JSON failures return complete partial JSON instead of rejecting
+  ---
+  duration_ms: 0.5388
+  type: 'test'
+  ...
+# Subtest: news rejects external feeds, malicious URLs and wrong apps while producing plain text
+ok 25 - news rejects external feeds, malicious URLs and wrong apps while producing plain text
+  ---
+  duration_ms: 0.4491
+  type: 'test'
+  ...
+# Subtest: a valid empty official news feed is distinct from an invalid or wrong-app payload
+ok 26 - a valid empty official news feed is distinct from an invalid or wrong-app payload
+  ---
+  duration_ms: 0.9547
+  type: 'test'
+  ...
+# (node:143704) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Administrator/.codex/worktrees/a5fb/Gamingwebsitedesign/src/app/lib/hood-warfare-2-server.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Administrator\\.codex\\worktrees\\a5fb\\Gamingwebsitedesign\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: requests only official Hood Warfare 2 news and emits safe ISO-dated items
+ok 27 - requests only official Hood Warfare 2 news and emits safe ISO-dated items
+  ---
+  duration_ms: 19.0698
+  type: 'test'
+  ...
+# Subtest: concurrent readers share one request and cached readings retain their original observation
+ok 28 - concurrent readers share one request and cached readings retain their original observation
+  ---
+  duration_ms: 1.9318
+  type: 'test'
+  ...
+# Subtest: failed refreshes use the previous snapshot without changing its time, then expire and recover
+ok 29 - failed refreshes use the previous snapshot without changing its time, then expire and recover
+  ---
+  duration_ms: 0.7629
+  type: 'test'
+  ...
+# Subtest: a wrong-app feed cannot populate or replace the verified Hood snapshot
+ok 30 - a wrong-app feed cannot populate or replace the verified Hood snapshot
+  ---
+  duration_ms: 0.5544
+  type: 'test'
+  ...
+# Subtest: filters malicious URLs, external feeds and wrong-app items while returning plain text
+ok 31 - filters malicious URLs, external feeds and wrong-app items while returning plain text
+  ---
+  duration_ms: 0.5526
+  type: 'test'
+  ...
+# Subtest: canonical Steam and SteamCommunity announcements remain usable without invented view IDs
+ok 32 - canonical Steam and SteamCommunity announcements remain usable without invented view IDs
+  ---
+  duration_ms: 1.3573
+  type: 'test'
+  ...
+# Subtest: valid empty feeds are ready while malformed, wrong-app and fully rejected feeds are unavailable
+ok 33 - valid empty feeds are ready while malformed, wrong-app and fully rejected feeds are unavailable
+  ---
+  duration_ms: 0.3952
+  type: 'test'
+  ...
+# Subtest: invalid news identities and dates cannot be published
+ok 34 - invalid news identities and dates cannot be published
+  ---
+  duration_ms: 0.7796
+  type: 'test'
+  ...
+# Subtest: deduplicates and orders announcement IDs and bounds excerpt length
+ok 35 - deduplicates and orders announcement IDs and bounds excerpt length
+  ---
+  duration_ms: 0.4799
+  type: 'test'
+  ...
+# Subtest: network, HTTP and JSON errors return a complete response without leaking internal exceptions
+ok 36 - network, HTTP and JSON errors return a complete response without leaking internal exceptions
+  ---
+  duration_ms: 1.089
+  type: 'test'
+  ...
+# (node:176124) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Administrator/.codex/worktrees/a5fb/Gamingwebsitedesign/src/app/lib/hood-warfare-2-store-server.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Administrator\\.codex\\worktrees\\a5fb\\Gamingwebsitedesign\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: fetches the official CN store and emits only typed metadata with integer-cent CNY pricing
+ok 37 - fetches the official CN store and emits only typed metadata with integer-cent CNY pricing
+  ---
+  duration_ms: 16.4049
+  type: 'test'
+  ...
+# Subtest: missing optional text and prices remain unknown while an explicitly free game stays free
+ok 38 - missing optional text and prices remain unknown while an explicitly free game stays free
+  ---
+  duration_ms: 0.7695
+  type: 'test'
+  ...
+# Subtest: coming-soon status and a non-calendar release description are preserved without inventing a date
+ok 39 - coming-soon status and a non-calendar release description are preserved without inventing a date
+  ---
+  duration_ms: 0.4288
+  type: 'test'
+  ...
+# Subtest: cleans HTML, BBCode, entities and control characters from every metadata text field
+ok 40 - cleans HTML, BBCode, entities and control characters from every metadata text field
+  ---
+  duration_ms: 0.5306
+  type: 'test'
+  ...
+# Subtest: rejects wrong app IDs, unsuccessful envelopes and missing required boolean semantics
+ok 41 - rejects wrong app IDs, unsuccessful envelopes and missing required boolean semantics
+  ---
+  duration_ms: 1.7355
+  type: 'test'
+  ...
+# Subtest: invalid prices cannot be silently converted, rounded or published as CNY
+ok 42 - invalid prices cannot be silently converted, rounded or published as CNY
+  ---
+  duration_ms: 0.7666
+  type: 'test'
+  ...
+# Subtest: coalesces concurrent fetches, preserves cache time and prevents callers from mutating cached metadata
+ok 43 - coalesces concurrent fetches, preserves cache time and prevents callers from mutating cached metadata
+  ---
+  duration_ms: 0.4184
+  type: 'test'
+  ...
+# Subtest: failure backoff retains old values and time for one hour, then expires and permits recovery
+ok 44 - failure backoff retains old values and time for one hour, then expires and permits recovery
+  ---
+  duration_ms: 0.4034
+  type: 'test'
+  ...
+# Subtest: HTTP, JSON and network errors return a complete unavailable response without exposing exception text
+ok 45 - HTTP, JSON and network errors return a complete unavailable response without exposing exception text
+  ---
+  duration_ms: 0.7411
+  type: 'test'
+  ...
+# Subtest: the real route preserves legacy news fields and returns 200 when either independent source works
+ok 46 - the real route preserves legacy news fields and returns 200 when either independent source works
+  ---
+  duration_ms: 54.775
+  type: 'test'
+  ...
+# (node:53512) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Administrator/.codex/worktrees/a5fb/Gamingwebsitedesign/src/app/lib/krillion-server.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Administrator\\.codex\\worktrees\\a5fb\\Gamingwebsitedesign\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: fetches only the official daily summary and returns seven whitelisted prompts
+ok 47 - fetches only the official daily summary and returns seven whitelisted prompts
+  ---
+  duration_ms: 17.2304
+  type: 'test'
+  ...
+# Subtest: coalesces simultaneous readers and preserves cached observation time
+ok 48 - coalesces simultaneous readers and preserves cached observation time
+  ---
+  duration_ms: 0.9134
+  type: 'test'
+  ...
+# Subtest: failure retains today's verified prompts for at most one hour and applies retry backoff
+ok 49 - failure retains today's verified prompts for at most one hour and applies retry backoff
+  ---
+  duration_ms: 0.8053
+  type: 'test'
+  ...
+# Subtest: a fresh cache cannot return yesterday's prompts after New York midnight
+ok 50 - a fresh cache cannot return yesterday's prompts after New York midnight
+  ---
+  duration_ms: 0.7074
+  type: 'test'
+  ...
+# Subtest: UTC midnight does not change the official New York puzzle date
+ok 51 - UTC midnight does not change the official New York puzzle date
+  ---
+  duration_ms: 1.52
+  type: 'test'
+  ...
+# Subtest: an upstream request crossing official midnight cannot validate yesterday's summary
+ok 52 - an upstream request crossing official midnight cannot validate yesterday's summary
+  ---
+  duration_ms: 0.6148
+  type: 'test'
+  ...
+# Subtest: New York daylight saving transitions accept 23- and 25-hour countdowns and winter midnight
+ok 53 - New York daylight saving transitions accept 23- and 25-hour countdowns and winter midnight
+  ---
+  duration_ms: 1.2757
+  type: 'test'
+  ...
+# Subtest: an expired upstream reset invalidates the cache even if its date is still today
+ok 54 - an expired upstream reset invalidates the cache even if its date is still today
+  ---
+  duration_ms: 0.5472
+  type: 'test'
+  ...
+# Subtest: rejects malformed, unsafe or off-date upstream summaries without echoing their contents
+ok 55 - rejects malformed, unsafe or off-date upstream summaries without echoing their contents
+  ---
+  duration_ms: 2.4844
+  type: 'test'
+  ...
+# Subtest: HTTP, parsing and network failures return a complete unavailable response
+ok 56 - HTTP, parsing and network failures return a complete unavailable response
+  ---
+  duration_ms: 0.9311
+  type: 'test'
+  ...
+# Subtest: the 404 has one meaningful H1 and direct game/guide recovery links in SSR HTML
+ok 57 - the 404 has one meaningful H1 and direct game/guide recovery links in SSR HTML
+  ---
+  duration_ms: 3.0734
+  type: 'test'
+  ...
+# Subtest: error metadata overrides the root title and index flag without inventing a canonical
+ok 58 - error metadata overrides the root title and index flag without inventing a canonical
+  ---
+  duration_ms: 0.1481
+  type: 'test'
+  ...
+# Subtest: the 404 uses the existing atlas shell with the question route row hidden
+ok 59 - the 404 uses the existing atlas shell with the question route row hidden
+  ---
+  duration_ms: 0.2421
+  type: 'test'
+  ...
+# Subtest: directory metadata rejects missing pages before emitting indexable page metadata
+ok 60 - directory metadata rejects missing pages before emitting indexable page metadata
+  ---
+  duration_ms: 100.7686
+  type: 'test'
+  ...
+# Subtest: valid pagination and empty first-page searches retain their canonical and noindex rules
+ok 61 - valid pagination and empty first-page searches retain their canonical and noindex rules
+  ---
+  duration_ms: 4.7561
+  type: 'test'
+  ...
+# Subtest: HTTP /this-page-is-not-in-the-atlas/ preserves 404/noindex and separately reports SSR recovery
+ok 62 - HTTP /this-page-is-not-in-the-atlas/ preserves 404/noindex and separately reports SSR recovery # SKIP
+  ---
+  duration_ms: 0.0699
+  type: 'test'
+  ...
+# Subtest: HTTP /guides/?page=999 preserves 404/noindex and separately reports SSR recovery
+ok 63 - HTTP /guides/?page=999 preserves 404/noindex and separately reports SSR recovery # SKIP
+  ---
+  duration_ms: 0.0587
+  type: 'test'
+  ...
+# Subtest: HTTP /games/?page=999 preserves 404/noindex and separately reports SSR recovery
+ok 64 - HTTP /games/?page=999 preserves 404/noindex and separately reports SSR recovery # SKIP
+  ---
+  duration_ms: 0.0421
+  type: 'test'
+  ...
+# Subtest: HTTP /guides/?q=Harry%20Potter&page=2 preserves 404/noindex and separately reports SSR recovery
+ok 65 - HTTP /guides/?q=Harry%20Potter&page=2 preserves 404/noindex and separately reports SSR recovery # SKIP
+  ---
+  duration_ms: 0.0543
+  type: 'test'
+  ...
+# Subtest: HTTP /games/not-a-published-game/ preserves 404/noindex and separately reports SSR recovery
+ok 66 - HTTP /games/not-a-published-game/ preserves 404/noindex and separately reports SSR recovery # SKIP
+  ---
+  duration_ms: 0.0862
+  type: 'test'
+  ...
+# Subtest: JSON-LD cannot terminate its script and preserves the original data
+ok 67 - JSON-LD cannot terminate its script and preserves the original data
+  ---
+  duration_ms: 1.0848
+  type: 'test'
+  ...
+# Subtest: metadata uses its own canonical and absolute title without parent title duplication
+ok 68 - metadata uses its own canonical and absolute title without parent title duplication
+  ---
+  duration_ms: 0.2104
+  type: 'test'
+  ...
+# Subtest: search pages may be noindex while crawlers can follow links
+ok 69 - search pages may be noindex while crawlers can follow links
+  ---
+  duration_ms: 0.1119
+  type: 'test'
+  ...
+# Subtest: canonical pagination stays on this site and strips fragments
+ok 70 - canonical pagination stays on this site and strips fragments
+  ---
+  duration_ms: 0.1818
+  type: 'test'
+  ...
+# Subtest: breadcrumb and item lists contain ordered crawlable page URLs
+ok 71 - breadcrumb and item lists contain ordered crawlable page URLs
+  ---
+  duration_ms: 0.2259
+  type: 'test'
+  ...
+# Subtest: game schemas do not turn unsourced editorial stars into aggregate reviews
+ok 72 - game schemas do not turn unsourced editorial stars into aggregate reviews
+  ---
+  duration_ms: 0.9859
+  type: 'test'
+  ...
+# Subtest: tabletop guides describe a board game without classifying it as a video game
+ok 73 - tabletop guides describe a board game without classifying it as a video game
+  ---
+  duration_ms: 0.4368
+  type: 'test'
+  ...
+# Subtest: game JSON-LD is present in server-rendered HTML before hydration
+ok 74 - game JSON-LD is present in server-rendered HTML before hydration
+  ---
+  duration_ms: 26.9305
+  type: 'test'
+  ...
+# Subtest: ordinary game guides expose their own SSR sharing URL and reject unsupported slugs
+ok 75 - ordinary game guides expose their own SSR sharing URL and reject unsupported slugs
+  ---
+  duration_ms: 23.3784
+  type: 'test'
+  ...
+# Subtest: sitemap registry covers exactly the real static and generated canonical pages
+ok 76 - sitemap registry covers exactly the real static and generated canonical pages
+  ---
+  duration_ms: 29.2231
+  type: 'test'
+  ...
+# Subtest: sitemap emits canonical URLs without invented dates, parameters or redirect aliases
+ok 77 - sitemap emits canonical URLs without invented dates, parameters or redirect aliases
+  ---
+  duration_ms: 3.7234
+  type: 'test'
+  ...
+# Subtest: robots links the sitemap and permits crawling pages carrying noindex
+ok 78 - robots links the sitemap and permits crawling pages carrying noindex
+  ---
+  duration_ms: 1.9643
+  type: 'test'
+  ...
+1..78
+# tests 78
+# suites 0
+# pass 73
+# fail 0
+# cancelled 0
+# skipped 5
+# todo 0
+# duration_ms 792.1333

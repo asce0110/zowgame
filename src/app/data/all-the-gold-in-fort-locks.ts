@@ -16,9 +16,9 @@ export const allTheGoldInFortLocksGame: GameRecord = {
   topBarTitle: "ALL THE GOLD IN FORT LOCKS",
   topBarDescription: "A mind-bending browser puzzle game. Doors are portals. Keys overlap rooms.",
   notificationFooter: "Walkthrough based on community solutions and developer hints.",
-  guideTitle: "How to Beat All The Gold In Fort Locks",
+  guideTitle: "How to Play All The Gold In Fort Locks",
   guideIntro:
-    "All The Gold In Fort Locks is a brain-twisting puzzle game by Draknek & Friends where doors act as portals to overlapping rooms. Each key unlocks a new dimension, and you must navigate nested spaces to collect every gold coin. This walkthrough covers all 6 key stages and the most common stuck points.",
+    "Start All The Gold In Fort Locks with the overlapping-room rules, colored keys and movement controls. Learn key handling, undo and reset before working through the six key stages. For detailed puzzle help, use the separate walkthrough linked below.",
   objectiveTitle: "Your Goal",
   objectiveBody:
     "Collect every gold coin in the fort. To do this, you'll need to find 6 colored keys (Blue, Green, Orange, Red, Purple, Yellow), each unlocking a new door that opens into another overlapping room. Rooms stack on top of each other — think of doors as portals between dimensions.",

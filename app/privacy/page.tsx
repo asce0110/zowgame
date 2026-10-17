@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "../../src/app/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy | ZowGame",
   description: "ZowGame privacy policy — how we handle data, cookies, and third-party services.",
-};
+  path: "/privacy/",
+});
 
 export default function PrivacyPage() {
   return (

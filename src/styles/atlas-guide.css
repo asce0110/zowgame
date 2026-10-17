@@ -1,0 +1,153 @@
+/* Level Select: readable shared guides, with sharp black rules and lime selection. */
+.atlas-guide {
+  --atlas-guide-bg: #ffffff;
+  --atlas-guide-surface: #f3f4f2;
+  --atlas-guide-ink: #111111;
+  --atlas-guide-muted: #565d66;
+  --atlas-guide-line: #d6dadd;
+  --atlas-guide-accent: #c7ff36;
+  --atlas-guide-space: clamp(20px, 3.4vw, 48px);
+  --zg-bg: var(--atlas-guide-bg); --zg-surface: var(--atlas-guide-surface); --zg-raised: #e9ece6;
+  --zg-text: var(--atlas-guide-ink); --zg-muted: var(--atlas-guide-muted); --zg-line: var(--atlas-guide-line);
+  --zg-accent: var(--atlas-guide-ink); --zg-focus: var(--atlas-guide-ink);
+  --zg-display: "Barlow Condensed", Impact, sans-serif;
+  --zg-body: "Manrope", "Trebuchet MS", sans-serif;
+  background: var(--atlas-guide-bg); color: var(--atlas-guide-ink); font-family: var(--zg-body);
+}
+.atlas-guide * { box-sizing: border-box; }
+.atlas-guide.zg-general-guide :is(h1,h2,h3,h4) { font-family: var(--zg-display) !important; font-weight: 800 !important; font-style: normal; line-height: 1.08; letter-spacing: -.01em; overflow-wrap: break-word; }
+.atlas-guide :is(a,button,input,select,summary,[tabindex]):focus-visible { outline: 3px solid var(--atlas-guide-ink); outline-offset: 4px; }
+.atlas-guide :is(a,button) { transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease; }
+.atlas-guide :is(a,button):active { opacity: .72; }
+.atlas-guide button:disabled { cursor: not-allowed; opacity: .5; }
+.atlas-guide.zg-general-guide nav { border: 0; }
+.atlas-guide-main { max-width: 1440px; margin-inline: auto; }
+.atlas-guide-breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px var(--atlas-guide-space); border-bottom: 1px solid var(--atlas-guide-line); color: var(--atlas-guide-muted); font-size: 12px; line-height: 1.6; }
+.atlas-guide-breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; }
+.atlas-guide-breadcrumb span { overflow-wrap: anywhere; }
+.atlas-guide-breadcrumb span[aria-current] { color: var(--atlas-guide-ink); font-weight: 600; }
+.atlas-guide-breadcrumb a:hover { color: var(--atlas-guide-ink); text-decoration: underline; text-underline-offset: 4px; }
+.atlas-guide-breadcrumb svg { flex-shrink: 0; }
+.atlas-guide.zg-general-guide .atlas-guide-masthead { padding: 36px var(--atlas-guide-space) 30px; border-bottom: 2px solid var(--atlas-guide-ink); background: var(--atlas-guide-bg); }
+.atlas-guide-eyebrow { display: flex; align-items: center; gap: 10px; margin: 0; font: 700 10px/1.7 var(--zg-body); letter-spacing: .15em; color: var(--atlas-guide-muted); }
+.atlas-guide.zg-general-guide .atlas-guide-masthead h1 { max-width: 27ch; margin: 18px 0; font-size: clamp(48px, 6vw, 90px); font-style: italic; font-weight: 900 !important; line-height: .95; text-transform: uppercase; }
+.atlas-guide.zg-general-guide .atlas-guide-masthead>.atlas-guide-eyebrow { color: var(--atlas-guide-ink); }
+.atlas-guide.zg-general-guide .atlas-guide-description { max-width: 76ch; margin: 0; color: var(--atlas-guide-muted); font: 400 16px/1.85 var(--zg-body); }
+.atlas-guide.zg-general-guide .atlas-guide-back { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 18px; color: var(--atlas-guide-ink); font-size: 12px; }
+.atlas-guide-back:hover { text-decoration: underline; text-underline-offset: 5px; }
+.atlas-guide-workspace { display: grid; grid-template-columns: 238px minmax(0,1fr); align-items: start; gap: 32px; padding: 32px var(--atlas-guide-space) 48px; }
+.atlas-guide-sidebar { position: sticky; top: 24px; min-width: 0; max-height: calc(100dvh - 48px); overflow-y: auto; scrollbar-color: #888e93 var(--atlas-guide-bg); }
+.atlas-guide-directory { padding: 20px 0; border-top: 4px solid var(--atlas-guide-ink); border-bottom: 1px solid var(--atlas-guide-line); background: var(--atlas-guide-bg); }
+.atlas-guide-directory h2 { font-size: 29px; margin: 12px 10px 22px; }
+.atlas-guide-directory>.atlas-guide-eyebrow { padding-inline: 10px; }
+.atlas-guide-directory nav { display: flex; flex-direction: column; }
+.atlas-guide-directory nav a { display: grid; grid-template-columns: 22px 16px minmax(0,1fr) 14px; align-items: center; gap: 9px; min-height: 48px; padding: 12px 10px; border-top: 1px solid var(--atlas-guide-line); color: var(--atlas-guide-muted); font-size: 12px; line-height: 1.6; }
+.atlas-guide-directory nav a:hover { color: var(--atlas-guide-ink); background: var(--atlas-guide-surface); }
+.atlas-guide-directory nav a[aria-current=page] { color: var(--atlas-guide-ink); background: var(--atlas-guide-accent); }
+.atlas-guide-chapter-number { font: 800 20px/1 var(--zg-display); font-variant-numeric: tabular-nums; color: var(--atlas-guide-ink); }
+.atlas-guide-overview { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; padding: 12px 10px; color: var(--atlas-guide-ink); font-size: 11px; }
+.atlas-guide-overview:hover { text-decoration: underline; text-underline-offset: 4px; }
+.atlas-guide-paper {
+  --background: var(--atlas-guide-bg); --foreground: var(--atlas-guide-ink); --card: var(--atlas-guide-surface); --card-foreground: var(--atlas-guide-ink);
+  --primary: var(--atlas-guide-ink); --primary-foreground: #ffffff; --secondary: #e9ece6; --secondary-foreground: var(--atlas-guide-ink);
+  --muted-foreground: var(--atlas-guide-muted); --border: var(--atlas-guide-line); --accent: var(--atlas-guide-accent); --accent-foreground: var(--atlas-guide-ink);
+  min-width: 0; padding: 0 0 0 32px; border-left: 1px solid var(--atlas-guide-line); background: var(--atlas-guide-bg); color: var(--atlas-guide-ink);
+}
+.atlas-guide-body { display: flex; flex-direction: column; gap: 32px; }
+.atlas-guide.zg-general-guide article>div>section.atlas-guide-section { padding-bottom: 32px; border: 0; border-bottom: 1px solid var(--atlas-guide-line); }
+.atlas-guide-section h2 { margin: 0 0 20px; font-size: clamp(28px, 3vw, 39px); }
+.atlas-guide-prose { color: var(--atlas-guide-muted); font: 400 15px/1.9 var(--zg-body); overflow-wrap: anywhere; }
+.atlas-guide-prose>*+* { margin-top: 20px; }
+.atlas-guide-prose p { margin-bottom: 0; }
+.atlas-guide-prose :is(ul,ol) { padding-left: 24px; }
+.atlas-guide-prose ul { list-style: disc; }
+.atlas-guide-prose ol { list-style: decimal; }
+.atlas-guide-prose li+li { margin-top: 10px; }
+.atlas-guide-prose strong { color: var(--atlas-guide-ink); font-weight: 700; }
+.atlas-guide-prose a { color: var(--atlas-guide-ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.atlas-guide-prose a:hover { text-decoration-thickness: 3px; }
+.atlas-guide-prose :is(img,iframe,video) { max-width: 100%; }
+.atlas-guide-prose img { height: auto; }
+.atlas-guide-related { margin-top: 36px; padding: 28px 0 0; border-top: 2px solid var(--atlas-guide-ink); }
+.atlas-guide-related>.atlas-guide-eyebrow { color: var(--atlas-guide-ink); }
+.atlas-guide-related h2 { font-size: 32px; margin: 14px 0 22px; }
+.atlas-guide-related nav { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 24px; }
+.atlas-guide-related a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 10px 0; border-bottom: 1px solid var(--atlas-guide-line); color: var(--atlas-guide-ink); font-size: 13px; }
+.atlas-guide-related a:hover { background: var(--atlas-guide-accent); }
+.atlas-guide-related svg { flex-shrink: 0; }
+.atlas-guide-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--atlas-guide-line); font: 400 10px/1.8 var(--zg-body); color: var(--atlas-guide-muted); }
+.atlas-guide-footer p { margin: 0; }
+.atlas-guide-footer nav { display: flex; gap: 20px; }
+.atlas-guide-footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.atlas-guide-footer nav a:hover { color: var(--atlas-guide-ink); text-decoration: underline; text-underline-offset: 4px; }
+.atlas-guide-badge { display: inline-flex; align-items: center; min-height: 55px; max-width: 175px; }
+.atlas-guide-badge img { max-width: 100%; height: auto; }
+.atlas-guide-note { padding: 20px 24px; border: 1px solid var(--atlas-guide-line); border-left: 4px solid var(--atlas-guide-ink); background: var(--atlas-guide-surface); color: var(--atlas-guide-ink); font: 400 14px/1.85 var(--zg-body); }
+.atlas-guide-note-warning { border-left-color: #8c5900; background: #fff9e6; }
+.atlas-guide-note-danger { border-left-color: #a12e2e; background: #fff4f2; }
+.atlas-guide-note-success { border-left-color: #246241; background: #f1f8ef; }
+.atlas-guide-step-number { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; background: var(--atlas-guide-accent); color: var(--atlas-guide-ink); font: 900 23px/1 var(--zg-display); font-variant-numeric: tabular-nums; }
+
+/* Theme the existing specialist shells without changing their content or live tools. */
+:root :is(.zg-site.fishes-manual,.zg-site.kr-page,.zg-site.hw-page,.zg-site.zg-tabletop,.zg-site.a2-page) {
+  --zg-bg: #ffffff; --zg-surface: #f3f4f2; --zg-raised: #e9ece6; --zg-text: #111111; --zg-muted: #565d66; --zg-line: #d6dadd; --zg-accent: #111111; --zg-focus: #111111;
+  --zg-display: "Barlow Condensed", Impact, sans-serif; --zg-body: "Manrope", "Trebuchet MS", sans-serif; --zg-mono: "Manrope", "Trebuchet MS", sans-serif;
+  --color-bg: #ffffff; --color-surface: #f3f4f2; --color-text: #111111; --color-muted: #565d66; --color-accent: #111111; --color-focus: #111111;
+  --color-warning: #805000; --color-danger: #a12e2e; --color-success: #246241; --ed-line: #d6dadd;
+  --font-display: "Barlow Condensed", Impact, sans-serif; --font-poster: "Barlow Condensed", Impact, sans-serif; --font-body: "Manrope", "Trebuchet MS", sans-serif; --font-mono: "Manrope", "Trebuchet MS", sans-serif;
+  --fm-bg: #ffffff; --fm-surface: #f3f4f2; --fm-raised: #e9ece6; --fm-text: #111111; --fm-muted: #565d66; --fm-line: #d6dadd; --fm-accent: #111111; --fm-focus: #111111; --fm-warning: #805000; --fm-success: #246241; --fm-danger: #a12e2e;
+  --fm-display: "Barlow Condensed", Impact, sans-serif; --fm-body: "Manrope", "Trebuchet MS", sans-serif; --fm-mono: "Manrope", "Trebuchet MS", sans-serif;
+  --tt-bg: #ffffff; --tt-surface: #f3f4f2; --tt-raised: #e9ece6; --tt-text: #111111; --tt-muted: #565d66; --tt-accent: #111111; --tt-gold: #333333; --tt-line: #d6dadd; --tt-focus: #111111;
+  --tt-display: "Barlow Condensed", Impact, sans-serif; --tt-body: "Manrope", "Trebuchet MS", sans-serif; --tt-mono: "Manrope", "Trebuchet MS", sans-serif;
+  background: #ffffff; color: #111111; font-family: "Manrope", "Trebuchet MS", sans-serif;
+}
+:root :is(.fishes-manual,.kr-page,.hw-page,.zg-tabletop,.a2-page) :is(h1,h2,h3,h4) { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 800; font-style: normal; line-height: 1.05; }
+:root :is(.fishes-manual .fm-hero h1,.kr-page .kr-hero h1,.hw-page .hw-hero h1,.zg-tabletop .tt-hero h1,.a2-page .a2-intro h1) { font-size: clamp(54px, 6.3vw, 94px); font-style: italic; font-weight: 900; line-height: .95; letter-spacing: -.015em; }
+:root :is(.fishes-manual .fm-article-header h1,.hw-page .hw-hero-inner h1,.kr-page .kr-hero-guide h1) { font-size: clamp(42px, 5.2vw, 76px); font-style: italic; font-weight: 900; line-height: 1; }
+:root :is(.fishes-manual .fm-dispatch,.kr-page .kr-facts,.hw-page .hw-directory,.zg-tabletop .tt-article-layout) { background: #ffffff; }
+:root :is(.fishes-manual .fm-button,.zg-tabletop .tt-button,.kr-page .ed-button,.hw-page .ed-button) { background: #111111; color: #ffffff; border-color: #111111; border-radius: 0; }
+:root :is(.fishes-manual .fm-button,.zg-tabletop .tt-button,.kr-page .ed-button,.hw-page .ed-button):hover { background: #c7ff36; color: #111111; border-color: #111111; }
+:root :is(.fishes-manual .fm-button-secondary,.zg-tabletop .tt-button-outline,.kr-page .ed-button-outline,.hw-page .ed-button-outline) { background: transparent; color: #111111; border-color: #111111; }
+:root :is(.fishes-manual .fm-button-secondary,.zg-tabletop .tt-button-outline,.kr-page .ed-button-outline,.hw-page .ed-button-outline):hover { background: #c7ff36; color: #111111; }
+:root :is(.fishes-manual .fm-filters button,.zg-tabletop .tt-question-filters button,.hw-page .hw-mode-controls button)[aria-pressed=true],
+:root .hw-page .hw-page-nav a[aria-current=page] { background: #c7ff36; color: #111111; border-color: #111111; }
+:root :is(.kr-page .kr-page-nav a[aria-current=page],.fishes-manual .fm-rail nav a[aria-current=page],.zg-tabletop .fm-compass a[aria-current=location]) { box-shadow: inset 0 -4px 0 #c7ff36; color: #111111; }
+:root .fishes-manual .fm-hero-art:after { background: linear-gradient(90deg,#ffffff 0%,#ffffffd9 25%,#ffffff00 78%),linear-gradient(0deg,#ffffff,transparent 65%); }
+:root .a2-page .atlas-site-header { background: #ffffff; }
+
+@media (max-width:1100px) {
+  .atlas-guide-workspace { grid-template-columns: 205px minmax(0,1fr); gap: 22px; }
+  .atlas-guide-directory nav a { grid-template-columns: 20px minmax(0,1fr) 14px; gap: 8px; }
+  .atlas-guide-directory nav a>svg:first-of-type { display: none; }
+  .atlas-guide-paper { padding-left: 24px; }
+}
+@media (max-width:800px) {
+  .atlas-guide-workspace { grid-template-columns: 1fr; gap: 24px; padding-top: 22px; }
+  .atlas-guide-sidebar { position: static; max-height: none; overflow: visible; }
+  .atlas-guide-directory { padding: 16px 0; }
+  .atlas-guide-directory h2 { margin: 10px 0 16px; font-size: 27px; }
+  .atlas-guide-directory>.atlas-guide-eyebrow { padding-inline: 0; }
+  .atlas-guide-directory nav { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0 14px; }
+  .atlas-guide-directory nav a { padding-inline: 2px; min-height: 48px; }
+  .atlas-guide-overview { display: inline-flex; margin: 10px 24px 0 0; padding-inline: 0; }
+  .atlas-guide-paper { border-left: 0; padding-left: 0; }
+  .atlas-guide-masthead h1 { max-width: 25ch; }
+}
+@media (max-width:560px) {
+  .atlas-guide { --atlas-guide-space: 16px; }
+  .atlas-guide-breadcrumb { font-size: 10px; gap: 4px 8px; }
+  .atlas-guide.zg-general-guide .atlas-guide-masthead { padding-block: 28px 22px; }
+  .atlas-guide.zg-general-guide .atlas-guide-masthead h1 { font-size: clamp(38px, 10vw, 54px); }
+  .atlas-guide.zg-general-guide .atlas-guide-description { font-size: 14px; line-height: 1.8; }
+  .atlas-guide-directory nav { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 12px; }
+  .atlas-guide-directory nav a { font-size: 11px; }
+  .atlas-guide-prose { font-size: 14px; line-height: 1.85; }
+  .atlas-guide-section h2 { font-size: 30px; }
+  .atlas-guide-related nav { grid-template-columns: 1fr; gap: 4px; }
+  .atlas-guide-related h2 { font-size: 29px; }
+  .atlas-guide-note { padding: 18px; }
+  .atlas-guide-footer { margin-top: 28px; gap: 6px 20px; }
+  :root :is(.fishes-manual .fm-hero h1,.kr-page .kr-hero h1,.hw-page .hw-hero h1,.zg-tabletop .tt-hero h1,.a2-page .a2-intro h1) { font-size: clamp(46px, 12vw, 68px); }
+  :root :is(.fishes-manual .fm-article-header h1,.hw-page .hw-hero-inner h1,.kr-page .kr-hero-guide h1) { font-size: clamp(38px, 10vw, 56px); }
+}
+@media (prefers-reduced-motion:reduce) { .atlas-guide :is(a,button,input,summary) { transition: none; scroll-behavior: auto; } }

@@ -1,0 +1,106 @@
+{
+  "checkedAt": "2026-10-17T07:15:29.707Z",
+  "baseUrl": "http://127.0.0.1:3001",
+  "nextVersion": "15.5.18",
+  "scope": "Raw HTTP only; no browser hydration or upstream API requests",
+  "testRun": {
+    "command": "ZOW_NOT_FOUND_BASE_URL=http://127.0.0.1:3001 node --test src/app/lib/not-found.test.mjs src/app/lib/seo.test.mjs src/app/data/atlas.test.mjs",
+    "passed": 28,
+    "failed": 0,
+    "knownSSRLimitations": 4
+  },
+  "changes": [
+    "Pagination validated before directory metadata generation",
+    "Root branded app/not-found.tsx and noindex retained",
+    "Ineffective route-level not-found re-exports and pass-through layouts removed"
+  ],
+  "limitations": [
+    "Top-level unmatched routes render complete branded SSR 404 HTML. Matched-route notFound() keeps a real 404 and noindex but Next produces an empty SSR error document; the branded fallback is present only in RSC data.",
+    "RSC text is not evidence of server-rendered visible markup. Browser hydration recovery was not verified in these HTTP tests.",
+    "Global loading was not added and no error page was changed to a 200 JSX response."
+  ],
+  "results": [
+    {
+      "route": "/this-page-is-not-in-the-atlas/",
+      "status": 404,
+      "title": "404 — Page not found | ZowGame",
+      "serverHtmlH1": [
+        "This page isn’t in the atlas."
+      ],
+      "robots": [
+        "noindex",
+        "noindex, follow"
+      ],
+      "serverRecoveryLinks": {
+        "games": true,
+        "guides": true
+      },
+      "serializedBrandPresent": true,
+      "emptyNextErrorDocument": false
+    },
+    {
+      "route": "/guides/?page=999",
+      "status": 404,
+      "title": "404 — Page not found | ZowGame",
+      "serverHtmlH1": [],
+      "robots": [
+        "noindex",
+        "noindex, follow"
+      ],
+      "serverRecoveryLinks": {
+        "games": false,
+        "guides": false
+      },
+      "serializedBrandPresent": true,
+      "emptyNextErrorDocument": true
+    },
+    {
+      "route": "/games/?page=999",
+      "status": 404,
+      "title": "404 — Page not found | ZowGame",
+      "serverHtmlH1": [],
+      "robots": [
+        "noindex",
+        "noindex, follow"
+      ],
+      "serverRecoveryLinks": {
+        "games": false,
+        "guides": false
+      },
+      "serializedBrandPresent": true,
+      "emptyNextErrorDocument": true
+    },
+    {
+      "route": "/guides/?q=Harry%20Potter&page=2",
+      "status": 404,
+      "title": "404 — Page not found | ZowGame",
+      "serverHtmlH1": [],
+      "robots": [
+        "noindex",
+        "noindex, follow"
+      ],
+      "serverRecoveryLinks": {
+        "games": false,
+        "guides": false
+      },
+      "serializedBrandPresent": true,
+      "emptyNextErrorDocument": true
+    },
+    {
+      "route": "/games/not-a-published-game/",
+      "status": 404,
+      "title": "404 — Page not found | ZowGame",
+      "serverHtmlH1": [],
+      "robots": [
+        "noindex",
+        "noindex, follow"
+      ],
+      "serverRecoveryLinks": {
+        "games": false,
+        "guides": false
+      },
+      "serializedBrandPresent": true,
+      "emptyNextErrorDocument": true
+    }
+  ]
+}

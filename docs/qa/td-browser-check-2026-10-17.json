@@ -1,0 +1,114 @@
+{
+  "checkedAt": "2026-10-17T09:42:58.476Z",
+  "method": "Read-only browser DOM inspection after navigation; HTTP audit separately covers all 39 views.",
+  "pages": [
+    {
+      "canonical": "https://zowgame.com/games/dont-sleep-with-the-fishes/guide/",
+      "description": "Start Don't Sleep With The Fishes with an evacuation plan. Learn controls, manage daily energy, choose shipmate support and prepare for your first rescue.",
+      "h1": [
+        "Don't Sleep With The Fishes\nBeginner Guide."
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "Don't Sleep With The Fishes: Beginner Guide | ZowGame",
+      "url": "http://127.0.0.1:3000/games/dont-sleep-with-the-fishes/guide/"
+    },
+    {
+      "canonical": "https://zowgame.com/games/defenders-of-hogwarts/",
+      "description": "Learn MinaLima's physical Harry Potter board game, Defenders of Hogwarts: setup, House and Dark Arts turns, win conditions, rule answers and buying support.",
+      "h1": [
+        "DEFENDERS\nOF HOGWARTS"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "Harry Potter Defenders of Hogwarts: Board Game | ZowGame",
+      "url": "http://127.0.0.1:3000/games/defenders-of-hogwarts/"
+    },
+    {
+      "canonical": "https://zowgame.com/games/aion-2/steam-launch-stats/",
+      "description": "Read AION 2 Steam player counts, a dated launch-peak reference and release timeline. Compare Steam with PURPLE, read update summaries and find player help.",
+      "h1": [
+        "AION 2\nSteam launch stats"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "AION 2 Steam Launch Stats & Player Counts | ZowGame",
+      "url": "http://127.0.0.1:3000/games/aion-2/steam-launch-stats/"
+    },
+    {
+      "canonical": "https://zowgame.com/guides/?page=2",
+      "description": "Browse page 2 of ZowGame's guide library for more game rules, survival strategies, walkthroughs and player questions, with direct links to published chapters.",
+      "h1": [
+        "GUIDES FOR YOUR NEXT MOVE."
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "Game Guides: Rules & Walkthroughs, Page 2 | ZowGame",
+      "url": "http://127.0.0.1:3000/guides/?page=2"
+    },
+    {
+      "canonical": "https://zowgame.com/games/",
+      "description": "Search ZowGame's game library for “Tabletop”. Browse matching game overviews, filter by format and follow player guides and official links.",
+      "h1": [
+        "FIND YOUR NEXT GAME."
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "noindex, follow",
+      "title": "Game Library: Tabletop | ZowGame",
+      "url": "http://127.0.0.1:3000/games/?genre=tabletop&format=tabletop"
+    },
+    {
+      "canonical": "https://zowgame.com/games/all-the-gold-in-fort-locks/guide/",
+      "description": "Learn All The Gold In Fort Locks basics, from the blue key to the yellow key. Understand overlapping rooms, key handling, movement, undo and reset controls.",
+      "h1": [
+        "HOW TO PLAY ALL THE GOLD IN FORT LOCKS"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "All The Gold In Fort Locks Beginner Guide | ZowGame",
+      "url": "http://127.0.0.1:3000/games/all-the-gold-in-fort-locks/guide/"
+    },
+    {
+      "canonical": "https://zowgame.com/games/all-the-gold-in-fort-locks/walkthrough/",
+      "description": "Follow the All The Gold In Fort Locks walkthrough through six key stages, including green, orange, red and purple puzzles, with screenshots and a video.",
+      "h1": [
+        "All The Gold In Fort Locks\nWALKTHROUGH"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "All The Gold In Fort Locks Walkthrough: Keys | ZowGame",
+      "url": "http://127.0.0.1:3000/games/all-the-gold-in-fort-locks/walkthrough/"
+    },
+    {
+      "canonical": "https://zowgame.com/games/hood-warfare-2/weapons/",
+      "description": "Understand Hood Warfare 2 weapon unlocks, attachment challenges, skins and loadout practice, with confirmed systems separated from unverified gun stats.",
+      "h1": [
+        "Hood Warfare 2\nWeapons & Attachments"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "Hood Warfare 2 Weapons: Unlocks & Attachments | ZowGame",
+      "url": "http://127.0.0.1:3000/games/hood-warfare-2/weapons/"
+    },
+    {
+      "canonical": "https://zowgame.com/",
+      "description": "Find independent game guides, walkthroughs, rules and player help for shooters, horror, puzzles and tabletop games, with links to official sources.",
+      "h1": [
+        "GAME GUIDES & WALKTHROUGHS"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "robots": "index, follow",
+      "title": "Game Guides, Walkthroughs & Player Help | ZowGame",
+      "url": "http://127.0.0.1:3000/"
+    }
+  ]
+}

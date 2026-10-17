@@ -5,10 +5,9 @@ type CanonicalProps = {
   title: string;
   canonical: string;
   description?: string;
-  keywords?: string;
 };
 
-export function SeoHead({ title, canonical, description, keywords }: CanonicalProps) {
+export function SeoHead({ title, canonical, description }: CanonicalProps) {
   useEffect(() => {
     document.title = title;
 
@@ -36,8 +35,7 @@ export function SeoHead({ title, canonical, description, keywords }: CanonicalPr
     canonicalLink.href = canonical;
 
     if (description) ensureMeta("description").content = description;
-    if (keywords) ensureMeta("keywords").content = keywords;
-  }, [title, canonical, description, keywords]);
+  }, [title, canonical, description]);
 
   return null;
 }

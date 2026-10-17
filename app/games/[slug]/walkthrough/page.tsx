@@ -4,6 +4,7 @@ import { getGameBySlug, getPublishedGames } from "../../../../src/app/data/games
 import { SubPageLayout, SubSection, HighlightBox } from "../../../../src/app/components/sub-page-layout";
 import { BookOpen } from "lucide-react";
 import { FishesGuidePage, fishesGuideMetadata } from "../../../../src/app/components/fishes-guide-page";
+import { createPageMetadata } from "../../../../src/app/lib/seo";
 
 const WALKTHROUGH_GAMES = ["dont-sleep-with-the-fishes", "all-the-gold-in-fort-locks"];
 
@@ -15,11 +16,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   if (slug === "dont-sleep-with-the-fishes") return fishesGuideMetadata("walkthrough");
   const game = getGameBySlug(slug);
-  if (!game) return {};
+  if (!game || !WALKTHROUGH_GAMES.includes(slug)) notFound();
   const desc = slug === "all-the-gold-in-fort-locks"
     ? `Step-by-step walkthrough for ${game.shortTitle}: Blue, Green, Orange, Red, Purple, and Yellow key stages. Developer-confirmed solutions.`
     : `Step-by-step survival walkthrough for ${game.shortTitle}: ship evacuation, Days 1-10, mid-game events, and rescue conditions.`;
-  return { title: `${game.shortTitle} Walkthrough`, description: desc, alternates: { canonical: `https://zowgame.com${game.canonicalPath}walkthrough/` } };
+  return createPageMetadata({ title: `${game.shortTitle} Walkthrough`, description: desc, path: `${game.canonicalPath}walkthrough/`, image: game.ogImage });
 }
 
 /* ========== Fort Locks walkthrough ========== */
@@ -65,7 +66,7 @@ export default async function WalkthroughPage({ params }: { params: Promise<{ sl
   const wikiLinks = isFortLocks ? [{ label: "Walkthrough", href: `${game.canonicalPath}walkthrough/`, icon: BookOpen }] : undefined;
 
   return (
-    <SubPageLayout gameTitle={game.shortTitle} gamePath={game.canonicalPath} wikiLinks={wikiLinks} pageTitle="Walkthrough" pageDescription={isFortLocks ? "Complete step-by-step walkthrough. Blue → Green → Orange → Red → Purple → Yellow. Developer-confirmed solutions for every stuck point." : `Day-by-day survival walkthrough for ${game.shortTitle}. Evacuation, mid-game, and rescue.`}>
+    <SubPageLayout gameTitle={game.shortTitle} gamePath={game.canonicalPath} wikiLinks={wikiLinks} pageTitle="Walkthrough" pageDescription={isFortLocks ? "Follow six key stages with screenshots, puzzle notes and a walkthrough video: Blue, Green, Orange, Red, Purple and Yellow." : `Day-by-day survival walkthrough for ${game.shortTitle}. Evacuation, mid-game, and rescue.`}>
       {isFortLocks ? (
         <>
           <SubSection title="Full Walkthrough Video">

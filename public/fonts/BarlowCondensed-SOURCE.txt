@@ -1,0 +1,14 @@
+Barlow Condensed — self-hosted Latin WOFF2 faces
+Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)
+License: SIL Open Font License 1.1, retained in BarlowCondensed-OFL.txt
+Official metadata: https://raw.githubusercontent.com/google/fonts/main/ofl/barlowcondensed/METADATA.pb
+Official stylesheet: https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,800;0,900;1,800;1,900&display=swap&subset=latin
+
+800 normal: https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3bWuQ.woff2
+900 normal: https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B45L0z3bWuQ.woff2
+800 italic: https://fonts.gstatic.com/s/barlowcondensed/v13/HTxyL3I-JCGChYJ8VI-L6OO_au7B6xTrf3fmu4kG.woff2
+900 italic: https://fonts.gstatic.com/s/barlowcondensed/v13/HTxyL3I-JCGChYJ8VI-L6OO_au7B6xTrW3bmu4kG.woff2
+
+Original downloaded font files are served unchanged. Existing Fraunces and Manrope assets and licenses are retained.
+500 normal: https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4-Lwz3bWuQ.woff2
+600 normal: https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3bWuQ.woff2

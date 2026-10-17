@@ -1,81 +1,24 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, BookOpen, Compass, LifeBuoy, Search, X } from "lucide-react";
-import { getPublishedGames } from "./data/games";
-import { FISHES_VERSION } from "./data/fishes-guide";
-import { SiteHeader } from "./components/site-header";
-import { GameCover } from "./components/game-cover";
-import { ConnectionNote } from "./components/fishes-guide-tools";
-import { AionStatsEntry } from "./components/aion-2-stats-entry";
-import { AION_2_STATS_PATH } from "./data/aion-2-stats";
-import { KRILLION_PATH } from "./data/krillion";
-import "../styles/editorial.css";
+import { ArrowRight } from "lucide-react";
+import { AtlasShell } from "./components/atlas-shell";
+import { LevelSelect, HomeGuideFinder } from "./components/level-select";
+import { ATLAS_GAMES, ATLAS_GENRES, ATLAS_GUIDES, filterAtlasGames, type AtlasGenreId } from "./data/atlas";
+import { featuredGameSlug, featuredHomeGames, homeStateHref, type HomeGuideFilter } from "./data/level-select";
 
-const defendersPath = "/games/defenders-of-hogwarts/";
-const filters = ["All games", "Browser", "Download", "Tabletop"] as const;
-const guides = [
-  { title: "Think beyond the obvious", game: "Krillion", note: "Rare-answer routine & scoring", href: `${KRILLION_PATH}guide/` },
-  { title: "Your first night at sea", game: "Don't Sleep With The Fishes", note: `Survival manual · ${FISHES_VERSION}`, href: "/games/dont-sleep-with-the-fishes/guide/" },
-  { title: "Keep the furnace alive", game: "Cobb Can Move", note: "Controls & survival basics", href: "/games/cobb-can-move/guide/" },
-  { title: "Find your way out", game: "All the Gold in Fort Locks", note: "Room puzzles & key sequences", href: "/games/all-the-gold-in-fort-locks/walkthrough/" },
-];
-const updates = [
-  { title: "Krillion joins the daily game desk", note: "Daily prompts, rare-answer guide & score calculator", href: KRILLION_PATH, image: "/krillion-official.jpg", date: "2026-10-12", label: "12 OCT 2026" },
-  { title: "Defenders of Hogwarts, explained", note: "Setup, turns, win conditions & searchable answers", href: defendersPath, image: "/defenders-official.webp", date: "2026-10-12", label: "12 OCT 2026" },
-  { title: "The sea has new rules", note: `Fishes survival manual · ${FISHES_VERSION}`, href: "/games/dont-sleep-with-the-fishes/changelog/", image: "/fishes-at-sea.jpg", date: "2026-10-07", label: "07 OCT 2026" },
-];
-
-export function HomePage() {
-  const order = ["dont-sleep-with-the-fishes", "cobb-can-move", "all-the-gold-in-fort-locks", "defenders-of-hogwarts", "krillion"];
-  const position = (slug: string) => { const index = order.indexOf(slug); return index < 0 ? order.length : index; };
-  const games = [...getPublishedGames()].sort((a, b) => position(a.slug) - position(b.slug));
-  const [ready, setReady] = useState(false);
-  useEffect(() => setReady(true), []);
-  const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<(typeof filters)[number]>("All games");
-  const searchRef = useRef<HTMLInputElement>(null);
-  const visible = games.filter((game) => {
-    const text = `${game.shortTitle} ${game.content.genre} ${game.content.description} ${game.keywords.join(" ")}`;
-    return text.toLowerCase().includes(query.trim().toLowerCase()) && (filter === "All games" || (game.accessMode || "browser") === filter.toLowerCase());
-  });
-  const matchesStats = query.trim().length > 0 && /aion|steam|launch|stats|statistics|player count/i.test(query.trim());
-  function resetLibrary() { setQuery(""); setFilter("All games"); }
-  function showRules() { setQuery(""); setFilter("Tabletop"); }
-  function searchLibrary() {
-    document.getElementById("library")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
-  }
-
-  return <div className="zg-site ed-home">
-    <a className="zg-skip" href="#library">Skip to the game library</a>
-    <ConnectionNote />
-    <SiteHeader editorial search={<div className="ed-header-search"><Search size={17} aria-hidden="true" /><label className="zg-sr-only" htmlFor="header-search">Search the game library</label><input ref={searchRef} id="header-search" type="search" disabled={!ready} placeholder={ready ? "Search games…" : "Loading search…"} value={query} onChange={(event) => { setQuery(event.target.value); setFilter("All games"); }} onKeyDown={(event) => { if (event.key === "Enter") searchLibrary(); }} />{query && <button type="button" aria-label="Clear game search" onClick={() => { setQuery(""); searchRef.current?.focus({ preventScroll: true }); }}><X size={16} aria-hidden="true" /></button>}</div>} />
-
-    <main className="ed-main">
-      <div className="ed-feature-grid">
-        <section className="ed-lead" aria-labelledby="featured-title">
-          <div className="ed-lead-art"><GameCover src="/defenders-editorial.webp" title="Castle and tabletop map editorial illustration" priority retry={false} /></div>
-          <div className="ed-lead-copy"><p className="ed-eyebrow">HARRY POTTER / TABLETOP GAME</p><h1 id="featured-title">DEFENDERS<br />OF HOGWARTS</h1><h2>Harry Potter Defenders RPG game — explained</h2><p className="ed-lead-deck">A new tabletop adventure from MinaLima.<br />Learn the rules. Find your next move.</p><div className="ed-lead-actions"><Link className="ed-button" href={defendersPath}>Read the guide<ArrowUpRight size={18} aria-hidden="true" /></Link><Link className="ed-button ed-button-outline" href={`${defendersPath}#rules`}>How to play</Link></div><nav className="ed-briefing" aria-label="Defenders of Hogwarts guide sections"><Link href={`${defendersPath}#overview`}>What is it?<ArrowRight size={15} aria-hidden="true" /></Link><Link href={`${defendersPath}#rules`}>Rules & turns<ArrowRight size={15} aria-hidden="true" /></Link><Link href={`${defendersPath}#availability`}>Where to buy<ArrowRight size={15} aria-hidden="true" /></Link></nav></div>
-          <small className="ed-art-credit">EDITORIAL ILLUSTRATION</small>
-        </section>
-        <aside className="ed-radar" aria-labelledby="radar-heading"><div className="ed-rail-heading"><h2 id="radar-heading">ON THE RADAR</h2><span className="ed-eyebrow">FRESH GUIDES</span></div><Link className="ed-radar-feature" href="/games/dont-sleep-with-the-fishes/"><GameCover src="/fishes-at-sea.jpg" title="Don't Sleep With The Fishes" retry={false} /><div><span className="ed-pill">SURVIVAL / DOWNLOAD</span><h3>Don't Sleep<br />With The Fishes</h3></div></Link><p className="ed-radar-caption"><span>{FISHES_VERSION} manual</span><span>Get your bearings at sea.</span></p><div id="guides" className="ed-start"><h3>START HERE</h3>{guides.map((guide, index) => <Link key={guide.href} href={guide.href}><span className="ed-number">{String(index + 1).padStart(2, "0")}</span><span>{guide.title}</span><ArrowUpRight size={17} aria-hidden="true" /></Link>)}</div></aside>
-      </div>
-
-      <AionStatsEntry />
-      <section className="ed-daily-entry" aria-labelledby="daily-entry-title"><div className="ed-daily-number" aria-hidden="true">07</div><div><p className="ed-eyebrow">THE DAILY GAME DESK / KRILLION</p><h2 id="daily-entry-title"><Link href={KRILLION_PATH}>Know the answer. Find the rare one.</Link></h2><p>Seven prompts. Twenty-five seconds each. Check today’s dive, learn the scoring and plan a better answer.</p></div><div className="ed-daily-actions"><Link className="ed-button" href={KRILLION_PATH}>Krillion game & guide<ArrowUpRight size={18} aria-hidden="true" /></Link><Link className="ed-text-link" href={`${KRILLION_PATH}#daily`}>Today’s official prompts<ArrowRight size={16} aria-hidden="true" /></Link></div></section>
-      <nav className="ed-intent" aria-label="Choose your next move"><a href="#library" onClick={resetLibrary}><Compass size={31} aria-hidden="true" /><span><strong>Find a game.</strong><small>Something worth your time.</small></span><ArrowRight size={20} aria-hidden="true" /></a><a href="#library" onClick={showRules}><BookOpen size={31} aria-hidden="true" /><span><strong>Learn the rules.</strong><small>Get ready for the table.</small></span><ArrowRight size={20} aria-hidden="true" /></a><a href="#guides"><LifeBuoy size={31} aria-hidden="true" /><span><strong>Get unstuck.</strong><small>A better next move.</small></span><ArrowRight size={20} aria-hidden="true" /></a></nav>
-
-      <section id="library" className="ed-library" aria-labelledby="library-heading"><div className="ed-section-heading"><div><h2 id="library-heading">THE GAME LIBRARY</h2><p className="ed-eyebrow">DIFFERENT WORLDS. SAME CURIOSITY.</p></div><button className="ed-text-link" disabled={!ready} onClick={() => { resetLibrary(); searchRef.current?.focus({ preventScroll: true }); }}>Browse all games<ArrowRight size={17} aria-hidden="true" /></button></div><div className="ed-library-tools"><div className="ed-filters" role="group" aria-label="Game format">{filters.map((item) => <button key={item} disabled={!ready} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}</button>)}</div><span className="ed-library-hint">BROWSER / DOWNLOAD / TABLETOP</span></div><p className={`ed-result-count${query || filter !== "All games" ? " ed-result-count-visible" : ""}`} role="status">{visible.length} {visible.length === 1 ? "game" : "games"}{matchesStats ? " + 1 data feature" : ""}{query ? ` matching “${query}”` : " in view"}</p><div className="ed-game-grid">{visible.map((game) => {
-        const tabletop = game.accessMode === "tabletop";
-        const dailyTrivia = game.slug === "krillion";
-        const guideHref = tabletop ? `${game.canonicalPath}#rules` : `${game.canonicalPath}${game.slug === "all-the-gold-in-fort-locks" ? "walkthrough" : "guide"}/`;
-        return <article key={game.slug} className={`ed-game ed-game-${game.slug}${tabletop ? " ed-game-tabletop" : ""}`}><Link className="ed-game-image" href={game.canonicalPath} aria-label={`Explore ${game.shortTitle}`}><GameCover src={game.slug === "dont-sleep-with-the-fishes" ? "/fishes-at-sea.jpg" : game.cardImage || game.content.coverImg || game.ogImage} title={game.shortTitle} retry={false} /><span className="ed-pill">{dailyTrivia ? "DAILY TRIVIA" : tabletop ? "PHYSICAL TABLETOP" : game.accessMode === "download" ? "DOWNLOAD GAME" : "BROWSER GAME"}</span></Link><div className="ed-game-copy"><p className="ed-eyebrow">{tabletop ? "MINALIMA / HARRY POTTER" : game.content.genre.split("·").slice(0, 2).join(" / ").trim()}</p><h3><Link href={game.canonicalPath}>{game.shortTitle}</Link></h3><p>{game.content.description}</p><Link className="ed-text-link" href={game.accessMode === "browser" || !game.accessMode ? game.canonicalPath : guideHref}>{dailyTrivia ? "Daily game & guide" : tabletop ? "How to play" : game.accessMode === "download" ? "Read survival guide" : "Play in browser"}<ArrowUpRight size={17} aria-hidden="true" /></Link></div></article>;
-      })}</div>{matchesStats && <div className="ed-stats-search"><p className="ed-eyebrow">MATCHING DATA FEATURE</p><Link className="ed-text-link" href={AION_2_STATS_PATH}>AION 2 Steam launch stats — players, peaks & official news<ArrowUpRight size={17} aria-hidden="true" /></Link></div>}{!visible.length && !matchesStats && <div className="ed-empty"><Search size={30} aria-hidden="true" /><h3>No games match this search.</h3><p>Try “Harry Potter”, “horror” or “puzzle”, or show the whole library.</p><button className="ed-button" onClick={resetLibrary}>Show all games<ArrowRight size={17} aria-hidden="true" /></button></div>}</section>
-
-      <div className="ed-bottom-grid"><section id="updates" className="ed-updates" aria-labelledby="updates-heading"><h2 id="updates-heading">RECENTLY UPDATED</h2>{updates.map((update) => <Link href={update.href} className="ed-update" key={update.href}><GameCover src={update.image} title={update.title} retry={false} /><div><time className="ed-eyebrow" dateTime={update.date}>{update.label}</time><h3>{update.title}</h3><p>{update.note}</p></div><ArrowUpRight size={18} aria-hidden="true" /></Link>)}</section><aside className="ed-editor-note"><img src="/defenders-editorial.webp" alt="" loading="lazy" width="1659" height="948" /><div><p className="ed-eyebrow">THE PLAYER'S INDEX</p><h2>SMALL WORLDS.<br />STRANGE RULES.</h2><p>Find a game. Learn its secrets.</p><a href="#library" className="ed-button" onClick={resetLibrary}>Explore the library<ArrowRight size={17} aria-hidden="true" /></a></div></aside></div>
-    </main>
-    <footer className="ed-footer"><Link href="/" className="zg-wordmark">ZOW<span>GAME</span></Link><p>Games worth your time.<br /><small>Independent player guides.</small></p><nav aria-label="Footer navigation"><a href="#library" onClick={resetLibrary}>Library</a><a href="#guides">Guides</a><Link href="/privacy/">Privacy</Link></nav></footer>
-  </div>;
+export function HomePage({ genre = "all", game, type = "featured" }: { genre?: AtlasGenreId; game?: string; type?: HomeGuideFilter }) {
+  const catalog = filterAtlasGames({ query: "", genre });
+  const games = featuredHomeGames(catalog);
+  const gameSlugs = new Set(catalog.map((entry) => entry.slug));
+  const guides = ATLAS_GUIDES.filter((entry) => gameSlugs.has(entry.gameSlug));
+  const initialGame = featuredGameSlug(game, games);
+  return <AtlasShell active="home" genre={genre} genrePath="/" query="" searchAction="/guides/" showRoute={false}>
+    {games.length > 0 && <LevelSelect key={`${genre}-${initialGame}-${type}`} games={games} initialGame={initialGame} genre={genre} guideType={type} />}
+    <div className="ls-home-content">
+      <div className="ls-library-controls"><nav className="ls-genres" aria-label="Game genres">{ATLAS_GENRES.map((entry) => <Link key={entry.id} href={homeStateHref({ genre: entry.id })} aria-current={genre === entry.id ? "true" : undefined}>{entry.label}</Link>)}</nav><p>{catalog.length} {catalog.length === 1 ? "game" : "games"}<span aria-hidden="true"> · </span>{genre === "all" ? `${ATLAS_GUIDES.length} guides & topics` : `${guides.length} guides`}</p></div>
+      {genre !== "all" && <p className="ls-category-note">Showing {ATLAS_GENRES.find((entry) => entry.id === genre)?.label.toLowerCase()}. <Link href="/">Explore all {ATLAS_GAMES.length} games</Link>.</p>}
+      <HomeGuideFinder key={`${genre}-${type}`} guides={guides} genre={genre} initialType={type} initialGame={initialGame} />
+      <aside id="updates" className="ls-data-strip" aria-label="Updates and data"><Link href="/updates/" className="ls-kicker">Updates & data</Link><Link href="/games/aion-2/steam-launch-stats/">AION 2 Steam launch stats<ArrowRight size={20} strokeWidth={1.5} aria-hidden="true" /></Link><p>Independent game guides<span aria-hidden="true"> / </span>Play smarter. Go further.</p></aside>
+    </div>
+  </AtlasShell>;
 }
 export default HomePage;

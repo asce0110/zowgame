@@ -238,9 +238,6 @@ export function ContentEditor() {
           <Field label="Meta 描述" hint={`${draft.seoDescription.length} 字符 · 建议 140-160`}>
             <textarea className={inputCls + " min-h-[80px]"} style={inputStyle} value={draft.seoDescription} onChange={(e) => update("seoDescription", e.target.value)} />
           </Field>
-          <Field label="关键词" hint="使用英文逗号分隔">
-            <textarea className={inputCls + " min-h-[60px]"} style={inputStyle} value={draft.seoKeywords} onChange={(e) => update("seoKeywords", e.target.value)} />
-          </Field>
         </div>
       )}
 

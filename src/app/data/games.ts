@@ -3,6 +3,7 @@ import { dontSleepWithTheFishesGame } from "./dont-sleep-with-the-fishes";
 import { allTheGoldInFortLocksGame } from "./all-the-gold-in-fort-locks";
 import { defendersOfHogwartsGame } from "./defenders-of-hogwarts";
 import { krillionGame } from "./krillion";
+import { hoodGame } from "./hood-warfare-2";
 
 export type GameFaqItem = {
   q: string;
@@ -420,6 +421,7 @@ export const GAMES: GameRecord[] = [
   allTheGoldInFortLocksGame,
   defendersOfHogwartsGame,
   krillionGame,
+  hoodGame,
 ];
 export function getGameBySlug(slug: string) {
   return GAMES.find((game) => game.slug === slug);

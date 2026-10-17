@@ -23,7 +23,7 @@ https://zowgame.com/
 Featured game page:
 
 ```text
-https://zowgame.com/cobb-can-move/
+https://zowgame.com/games/cobb-can-move/
 ```
 
 ## Project Purpose
@@ -38,7 +38,7 @@ Each game page is built as a dedicated playable page with the game embed, contro
 
 | Game | Route | Genre | Status |
 |---|---|---|---|
-| Cobb Can Move | `/cobb-can-move/` | Pixel Survival Horror | Featured |
+| Cobb Can Move | `/games/cobb-can-move/` | Pixel Survival Horror | Featured |
 
 ## Recommended URL Structure
 
@@ -49,7 +49,7 @@ Each game page is built as a dedicated playable page with the game embed, contro
 Homepage and platform entry page.
 
 ```text
-/cobb-can-move/
+/games/cobb-can-move/
 ```
 
 Main playable game page for Cobb Can Move.
@@ -67,7 +67,7 @@ Future examples:
 | Page | Purpose |
 |---|---|
 | `/` | Brand homepage, featured game, quick entry |
-| `/cobb-can-move/` | Main game page, gameplay content, SEO landing page, iframe embed |
+| `/games/cobb-can-move/` | Main game page, gameplay content, SEO landing page, iframe embed |
 
 ## Homepage Content Strategy
 
@@ -117,7 +117,7 @@ Instant game access
 
 ## Cobb Can Move Page Structure
 
-Recommended sections for `/cobb-can-move/`:
+Recommended sections for `/games/cobb-can-move/`:
 
 ```text
 H1: Cobb Can Move
@@ -141,23 +141,27 @@ H2: Cobb Can Move FAQ
 
 ## SEO Metadata
 
-Homepage:
+The canonical source for page titles and descriptions is [`src/app/data/page-seo.ts`](src/app/data/page-seo.ts). Its `PAGE_TD` registry covers 37 base routes and two real, unfiltered guide-pagination views: `/guides/?page=2` and `/guides/?page=3`. The shared `createPageMetadata` helper resolves page copy by canonical path; keep the visible page introduction and source evidence consistent with that copy.
 
-```html
-<title>ZowGame - Play Free Browser Games Online</title>
-<meta name="description" content="Play fast, free browser games on ZowGame. Start with Cobb Can Move, a tense pixel horror game you can launch instantly online.">
-<meta name="keywords" content="ZowGame, free browser games, online games, play games online, horror browser games, Cobb Can Move">
-<link rel="canonical" href="https://zowgame.com/">
+Each entry records a primary search intent, secondary planning terms, the full branded title, description, content evidence and editorial cautions. Keyword fields are editorial planning only: do not render a meta-keywords tag. Google documents that the [meta-keyword tag has no effect on indexing or ranking](https://developers.google.com/search/docs/crawling-indexing/special-tags).
+
+The writing target is 45–60 Unicode code points for a full title (65 maximum, including ` | ZowGame`) and 140–160 for a description (160 maximum). These are internal editorial standards, not Google's hard limits. Google may generate a different [title link](https://developers.google.com/search/docs/appearance/title-link) or [snippet](https://developers.google.com/search/docs/appearance/snippet); this work does not promise indexing, a ranking position or ranking improvement.
+
+Base pages use their canonical route, for example `https://zowgame.com/games/cobb-can-move/`. Valid unfiltered pagination has a self-referencing canonical and crawlable links. Search, genre, format, topic and other filtered/invalid parameter variants remain `noindex,follow` with the clean directory canonical; homepage parameter variants use the root canonical. Out-of-range pagination must return a real 404. Keep these pages crawlable so Google can [read their noindex directive](https://developers.google.com/search/docs/crawling-indexing/block-indexing).
+
+To update metadata:
+
+1. Review the actual page, its visible H1/intro and source boundaries.
+2. Edit the corresponding `PAGE_TD` entry. Preserve a distinct purpose for an overview, beginner guide, FAQ, reference page or news page. Do not advertise missing answers, unverified game data or playable copies that the page does not provide.
+3. For a new page, also create its real route and update route/sitemap registration. Registry copy alone does not create a page.
+4. Regenerate the delivery exports and check they match the registry:
+
+```sh
+node docs/seo/export-page-td.mjs --date 2026-10-17
+node docs/seo/export-page-td.mjs --date 2026-10-17 --check
 ```
 
-Cobb Can Move page:
-
-```html
-<title>Cobb Can Move - Play Online Free in Browser</title>
-<meta name="description" content="Play Cobb Can Move online for free. Survive a dark pixel dungeon, collect coal, keep the light alive, and escape Cobb as the rules change.">
-<meta name="keywords" content="Cobb Can Move, play Cobb Can Move online, Cobb Can Move game, Cobb Can Move free, browser horror game, survival horror game, pixel horror game">
-<link rel="canonical" href="https://zowgame.com/cobb-can-move/">
-```
+The exporter reads the registry directly and counts code points with `Array.from(text).length`. It creates the [complete Markdown table](docs/seo/page-td-2026-10-17.md) and [UTF-8 BOM CSV](docs/seo/page-td-2026-10-17.csv), including keywords, lengths, landing evidence and cautions. Use a new `--date` for a later snapshot; do not edit generated files or the historical draft JSON files as a substitute for updating the registry.
 
 ## Game Embed
 
@@ -182,7 +186,7 @@ Make sure the playable iframe is placed inside the main game page and not used a
 The SEO page should be:
 
 ```text
-https://zowgame.com/cobb-can-move/
+https://zowgame.com/games/cobb-can-move/
 ```
 
 The iframe URL should only be treated as the game runtime source.
@@ -238,7 +242,7 @@ Recommended sitemap entries:
   <loc>https://zowgame.com/</loc>
 </url>
 <url>
-  <loc>https://zowgame.com/cobb-can-move/</loc>
+  <loc>https://zowgame.com/games/cobb-can-move/</loc>
 </url>
 ```
 
@@ -333,7 +337,7 @@ Preferred canonical format:
 
 ```text
 https://zowgame.com/
-https://zowgame.com/cobb-can-move/
+https://zowgame.com/games/cobb-can-move/
 ```
 
 Redirect these variants to the canonical URLs:
@@ -341,8 +345,8 @@ Redirect these variants to the canonical URLs:
 ```text
 http://zowgame.com/
 https://www.zowgame.com/
-https://zowgame.com/cobb-can-move
-https://www.zowgame.com/cobb-can-move/
+https://zowgame.com/games/cobb-can-move
+https://www.zowgame.com/games/cobb-can-move/
 ```
 
 ## License And Credits

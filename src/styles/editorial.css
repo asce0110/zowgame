@@ -131,7 +131,7 @@
 .ed-intent strong { font: 27px var(--font-display); line-height: 1.1; display: block; }
 .ed-intent small { color: var(--color-muted); font-size: 12px; display: block; margin-top: 5px; }
 .ed-intent a:hover strong { color: var(--color-accent); }
-.ed-library { padding: 24px 36px; border-bottom: 1px solid var(--ed-line); scroll-margin-top: 22px; }
+.ed-library { --ed-card-columns: 6; --ed-card-min-height: 220px; --ed-card-title-size: 22px; --ed-card-copy-padding: 10px 10px 6px; --ed-card-grid-gap: 8px; --ed-card-summary-lines: 2; padding: 24px 36px; border-bottom: 1px solid var(--ed-line); scroll-margin-top: 22px; }
 .ed-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
 .ed-section-heading h2, .ed-updates > h2 { font-size: 29px; font-weight: 600; letter-spacing: .025em; }
 .ed-section-heading > div { display: flex; align-items: center; gap: 24px; }
@@ -149,8 +149,8 @@
 .ed-search button { background: transparent; border: 0; color: var(--color-muted); min-width: 44px; min-height: 44px; display: grid; place-items: center; }
 .ed-result-count { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .ed-result-count-visible { position: static; width: auto; height: auto; clip-path: none; font: 11px var(--font-mono); color: var(--color-muted); margin: 0 0 12px !important; }
-.ed-game-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
-.ed-game { position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; background: var(--color-surface); border: 1px solid var(--ed-line); min-width: 0; min-height: 320px; }
+.ed-game-grid { display: grid; grid-template-columns: repeat(var(--ed-card-columns),minmax(0,1fr)); gap: var(--ed-card-grid-gap); }
+.ed-game { position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; background: var(--color-surface); border: 1px solid var(--ed-line); min-width: 0; min-height: var(--ed-card-min-height); padding-top: 40px; }
 .ed-game::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg,transparent 12%,#11171655 35%,#111716ed 75%); }
 .ed-game-image { display: block; position: absolute; inset: 0; height: 100%; overflow: hidden; z-index: -2; }
 .ed-game-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.75) saturate(.85); transition: transform var(--duration-base) var(--ease-out); }
@@ -158,14 +158,16 @@
 .ed-game-image .zg-cover-fallback { justify-content: flex-start; padding-top: 45px; }
 .ed-game-image .zg-cover-fallback strong { display: none; }
 .ed-game-image .zg-cover-fallback span { font-size: 12px; line-height: 1.5; }
-.ed-game-image .ed-pill { position: absolute; left: 14px; top: 12px; }
-.ed-game-copy { padding: 17px 17px 9px; pointer-events: none; }
+.ed-game-image .ed-pill { position: absolute; left: 10px; top: 10px; max-width: calc(100% - 20px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 8px; letter-spacing: .04em; }
+.ed-game-copy { padding: var(--ed-card-copy-padding); pointer-events: none; }
 .ed-game-copy a { pointer-events: auto; }
-.ed-game-copy h3 { font-size: 29px; line-height: 1.02; margin-top: 7px; }
+.ed-game-copy .ed-eyebrow { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ed-game-copy h3 { font-size: var(--ed-card-title-size); line-height: 1.02; margin-top: 6px; }
 .ed-game-copy h3 a { color: var(--color-text); }
 .ed-game-copy h3 a:hover { color: var(--color-accent); }
-.ed-game-copy > p:not(.ed-eyebrow) { font-size: 13px; line-height: 1.5; color: #e0e4d8; margin-top: 9px; }
-.ed-game-copy .ed-text-link { margin-top: 8px; color: var(--color-accent); }
+.ed-game-copy > p:not(.ed-eyebrow) { font-size: 13px; line-height: 1.5; color: #e0e4d8; margin-top: 8px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: var(--ed-card-summary-lines); overflow: hidden; }
+.ed-game-copy .ed-text-link { margin-top: 4px; gap: 6px; color: var(--color-accent); }
+.ed-game-copy .ed-text-link svg { flex-shrink: 0; }
 .ed-game-tabletop .ed-game-image { background: #192018; }
 .ed-game-tabletop .ed-game-image img { object-position: 50% 15%; }
 .ed-game-all-the-gold-in-fort-locks .ed-game-image img { object-position: 70% center; }
@@ -210,8 +212,10 @@
 @media (prefers-reduced-motion: reduce) { .ed-home *, .ed-home *::before, .ed-home *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
 
 @media (max-width: 1100px) {
-  .ed-game-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
-  .ed-game { min-height: 295px; }
+  .ed-library { --ed-card-columns: 3; --ed-card-min-height: 210px; --ed-card-grid-gap: 10px; }
+  .ed-game-grid { grid-template-columns: repeat(var(--ed-card-columns),minmax(0,1fr)); gap: var(--ed-card-grid-gap); }
+  .ed-game { min-height: var(--ed-card-min-height); }
+  .ed-game-copy { padding: var(--ed-card-copy-padding); }
   .ed-game-image, .ed-game-tabletop .ed-game-image { height: 100%; }
   .ed-section-heading .ed-eyebrow { display: none; }
 }
@@ -219,7 +223,7 @@
   .ed-lead h1 { font-size: 82px; }
   .ed-lead-copy { padding: 36px 28px 24px; }
   .ed-game-tabletop { display: flex; }
-  .ed-game-tabletop .ed-game-copy { display: block; padding: 17px 17px 9px; }
+  .ed-game-tabletop .ed-game-copy { display: block; padding: var(--ed-card-copy-padding); }
   .ed-intent a > svg:first-child { width: 35px; height: 35px; }
 }
 @media (max-width: 600px) {
@@ -229,17 +233,18 @@
   .ed-lead h1 { font-size: clamp(45px,12.7vw,70px); line-height: 1.04; }
   .ed-lead h2 { font-size: 25px; line-height: 1.1; margin-top: 20px; }
   .ed-button { font-size: 17px; padding-inline: 15px; }
-  .ed-library { padding: 24px 20px; }
+  .ed-library { --ed-card-columns: 2; --ed-card-min-height: 220px; padding: 24px 20px; }
   .ed-library-tools { flex-direction: row; margin-bottom: 12px; gap: 0; }
   .ed-library-hint { display: none; }
   .ed-filters { width: 100%; }
   .ed-filters button { font-size: 12px; }
-  .ed-game-grid { grid-template-columns: 1fr; gap: 16px; }
-  .ed-game { min-height: 310px; }
+  .ed-game-grid { grid-template-columns: repeat(var(--ed-card-columns),minmax(0,1fr)); gap: var(--ed-card-grid-gap); }
+  .ed-game { min-height: var(--ed-card-min-height); }
   .ed-game-image, .ed-game-tabletop .ed-game-image { height: 100%; }
-  .ed-game-copy, .ed-game-tabletop .ed-game-copy { padding: 17px 20px 10px; }
-  .ed-game-copy h3 { font-size: 32px; }
-  .ed-game-copy > p:not(.ed-eyebrow) { font-size: 14px; line-height: 1.5; }
+  .ed-game-copy, .ed-game-tabletop .ed-game-copy { padding: var(--ed-card-copy-padding); }
+  .ed-game-copy h3 { font-size: var(--ed-card-title-size); }
+  .ed-game-copy > p:not(.ed-eyebrow) { font-size: 13px; line-height: 1.5; }
+  .ed-game-copy .ed-text-link { font-size: 12px; }
   .ed-intent a > svg:first-child { width: 44px; height: 44px; }
   .ed-editor-note { min-height: 300px; }
   .ed-editor-note > div { padding: 28px 20px; }

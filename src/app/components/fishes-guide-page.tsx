@@ -6,6 +6,7 @@ import { FISHES_VERSION, FISHES_CHECKED, fishesGuidePages, fishesSources } from 
 import { GuideIndex, ReadingCompass, ConnectionNote, GameArtwork } from "./fishes-guide-tools";
 import { SchemaJsonLd } from "./schema-jsonld";
 import { SiteHeader } from "./site-header";
+import { createPageMetadata } from "../lib/seo";
 import "../../styles/fishes.css";
 import type { Metadata } from "next";
 
@@ -16,8 +17,7 @@ export function fishesGuideMetadata(pageKey: string): Metadata {
   const page = fishesGuidePages[pageKey];
   const title = `Don't Sleep With The Fishes ${page.title} (${FISHES_VERSION})`;
   const description = `${page.description} Sources checked ${FISHES_CHECKED}.`;
-  const url = `https://zowgame.com${base}${pageKey}/`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, images: ["/fishes-steam-header.jpg"] }, twitter: { card: "summary_large_image", title, description, images: ["/fishes-steam-header.jpg"] } };
+  return createPageMetadata({ title, description, path: `${base}${pageKey}/`, image: "/fishes-steam-header.jpg" });
 }
 
 function Shell({ active, children }: { active: string; children: ReactNode }) {
@@ -37,7 +37,7 @@ export function FishesGuidePage({ pageKey }: { pageKey: string }) {
   const headings = page.sections.map((section, i) => ({ id: `section-${i + 1}`, title: section.title }));
   const index = Object.keys(labels).indexOf(pageKey) + 1;
   return <Shell active={pageKey}><div className="fm-breadcrumb"><Link href={base}>Fishes manual</Link><span>/</span>{labels[pageKey]}</div>
-    <header className="fm-article-header"><p className="fm-kicker">FIELD GUIDE {String(index).padStart(2, "0")} / {FISHES_VERSION}</p><h1>{page.title}<span className="fm-heading-dot">.</span></h1><p>{page.description}</p><div className="fm-audit"><span className="fm-status-dot" />Sources checked <time dateTime={FISHES_CHECKED}>{FISHES_CHECKED}</time><span>Official notes + labeled community reports</span></div></header>
+    <header className="fm-article-header"><p className="fm-kicker">FIELD GUIDE {String(index).padStart(2, "0")} / {FISHES_VERSION}</p><h1><span className="seo-game-prefix">Don't Sleep With The Fishes</span>{" "}{page.title}<span className="fm-heading-dot">.</span></h1><p>{page.description}</p><div className="fm-audit"><span className="fm-status-dot" />Sources checked <time dateTime={FISHES_CHECKED}>{FISHES_CHECKED}</time><span>Official notes + labeled community reports</span></div></header>
     <div className="fm-reading-grid"><article className="fm-article">{pageKey === "guide" && <figure className="fm-field-image"><img src="/fishes-lifeboat.jpg" alt="Scavenging supplies inside the ship before evacuation" width="1920" height="1080" loading="lazy" /><figcaption>Before the evacuation: know what you need, then get it to the boat. Official Steam screenshot.</figcaption></figure>}{page.sections.map((section, i) => {
       const content = <><h2>{section.title}</h2>{section.body && <p>{section.body}</p>}{section.bullets && <ul>{section.bullets.map((text) => <li key={text}>{text}</li>)}</ul>}{section.rows && <div className="fm-table-scroll" role="region" aria-label={`${section.title} reference table`} tabIndex={0}><table><caption className="fm-sr-only">{section.title}</caption><thead><tr>{section.headers!.map((text) => <th scope="col" key={text}>{text}</th>)}</tr></thead><tbody>{section.rows.map((row) => <tr key={row[0]}>{row.map((text, j) => j === 0 ? <th scope="row" key={j}>{text}</th> : <td key={j}>{text}</td>)}</tr>)}</tbody></table></div>}<SourceLinks sources={section.sources} /></>;
       return <section id={headings[i].id} key={headings[i].id} className="fm-article-section"><div className="fm-section-label"><span>{String(i + 1).padStart(2, "0")}</span><span>{section.spoiler ? "ENDING SPOILERS" : "FIELD NOTES"}</span></div>{section.spoiler ? <details className="fm-spoiler"><summary>{section.title}<span>Reveal spoilers +</span></summary><div>{content}</div></details> : content}</section>;

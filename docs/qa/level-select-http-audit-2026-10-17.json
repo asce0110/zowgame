@@ -1,0 +1,6775 @@
+{
+  "checkedAt": "2026-10-17T09:03:42.554Z",
+  "baseUrl": "http://127.0.0.1:3000",
+  "scope": "Raw HTTP responses; no browser, hydration, page-script execution, or upstream API requests",
+  "checks": [
+    {
+      "name": "sitemap status 200",
+      "ok": true
+    },
+    {
+      "name": "sitemap contains 37 unique canonical pages",
+      "ok": true,
+      "detail": 37
+    },
+    {
+      "name": "sitemap has no invented lastmod",
+      "ok": true
+    },
+    {
+      "name": "sitemap contains only production canonical paths without query/hash",
+      "ok": true
+    },
+    {
+      "name": "/updates/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/updates/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/aion-2/steam-launch-stats/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/aion-2/steam-launch-stats/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/cobb-can-move/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/cobb-can-move/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/guide/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/guide/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/defenders-of-hogwarts/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/defenders-of-hogwarts/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/faq/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/faq/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/faq/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/faq/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/guide/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/guide/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/faq/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/faq/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/modes/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/modes/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/weapons/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/weapons/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/purchase/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/purchase/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/maps/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/maps/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/news/: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/news/: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=2: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=2: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=zzzznomatch: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=zzzznomatch: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=Harry%20Potter: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=Harry%20Potter: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=3: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=3: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=AION%202: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=AION%202: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=AION2: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=AION2: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=aion%202%20steam%20launch%20stats: JSON-LD parses without literal HTML delimiters",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=aion%202%20steam%20launch%20stats: no unsourced aggregate rating",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=2: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=3: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=Harry%20Potter: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=zzzznomatch: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=AION2: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=AION%202: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/guides/?q=aion%202%20steam%20launch%20stats: one server-rendered H1 and one canonical/robots/title/description",
+      "ok": true
+    },
+    {
+      "name": "/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/: one H1",
+      "ok": true,
+      "detail": [
+        "Game guides & walkthroughs"
+      ]
+    },
+    {
+      "name": "/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/: one H1",
+      "ok": true,
+      "detail": [
+        "Find your next game."
+      ]
+    },
+    {
+      "name": "/games/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/"
+      ]
+    },
+    {
+      "name": "/games/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/guides/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/guides/: one H1",
+      "ok": true,
+      "detail": [
+        "Guides for your next move."
+      ]
+    },
+    {
+      "name": "/guides/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/guides/"
+      ]
+    },
+    {
+      "name": "/guides/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/guides/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/updates/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/updates/: one H1",
+      "ok": true,
+      "detail": [
+        "Read the game updates."
+      ]
+    },
+    {
+      "name": "/updates/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/updates/"
+      ]
+    },
+    {
+      "name": "/updates/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/updates/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/privacy/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/privacy/: one H1",
+      "ok": true,
+      "detail": [
+        "Privacy Policy"
+      ]
+    },
+    {
+      "name": "/privacy/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/privacy/"
+      ]
+    },
+    {
+      "name": "/privacy/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/privacy/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/aion-2/steam-launch-stats/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/aion-2/steam-launch-stats/: one H1",
+      "ok": true,
+      "detail": [
+        "AION 2 Steam launch stats"
+      ]
+    },
+    {
+      "name": "/games/aion-2/steam-launch-stats/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/aion-2/steam-launch-stats/"
+      ]
+    },
+    {
+      "name": "/games/aion-2/steam-launch-stats/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/aion-2/steam-launch-stats/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/cobb-can-move/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/cobb-can-move/: one H1",
+      "ok": true,
+      "detail": [
+        "COBB CAN MOVE"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/cobb-can-move/"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/cobb-can-move/guide/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/cobb-can-move/guide/: one H1",
+      "ok": true,
+      "detail": [
+        "How to Play Cobb Can Move"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/guide/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/cobb-can-move/guide/"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/guide/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/guide/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/cobb-can-move/faq/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/cobb-can-move/faq/: one H1",
+      "ok": true,
+      "detail": [
+        "FAQ"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/faq/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/cobb-can-move/faq/"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/faq/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/cobb-can-move/faq/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/: one H1",
+      "ok": true,
+      "detail": [
+        "DON'T SLEEP WITH THE FISHES ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/guide/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/guide/: one H1",
+      "ok": true,
+      "detail": [
+        "Beginner Guide ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/guide/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/guide/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/guide/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/guide/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/walkthrough/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/walkthrough/: one H1",
+      "ok": true,
+      "detail": [
+        "Survival Walkthrough ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/walkthrough/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/walkthrough/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/walkthrough/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/walkthrough/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/items/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/items/: one H1",
+      "ok": true,
+      "detail": [
+        "Items & Supplies ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/items/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/items/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/items/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/items/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/events/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/events/: one H1",
+      "ok": true,
+      "detail": [
+        "Night Events Guide ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/events/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/events/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/events/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/events/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/characters/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/characters/: one H1",
+      "ok": true,
+      "detail": [
+        "Characters & Crew ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/characters/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/characters/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/characters/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/characters/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/endings/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/endings/: one H1",
+      "ok": true,
+      "detail": [
+        "Endings Guide ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/endings/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/endings/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/endings/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/endings/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/tips-tricks/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/tips-tricks/: one H1",
+      "ok": true,
+      "detail": [
+        "Tips & Tricks ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/tips-tricks/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/tips-tricks/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/tips-tricks/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/tips-tricks/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/achievements/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/achievements/: one H1",
+      "ok": true,
+      "detail": [
+        "Achievements & Completion ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/achievements/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/achievements/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/achievements/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/achievements/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/steam/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/steam/: one H1",
+      "ok": true,
+      "detail": [
+        "Steam & Download Guide ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/steam/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/steam/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/steam/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/steam/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/faq/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/faq/: one H1",
+      "ok": true,
+      "detail": [
+        "FAQ ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/faq/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/faq/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/faq/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/faq/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/changelog/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/changelog/: one H1",
+      "ok": true,
+      "detail": [
+        "Changelog ."
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/changelog/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/changelog/"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/changelog/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/dont-sleep-with-the-fishes/changelog/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/: one H1",
+      "ok": true,
+      "detail": [
+        "ALL THE GOLD IN FORT LOCKS"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/guide/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/guide/: one H1",
+      "ok": true,
+      "detail": [
+        "How to Beat All The Gold In Fort Locks"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/guide/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/guide/"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/guide/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/guide/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/faq/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/faq/: one H1",
+      "ok": true,
+      "detail": [
+        "FAQ"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/faq/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/faq/"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/faq/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/faq/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/walkthrough/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/walkthrough/: one H1",
+      "ok": true,
+      "detail": [
+        "Walkthrough"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/walkthrough/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/walkthrough/"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/walkthrough/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/all-the-gold-in-fort-locks/walkthrough/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/defenders-of-hogwarts/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/defenders-of-hogwarts/: one H1",
+      "ok": true,
+      "detail": [
+        "DEFENDERS OF HOGWARTS"
+      ]
+    },
+    {
+      "name": "/games/defenders-of-hogwarts/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/defenders-of-hogwarts/"
+      ]
+    },
+    {
+      "name": "/games/defenders-of-hogwarts/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/defenders-of-hogwarts/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/krillion/: one H1",
+      "ok": true,
+      "detail": [
+        "KRILLION"
+      ]
+    },
+    {
+      "name": "/games/krillion/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/krillion/"
+      ]
+    },
+    {
+      "name": "/games/krillion/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/krillion/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/guide/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/krillion/guide/: one H1",
+      "ok": true,
+      "detail": [
+        "THINK RARE. STAY RIGHT."
+      ]
+    },
+    {
+      "name": "/games/krillion/guide/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/krillion/guide/"
+      ]
+    },
+    {
+      "name": "/games/krillion/guide/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/krillion/guide/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/krillion/faq/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/krillion/faq/: one H1",
+      "ok": true,
+      "detail": [
+        "GOOD QUESTIONS. CLEAR ANSWERS."
+      ]
+    },
+    {
+      "name": "/games/krillion/faq/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/krillion/faq/"
+      ]
+    },
+    {
+      "name": "/games/krillion/faq/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/krillion/faq/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/: one H1",
+      "ok": true,
+      "detail": [
+        "HOOD WARFARE 2"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/guide/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/guide/: one H1",
+      "ok": true,
+      "detail": [
+        "Your first match starts with preparation."
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/guide/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/guide/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/guide/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/guide/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/faq/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/faq/: one H1",
+      "ok": true,
+      "detail": [
+        "Find your answer. Take the next step."
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/faq/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/faq/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/faq/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/faq/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/purchase/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/purchase/: one H1",
+      "ok": true,
+      "detail": [
+        "Check your setup. Then enter the block."
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/purchase/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/purchase/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/purchase/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/purchase/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/weapons/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/weapons/: one H1",
+      "ok": true,
+      "detail": [
+        "Know the unlocks. Build your loadout."
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/weapons/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/weapons/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/weapons/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/weapons/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/maps/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/maps/: one H1",
+      "ok": true,
+      "detail": [
+        "Learn the route. Know your way out."
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/maps/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/maps/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/maps/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/maps/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/modes/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/modes/: one H1",
+      "ok": true,
+      "detail": [
+        "Know the objective. Play for the win."
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/modes/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/modes/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/modes/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/modes/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/games/hood-warfare-2/news/: status 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/games/hood-warfare-2/news/: one H1",
+      "ok": true,
+      "detail": [
+        "Find out what the update changed."
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/news/: unique self canonical",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/games/hood-warfare-2/news/"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/news/: unique indexable robots",
+      "ok": true,
+      "detail": [
+        "index, follow"
+      ]
+    },
+    {
+      "name": "/games/hood-warfare-2/news/: one nonempty title and description",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?game=hood-warfare-2: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?game=krillion: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?game=krillion: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?game=cobb-can-move: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?game=cobb-can-move: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?type=rules: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?type=rules: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/"
+      ]
+    },
+    {
+      "name": "/guides/?q=Harry%20Potter: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/guides/?q=Harry%20Potter: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/guides/"
+      ]
+    },
+    {
+      "name": "/guides/?q=zzzznomatch: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/guides/?q=zzzznomatch: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/guides/"
+      ]
+    },
+    {
+      "name": "/guides/?q=AION2: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/guides/?q=AION2: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/guides/"
+      ]
+    },
+    {
+      "name": "/guides/?q=AION%202: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/guides/?q=AION%202: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/guides/"
+      ]
+    },
+    {
+      "name": "/guides/?q=aion%202%20steam%20launch%20stats: status 200 and unique noindex follow",
+      "ok": true,
+      "detail": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "name": "/guides/?q=aion%202%20steam%20launch%20stats: canonical to standard directory",
+      "ok": true,
+      "detail": [
+        "https://zowgame.com/guides/"
+      ]
+    },
+    {
+      "name": "game directory retains six server-rendered overview cards",
+      "ok": true,
+      "detail": 6
+    },
+    {
+      "name": "/games/: six distinct real image elements with descriptive alt text",
+      "ok": true,
+      "detail": [
+        "/hood-warfare-2-cover.jpg",
+        "/fishes-steam-header.jpg",
+        "/krillion-official.jpg",
+        "/defenders-official.webp",
+        "/atlas/cobb-card.webp",
+        "/atlas/fort-card.webp"
+      ]
+    },
+    {
+      "name": "/: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=hood-warfare-2#featured-game"
+        ],
+        "heroSlug": "hood-warfare-2"
+      }
+    },
+    {
+      "name": "/: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Hood Warfare 2",
+        "image": "/level-select/hood-scene.webp"
+      }
+    },
+    {
+      "name": "/: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/hood-warfare-2/weapons/",
+        "/games/hood-warfare-2/modes/"
+      ]
+    },
+    {
+      "name": "/: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ]
+    },
+    {
+      "name": "/: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/: quick-guide destination /games/hood-warfare-2/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/: quick-guide destination /games/hood-warfare-2/weapons/ exists",
+      "ok": true
+    },
+    {
+      "name": "/: quick-guide destination /games/hood-warfare-2/modes/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?game=hood-warfare-2: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=hood-warfare-2#featured-game"
+        ],
+        "heroSlug": "hood-warfare-2"
+      }
+    },
+    {
+      "name": "/?game=hood-warfare-2: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Hood Warfare 2",
+        "image": "/level-select/hood-scene.webp"
+      }
+    },
+    {
+      "name": "/?game=hood-warfare-2: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/hood-warfare-2/weapons/",
+        "/games/hood-warfare-2/modes/"
+      ]
+    },
+    {
+      "name": "/?game=hood-warfare-2: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?game=hood-warfare-2: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ]
+    },
+    {
+      "name": "/?game=hood-warfare-2: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: quick-guide destination /games/hood-warfare-2/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: quick-guide destination /games/hood-warfare-2/weapons/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=hood-warfare-2: quick-guide destination /games/hood-warfare-2/modes/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=dont-sleep-with-the-fishes#featured-game"
+        ],
+        "heroSlug": "dont-sleep-with-the-fishes"
+      }
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Don't sleep with the fishes",
+        "image": "/level-select/fishes-scene.webp"
+      }
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/dont-sleep-with-the-fishes/items/",
+        "/games/dont-sleep-with-the-fishes/endings/"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: native guide-tab links retain the chosen game",
+      "ok": true,
+      "detail": [
+        {
+          "href": "/?game=dont-sleep-with-the-fishes#guides",
+          "current": "true"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=getting-started#guides"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=rules#guides"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=strategy#guides"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=troubleshooting#guides"
+        }
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: quick-guide destination /games/dont-sleep-with-the-fishes/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: quick-guide destination /games/dont-sleep-with-the-fishes/items/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes: quick-guide destination /games/dont-sleep-with-the-fishes/endings/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?game=krillion: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=krillion#featured-game"
+        ],
+        "heroSlug": "krillion"
+      }
+    },
+    {
+      "name": "/?game=krillion: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Krillion",
+        "image": "/krillion-official.jpg"
+      }
+    },
+    {
+      "name": "/?game=krillion: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/krillion/guide/",
+        "/games/krillion/#daily",
+        "/games/krillion/faq/"
+      ]
+    },
+    {
+      "name": "/?game=krillion: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?game=krillion: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ]
+    },
+    {
+      "name": "/?game=krillion: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: quick-guide destination /games/krillion/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: quick-guide destination /games/krillion/#daily exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=krillion: quick-guide destination /games/krillion/faq/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=defenders-of-hogwarts#featured-game"
+        ],
+        "heroSlug": "defenders-of-hogwarts"
+      }
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Defenders of Hogwarts",
+        "image": "/defenders-official.webp"
+      }
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#faq"
+      ]
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ]
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: quick-guide destination /games/defenders-of-hogwarts/#setup exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: quick-guide destination /games/defenders-of-hogwarts/#rules exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=defenders-of-hogwarts: quick-guide destination /games/defenders-of-hogwarts/#faq exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?game=cobb-can-move: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=cobb-can-move#featured-game"
+        ],
+        "heroSlug": "cobb-can-move"
+      }
+    },
+    {
+      "name": "/?game=cobb-can-move: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Cobb can move",
+        "image": "/atlas/cobb-card.webp"
+      }
+    },
+    {
+      "name": "/?game=cobb-can-move: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/cobb-can-move/guide/",
+        "/games/cobb-can-move/faq/",
+        "/games/cobb-can-move/"
+      ]
+    },
+    {
+      "name": "/?game=cobb-can-move: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?game=cobb-can-move: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ]
+    },
+    {
+      "name": "/?game=cobb-can-move: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: quick-guide destination /games/cobb-can-move/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: quick-guide destination /games/cobb-can-move/faq/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=cobb-can-move: quick-guide destination /games/cobb-can-move/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=all-the-gold-in-fort-locks#featured-game"
+        ],
+        "heroSlug": "all-the-gold-in-fort-locks"
+      }
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "All the gold in Fort Locks",
+        "image": "/atlas/fort-card.webp"
+      }
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/all-the-gold-in-fort-locks/guide/",
+        "/games/all-the-gold-in-fort-locks/walkthrough/",
+        "/games/all-the-gold-in-fort-locks/faq/"
+      ]
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ]
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: quick-guide destination /games/all-the-gold-in-fort-locks/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: quick-guide destination /games/all-the-gold-in-fort-locks/walkthrough/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=all-the-gold-in-fort-locks: quick-guide destination /games/all-the-gold-in-fort-locks/faq/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "defenders-of-hogwarts"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?genre=tabletop&game=defenders-of-hogwarts#featured-game"
+        ],
+        "heroSlug": "defenders-of-hogwarts"
+      }
+    },
+    {
+      "name": "/?genre=tabletop: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Defenders of Hogwarts",
+        "image": "/defenders-official.webp"
+      }
+    },
+    {
+      "name": "/?genre=tabletop: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#faq"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#strategy",
+        "/games/defenders-of-hogwarts/#faq"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: quick-guide destination /games/defenders-of-hogwarts/#setup exists",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: quick-guide destination /games/defenders-of-hogwarts/#rules exists",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop: quick-guide destination /games/defenders-of-hogwarts/#faq exists",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "defenders-of-hogwarts"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?genre=tabletop&game=defenders-of-hogwarts#featured-game"
+        ],
+        "heroSlug": "defenders-of-hogwarts"
+      }
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Defenders of Hogwarts",
+        "image": "/defenders-official.webp"
+      }
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#faq"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#strategy",
+        "/games/defenders-of-hogwarts/#faq"
+      ]
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: quick-guide destination /games/defenders-of-hogwarts/#setup exists",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: quick-guide destination /games/defenders-of-hogwarts/#rules exists",
+      "ok": true
+    },
+    {
+      "name": "/?genre=tabletop&game=hood-warfare-2: quick-guide destination /games/defenders-of-hogwarts/#faq exists",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?type=rules: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=hood-warfare-2&type=rules#featured-game"
+        ],
+        "heroSlug": "hood-warfare-2"
+      }
+    },
+    {
+      "name": "/?type=rules: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Hood Warfare 2",
+        "image": "/level-select/hood-scene.webp"
+      }
+    },
+    {
+      "name": "/?type=rules: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/guide/",
+        "/games/hood-warfare-2/weapons/",
+        "/games/hood-warfare-2/modes/"
+      ]
+    },
+    {
+      "name": "/?type=rules: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?type=rules: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/modes/",
+        "/games/defenders-of-hogwarts/#rules"
+      ]
+    },
+    {
+      "name": "/?type=rules: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: quick-guide destination /games/hood-warfare-2/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: quick-guide destination /games/hood-warfare-2/weapons/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?type=rules: quick-guide destination /games/hood-warfare-2/modes/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: native selection links represent the exact visible featured games",
+      "ok": true,
+      "detail": [
+        "hood-warfare-2",
+        "dont-sleep-with-the-fishes",
+        "krillion",
+        "defenders-of-hogwarts",
+        "cobb-can-move",
+        "all-the-gold-in-fort-locks"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: one selected game agrees with the server-rendered hero",
+      "ok": true,
+      "detail": {
+        "selected": [
+          "/?game=dont-sleep-with-the-fishes&type=rules#featured-game"
+        ],
+        "heroSlug": "dont-sleep-with-the-fishes"
+      }
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: hero heading and artwork belong to the selected game",
+      "ok": true,
+      "detail": {
+        "title": "Don't sleep with the fishes",
+        "image": "/level-select/fishes-scene.webp"
+      }
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: all three quick guides are the selected game's real links",
+      "ok": true,
+      "detail": [
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/dont-sleep-with-the-fishes/items/",
+        "/games/dont-sleep-with-the-fishes/endings/"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: selected overview and every thumbnail overview are real canonical pages",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/",
+        "/games/dont-sleep-with-the-fishes/",
+        "/games/krillion/",
+        "/games/defenders-of-hogwarts/",
+        "/games/cobb-can-move/",
+        "/games/all-the-gold-in-fort-locks/"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: visible thumbnails are distinct images with accessible selection labels",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: selectors preserve the current guide topic through native GET",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: global game/question search still targets the full guide directory",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: guide topic preview uses actual matching chapters in SSR HTML",
+      "ok": true,
+      "detail": [
+        "/games/hood-warfare-2/modes/",
+        "/games/defenders-of-hogwarts/#rules"
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: game ItemList matches the visible featured catalog without extra games",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: existing home section anchors remain available",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: native guide-tab links retain the chosen game",
+      "ok": true,
+      "detail": [
+        {
+          "href": "/?game=dont-sleep-with-the-fishes#guides"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=getting-started#guides"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=rules#guides",
+          "current": "true"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=strategy#guides"
+        },
+        {
+          "href": "/?game=dont-sleep-with-the-fishes&type=troubleshooting#guides"
+        }
+      ]
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: quick-guide destination /games/dont-sleep-with-the-fishes/guide/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: quick-guide destination /games/dont-sleep-with-the-fishes/items/ exists",
+      "ok": true
+    },
+    {
+      "name": "/?game=dont-sleep-with-the-fishes&type=rules: quick-guide destination /games/dont-sleep-with-the-fishes/endings/ exists",
+      "ok": true
+    },
+    {
+      "name": "guide index pages contain exactly 12/12/6 visible guide links",
+      "ok": true,
+      "detail": [
+        12,
+        12,
+        6
+      ]
+    },
+    {
+      "name": "all 30 guide index destinations are unique server HTML links",
+      "ok": true
+    },
+    {
+      "name": "all 30 guide destinations resolve to fetched canonical pages and existing section IDs",
+      "ok": true
+    },
+    {
+      "name": "/guides/: JSON-LD guide items match visible HTML links including anchors",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=2: JSON-LD guide items match visible HTML links including anchors",
+      "ok": true
+    },
+    {
+      "name": "/guides/?page=3: JSON-LD guide items match visible HTML links including anchors",
+      "ok": true
+    },
+    {
+      "name": "guide page 2: self canonical, unique indexable robots and differentiated title",
+      "ok": true
+    },
+    {
+      "name": "guide page 3: self canonical, unique indexable robots and differentiated title",
+      "ok": true
+    },
+    {
+      "name": "guide pagination exposes real second and third page anchors",
+      "ok": true
+    },
+    {
+      "name": "Harry Potter query renders four existing tabletop chapters",
+      "ok": true,
+      "detail": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#strategy",
+        "/games/defenders-of-hogwarts/#faq"
+      ]
+    },
+    {
+      "name": "/guides/?q=AION2: returns the existing AION 2 stats topic without adding a game card",
+      "ok": true,
+      "detail": [
+        "/games/aion-2/steam-launch-stats/"
+      ]
+    },
+    {
+      "name": "/guides/?q=AION%202: returns the existing AION 2 stats topic without adding a game card",
+      "ok": true,
+      "detail": [
+        "/games/aion-2/steam-launch-stats/"
+      ]
+    },
+    {
+      "name": "/guides/?q=aion%202%20steam%20launch%20stats: returns the existing AION 2 stats topic without adding a game card",
+      "ok": true,
+      "detail": [
+        "/games/aion-2/steam-launch-stats/"
+      ]
+    },
+    {
+      "name": "empty query has no fabricated results and a recovery link",
+      "ok": true
+    },
+    {
+      "name": "out-of-range pagination returns 404 with noindex",
+      "ok": true,
+      "detail": {
+        "status": 404,
+        "robots": [
+          "noindex",
+          "noindex, follow"
+        ]
+      }
+    },
+    {
+      "name": "robots status 200 and declares the production sitemap",
+      "ok": true
+    },
+    {
+      "name": "robots permits page and rendering-resource crawling",
+      "ok": true,
+      "detail": "User-Agent: *\nAllow: /\n\nSitemap: https://zowgame.com/sitemap.xml"
+    },
+    {
+      "name": "/hood-warfare-2-cover.jpg: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/fishes-steam-header.jpg: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/atlas/social-card.jpg: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/level-select/hood-scene.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/level-select/hood-thumb.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/level-select/fishes-thumb.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/krillion-official.jpg: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/defenders-official.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/atlas/cobb-card.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/atlas/fort-card.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/fishes-lifeboat.jpg: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/fishes-at-sea.jpg: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/defenders-editorial.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/hood-warfare-2-action.jpg: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "name": "/level-select/fishes-scene.webp: local image HTTP 200",
+      "ok": true,
+      "detail": 200
+    }
+  ],
+  "pages": [
+    {
+      "path": "/updates/",
+      "status": 200,
+      "bytes": 45170,
+      "title": [
+        "Game Updates: Official News & Reviewed Patch History | ZowGame"
+      ],
+      "h1": [
+        "Read the game updates."
+      ],
+      "canonical": [
+        "https://zowgame.com/updates/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Find Hood Warfare 2 announcements, Don't Sleep With The Fishes patch history and AION 2 official news, with source and review dates kept separate."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/hood-warfare-2/news/",
+        "/games/dont-sleep-with-the-fishes/changelog/",
+        "/games/aion-2/steam-launch-stats/"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 62602,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "hood-warfare-2",
+        "heroTitle": "Hood Warfare 2",
+        "heroArtwork": {
+          "img": "",
+          "src": "/level-select/hood-scene.webp",
+          "alt": "Hood Warfare 2 official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:48% 50%"
+        },
+        "quickGuides": [
+          "/games/hood-warfare-2/guide/",
+          "/games/hood-warfare-2/weapons/",
+          "/games/hood-warfare-2/modes/"
+        ],
+        "heroOverview": "/games/hood-warfare-2/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2#featured-game",
+            "current": "true",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#featured-game",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=hood-warfare-2#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=rules#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=strategy#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/",
+      "status": 200,
+      "bytes": 56812,
+      "title": [
+        "Game Library: Browser, Download & Tabletop Games | ZowGame"
+      ],
+      "h1": [
+        "Find your next game."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Browse ZowGame's game library by genre and format. Find official play links, independent guides, rules and walkthroughs."
+      ],
+      "gameCards": 6,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/games/",
+            "method": "get"
+          },
+          {
+            "action": "/games/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/",
+      "status": 200,
+      "bytes": 75322,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/hood-warfare-2/modes/",
+        "/games/hood-warfare-2/weapons/",
+        "/games/hood-warfare-2/maps/",
+        "/games/hood-warfare-2/purchase/",
+        "/games/hood-warfare-2/faq/",
+        "/games/hood-warfare-2/news/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/dont-sleep-with-the-fishes/walkthrough/",
+        "/games/dont-sleep-with-the-fishes/items/",
+        "/games/dont-sleep-with-the-fishes/events/",
+        "/games/dont-sleep-with-the-fishes/characters/"
+      ],
+      "pagination": [
+        {
+          "href": "/guides/",
+          "current": "page"
+        },
+        {
+          "href": "/guides/?page=2"
+        },
+        {
+          "href": "/guides/?page=3"
+        }
+      ],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "bytes": 19002,
+      "title": [
+        "Privacy Policy | ZowGame"
+      ],
+      "h1": [
+        "Privacy Policy"
+      ],
+      "canonical": [
+        "https://zowgame.com/privacy/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "ZowGame privacy policy — how we handle data, cookies, and third-party services."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": []
+      }
+    },
+    {
+      "path": "/games/cobb-can-move/guide/",
+      "status": 200,
+      "bytes": 47397,
+      "title": [
+        "Cobb Can Move Beginner Guide | ZowGame"
+      ],
+      "h1": [
+        "How to Play Cobb Can Move"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/cobb-can-move/guide/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Cobb Can Move is a survival horror game where your goal is to explore the dungeon, collect coal, keep the light alive, and avoid Cobb. The controls are simple, but the challenge comes from the changing rules. Each level gives Cobb a new way to hunt you, so you must read the rule, plan your route, and adapt before the monster catches you."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/aion-2/steam-launch-stats/",
+      "status": 200,
+      "bytes": 105689,
+      "title": [
+        "AION 2 Steam Launch Stats: Players, Updates & Help | ZowGame"
+      ],
+      "h1": [
+        "AION 2 Steam launch stats"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/aion-2/steam-launch-stats/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Check AION 2 Steam players and peak CCU. Read launch updates, login and crash checks, character recovery, server-transfer rules and EU compensation guidance."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "WebPage",
+            "FAQPage",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/cobb-can-move/",
+      "status": 200,
+      "bytes": 123949,
+      "title": [
+        "Cobb Can Move - Play Online Free in Browser | ZowGame"
+      ],
+      "h1": [
+        "COBB CAN MOVE"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/cobb-can-move/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Play Cobb Can Move online free — survive a dark pixel dungeon, collect coal, keep the furnace lit, escape Cobb as rules change every level. No download."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "VideoGame",
+            "FAQPage",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/cobb-can-move/faq/",
+      "status": 200,
+      "bytes": 47030,
+      "title": [
+        "Cobb Can Move FAQ | ZowGame"
+      ],
+      "h1": [
+        "FAQ"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/cobb-can-move/faq/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Common questions about Cobb Can Move, controls and gameplay."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/guide/",
+      "status": 200,
+      "bytes": 75080,
+      "title": [
+        "Don't Sleep With The Fishes Beginner Guide (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Beginner Guide ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/guide/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Evacuate, budget daily energy, and choose a route using current developer notes. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/walkthrough/",
+      "status": 200,
+      "bytes": 64316,
+      "title": [
+        "Don't Sleep With The Fishes Survival Walkthrough (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Survival Walkthrough ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/walkthrough/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "A decision-based route through evacuation, daily survival, and ending preparation. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/",
+      "status": 200,
+      "bytes": 97340,
+      "title": [
+        "Don't Sleep With The Fishes v1.1.4.4 Guide & Walkthrough | ZowGame"
+      ],
+      "h1": [
+        "DON'T SLEEP WITH THE FISHES ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Updated v1.1.4.4 survival guide: rescue, Heart Parts, crew support, items, night events and Steam achievements. Developer sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "VideoGame",
+            "WebPage",
+            "FAQPage",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/items/",
+      "status": 200,
+      "bytes": 67270,
+      "title": [
+        "Don't Sleep With The Fishes Items & Supplies (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Items & Supplies ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/items/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Pack for survival: food, bait, medicine, and the tools your route needs. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/characters/",
+      "status": 200,
+      "bytes": 55117,
+      "title": [
+        "Don't Sleep With The Fishes Characters & Crew (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Characters & Crew ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/characters/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Know your shipmates, their support abilities, and when to ask for help. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/events/",
+      "status": 200,
+      "bytes": 65822,
+      "title": [
+        "Don't Sleep With The Fishes Night Events Guide (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Night Events Guide ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/events/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "New encounters and a source-labeled reference for risky night choices. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/endings/",
+      "status": 200,
+      "bytes": 57710,
+      "title": [
+        "Don't Sleep With The Fishes Endings Guide (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Endings Guide ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/endings/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Official ending objectives, current rescue mechanics, and clearly marked community route details. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/tips-tricks/",
+      "status": 200,
+      "bytes": 61520,
+      "title": [
+        "Don't Sleep With The Fishes Tips & Tricks (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Tips & Tricks ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/tips-tricks/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Practical decisions grounded in patch notes, with uncertain route advice labeled. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/achievements/",
+      "status": 200,
+      "bytes": 59806,
+      "title": [
+        "Don't Sleep With The Fishes Achievements & Completion (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Achievements & Completion ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/achievements/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "All 12 Steam achievement names and objectives, separated from ending count. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/steam/",
+      "status": 200,
+      "bytes": 59597,
+      "title": [
+        "Don't Sleep With The Fishes Steam & Download Guide (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Steam & Download Guide ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/steam/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Official purchase links, requirements, and a comparison with itch.io. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/faq/",
+      "status": 200,
+      "bytes": 107462,
+      "title": [
+        "Don't Sleep With The Fishes FAQ (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "FAQ ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/faq/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Current answers about download, support, versions, and game mechanics. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/all-the-gold-in-fort-locks/guide/",
+      "status": 200,
+      "bytes": 51486,
+      "title": [
+        "All The Gold In Fort Locks Beginner Guide | ZowGame"
+      ],
+      "h1": [
+        "How to Beat All The Gold In Fort Locks"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/guide/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "All The Gold In Fort Locks is a brain-twisting puzzle game by Draknek & Friends where doors act as portals to overlapping rooms. Each key unlocks a new dimension, and you must navigate nested spaces to collect every gold coin. This walkthrough covers all 6 key stages and the most common stuck points."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/all-the-gold-in-fort-locks/faq/",
+      "status": 200,
+      "bytes": 49508,
+      "title": [
+        "All The Gold In Fort Locks FAQ | ZowGame"
+      ],
+      "h1": [
+        "FAQ"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/faq/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Common questions about All The Gold In Fort Locks, controls and gameplay."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/dont-sleep-with-the-fishes/changelog/",
+      "status": 200,
+      "bytes": 60486,
+      "title": [
+        "Don't Sleep With The Fishes Changelog (v1.1.4.4) | ZowGame"
+      ],
+      "h1": [
+        "Changelog ."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/dont-sleep-with-the-fishes/changelog/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Developer-sourced version history through v1.1.4.4. Sources checked 2026-10-07."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/all-the-gold-in-fort-locks/",
+      "status": 200,
+      "bytes": 103784,
+      "title": [
+        "All The Gold In Fort Locks — Free Puzzle Game | ZowGame"
+      ],
+      "h1": [
+        "ALL THE GOLD IN FORT LOCKS"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Play All The Gold In Fort Locks online free. A puzzle game where doors are portals to overlapping rooms. 6 colored keys, nested spaces. By Draknek & Friends."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "VideoGame",
+            "WebPage",
+            "FAQPage",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/all-the-gold-in-fort-locks/walkthrough/",
+      "status": 200,
+      "bytes": 46418,
+      "title": [
+        "All The Gold In Fort Locks Walkthrough | ZowGame"
+      ],
+      "h1": [
+        "Walkthrough"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/all-the-gold-in-fort-locks/walkthrough/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Step-by-step walkthrough for All The Gold In Fort Locks: Blue, Green, Orange, Red, Purple, and Yellow key stages. Developer-confirmed solutions."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/krillion/",
+      "status": 200,
+      "bytes": 84780,
+      "title": [
+        "Krillion: Daily Game, Rare-Answer Guide & Score Calculator | ZowGame"
+      ],
+      "h1": [
+        "KRILLION"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/krillion/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Explore the original Krillion daily trivia game: today's seven prompts, official play links, scoring tiers, rare-answer tips and a seven-answer depth calculator."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "VideoGame",
+            "WebPage",
+            "FAQPage",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/krillion/guide/",
+      "status": 200,
+      "bytes": 64957,
+      "title": [
+        "How to Play Krillion: Rules, Scoring & Rare-Answer Tips | ZowGame"
+      ],
+      "h1": [
+        "THINK RARE. STAY RIGHT."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/krillion/guide/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "A practical Krillion beginner guide: choose a valid answer, use the 25-second timer, understand six scoring tiers and practise rare-answer decisions."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/defenders-of-hogwarts/",
+      "status": 200,
+      "bytes": 275739,
+      "title": [
+        "Harry Potter Defenders RPG Game: Rules & Player Guide | ZowGame"
+      ],
+      "h1": [
+        "DEFENDERS OF HOGWARTS"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/defenders-of-hogwarts/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Defenders of Hogwarts explained: setup, House and Dark Arts turns, win conditions, strategy, rules FAQ and where to buy MinaLima's Harry Potter board game."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "FAQPage",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/krillion/faq/",
+      "status": 200,
+      "bytes": 60067,
+      "title": [
+        "Krillion FAQ: Daily Rules, Unlimited, Scores & Help | ZowGame"
+      ],
+      "h1": [
+        "GOOD QUESTIONS. CLEAR ANSWERS."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/krillion/faq/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Find answers about Krillion daily resets, scoring, spelling, missing answers, official Unlimited mode, browser play and where to get help."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article"
+          ]
+        },
+        {
+          "topLevelTypes": [
+            "FAQPage"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/guide/",
+      "status": 200,
+      "bytes": 63907,
+      "title": [
+        "Hood Warfare 2 Beginner Guide: Bot Practice, Your First Match & Progression | ZowGame"
+      ],
+      "h1": [
+        "Your first match starts with preparation."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/guide/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Learn routes, controls and objectives in bot matches. Save an eight-step beginner checklist on this device, and understand player levels, weapon challenges and skin progression."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/",
+      "status": 200,
+      "bytes": 76346,
+      "title": [
+        "Hood Warfare 2 Guide Hub: Buying, Beginners, Weapons, Maps & News | ZowGame"
+      ],
+      "h1": [
+        "HOOD WARFARE 2"
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Your Hood Warfare 2 field manual: Steam purchase and download, system requirements, all six modes, beginner practice, weapon progression, maps and reviewed patch summaries."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList",
+            "VideoGame"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/faq/",
+      "status": 200,
+      "bytes": 83643,
+      "title": [
+        "Hood Warfare 2 FAQ: Buying, Languages, Modes, Voice Chat & Support | ZowGame"
+      ],
+      "h1": [
+        "Find your answer. Take the next step."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/faq/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Search 22 Hood Warfare 2 questions covering platforms, languages, downloads, weapon progression, push-to-talk, saved loadouts, anti-cheat, spawns and technical support."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList",
+            "FAQPage"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/modes/",
+      "status": 200,
+      "bytes": 68939,
+      "title": [
+        "Hood Warfare 2 Game Modes: All Six Objectives, Rules & Beginner Tips | ZowGame"
+      ],
+      "h1": [
+        "Know the objective. Play for the win."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/modes/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Learn the objectives of Turf War, GangBang, Chaos, Hit A Lick, Destroy The Block and Chain Snatch, and compare team play with free-for-all action."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/weapons/",
+      "status": 200,
+      "bytes": 69367,
+      "title": [
+        "Hood Warfare 2 Weapons Guide: Unlocks, Attachments, Skins & Loadouts | ZowGame"
+      ],
+      "h1": [
+        "Know the unlocks. Build your loadout."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/weapons/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Understand the three progression paths for weapons, equipment, attachments and skins. Review what is confirmed about sights, magazines, grips and suppressors, with a practice method for each."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/purchase/",
+      "status": 200,
+      "bytes": 62282,
+      "title": [
+        "Hood Warfare 2 Buying & Download Guide: Price, Platforms, Languages & Specs | ZowGame"
+      ],
+      "h1": [
+        "Check your setup. Then enter the block."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/purchase/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Check the official Steam listing, automatically refreshed China-region price, Windows requirements, languages and anti-cheat information. Follow the install steps and find purchase support."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/maps/",
+      "status": 200,
+      "bytes": 61759,
+      "title": [
+        "Hood Warfare 2 Maps Guide: Known Areas, Route Practice & Spawn Updates | ZowGame"
+      ],
+      "h1": [
+        "Learn the route. Know your way out."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/maps/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Explore four areas mentioned in the official store listing and the spawn changes in 1.0.10. Find route-practice advice, with unverified map counts and layouts clearly marked."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/games/hood-warfare-2/news/",
+      "status": 200,
+      "bytes": 67497,
+      "title": [
+        "Hood Warfare 2 News: Patch 1.0.10 Summary & Official Announcements | ZowGame"
+      ],
+      "h1": [
+        "Find out what the update changed."
+      ],
+      "canonical": [
+        "https://zowgame.com/games/hood-warfare-2/news/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Follow automatically refreshed Steam developer announcements and a reviewed summary of the voice chat, anti-cheat, spawn protection and fixes in 1.0.10."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Article",
+            "BreadcrumbList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?game=krillion",
+      "status": 200,
+      "bytes": 62502,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "krillion",
+        "heroTitle": "Krillion",
+        "heroArtwork": {
+          "img": "",
+          "src": "/krillion-official.jpg",
+          "alt": "Krillion official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async"
+        },
+        "quickGuides": [
+          "/games/krillion/guide/",
+          "/games/krillion/#daily",
+          "/games/krillion/faq/"
+        ],
+        "heroOverview": "/games/krillion/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2#featured-game",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#featured-game",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion#featured-game",
+            "current": "true",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=krillion#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=krillion&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=krillion&type=rules#guides"
+          },
+          {
+            "href": "/?game=krillion&type=strategy#guides"
+          },
+          {
+            "href": "/?game=krillion&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?game=hood-warfare-2",
+      "status": 200,
+      "bytes": 62664,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "hood-warfare-2",
+        "heroTitle": "Hood Warfare 2",
+        "heroArtwork": {
+          "img": "",
+          "src": "/level-select/hood-scene.webp",
+          "alt": "Hood Warfare 2 official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:48% 50%"
+        },
+        "quickGuides": [
+          "/games/hood-warfare-2/guide/",
+          "/games/hood-warfare-2/weapons/",
+          "/games/hood-warfare-2/modes/"
+        ],
+        "heroOverview": "/games/hood-warfare-2/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2#featured-game",
+            "current": "true",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#featured-game",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=hood-warfare-2#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=rules#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=strategy#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?game=dont-sleep-with-the-fishes",
+      "status": 200,
+      "bytes": 62956,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "dont-sleep-with-the-fishes",
+        "heroTitle": "Don't sleep with the fishes",
+        "heroArtwork": {
+          "img": "",
+          "src": "/level-select/fishes-scene.webp",
+          "alt": "Don't Sleep With The Fishes official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:0% 50%"
+        },
+        "quickGuides": [
+          "/games/dont-sleep-with-the-fishes/guide/",
+          "/games/dont-sleep-with-the-fishes/items/",
+          "/games/dont-sleep-with-the-fishes/endings/"
+        ],
+        "heroOverview": "/games/dont-sleep-with-the-fishes/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2#featured-game",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#featured-game",
+            "current": "true",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=rules#guides"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=strategy#guides"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?genre=tabletop",
+      "status": 200,
+      "bytes": 41242,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 1,
+      "guideLinks": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#strategy",
+        "/games/defenders-of-hogwarts/#faq"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "defenders-of-hogwarts",
+        "heroTitle": "Defenders of Hogwarts",
+        "heroArtwork": {
+          "img": "",
+          "src": "/defenders-official.webp",
+          "alt": "Defenders of Hogwarts official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:50% 48%"
+        },
+        "quickGuides": [
+          "/games/defenders-of-hogwarts/#setup",
+          "/games/defenders-of-hogwarts/#rules",
+          "/games/defenders-of-hogwarts/#faq"
+        ],
+        "heroOverview": "/games/defenders-of-hogwarts/",
+        "selectors": [
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts#featured-game",
+            "current": "true",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/defenders-of-hogwarts/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=getting-started#guides"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=rules#guides"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=strategy#guides"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?game=defenders-of-hogwarts",
+      "status": 200,
+      "bytes": 62813,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "defenders-of-hogwarts",
+        "heroTitle": "Defenders of Hogwarts",
+        "heroArtwork": {
+          "img": "",
+          "src": "/defenders-official.webp",
+          "alt": "Defenders of Hogwarts official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:50% 48%"
+        },
+        "quickGuides": [
+          "/games/defenders-of-hogwarts/#setup",
+          "/games/defenders-of-hogwarts/#rules",
+          "/games/defenders-of-hogwarts/#faq"
+        ],
+        "heroOverview": "/games/defenders-of-hogwarts/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2#featured-game",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#featured-game",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts#featured-game",
+            "current": "true",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=defenders-of-hogwarts#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts&type=rules#guides"
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts&type=strategy#guides"
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?game=all-the-gold-in-fort-locks",
+      "status": 200,
+      "bytes": 62897,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "all-the-gold-in-fort-locks",
+        "heroTitle": "All the gold in Fort Locks",
+        "heroArtwork": {
+          "img": "",
+          "src": "/atlas/fort-card.webp",
+          "alt": "All The Gold In Fort Locks official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async"
+        },
+        "quickGuides": [
+          "/games/all-the-gold-in-fort-locks/guide/",
+          "/games/all-the-gold-in-fort-locks/walkthrough/",
+          "/games/all-the-gold-in-fort-locks/faq/"
+        ],
+        "heroOverview": "/games/all-the-gold-in-fort-locks/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2#featured-game",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#featured-game",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#featured-game",
+            "current": "true",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks&type=rules#guides"
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks&type=strategy#guides"
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?game=cobb-can-move",
+      "status": 200,
+      "bytes": 62625,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/guide/",
+        "/games/dont-sleep-with-the-fishes/guide/",
+        "/games/krillion/guide/",
+        "/games/defenders-of-hogwarts/#setup"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "cobb-can-move",
+        "heroTitle": "Cobb can move",
+        "heroArtwork": {
+          "img": "",
+          "src": "/atlas/cobb-card.webp",
+          "alt": "Cobb Can Move official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async"
+        },
+        "quickGuides": [
+          "/games/cobb-can-move/guide/",
+          "/games/cobb-can-move/faq/",
+          "/games/cobb-can-move/"
+        ],
+        "heroOverview": "/games/cobb-can-move/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2#featured-game",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#featured-game",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move#featured-game",
+            "current": "true",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=cobb-can-move#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=cobb-can-move&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=cobb-can-move&type=rules#guides"
+          },
+          {
+            "href": "/?game=cobb-can-move&type=strategy#guides"
+          },
+          {
+            "href": "/?game=cobb-can-move&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?genre=tabletop&game=hood-warfare-2",
+      "status": 200,
+      "bytes": 41303,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 1,
+      "guideLinks": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#strategy",
+        "/games/defenders-of-hogwarts/#faq"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "defenders-of-hogwarts",
+        "heroTitle": "Defenders of Hogwarts",
+        "heroArtwork": {
+          "img": "",
+          "src": "/defenders-official.webp",
+          "alt": "Defenders of Hogwarts official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:50% 48%"
+        },
+        "quickGuides": [
+          "/games/defenders-of-hogwarts/#setup",
+          "/games/defenders-of-hogwarts/#rules",
+          "/games/defenders-of-hogwarts/#faq"
+        ],
+        "heroOverview": "/games/defenders-of-hogwarts/",
+        "selectors": [
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts#featured-game",
+            "current": "true",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/defenders-of-hogwarts/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=getting-started#guides"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=rules#guides"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=strategy#guides"
+          },
+          {
+            "href": "/?genre=tabletop&game=defenders-of-hogwarts&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?type=rules",
+      "status": 200,
+      "bytes": 61531,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/modes/",
+        "/games/defenders-of-hogwarts/#rules"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "hood-warfare-2",
+        "heroTitle": "Hood Warfare 2",
+        "heroArtwork": {
+          "img": "",
+          "src": "/level-select/hood-scene.webp",
+          "alt": "Hood Warfare 2 official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:48% 50%"
+        },
+        "quickGuides": [
+          "/games/hood-warfare-2/guide/",
+          "/games/hood-warfare-2/weapons/",
+          "/games/hood-warfare-2/modes/"
+        ],
+        "heroOverview": "/games/hood-warfare-2/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2&type=rules#featured-game",
+            "current": "true",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=rules#featured-game",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion&type=rules#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts&type=rules#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move&type=rules#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks&type=rules#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=hood-warfare-2#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=rules#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=strategy#guides"
+          },
+          {
+            "href": "/?game=hood-warfare-2&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/?game=dont-sleep-with-the-fishes&type=rules",
+      "status": 200,
+      "bytes": 61884,
+      "title": [
+        "Game Guides, Walkthroughs & Player Help | ZowGame"
+      ],
+      "h1": [
+        "Game guides & walkthroughs"
+      ],
+      "canonical": [
+        "https://zowgame.com/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find rules, beginner guides and walkthroughs for Hood Warfare 2, Krillion, Defenders of Hogwarts and more. Explore the ZowGame guide library."
+      ],
+      "gameCards": 6,
+      "guideLinks": [
+        "/games/hood-warfare-2/modes/",
+        "/games/defenders-of-hogwarts/#rules"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "Organization",
+            "WebSite",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroSlug": "dont-sleep-with-the-fishes",
+        "heroTitle": "Don't sleep with the fishes",
+        "heroArtwork": {
+          "img": "",
+          "src": "/level-select/fishes-scene.webp",
+          "alt": "Don't Sleep With The Fishes official game artwork",
+          "width": "1400",
+          "height": "788",
+          "fetchpriority": "high",
+          "decoding": "async",
+          "style": "object-position:0% 50%"
+        },
+        "quickGuides": [
+          "/games/dont-sleep-with-the-fishes/guide/",
+          "/games/dont-sleep-with-the-fishes/items/",
+          "/games/dont-sleep-with-the-fishes/endings/"
+        ],
+        "heroOverview": "/games/dont-sleep-with-the-fishes/",
+        "selectors": [
+          {
+            "href": "/?game=hood-warfare-2&type=rules#featured-game",
+            "label": "Select Hood Warfare 2",
+            "cover": {
+              "img": "",
+              "src": "/level-select/hood-thumb.webp",
+              "alt": "Hood Warfare 2 game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=rules#featured-game",
+            "current": "true",
+            "label": "Select Don't Sleep With The Fishes",
+            "cover": {
+              "img": "",
+              "src": "/level-select/fishes-thumb.webp",
+              "alt": "Don't Sleep With The Fishes game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=krillion&type=rules#featured-game",
+            "label": "Select Krillion",
+            "cover": {
+              "img": "",
+              "src": "/krillion-official.jpg",
+              "alt": "Krillion game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=defenders-of-hogwarts&type=rules#featured-game",
+            "label": "Select Defenders of Hogwarts",
+            "cover": {
+              "img": "",
+              "src": "/defenders-official.webp",
+              "alt": "Defenders of Hogwarts game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=cobb-can-move&type=rules#featured-game",
+            "label": "Select Cobb Can Move",
+            "cover": {
+              "img": "",
+              "src": "/atlas/cobb-card.webp",
+              "alt": "Cobb Can Move game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          },
+          {
+            "href": "/?game=all-the-gold-in-fort-locks&type=rules#featured-game",
+            "label": "Select All The Gold In Fort Locks",
+            "cover": {
+              "img": "",
+              "src": "/atlas/fort-card.webp",
+              "alt": "All The Gold In Fort Locks game artwork",
+              "width": "960",
+              "height": "540",
+              "loading": "lazy",
+              "fetchpriority": "auto",
+              "decoding": "async"
+            }
+          }
+        ],
+        "overviewLinks": [
+          "/games/hood-warfare-2/",
+          "/games/dont-sleep-with-the-fishes/",
+          "/games/krillion/",
+          "/games/defenders-of-hogwarts/",
+          "/games/cobb-can-move/",
+          "/games/all-the-gold-in-fort-locks/"
+        ],
+        "guideTabs": [
+          {
+            "href": "/?game=dont-sleep-with-the-fishes#guides"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=getting-started#guides"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=rules#guides",
+            "current": "true"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=strategy#guides"
+          },
+          {
+            "href": "/?game=dont-sleep-with-the-fishes&type=troubleshooting#guides"
+          }
+        ],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/?page=2",
+      "status": 200,
+      "bytes": 76032,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help — Page 2 | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/?page=2"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/dont-sleep-with-the-fishes/endings/",
+        "/games/dont-sleep-with-the-fishes/tips-tricks/",
+        "/games/dont-sleep-with-the-fishes/achievements/",
+        "/games/dont-sleep-with-the-fishes/steam/",
+        "/games/dont-sleep-with-the-fishes/faq/",
+        "/games/dont-sleep-with-the-fishes/changelog/",
+        "/games/krillion/guide/",
+        "/games/krillion/faq/",
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#strategy",
+        "/games/defenders-of-hogwarts/#faq"
+      ],
+      "pagination": [
+        {
+          "href": "/guides/"
+        },
+        {
+          "href": "/guides/?page=2",
+          "current": "page"
+        },
+        {
+          "href": "/guides/?page=3"
+        }
+      ],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/?page=999",
+      "status": 404,
+      "bytes": 15794,
+      "title": [
+        "404 — Page not found | ZowGame"
+      ],
+      "h1": [],
+      "canonical": [],
+      "robots": [
+        "noindex",
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find your way back to ZowGame's game library and independent player guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": []
+      }
+    },
+    {
+      "path": "/guides/?q=zzzznomatch",
+      "status": 200,
+      "bytes": 35263,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/?q=Harry%20Potter",
+      "status": 200,
+      "bytes": 48009,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/defenders-of-hogwarts/#setup",
+        "/games/defenders-of-hogwarts/#rules",
+        "/games/defenders-of-hogwarts/#strategy",
+        "/games/defenders-of-hogwarts/#faq"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/?page=3",
+      "status": 200,
+      "bytes": 55748,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help — Page 3 | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/?page=3"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/cobb-can-move/guide/",
+        "/games/cobb-can-move/faq/",
+        "/games/all-the-gold-in-fort-locks/guide/",
+        "/games/all-the-gold-in-fort-locks/walkthrough/",
+        "/games/all-the-gold-in-fort-locks/faq/",
+        "/games/aion-2/steam-launch-stats/"
+      ],
+      "pagination": [
+        {
+          "href": "/guides/"
+        },
+        {
+          "href": "/guides/?page=2"
+        },
+        {
+          "href": "/guides/?page=3",
+          "current": "page"
+        }
+      ],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/?q=AION%202",
+      "status": 200,
+      "bytes": 38278,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/aion-2/steam-launch-stats/"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/?q=AION2",
+      "status": 200,
+      "bytes": 38268,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/aion-2/steam-launch-stats/"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/guides/?q=aion%202%20steam%20launch%20stats",
+      "status": 200,
+      "bytes": 38468,
+      "title": [
+        "Game Guides: Rules, Walkthroughs, Strategy & Help | ZowGame"
+      ],
+      "h1": [
+        "Guides for your next move."
+      ],
+      "canonical": [
+        "https://zowgame.com/guides/"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "descriptions": [
+        "Find a beginner guide, rule explanation, walkthrough or troubleshooting answer across ZowGame's published game guides."
+      ],
+      "gameCards": 0,
+      "guideLinks": [
+        "/games/aion-2/steam-launch-stats/"
+      ],
+      "pagination": [],
+      "jsonLd": [
+        {
+          "topLevelTypes": [
+            "BreadcrumbList",
+            "ItemList"
+          ]
+        }
+      ],
+      "homeSelection": {
+        "heroTitle": "",
+        "quickGuides": [],
+        "selectors": [],
+        "overviewLinks": [],
+        "guideTabs": [],
+        "searchActions": [
+          {
+            "action": "/guides/",
+            "method": "get"
+          },
+          {
+            "action": "/guides/",
+            "method": "get"
+          }
+        ]
+      }
+    }
+  ],
+  "images": [
+    {
+      "path": "/hood-warfare-2-cover.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "46656"
+    },
+    {
+      "path": "/fishes-steam-header.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "65101"
+    },
+    {
+      "path": "/atlas/social-card.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "178714"
+    },
+    {
+      "path": "/level-select/hood-scene.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "124116"
+    },
+    {
+      "path": "/level-select/hood-thumb.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "21094"
+    },
+    {
+      "path": "/level-select/fishes-thumb.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "26490"
+    },
+    {
+      "path": "/krillion-official.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "84228"
+    },
+    {
+      "path": "/defenders-official.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "166316"
+    },
+    {
+      "path": "/atlas/cobb-card.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "18006"
+    },
+    {
+      "path": "/atlas/fort-card.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "13692"
+    },
+    {
+      "path": "/fishes-lifeboat.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "563272"
+    },
+    {
+      "path": "/fishes-at-sea.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "726221"
+    },
+    {
+      "path": "/defenders-editorial.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "184988"
+    },
+    {
+      "path": "/hood-warfare-2-action.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "511151"
+    },
+    {
+      "path": "/level-select/fishes-scene.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "contentLength": "179886"
+    }
+  ],
+  "limitations": [
+    "These checks inspect complete raw HTTP responses. They do not prove browser visibility with JavaScript disabled, hydration behavior, keyboard access, responsive visuals, or runtime client API results.",
+    "Only same-origin image src resources were requested, using HEAD. External images, CSS backgrounds, video, iframe contents, scripts, and upstream APIs were not fetched."
+  ],
+  "notes": [
+    {
+      "path": "/guides/?page=999",
+      "note": "The 404 response has multiple robots tags, including Next's automatic noindex. Its error HTML has no H1; any RSC fallback text is not SSR markup. These are recorded separately from the H1/metadata uniqueness checks on 200 pages.",
+      "robots": [
+        "noindex",
+        "noindex, follow"
+      ],
+      "h1Count": 0,
+      "canonical": []
+    }
+  ],
+  "summary": {
+    "totalHttpRequests": 72,
+    "htmlPages": 55,
+    "sitemapCanonicalPages": 37,
+    "localImageHeadRequests": 15,
+    "parsedJsonLdScripts": 38,
+    "checks": 502,
+    "passed": 502,
+    "failed": 0
+  },
+  "completedAt": "2026-10-17T09:03:43.309Z"
+}

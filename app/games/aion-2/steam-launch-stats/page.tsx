@@ -2,18 +2,13 @@ import type { Metadata } from "next";
 import { Aion2StatsPage } from "../../../../src/app/components/aion-2-stats-page";
 import { AION_2_FAQ, AION_2_STATS_PATH } from "../../../../src/app/data/aion-2-stats";
 import { AION_2_HELP_CHECKED, AION_2_HELP_GUIDES } from "../../../../src/app/data/aion-2-player-help";
+import { getPageTd } from "../../../../src/app/data/page-seo";
+import { createPageMetadata } from "../../../../src/app/lib/seo";
 
-const title = "AION 2 Steam Launch Stats: Players, Updates & Help";
-const description = "Check AION 2 Steam players and peak CCU. Read launch updates, login and crash checks, character recovery, server-transfer rules and EU compensation guidance.";
+const { title, description } = getPageTd(AION_2_STATS_PATH)!;
 const canonical = `https://zowgame.com${AION_2_STATS_PATH}`;
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical },
-  openGraph: { title, description, url: canonical, type: "website" },
-  twitter: { card: "summary_large_image", title, description },
-};
+export const metadata: Metadata = createPageMetadata({ title, description, path: AION_2_STATS_PATH });
 
 const schema = [
   {
