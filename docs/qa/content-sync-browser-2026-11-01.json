@@ -1,0 +1,155 @@
+{
+  "checkedAt": "2026-11-01T15:27:49.611Z",
+  "scope": "Read-only local browser inspection; content-source checks and full raw HTTP audits are separate. Mode switch and transfer disclosure were tested with ordinary controls.",
+  "pages": [
+    {
+      "description": "Check game patch notes, new modes, buying changes and source reviews across ZowGame. Follow official announcements with release and review dates kept separate.",
+      "h1": [
+        "READ THE GAME UPDATES."
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "Game Updates, Official News & Patch Notes | ZowGame",
+      "url": "http://127.0.0.1:3000/updates/",
+      "viewport": {
+        "height": 900,
+        "width": 1280
+      }
+    },
+    {
+      "description": "Explore Krillion's daily trivia, scoring and depth calculator, plus the separate Puffer Party multiplayer beta. Learn the rules and play on the official site.",
+      "h1": [
+        "KRILLION"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "Krillion Game: Daily Trivia & Puffer Party | ZowGame",
+      "url": "http://127.0.0.1:3000/games/krillion/#puffer-party",
+      "viewport": {
+        "height": 900,
+        "width": 1280
+      },
+      "party": {
+        "text": "SEPARATE MODE / BETA · LIMITED TIME\n\nPuffer Party.\nPass it on.\n\nA separate multiplayer category game on Krillion. Give a valid answer, pass the puffer and avoid being the player holding it when it bursts. The last surviving player wins.\n\nOpen official Puffer Party\n\nOfficial entry and rules checked 2026-11-01.\n\n01\nAnswer, then pass the puffer.\n\nName something that fits the current question before the puffer bursts on you. Follow the room’s countdown; the Daily Dive’s 25-second rule does not define this mode.\n\n02\nKeep answers fresh within the question.\n\nAn answer already used for the current question cannot be reused. Listen to the other players and prepare another valid choice.\n\n03\nRarity can help you survive.\n\nRarer answers move you closer to an extra heart. The official landing rules do not publish a fixed heart threshold or promise a heart for every rare answer.\n\nThe official page offers rated matchmaking, unrated Quick Play, hosting, joining by code and a public room list. Choose the entry that suits your group and check its current availability.\n\nThe homepage labels this a limited-time beta. Its availability and rules may change. ZowGame explains the official entry screen and rules; play, matchmaking and rooms stay on krillion.io.\n\nDaily Dive remains the seven-question solo daily run. Its preset score tiers, 700-point maximum and depth calculator are separate from Puffer Party.",
+        "top": 23.984375
+      }
+    },
+    {
+      "description": "Find official Don't Sleep With The Fishes downloads, compare Steam and itch.io, check Windows requirements and review the Steam Deck Playable limitations.",
+      "h1": [
+        "Don't Sleep With The Fishes\nSteam & Download Guide."
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "Don't Sleep With The Fishes: Steam & Download | ZowGame",
+      "url": "http://127.0.0.1:3000/games/dont-sleep-with-the-fishes/steam/#section-3",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    {
+      "description": "Learn the six Hood Warfare 2 game modes, team and free-for-all objectives, and the revised 75-point Chain Snatch rules, with practical advice for beginners.",
+      "h1": [
+        "Hood Warfare 2\nGame Modes"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "Hood Warfare 2 Game Modes: Six Objectives | ZowGame",
+      "url": "http://127.0.0.1:3000/games/hood-warfare-2/modes/",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "selectedMode": "06\nChain Snatch\nChain collection"
+    },
+    {
+      "description": "Learn MinaLima's Harry Potter board game, Defenders of Hogwarts: setup, turns and win conditions, plus official retail buying and campaign reward guidance.",
+      "h1": [
+        "DEFENDERS\nOF HOGWARTS"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "Harry Potter Defenders of Hogwarts: Board Game | ZowGame",
+      "url": "http://127.0.0.1:3000/games/defenders-of-hogwarts/#availability",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      }
+    },
+    {
+      "description": "Explore Cobb Can Move's changing rules, coal and furnace basics, controls and survival tips. Find the beginner guide, common questions and play options.",
+      "h1": [
+        "COBB CAN MOVE"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "Cobb Can Move: Controls, Rules & Player Guide | ZowGame",
+      "url": "http://127.0.0.1:3000/games/cobb-can-move/",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "session": [
+        "SESSION\nA few minutes",
+        "SESSION\nA few minutes"
+      ]
+    },
+    {
+      "description": "Explore All The Gold In Fort Locks, a puzzle about keys and overlapping rooms. Find controls, beginner tips, common stuck points and the itch.io source.",
+      "h1": [
+        "ALL THE GOLD IN FORT LOCKS"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "All The Gold In Fort Locks: Game & Guide | ZowGame",
+      "url": "http://127.0.0.1:3000/games/all-the-gold-in-fort-locks/",
+      "viewport": {
+        "height": 1024,
+        "width": 768
+      },
+      "session": [
+        "SESSION\nVaries",
+        "SESSION\nVaries"
+      ]
+    },
+    {
+      "description": "Read AION 2 Steam player counts, a dated launch-peak reference and release timeline. Compare Steam with PURPLE, read update summaries and find player help.",
+      "h1": [
+        "AION 2\nSteam launch stats"
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "AION 2 Steam Launch Stats & Player Counts | ZowGame",
+      "url": "http://127.0.0.1:3000/games/aion-2/steam-launch-stats/",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    {
+      "description": "Check game patch notes, new modes, buying changes and source reviews across ZowGame. Follow official announcements with release and review dates kept separate.",
+      "h1": [
+        "READ THE GAME UPDATES."
+      ],
+      "keywords": 0,
+      "overflow": false,
+      "title": "Game Updates, Official News & Patch Notes | ZowGame",
+      "url": "http://127.0.0.1:3000/updates/",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    }
+  ],
+  "actions": [
+    "Updates -> Krillion link reached #puffer-party",
+    "Chain Snatch mode selected; 75 points and no friendly-chain scoring shown",
+    "AION transfer disclosure opened; ended October offer and November 1 review date shown"
+  ],
+  "screenshots": [
+    "docs/design/content-updates-2026-11-01-desktop.png",
+    "docs/design/content-updates-2026-11-01-mobile.png",
+    "docs/design/fishes-deck-2026-11-01-mobile.png"
+  ]
+}

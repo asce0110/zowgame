@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, List } from "lucide-react";
-import { defendersFaqs, defendersOfHogwartsGame, defendersSections, defendersSources, DEFENDERS_CHECKED } from "../data/defenders-of-hogwarts";
+import { defendersFaqs, defendersOfHogwartsGame, defendersSections, defendersSources, DEFENDERS_CHECKED, DEFENDERS_RETAIL_CHECKED, DEFENDERS_RULE_RESOURCES_CHECKED } from "../data/defenders-of-hogwarts";
 import { defendersGuideSections, defendersStrategy, defendersTerminology } from "../data/defenders-guide";
 import type { GameRecord } from "../data/games";
 import { SiteHeader } from "./site-header";
@@ -30,7 +30,7 @@ const routes = [
 export function TabletopGamePage({ game = defendersOfHogwartsGame }: { game?: GameRecord }) {
   return <div className="zg-site zg-tabletop">
     <a className="zg-skip" href="#tabletop-main">Skip to the game guide</a>
-    <SiteHeader gameTitle={game.shortTitle} officialUrl={defendersSources.project.url} />
+    <SiteHeader gameTitle={game.shortTitle} officialUrl={defendersSources.publisher.url} />
     <ConnectionNote />
     <SchemaJsonLd game={game} />
     <main id="tabletop-main" className="tt-main">
@@ -42,7 +42,7 @@ export function TabletopGamePage({ game = defendersOfHogwartsGame }: { game?: Ga
           <p className="tt-hero-deck">A castle to defend.<br />A side to choose.</p>
           <p className="tt-hero-intro">Learn MinaLima’s physical Harry Potter board game: set up the castle, take either side’s turn, check a disputed rule and find official buying or support information.</p>
           <div className="tt-hero-actions"><a className="tt-button" href="#setup">Set up a game<ArrowRight size={19} aria-hidden="true" /></a><a className="tt-button tt-button-outline" href="#faq">Find an answer</a></div>
-          <p className="tt-preview-note">RULEBOOK-BASED GUIDE · CHECKED {DEFENDERS_CHECKED}</p>
+          <p className="tt-preview-note">RULES GUIDE REVIEWED {DEFENDERS_CHECKED}<br />RETAIL CHECKED {DEFENDERS_RETAIL_CHECKED}</p>
         </div>
         <figure className="tt-hero-art"><GameCover src="/defenders-editorial.webp" title="Defenders of Hogwarts editorial illustration" priority /><figcaption>Editorial illustration. Not product photography or gameplay.</figcaption></figure>
       </header>
@@ -87,17 +87,18 @@ export function TabletopGamePage({ game = defendersOfHogwartsGame }: { game?: Ga
             <SectionLabel id="availability" eyebrow="BUYING / DELIVERY / GETTING HELP" />
             <h2 id="tt-availability-title">Choose an edition.<br /><span>Check the details.</span></h2>
             <p className="tt-lead">Start with the base game to play. Campaign tiers add accessories and presentation extras. Confirm the language, contents and total delivered cost for your address.</p>
-            <p>Publisher information checked October 12, 2026. Current stock, ordering access and the status of an individual shipment require confirmation from the seller.</p>
+            <p>Official retail listing checked <time dateTime={DEFENDERS_RETAIL_CHECKED}>{DEFENDERS_RETAIL_CHECKED}</time>. New retail purchases and existing campaign orders have separate support and fulfillment paths.</p>
             <dl className="tt-availability-list">
-              <div><dt>Original campaign</dt><dd><strong>Ended July 23, 2026</strong><p>The campaign ran from June 30 to July 23. The October 8 update announced one day left for late pledges. An old pledge button does not establish that orders are still accepted; check the official ordering destination.</p></dd></div>
-              <div><dt>Base game</dt><dd><strong>October 2026 estimated shipping</strong><p>The FAQ gives an estimated shipping window. This is not confirmation that your order has shipped or arrived. The same base game is planned for selected House of MinaLima retail locations.</p></dd></div>
-              <div><dt>Collector’s Box & extras</dt><dd><strong>March 2027 estimated second shipment</strong><p>These items have a separate estimated delivery window. The FAQ says the estimated Collector-tier shipping fee includes both shipments; check your exact order and included items.</p></dd></div>
-              <div><dt>Price & delivery cost</dt><dd><strong>£75 UK base-game retail reference</strong><p>This recommended price includes UK VAT. It is not a live offer. Campaign shipping, regional sales taxes and applicable import duties are separate; compare the final checkout total, not just a pledge tier.</p></dd></div>
-              <div><dt>Language & retail</dt><dd><strong>Initial edition: English</strong><p>Translations are planned without a confirmed date in the FAQ. Selected House of MinaLima retail sales are described for autumn 2026 and wholesale in 2027. Confirm current language and stock with the seller.</p></dd></div>
+              <div><dt>Original campaign</dt><dd><strong>Ended July 23, 2026</strong><p>The June 30–July 23 campaign is historical. Use the publisher’s retail listing for a new purchase and backer support for an existing pledge.</p></dd></div>
+              <div><dt>Base-game retail</dt><dd><strong>Listed online and in House of MinaLima stores</strong><p>MinaLima now lists exclusive retail availability. Check the official product listing for your current ordering options.</p></dd></div>
+              <div><dt>Campaign fulfillment</dt><dd><strong>October estimate is not a dispatch confirmation</strong><p>The campaign FAQ snapshot reviewed October 12 estimated October 2026 for the base game. Ask backer support about your own shipment; retail availability does not establish its status.</p></dd></div>
+              <div><dt>Collector’s Box & extras</dt><dd><strong>March 2027 estimated second shipment</strong><p>This remains the older campaign FAQ estimate, separate from retail. Confirm your order’s included items and shipment status with backer support.</p></dd></div>
+              <div><dt>Price & delivery cost</dt><dd><strong>£75 displayed on November 1, 2026</strong><p>The official base-game listing showed an add-to-cart option. Check the current currency, delivery charges and final tax total before paying.</p></dd></div>
+              <div><dt>Language</dt><dd><strong>English edition; translations coming soon</strong><p>The publisher’s rules page gives no translation release date. Confirm the language and instructions of the edition you order.</p></dd></div>
             </dl>
-            <a className="tt-button" href={defendersSources.project.url} target="_blank" rel="noopener noreferrer">Check official ordering<ArrowUpRight size={19} aria-hidden="true" /></a>
-            <div className="tt-support-note"><p className="tt-eyebrow">ORDER PROBLEM OR MISSING COMPONENT?</p><h3>Keep the details. Contact the right team.</h3><p>Check components against printed page 4. Prepare your order reference, a clear description and photos of any damage. The campaign FAQ asks for damage or defect reports within seven days of receipt; statutory rights are unaffected.</p><p>For cancellation or return requests, read the full current policy first. The stated September 30 campaign cancellation cutoff has passed. Eligible unopened base-game returns have a 28-day window and a 20% fee, with delivery charges excluded.</p><div className="tt-section-sources"><SourceLink source={defendersSources.backerSupport} /><SourceLink source={defendersSources.support} /></div></div>
-            <div className="tt-section-sources"><SourceLink source={defendersSources.faq} /><SourceLink source={defendersSources.latestUpdate} /></div>
+            <a className="tt-button" href={defendersSources.retail.url} target="_blank" rel="noopener noreferrer">Open official retail listing<ArrowUpRight size={19} aria-hidden="true" /></a>
+            <div className="tt-support-note"><p className="tt-eyebrow">ORDER PROBLEM OR MISSING COMPONENT?</p><h3>Keep the details. Contact the right team.</h3><p>Check components against printed page 4. Prepare your order reference, a clear description and photos of any damage. The campaign-policy snapshot reviewed October 12 asks for reports within seven days of receipt; statutory rights are unaffected.</p><p>For campaign cancellation or return requests, read the current policy first. The historical September 30 cancellation cutoff has passed. The reviewed campaign terms give eligible unopened base-game returns a 28-day window and a 20% fee, with delivery charges excluded. Retail purchases follow their seller’s terms.</p><div className="tt-section-sources"><SourceLink source={defendersSources.backerSupport} /><SourceLink source={defendersSources.support} /></div></div>
+            <div className="tt-section-sources"><SourceLink source={defendersSources.retail} /><SourceLink source={defendersSources.publisher} /><SourceLink source={defendersSources.faq} /></div>
           </section>
           <section id="faq" className="tt-section" aria-labelledby="tt-faq-title">
             <SectionLabel id="faq" eyebrow="QUESTIONS / RULES / BUYING & SUPPORT" />
@@ -105,7 +106,7 @@ export function TabletopGamePage({ game = defendersOfHogwartsGame }: { game?: Ga
             <p className="tt-lead">Search a rule, a resource or an order question. Open an answer to read it; filter by topic to narrow the list.</p>
             <TabletopQuestions faqs={defendersFaqs} supportUrl={defendersSources.support.url} />
             <p className="tt-editor-note">An unresolved card interaction? Record the exact card text, player side, path zone and rulebook page. Ask MinaLima for a ruling instead of assuming an unlisted exception.</p>
-            <div className="tt-section-sources"><SourceLink source={defendersSources.rulebook} /><SourceLink source={defendersSources.faq} /><SourceLink source={defendersSources.support} /></div>
+            <div className="tt-section-sources"><SourceLink source={defendersSources.rulebook} /><SourceLink source={defendersSources.rulesFaq} /><SourceLink source={defendersSources.faq} /><SourceLink source={defendersSources.support} /></div>
           </section>
           <section id="glossary" className="tt-section" aria-labelledby="tt-glossary-title">
             <SectionLabel id="glossary" eyebrow="THE LANGUAGE AT THE TABLE" />
@@ -116,10 +117,10 @@ export function TabletopGamePage({ game = defendersOfHogwartsGame }: { game?: Ga
           <section id="sources" className="tt-section tt-credits" aria-labelledby="tt-sources-title">
             <SectionLabel id="sources" eyebrow="ORIGINAL RULES / A VIDEO WALKTHROUGH / SUPPORT" />
             <h2 id="tt-sources-title">Keep the originals<br /><span>within reach.</span></h2>
-            <p>The official rulebook supplies the rules above. The Meeple Marathon tutorial is a third-party walkthrough recommended by MinaLima in its July 14 announcement. Use it alongside your rulebook.</p>
+            <p>The official rulebook supplies the rules above. The publisher’s rules hub and gameplay FAQ are also linked below. The Meeple Marathon tutorial is a third-party walkthrough recommended by MinaLima in its July 14 announcement.</p>
             <a className="tt-button" href={defendersSources.rulebook.url} target="_blank" rel="noopener noreferrer"><BookOpen size={19} aria-hidden="true" />Open the complete rulebook<ArrowUpRight size={19} aria-hidden="true" /></a>
             <ul>{Object.values(defendersSources).map((source) => <li key={source.url}><SourceLink source={source} /></li>)}</ul>
-            <p className="tt-editor-note">Sources checked {DEFENDERS_CHECKED}. Game: MinaLima, developed with David Waterman. Harry Potter characters and world belong to their respective rights holders. Hero artwork is an editorial illustration created for this guide. ZowGame is independent of the publisher.</p>
+            <p className="tt-editor-note">Rules guide and campaign-policy snapshot reviewed {DEFENDERS_CHECKED}. Retail checked {DEFENDERS_RETAIL_CHECKED}; rule-resource links rechecked {DEFENDERS_RULE_RESOURCES_CHECKED}. A resource check does not establish a new rulebook edition. Game: MinaLima, developed with David Waterman. Hero artwork is editorial. ZowGame is independent of the publisher.</p>
           </section>
         </article>
       </div>

@@ -1,10 +1,13 @@
 // Verified against the developer's public pages on this date; no live price feed.
 export const FISHES_VERSION = "v1.1.4.4";
-export const FISHES_CHECKED = "2026-10-07";
+export const FISHES_CHECKED = "2026-11-01";
+export const FISHES_PATCH_DATE = "2026-08-15";
 const official = "https://dopplerghost.itch.io/dont-sleep-with-the-fishes";
 export const fishesSources = {
   official: { label: "Developer's game page", url: official },
   steam: { label: "Official Steam store", url: "https://store.steampowered.com/app/4834070/Dont_Sleep_With_The_Fishes/" },
+  news: { label: "Official Steam developer announcements", url: "https://store.steampowered.com/news/app/4834070" },
+  deck: { label: "Valve's Steam Deck compatibility report", url: "https://store.steampowered.com/saleaction/ajaxgetdeckappcompatibilityreport?nAppID=4834070" },
   patch1144: { label: "Developer: v1.1.4.4 announcement", url: `${official}/devlog/1621472/50000-copies-sold-small-game-fixes` },
   patch114: { label: "Developer: v1.1.4", url: `${official}/devlog/1603522/version-114` },
   hotfix: { label: "Developer: v1.1.4.2 hotfix", url: `${official}/devlog/1604159/hotfix-1142` },
@@ -19,16 +22,17 @@ type Source = keyof typeof fishesSources;
 type Section = { title: string; body?: string; bullets?: string[]; headers?: string[]; rows?: string[][]; sources: Source[]; spoiler?: boolean };
 type GuidePage = { title: string; description: string; sections: Section[] };
 
-export const fishesFaqs = [
-  { q: "Where can I play or download it?", a: "Buy the Windows download from DopplerGhost on itch.io or Taiki / DopplerGhost on Steam. This site is an unofficial guide and does not host the game." },
-  { q: "What is the latest verified version?", a: `The developer's download list provides ${FISHES_VERSION}. Sources last checked ${FISHES_CHECKED}; check the official page for subsequent releases.` },
-  { q: "How much does it cost?", a: "itch.io lists a minimum of US$1.99. Steam prices depend on region and promotions; check its store for the current checkout price." },
-  { q: "Does it support my device or language?", a: "The official listings support Windows and English. Steam Cloud, native Mac/Linux/mobile support, and a Valve Steam Deck rating were not confirmed in the pages checked." },
-  { q: "Do I need to collect a Fishing Rod?", a: "The community guide reports that fishing and repair equipment are already aboard the lifeboat. Spend evacuation time on supplies; bait improves fishing but can be switched off." },
-  { q: "What changed for Frederik?", a: "His support now preserves bait on successful catches for that day. The old guaranteed-catch advice is obsolete." },
-  { q: "How many endings are there?", a: "The developer confirms multiple endings without an exact total. Steam lists 12 achievements, which include milestones as well as endings." },
-  { q: "Is paying the debt a separate ending from True End?", a: "Steam identifies paying back the debt as the True End objective. The developer confirms that collecting Heart Parts can still lead to it after a Kraken encounter in the same run." },
-  { q: "What should I do if a new run inherits old status?", a: "Update the game. The v1.1.4.2 hotfix addresses run data incorrectly persisting between runs. If it continues on the current version, record your version and reproduction steps for the developer." },
+export const fishesFaqs: { q: string; a: string; sources: Source[] }[] = [
+  { q: "Where can I play or download it?", a: "Buy the Windows download from DopplerGhost on itch.io or Taiki / DopplerGhost on Steam. This site is an unofficial guide and does not host the game.", sources: ["official", "steam"] },
+  { q: "What is the latest verified version?", a: `The developer's download list still provides ${FISHES_VERSION}. The latest public Steam patch announcement is dated ${FISHES_PATCH_DATE}. No newer release appeared in the official sources rechecked on ${FISHES_CHECKED}.`, sources: ["official", "news", "patch1144"] },
+  { q: "How much does it cost?", a: "itch.io lists a minimum of US$1.99. Steam prices depend on region and promotions; check its store for the current checkout price.", sources: ["official", "steam"] },
+  { q: "Does it support my device or language?", a: "The official listings support Windows and English. Steam now labels the game Steam Deck Playable. Valve notes mismatched button prompts and small interface text; this is not a Verified rating or a native Linux release. Steam Cloud and native Mac/mobile support are not listed in the sources checked.", sources: ["steam", "deck", "official"] },
+  { q: "Have new endings or a larger update been released?", a: `The August 15 developer post discussed possible larger updates and new endings if completed, without a release date. As checked on ${FISHES_CHECKED}, this remains a development plan rather than a newly released content patch.`, sources: ["patch1144", "news"] },
+  { q: "Do I need to collect a Fishing Rod?", a: "The community guide reports that fishing and repair equipment are already aboard the lifeboat. Spend evacuation time on supplies; bait improves fishing but can be switched off.", sources: ["community", "patch114"] },
+  { q: "What changed for Frederik?", a: "His support now preserves bait on successful catches for that day. The old guaranteed-catch advice is obsolete.", sources: ["patch114"] },
+  { q: "How many endings are there?", a: "The developer confirms multiple endings without an exact total. Steam lists 12 achievements, which include milestones as well as endings.", sources: ["official", "achievements"] },
+  { q: "Is paying the debt a separate ending from True End?", a: "Steam identifies paying back the debt as the True End objective. The developer confirms that collecting Heart Parts can still lead to it after a Kraken encounter in the same run.", sources: ["achievements", "patch1144"] },
+  { q: "What should I do if a new run inherits old status?", a: "Update the game. The v1.1.4.2 hotfix addresses run data incorrectly persisting between runs. If it continues on the current version, record your version and reproduction steps for the developer.", sources: ["hotfix"] },
 ];
 
 export const fishesChangelog = [
@@ -38,6 +42,13 @@ export const fishesChangelog = [
   { version: "v1.1.3", date: "2026-06-26", sourceUrl: fishesSources.patch113.url, summary: "Steam launch and survival improvements, also released on itch.io.", details: [{ label: "Changes", items: ["Steam achievements introduced at launch; existing itch.io progress should carry over.", "Enable Fast-Forward in Settings, then hold F during night introductions. Small Island allows sending a shipmate.", "First Aid Kit healing rises from 50% to 70%. Junk scaling after Day 30 slows; bait's default effectiveness lasts until Day 60.", "Hungry or sick shipmates gain visual feedback; Frederik's pipe animation and other bugs fixed."] }] },
   { version: "v1.1.2", date: "2026-06-06", sourceUrl: fishesSources.patch112.url, summary: "Support actions, tracking, and item balance before the Steam release.", details: [{ label: "Changes", items: ["Bait is spent only on fish catches; Duct Tape repairs become optional. Swim Ring joins chest loot.", "Support actions added. Laurel doubles hunger restored by food; Row reduces repair costs by two Energy. Frederik's original catch guarantee is superseded in v1.1.4.", "Captain Whiskers gains a 1% fishing bonus. Lore and highest-day tracking added; older v1.1.1 runs are not recorded.", "Three night events and alternative pickup inputs added. Rescue chances and starvation handling adjusted."] }] },
 ];
+
+const releaseCheck: Section = {
+  title: `Latest Release Check — ${FISHES_CHECKED}`,
+  body: `The public itch.io downloads and Steam developer announcements still identify ${FISHES_VERSION} as the latest patch, announced ${FISHES_PATCH_DATE}. This review date is not a new patch release date.`,
+  bullets: ["The latest developer post discusses possible future content, including new endings if a larger update is completed. It does not give a release date.", "Steam currently labels the game Steam Deck Playable. Valve flags button-prompt differences and small text; the Windows release remains the listed build."],
+  sources: ["official", "news", "patch1144", "steam", "deck"],
+};
 
 const supportSection: Section = {
   title: "Choose Support for Today's Work",
@@ -122,10 +133,11 @@ export const fishesGuidePages: Record<string, GuidePage> = {
   ] },
   steam: { title: "Steam & Download Guide", description: "Official purchase links, requirements, and a comparison with itch.io.", sections: [
     { title: "Official Distribution", body: "Steam lists Taiki as developer and DopplerGhost as publisher, with a June 26, 2026 release. itch.io offers the Windows download at US$1.99 or more. Steam regional prices and temporary discounts should be checked at checkout.", sources: ["steam", "official"] },
-    { title: "Steam vs itch.io", headers: ["Feature", "Steam", "itch.io"], rows: [["Download", "Steam client", "ZIP / RAR from developer"], ["Achievements", "12 listed", "No Steam achievement integration claimed"], ["Updates", "Client-managed", "Download a current build"], ["Language", "English", "English"], ["Cloud / Deck", "Not confirmed in checked sources", "No equivalent feature confirmed"]], sources: ["steam", "official", "achievements"] },
-    { title: "Windows Requirements", body: "Minimum: Windows 10 (64-bit), Core i5-4460 or Ryzen 3 1200, 8 GB RAM, GTX 750 Ti / Radeon R7 265 / Intel UHD 620, and 1 GB storage. No verified Steam Deck performance result is available here.", sources: ["steam"] },
+    { title: "Steam vs itch.io", headers: ["Feature", "Steam", "itch.io"], rows: [["Download", "Steam client", "ZIP / RAR from developer"], ["Achievements", "12 listed", "No Steam achievement integration claimed"], ["Updates", "Client-managed", "Download a current build"], ["Language", "English", "English"], ["Steam Deck", "Valve rating: Playable; see limitations below", "No equivalent platform rating confirmed"], ["Steam Cloud", "Not listed in the checked store features", "No equivalent feature confirmed"]], sources: ["steam", "official", "achievements", "deck"] },
+    { title: "Steam Deck Compatibility", body: "Valve currently rates the Steam build Playable, with the default controller configuration supported. Its report warns that some controller prompts do not match Deck controls and some interface text is small. Playable is distinct from Verified; it does not establish a native Linux build or a measured frame rate from ZowGame.", sources: ["steam", "deck"] },
+    { title: "Windows Requirements", body: "Minimum: Windows 10 (64-bit), Core i5-4460 or Ryzen 3 1200, 8 GB RAM, GTX 750 Ti / Radeon R7 265 / Intel UHD 620, and 1 GB storage. The official release remains Windows-only; the Deck compatibility rating is a separate assessment.", sources: ["steam", "deck"] },
     { title: "Updating and Troubleshooting", body: "Check the version in your installed build. itch.io buyers must obtain the current download rather than assume an older archive updates itself. If a fault persists, send the developer the build number and steps that reproduce it.", sources: ["official", "hotfix"] },
   ] },
-  faq: { title: "FAQ", description: "Current answers about download, support, versions, and game mechanics.", sections: fishesFaqs.map(({ q, a }) => ({ title: q, body: a, sources: ["official", "steam", "patch114", "patch1144", "achievements"] })) },
-  changelog: { title: "Changelog", description: "Developer-sourced version history through v1.1.4.4.", sections: fishesChangelog.map((entry) => ({ title: `${entry.version} — ${entry.date}`, body: entry.summary, bullets: entry.details.flatMap((d) => d.items), sources: [Object.entries(fishesSources).find(([, s]) => s.url === entry.sourceUrl)![0] as Source] })) },
+  faq: { title: "FAQ", description: "Current answers about download, support, versions, and game mechanics.", sections: fishesFaqs.map(({ q, a, sources }) => ({ title: q, body: a, sources })) },
+  changelog: { title: "Changelog", description: `Developer-sourced version history through ${FISHES_VERSION}, with a separate release-status check.`, sections: [releaseCheck, ...fishesChangelog.map((entry) => ({ title: `${entry.version} — ${entry.date}`, body: entry.summary, bullets: entry.details.flatMap((d) => d.items), sources: [Object.entries(fishesSources).find(([, s]) => s.url === entry.sourceUrl)![0] as Source] }))] },
 };

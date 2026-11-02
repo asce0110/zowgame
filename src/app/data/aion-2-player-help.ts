@@ -1,4 +1,5 @@
-export const AION_2_HELP_CHECKED = "2026-10-12";
+export const AION_2_HELP_CHECKED = "2026-11-01";
+export const AION_2_REQUIREMENTS_CHECKED = "2026-11-01";
 export const AION_2_SUPPORT = "https://help.plaync.com/qna/ticket?service=aion2global";
 
 export const AION_2_HELP_GROUPS = [
@@ -14,6 +15,7 @@ export type AionHelpGuide = {
   id: string;
   group: Exclude<AionHelpGroup, "all">;
   title: string;
+  checkedAt: string;
   answer: string;
   steps: string[];
   boundary: string;
@@ -25,8 +27,12 @@ const sources = {
   known: "https://steamcommunity.com/games/3393110/announcements/detail/712288224875120014",
   transfer: "https://steamcommunity.com/games/3393110/announcements/detail/712288859283523637",
   transferQa: "https://steamcommunity.com/games/3393110/announcements/detail/712288859283523640",
-  account: "https://steamcommunity.com/games/3393110/announcements/detail/712288859283524486",
+  account: "https://steamcommunity.com/games/3393110/announcements/detail/675136064593068541",
   compensation: "https://steamcommunity.com/games/3393110/announcements/detail/712288859283523340",
+  transferRevision: "https://steamcommunity.com/games/3393110/announcements/detail/675135430408018666",
+  octoberPatch: "https://steamcommunity.com/games/3393110/announcements/detail/675136064593068108",
+  maintenanceNaw: "https://steamcommunity.com/games/3393110/announcements/detail/675136064593068553",
+  maintenanceNae: "https://steamcommunity.com/games/3393110/announcements/detail/675136064593068551",
 };
 
 // Dated official facts, followed by an editorial order of checks. No live
@@ -34,18 +40,20 @@ const sources = {
 export const AION_2_HELP_GUIDES: AionHelpGuide[] = [
   {
     id: "login", group: "access", title: "I cannot log in, or character selection is stuck. What should I check?",
-    answer: "First identify whether the failure is regional, account-related or local. The October 9 Nezekan NA West report is marked resolved; it does not establish the cause of a new login failure.",
+    checkedAt: "2026-11-01",
+    answer: "Identify whether the failure is regional, account-related or local. The November 1 NA maintenance notices are marked Completed at this check. The revised known-issues notice lists EU chat interruptions separately; its Nezekan login and latency reports remain resolved.",
     steps: [
       "Record the region, server, Steam or PURPLE client, exact message and time with its time zone. A player-count drop alone cannot confirm an outage.",
       "Match the newest official notice to that region and time. A past maintenance notice is not a live status reading. If a current notice covers your session, follow its stated recovery update.",
       "If there is no matching notice, finish pending client updates and retry once. For a repeated failure, send the recorded details to AION 2 Global support; use the block-code or account guide below if that is the message shown.",
     ],
     boundary: "These are triage steps. This tracker has no server-health API and cannot diagnose a login failure from concurrent-player numbers.",
-    keywords: "login log in logging maintenance outage connection connect disconnect disconnected queue queued stuck latency server status nezekan",
-    sources: [{ label: "NC · dated Nezekan issue report", url: sources.known }, { label: "NC · newest Steam notices", url: "https://steamcommunity.com/app/3393110/allnews/" }],
+    keywords: "login log in logging maintenance outage connection connect disconnect disconnected queue queued stuck latency server status nezekan chat europe eu daylight time clock",
+    sources: [{ label: "NC · known issues, revised October 26", url: sources.known }, { label: "NC · November 1 NA West maintenance", url: sources.maintenanceNaw }, { label: "NC · NA East clock-change maintenance", url: sources.maintenanceNae }, { label: "NC · newest Steam notices", url: "https://steamcommunity.com/app/3393110/allnews/" }],
   },
   {
     id: "startup", group: "access", title: "AION 2 will not launch or crashes on my PC. What can I try?",
+    checkedAt: "2026-10-12",
     answer: "Use a local installation check before assuming a server outage. Steam recommends checking requirements, updating the operating system and drivers, and verifying installed files for launch problems.",
     steps: [
       "Compare your PC with the minimum and recommended requirements below. Record your Windows version, CPU, GPU and RAM for a repeatable report.",
@@ -55,10 +63,11 @@ export const AION_2_HELP_GUIDES: AionHelpGuide[] = [
     ],
     boundary: "File verification repairs installation problems; it cannot remove an account restriction or guarantee a fix for every crash.",
     keywords: "launch launching wont will not start startup crash crashing pc computer fps performance requirements specs minimum recommended ram gpu files verify installation download",
-    sources: [{ label: "Steam · launch troubleshooting", url: "https://help.steampowered.com/en/faqs/view/5814-D9A3-BE42-62DF" }, { label: "Steam · verify installed files", url: "https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB" }, { label: "NC · system requirements", url: "https://help.plaync.com/faq/aion2global?faqNo=7083" }],
+    sources: [{ label: "Steam · launch troubleshooting", url: "https://help.steampowered.com/en/faqs/view/5814-D9A3-BE42-62DF" }, { label: "Steam · verify installed files", url: "https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB" }, { label: "Steam · PC requirements rechecked November 1", url: "https://store.steampowered.com/app/3393110/AION_2/" }, { label: "NC · system requirements", url: "https://help.plaync.com/faq/aion2global?faqNo=7083" }],
   },
   {
     id: "block-code", group: "access", title: "The game closes with a Block Code. What should I do?",
+    checkedAt: "2026-10-12",
     answer: "NC directs players to look up the exact displayed Block Code and follow the guidance for that code. Different codes can require different checks.",
     steps: [
       "Save the complete code and message before closing the pop-up. Include when it appears: launching the client, signing in or entering the game.",
@@ -71,6 +80,7 @@ export const AION_2_HELP_GUIDES: AionHelpGuide[] = [
   },
   {
     id: "character", group: "accounts", title: "My character disappeared after changing my Steam account link. Is it lost?",
+    checkedAt: "2026-10-12",
     answer: "NC says characters belong to the NC account used to create them. Linking Steam to a different NC account does not move those characters. A different account view is not proof of deletion.",
     steps: [
       "Identify the original NC account and login method, then confirm the region and server you previously used.",
@@ -82,31 +92,34 @@ export const AION_2_HELP_GUIDES: AionHelpGuide[] = [
     sources: [{ label: "NC · missing characters after relinking", url: "https://help.plaync.com/faq/aion2global/view?faqNo=7240" }, { label: "NC · use a Steam character on PURPLE", url: "https://help.plaync.com/faq/aion2global/view?faqNo=7176" }],
   },
   {
-    id: "transfer", group: "transfers", title: "Why is server transfer unavailable, and when can I apply?",
-    answer: "The announced window starts after maintenance on October 13 PDT for Early Access servers, and October 20 PDT for Launch servers. Each lasts until the following week’s maintenance. October 12 is before these openings.",
+    id: "transfer", group: "transfers", title: "Why is server transfer unavailable after the October offer?",
+    checkedAt: "2026-11-01",
+    answer: "The October offer has ended. The October 28 patch removes the Server Transfer shop tab. The earlier October 26 resumption also raised the level requirement to 45; it does not establish an open November application window.",
     steps: [
-      "Check server type, same region and same faction. Early Access transfers stay within Early Access servers. The offer allows one transfer per account.",
-      "Check the regional application hours below. A closed departure application window or either server reaching its transfer limit can also make the service unavailable.",
-      "Read the in-game destination message. Already owning a character there does not override capacity limits.",
+      "Check the newest official notice before planning another transfer. No new application window is established by the sources reviewed here on November 1.",
+      "If you applied during October and have an unresolved transfer, record your source and destination servers, character names and exact application or error message for support.",
+      "Use the original offer’s region, faction and capacity conditions only to review that past transaction. Owning a destination character did not override the offer’s capacity limits.",
     ],
-    boundary: "Opening follows maintenance completion, not a fixed midnight. The table preserves published PDT hours; check the game’s current message for availability.",
-    keywords: "transfer transfers transferring server unavailable grey gray disabled button destination source region faction early access launch schedule times time",
-    sources: [{ label: "NC · transfer offer and eligibility", url: sources.transfer }, { label: "NC · transfer windows and limits", url: sources.transferQa }],
+    boundary: "The hours below archive the ended October offer, including its original PDT labels. They are not a current schedule; first-day and maintenance-day corrections remain in the linked original notices.",
+    keywords: "transfer transfers transferring server unavailable grey gray disabled button destination source region faction early access launch schedule times time ended closed november level 45",
+    sources: [{ label: "NC · October 28 patch / transfer closure", url: sources.octoberPatch }, { label: "NC · October 26 level-45 revision", url: sources.transferRevision }, { label: "NC · historical offer and eligibility", url: sources.transfer }, { label: "NC · historical windows and limits", url: sources.transferQa }],
   },
   {
-    id: "belongings", group: "transfers", title: "What should I prepare before transferring characters and items?",
-    answer: "Character inventory and Character Storage move with the character; Server Storage items do not. Move wanted items to a transferring character first. The transfer costs 0 Quna, but extra destination character slots cost 1,000 Quna each.",
+    id: "belongings", group: "transfers", title: "What moved in the October transfer, and what should I check now?",
+    checkedAt: "2026-11-01",
+    answer: "The ended October offer moved character inventory and Character Storage, not items in Server Storage. It listed a 0-Quna transfer and 1,000 Quna per extra destination character slot. These historical terms do not establish a new transfer offer.",
     steps: [
-      "Collect outstanding Market items or proceeds, Shop Storage purchases and character mail. Clear active Duty Missions before applying.",
-      "Check destination character-slot capacity and select the characters to move. Purchased character slots on the departure server stay there.",
-      "Expect a temporary character name, then rename on first login. A previously used name may be taken at the destination.",
+      "For an October transfer problem, identify whether the missing item was in character inventory, Character Storage or Server Storage. Keep screenshots or transaction details for support.",
+      "Review the original destination slot capacity and naming terms. Purchased departure-server character slots stayed there, and a transferred character received a temporary name before renaming.",
+      "If you received a Pet Reward Ticket or Skin (Single) Reward Ticket, check its stated November 24 PST / November 25 CET maintenance expiry in the original notice. Eligible pet refunds require Customer Support; a ticket is not an automatic refund.",
     ],
-    boundary: "Check the final in-game price and eligibility before confirming a transfer. This checklist does not promise that every form of server-level progress transfers.",
+    boundary: "The Server Transfer tab was removed by the October 28 patch. This is a record-checking and support guide, not a promise of current applications or recovery of every server-level item.",
     keywords: "transfer item items storage inventory cube kina quna cost price free slot slots character name rename preparation market mail mission",
-    sources: [{ label: "NC · transfer preparation and pricing", url: sources.transfer }, { label: "NC · storage, slots and names", url: sources.transferQa }],
+    sources: [{ label: "NC · historical pricing, items and ticket expiry", url: sources.transfer }, { label: "NC · storage, slots and names", url: sources.transferQa }, { label: "NC · October offer closure", url: sources.octoberPatch }],
   },
   {
     id: "account", group: "accounts", title: "My account is restricted or security-locked. How do I request a review?",
+    checkedAt: "2026-11-01",
     answer: "NC distinguishes policy sanctions from precautionary security locks. A security lock is not a penalty. The public restriction announcement cannot identify the reason for your individual account.",
     steps: [
       "Record the exact restriction or lock message and when it appeared.",
@@ -119,10 +132,11 @@ export const AION_2_HELP_GUIDES: AionHelpGuide[] = [
   },
   {
     id: "compensation", group: "rewards", title: "Am I eligible for the October 8 EU outage compensation?",
-    answer: "Check the EU server list below. Eligible active memberships and activated pet auto-loot receive one extra day at upcoming maintenance; the supply chest arrives through in-game mail.",
+    checkedAt: "2026-10-12",
+    answer: "The October 8 notice announced an extra day for eligible active memberships and activated pet auto-loot, plus a supply chest by in-game mail. The server list below records that historical offer; it is not a new November reward announcement.",
     steps: [
-      "Match your server and the active-service condition. These extensions need no player action.",
-      "Check mail for the chest. If an expected reward is absent, report your server and missing reward to support.",
+      "Match your server and active-service condition to the October notice. It said that the extensions required no player action.",
+      "For an expected historical reward that is missing, report your server and the specific reward to support. Do not infer that another compensation event has the same conditions.",
     ],
     boundary: "The notice sets no claim deadline or eligibility snapshot time and does not confirm delivery to your account.",
     keywords: "compensation reward rewards chest mail pet membership extension missing europe eu outage loot",

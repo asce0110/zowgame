@@ -205,12 +205,13 @@ export const PAGE_TD: readonly PageTd[] = [
       "MinaLima board game"
     ],
     "title": "Harry Potter Defenders of Hogwarts: Board Game | ZowGame",
-    "description": "Learn MinaLima's physical Harry Potter board game, Defenders of Hogwarts: setup, House and Dark Arts turns, win conditions, rule answers and buying support.",
+    "description": "Learn MinaLima's Harry Potter board game, Defenders of Hogwarts: setup, turns and win conditions, plus official retail buying and campaign reward guidance.",
     "contentEvidence": [
       "src/app/components/tabletop-game-page.tsx: H1 names Defenders of Hogwarts; the hero introduction explicitly identifies MinaLima's physical Harry Potter board game.",
       "src/app/components/tabletop-game-page.tsx: #overview directly addresses the 'Harry Potter Defenders RPG game' search and explains that this is not an online RPG or downloadable video game.",
       "src/app/components/tabletop-game-page.tsx and src/app/data/defenders-guide.ts: #setup, #house-turn, #dark-turn, #movement, #resources and #ending explain official-rulebook procedures.",
-      "src/app/components/tabletop-game-page.tsx: #faq, #availability and #sources cover rules, editions, dated shipping estimates, official ordering and support."
+      "src/app/components/tabletop-game-page.tsx: #faq, #availability and #sources cover rules, editions, dated shipping estimates, official ordering and support.",
+      "src/app/data/defenders-of-hogwarts.ts: official £75 retail listing rechecked November 1, separate from older campaign-fulfilment policy"
     ],
     "notes": [
       "Use one consolidated page for game identification, rulebook-based help and buying support; do not invent separate /guide/ or /faq/ routes.",
@@ -272,7 +273,7 @@ export const PAGE_TD: readonly PageTd[] = [
       "src/app/data/fishes-guide.ts:fishesGuidePages.changelog"
     ],
     "notes": [
-      "A manually reviewed history through v1.1.4.4 with sources checked 2026-10-07. No latest-version or automatic-update claim is made."
+      "A manually reviewed history through v1.1.4.4. Public release sources rechecked 2026-11-01 still list the August 15 patch; a new review date is not a new release. Steam Deck status is now Playable."
     ]
   },
   {
@@ -343,7 +344,7 @@ export const PAGE_TD: readonly PageTd[] = [
       "run-state bug"
     ],
     "title": "Don't Sleep With The Fishes FAQ & Support | ZowGame",
-    "description": "Get answers about Don't Sleep With The Fishes downloads, Windows support, shipmate changes, True End and run-state bugs, with links to checked sources.",
+    "description": "Get Don't Sleep With The Fishes help on downloads, Steam Deck compatibility, shipmate changes, True End and run-state bugs, with checked official sources.",
     "contentEvidence": [
       "src/app/data/fishes-guide.ts:fishesFaqs / download, device support, Frederik, ending objectives, state carried between runs",
       "src/app/data/fishes-guide.ts:fishesGuidePages.faq"
@@ -398,10 +399,11 @@ export const PAGE_TD: readonly PageTd[] = [
       "Steam purchase",
       "itch.io download",
       "Windows requirements",
-      "update game"
+      "update game",
+      "Don't Sleep With The Fishes Steam Deck"
     ],
     "title": "Don't Sleep With The Fishes: Steam & Download | ZowGame",
-    "description": "Find official Don't Sleep With The Fishes purchase links, compare Steam with itch.io, check Windows requirements and learn how to update your build.",
+    "description": "Find official Don't Sleep With The Fishes downloads, compare Steam and itch.io, check Windows requirements and review the Steam Deck Playable limitations.",
     "contentEvidence": [
       "src/app/data/fishes-guide.ts:fishesGuidePages.steam / Official Distribution, Steam vs itch.io, Windows Requirements, Updating and Troubleshooting"
     ],
@@ -475,9 +477,9 @@ export const PAGE_TD: readonly PageTd[] = [
       "Hood Warfare 2 support"
     ],
     "title": "Hood Warfare 2 FAQ: Platforms, Voice & Help | ZowGame",
-    "description": "Get answers to 22 Hood Warfare 2 questions about platforms, languages, voice chat, weapon progression, saved loadouts, anti-cheat and support options.",
+    "description": "Get Hood Warfare 2 answers about updates, Steam Deck, voice chat, Party invites, private lobbies, weapon progression, purchases and technical support.",
     "contentEvidence": [
-      "src/app/components/hood-warfare-2-page.tsx: #questions introduces 22 questions about buying, languages, modes, progression and technical support.",
+      "src/app/components/hood-warfare-2-page.tsx: #questions introduces 26 questions about buying, languages, modes, progression and technical support.",
       "src/app/components/hood-warfare-2-tools.tsx: HoodQuestions renders searchable hoodFaqs as details/summary answers, with a no-JavaScript fallback.",
       "src/app/data/hood-warfare-2.ts: hoodFaqs includes platforms, languages, push-to-talk, loadouts, progression, anti-cheat and official support."
     ],
@@ -517,11 +519,10 @@ export const PAGE_TD: readonly PageTd[] = [
       "Hood Warfare 2 spawn protection"
     ],
     "title": "Hood Warfare 2 Maps: Areas & Route Practice | ZowGame",
-    "description": "Explore developer-named Hood Warfare 2 areas, learn an approach and retreat route, and use focused bot practice to check cover, sightlines and spawns.",
+    "description": "Check Hood Warfare 2 map and route changes for TheStrip, TheTrenches, Chicago Mall and Suburbs, with dated developer notes and focused bot-practice advice.",
     "contentEvidence": [
-      "src/app/components/hood-warfare-2-page.tsx: Maps distinguishes four store-described areas from a complete map-selection menu.",
-      "src/app/data/hood-warfare-2.ts: hoodMapAreas supplies developer-named settings and original route-practice advice.",
-      "src/app/components/hood-warfare-2-page.tsx: map support note explains 1.0.10 spawn changes and does not count the separately mentioned supermarket as a confirmed fifth map."
+      "src/app/components/hood-warfare-2-page.tsx: Maps describes route practice and reviewed layout changes",
+      "src/app/data/hood-warfare-2.ts: patch 1.0.2.0 names TheStrip, TheTrenches, Chicago Mall and Suburbs; the full map roster and layouts remain unverified"
     ],
     "notes": [
       "Primary intent: identifying known settings and learning routes. Complete map names, layouts, spawn positions and protection duration are content gaps.",
@@ -538,7 +539,7 @@ export const PAGE_TD: readonly PageTd[] = [
       "Hood Warfare 2 Chain Snatch"
     ],
     "title": "Hood Warfare 2 Game Modes: Six Objectives | ZowGame",
-    "description": "Learn all six Hood Warfare 2 modes, compare team and free-for-all objectives, and find beginner tips for Turf War, Chain Snatch and the other modes.",
+    "description": "Learn the six Hood Warfare 2 game modes, team and free-for-all objectives, and the revised 75-point Chain Snatch rules, with practical advice for beginners.",
     "contentEvidence": [
       "src/app/components/hood-warfare-2-page.tsx: #mode-brief provides a selectable briefing; #mode-rules renders all six mode explanations as readable articles.",
       "src/app/data/hood-warfare-2.ts: hoodModes contains Turf War, GangBang, Chaos, Hit A Lick, Destroy The Block and Chain Snatch, with official objectives and editorial advice."
@@ -554,20 +555,18 @@ export const PAGE_TD: readonly PageTd[] = [
     "primaryKeyword": "Hood Warfare 2 news",
     "secondaryKeywords": [
       "Hood Warfare 2 patch notes",
-      "Hood Warfare 2 updates",
-      "Hood Warfare 2 1.0.10"
+      "Hood Warfare 2 1.0.2.0",
+      "Hood Warfare 2 official servers",
+      "Hood Warfare 2 Party Mode"
     ],
     "title": "Hood Warfare 2 News & Patch Summaries | ZowGame",
-    "description": "Read Hood Warfare 2 developer announcements and reviewed patch summaries, including voice chat, spawn protection and loadout fixes in version 1.0.10.",
+    "description": "Read Hood Warfare 2 developer news and patch summaries covering weapon additions, Party fixes, official servers and map changes, with dated source links.",
     "contentEvidence": [
-      "src/app/components/hood-warfare-2-page.tsx: #news-live displays the official feed; Updates renders three dated editorial summaries and links their developer announcements.",
-      "src/app/data/hood-warfare-2.ts: hoodUpdates includes the 1.0.10 patch, release and pre-release notices, dated separately from the guide review.",
-      "src/app/components/hood-warfare-2-tools.tsx: HoodLiveNews keeps retrieval times, original publication dates and editorial-review status distinct."
+      "src/app/components/hood-warfare-2-page.tsx: official feed and seven dated, reviewed announcement summaries",
+      "src/app/data/hood-warfare-2.ts: four added updates through 1.0.2.0, with original UTC publication dates and distinct 2026-11-01 review date"
     ],
     "notes": [
-      "Primary intent: changes over time and their practical effects, rather than an evergreen rules guide.",
-      "Visible H1 pairs Hood Warfare 2 with News & Patch Notes; the description and dated timeline distinguish the refreshed official feed from reviewed summaries.",
-      "The title avoids pinning the entire news page to 1.0.10. Keep that patch in the description only while it remains a meaningful featured summary; do not describe it as the latest patch without a fresh check."
+      "The title remains evergreen. Summaries distinguish announced changes, reviewed fixes and future plans; official-server counts are attributed to the dated announcement rather than presented as a live server count."
     ]
   },
   {
@@ -600,7 +599,7 @@ export const PAGE_TD: readonly PageTd[] = [
       "Hood Warfare 2 loadouts"
     ],
     "title": "Hood Warfare 2 Weapons: Unlocks & Attachments | ZowGame",
-    "description": "Understand Hood Warfare 2 weapon unlocks, attachment challenges, skins and loadout practice, with confirmed systems separated from unverified gun stats.",
+    "description": "Learn Hood Warfare 2 weapon progression, Draco and ARP additions, attachment challenges and loadout practice, with unverified gun stats clearly marked.",
     "contentEvidence": [
       "src/app/components/hood-warfare-2-page.tsx: Weapons explains player-level, weapon-challenge and weapon-kill progression as separate tracks.",
       "src/app/data/hood-warfare-2.ts: hoodWeaponSystems covers sights, magazines, grips, suppressors, equipment and skins with practice methods and explicit unknowns.",
@@ -619,15 +618,18 @@ export const PAGE_TD: readonly PageTd[] = [
       "Krillion daily trivia",
       "Krillion score calculator",
       "Krillion scoring tiers",
-      "official Krillion game"
+      "official Krillion game",
+      "Krillion Puffer Party",
+      "Krillion multiplayer beta"
     ],
-    "title": "Krillion Game: Daily Trivia & Score Guide | ZowGame",
-    "description": "Explore Krillion's daily trivia format, scoring tiers and depth calculator. Learn the rules and rare-answer basics, then play on the official website.",
+    "title": "Krillion Game: Daily Trivia & Puffer Party | ZowGame",
+    "description": "Explore Krillion's daily trivia, scoring and depth calculator, plus the separate Puffer Party multiplayer beta. Learn the rules and play on the official site.",
     "contentEvidence": [
       "src/app/components/krillion-game-page.tsx: overview H1 names Krillion; its introduction identifies a daily browser trivia game by kp.",
       "src/app/components/krillion-game-page.tsx: overview renders KrillionDailyBrief, scoring tiers, KrillionScoreCalculator and official Daily/Unlimited/packs/archive links.",
       "src/app/components/krillion-tools.tsx: daily brief retrieves prompts, not an answer key; the calculator combines seven selected tiers into score and depth.",
-      "src/app/data/krillion.ts: FAQ explicitly says ZowGame is independent, play stays on krillion.io and today's answers have not been verified."
+      "src/app/data/krillion.ts: FAQ explicitly says ZowGame is independent, play stays on krillion.io and today's answers have not been verified.",
+      "src/app/data/krillion.ts and components/krillion-game-page.tsx: separate Puffer Party beta rules, limits and official entry"
     ],
     "notes": [
       "Primary intent: identify Krillion and find the rules, score tools and official play entry. Keep the in-depth decision routine on /guide/ and practical questions on /faq/.",
@@ -643,14 +645,16 @@ export const PAGE_TD: readonly PageTd[] = [
       "Krillion daily reset",
       "Krillion Unlimited",
       "Krillion spelling",
-      "Krillion missing answers"
+      "Krillion missing answers",
+      "Puffer Party rules"
     ],
-    "title": "Krillion FAQ: Daily Reset, Unlimited & Help | ZowGame",
-    "description": "Check Krillion's daily reset, spelling rules, missing-answer help, scoring, optional accounts and Unlimited access, with links to the creator's FAQ.",
+    "title": "Krillion FAQ: Daily Reset, Modes & Player Help | ZowGame",
+    "description": "Find Krillion answers on daily resets, spelling, scoring, Unlimited access and the separate Puffer Party beta, with official links and clear mode differences.",
     "contentEvidence": [
       "src/app/components/krillion-game-page.tsx: FAQ hero description covers resets, scores, spelling, missing answers, Unlimited and help.",
       "src/app/components/krillion-game-page.tsx: #questions renders searchable krillionFaqs and links the creator's FAQ.",
-      "src/app/data/krillion.ts: ten FAQs explain America/New_York midnight resets, optional accounts, curated scoring, spelling/aliases, paid unlock boundaries and official support."
+      "src/app/data/krillion.ts: ten FAQs explain America/New_York midnight resets, optional accounts, curated scoring, spelling/aliases, paid unlock boundaries and official support.",
+      "src/app/data/krillion.ts: Puffer Party versus Daily questions, rooms and beta access"
     ],
     "notes": [
       "Primary intent: rule clarification, access and support. 'Answers' in the description means answers to player questions, not the daily puzzle's answer key.",
@@ -764,10 +768,10 @@ export const PAGE_TD: readonly PageTd[] = [
       "AION 2 news"
     ],
     "title": "Game Updates, Official News & Patch Notes | ZowGame",
-    "description": "Find Hood Warfare 2 announcements, Fishes patch history and AION 2 news. Read dated coverage with official source links and separate feed and review times.",
+    "description": "Check game patch notes, new modes, buying changes and source reviews across ZowGame. Follow official announcements with release and review dates kept separate.",
     "contentEvidence": [
-      "app/updates/page.tsx: explicit update index and explanation of retrieval versus editorial-review dates",
-      "src/app/data/atlas.ts: ATLAS_UPDATE_CHANNELS for Hood Warfare 2 Steam news, Fishes reviewed changelog and AION 2 official news"
+      "app/updates/page.tsx: all six games and the AION 2 topic have distinct review outcomes",
+      "src/app/data/atlas.ts: seven ATLAS_UPDATE_CHANNELS separate new patches, beta modes, retail changes and unchanged releases"
     ],
     "notes": [
       "An update index, not a promise that every linked guide is freshly reviewed or that every feed has an editorial summary. Do not describe the edited Fishes history as a live feed."

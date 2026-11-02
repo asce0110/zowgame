@@ -124,8 +124,8 @@ const cobbContent: SiteContent = {
   coverImg: "https://img.zowgame.com/cobb-can-move-cover.webp",
   iframeUrl: "https://s.cobb-can-move.com/games/cobb-can-move/index.html",
   trailerUrl: "https://www.youtube.com/watch?v=lyiiHZ2ruAM",
-  rating: "4.8",
-  avgSession: "18",
+  rating: "4.7",
+  avgSession: "A few minutes",
   seoTitle: "Cobb Can Move - Play Online Free in Browser",
   seoDescription:
     "Play Cobb Can Move online free — survive a dark pixel dungeon, collect coal, keep the furnace lit, escape Cobb as rules change every level. No download.",
@@ -135,6 +135,7 @@ const cobbContent: SiteContent = {
     "Cobb Can Move is a tense pixel survival horror game where the rules change as you play. You explore a dark dungeon, collect coal, keep the light alive, and avoid Cobb, a red monster that becomes more dangerous with each level.",
     "What makes Cobb Can Move different is its changing rule system. Cobb may hear your movement, see you across open spaces, smell your trail, reach farther than expected, or even duplicate. Each new rule forces you to change your route, your timing, and your survival strategy.",
     "The game is easy to start but hard to master. With simple keyboard controls, short high-pressure levels, and a dark pixel-art atmosphere, Cobb Can Move is built for players who enjoy browser horror games, survival challenges, and unpredictable dungeon runs.",
+    "Official itch.io distribution rechecked November 1, 2026: HTML5 browser play and a name-your-own-price Windows download remain listed. The latest listed release is v1.7, dated May 19, 2026; this review does not establish a newer patch.",
   ],
   faqs: [
     {
@@ -171,21 +172,21 @@ const cobbContent: SiteContent = {
     },
     {
       q: "Where can I download Cobb Can Move?",
-      a: "The official Cobb Can Move download is available on the developer's itch.io page. The game currently supports HTML5 browser play and a Windows download version.",
+      a: "Use abho's official itch.io page for downloads. On November 1, 2026 it listed COBB CAN MOVE v1.7 webview2.zip, 15 MB, as a name-your-own-price Windows download, alongside browser play. Check the current listing before downloading.",
     },
     {
       q: "Is Cobb Can Move on Steam?",
-      a: "As of May 12, 2026, there is no official Steam store page surfaced in public search results. The official distribution source is the developer's itch.io page.",
+      a: "The official distribution options rechecked for this guide are HTML5 browser play and Windows download on abho's itch.io page. These sources do not establish a Steam edition. Check the developer's own links for any later platform announcement.",
     },
   ],
   notifications: [
     {
       id: "n1",
-      title: "Cobb Can Move is now playable on ZowGame. Play in fullscreen mode for the best horror experience.",
-      body: "Move with WASD or Arrow Keys.\nPress E or Spacebar to interact.\nCollect coal and keep the light alive.\nRead the active rule before moving.",
-      tag: "Game Notices",
+      title: "Official Cobb Can Move listing rechecked: v1.7 remains listed.",
+      body: "HTML5 browser play and Windows download remain on the developer's itch.io page.\nThis source check does not establish a newer patch.\nRead the active rule before moving.",
+      tag: "Source Check",
       tone: "cyan",
-      time: "now",
+      time: "2026-11-01",
     },
   ],
 };
@@ -196,6 +197,7 @@ export const GAMES: GameRecord[] = [
     slug: "cobb-can-move",
     shortTitle: "Cobb Can Move",
     canonicalPath: "/games/cobb-can-move/",
+    lastUpdated: "2026-11-01",
     ogImage: "/og-image.png",
     keywords: [
       "Cobb Can Move",
@@ -204,14 +206,14 @@ export const GAMES: GameRecord[] = [
       "pixel horror game",
       "roguelite browser game",
     ],
-    heroBadges: ["HTML5 / BROWSER", "FREE TO PLAY", "4.8 / 5 OFFICIAL RATING"],
+    heroBadges: ["HTML5 / BROWSER", "FREE TO PLAY", "KEYBOARD + GAMEPAD"],
     primaryCtaLabel: "PLAY COBB CAN MOVE",
     secondaryCtaLabel: "WATCH TRAILER",
     accessMode: "browser",
     topBarEyebrow: "// OFFICIAL SOURCE + PLAY PAGE",
     topBarTitle: "COBB CAN MOVE",
     topBarDescription: "Browser play, controls, rules, FAQ, and download intent coverage.",
-    notificationFooter: "Content is aligned to public search intent and official itch.io distribution.",
+    notificationFooter: "Official itch.io listing and v1.7 notes rechecked November 1, 2026.",
     guideTitle: "How to Play Cobb Can Move",
     guideIntro:
       "Cobb Can Move is a survival horror game where your goal is to explore the dungeon, collect coal, keep the light alive, and avoid Cobb. The controls are simple, but the challenge comes from the changing rules. Each level gives Cobb a new way to hunt you, so you must read the rule, plan your route, and adapt before the monster catches you.",
@@ -285,64 +287,16 @@ export const GAMES: GameRecord[] = [
         body: "Cobb Can Move is designed to make you panic. Move with purpose, reset when needed, and do not rush into darkness.",
       },
     ],
-    reviewsHeading: "What Players Are Saying",
+    reviewsHeading: "Official itch.io Rating Snapshot",
     reviewsSummary:
-      "Based on 142 public ratings from the official page. These player impressions focus on the game's rule system, horror pacing, and short-run tension.",
-    reviews: [
-      {
-        name: "Player One",
-        date: "Recent",
-        rating: 5,
-        body: "The rules keep changing, so every run feels different. Just when I think I understand Cobb, the game finds a new way to scare me.",
-      },
-      {
-        name: "Player Two",
-        date: "Recent",
-        rating: 5,
-        body: "Cobb Can Move is simple to start, but the tension builds fast. Collecting coal in the dark feels way more stressful than it should.",
-      },
-      {
-        name: "Player Three",
-        date: "Recent",
-        rating: 5,
-        body: "The moment Cobb can hear you, the whole game changes. I started thinking about every step instead of just running around.",
-      },
-      {
-        name: "Player Four",
-        date: "Recent",
-        rating: 5,
-        body: "I love how short and intense each level feels. It is easy to play for a few minutes, but hard to stop after one run.",
-      },
-      {
-        name: "Player Five",
-        date: "Recent",
-        rating: 5,
-        body: "The pixel art makes it look cute at first, then Cobb shows up and suddenly the dungeon feels unsafe everywhere.",
-      },
-      {
-        name: "Player Six",
-        date: "Recent",
-        rating: 5,
-        body: "What makes this game work is the rule system. Cobb is not just chasing you. He learns new ways to make you panic.",
-      },
-      {
-        name: "Player Seven",
-        date: "Recent",
-        rating: 5,
-        body: "Keeping the furnace alive while Cobb is nearby creates a perfect horror loop. You always need one more piece of coal.",
-      },
-      {
-        name: "Player Eight",
-        date: "Recent",
-        rating: 5,
-        body: "Every new rule forced me to change my strategy. Cobb can see, Cobb can hear, Cobb can smell... none of them feel fair, and that is the fun.",
-      },
-    ],
+      "The official itch.io page displayed 4.7/5 from 853 ratings on November 1, 2026. This is a dated platform reading, not a ZowGame review score or a live count. Individual review quotations are not reproduced here.",
+    reviews: [],
     quickFactsHeading: "QUICK FACTS",
     quickFacts: [
       { label: "Controls", value: "WASD / Arrows + E / Space" },
       { label: "Input", value: "Keyboard and gamepad" },
       { label: "Platform", value: "HTML5 Browser + Windows" },
+      { label: "Official listing rechecked", value: "2026-11-01" },
     ],
     ambientMessages: [
       "Official page: itch.io / developer: abho",
@@ -367,7 +321,7 @@ export const GAMES: GameRecord[] = [
       playMode: "SinglePlayer",
       price: "0",
       priceCurrency: "USD",
-      ratingCount: 142,
+      ratingCount: 853,
     },
     content: cobbContent,
     footerTagline: "© 2026 COBB CAN MOVE // FAN LANDING PAGE FOR DISCOVERY",
@@ -381,6 +335,7 @@ export const GAMES: GameRecord[] = [
         version: "v1.7",
         date: "2026-05-19",
         summary: "Smell nerf, pursuit acceleration nerf, rock stun bug fix.",
+        sourceUrl: "https://abho.itch.io/cobb-can-move/devlog/1527864/v17",
         details: [
           { label: "Tweaks", items: [
             "Nerfed \"Cobb can smell\" (less frequent sniffs, less persistence when smelled at close range).",
@@ -395,6 +350,7 @@ export const GAMES: GameRecord[] = [
         version: "v1.6",
         date: "2026-05-16",
         summary: "Rocks stun Cobb, coal spawn balancing, international keyboard support, duplicate fix, multiple bug fixes.",
+        sourceUrl: "https://abho.itch.io/cobb-can-move/devlog/1525107/v16",
         details: [
           { label: "New", items: [
             "Rocks can now stun Cobb with a direct hit for a short period of time.",

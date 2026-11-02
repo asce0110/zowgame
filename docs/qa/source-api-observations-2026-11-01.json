@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-11-01T15:24:14.670Z",
+  "scope": "Local API responses; observations establish readiness at this time, not permanent freshness or production deployment.",
+  "observations": [
+    {
+      "name": "hood",
+      "url": "/api/hood-warfare-2/",
+      "status": 200,
+      "state": "ready",
+      "newsState": "ready",
+      "newsCount": 6,
+      "storeState": "ready",
+      "dailyDate": null,
+      "playersState": null,
+      "peakState": null,
+      "observedAt": "2026-11-01T15:24:11.810Z"
+    },
+    {
+      "name": "krillion",
+      "url": "/api/krillion/",
+      "status": 200,
+      "state": "ready",
+      "newsState": null,
+      "newsCount": null,
+      "storeState": null,
+      "dailyDate": "2026-11-01",
+      "playersState": null,
+      "peakState": null
+    },
+    {
+      "name": "aion",
+      "url": "/api/aion-2/",
+      "status": 200,
+      "state": null,
+      "newsState": "ready",
+      "newsCount": 6,
+      "storeState": null,
+      "dailyDate": null,
+      "playersState": "ready",
+      "peakState": "ready"
+    }
+  ]
+}

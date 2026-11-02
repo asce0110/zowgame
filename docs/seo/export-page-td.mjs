@@ -8,14 +8,14 @@ import ts from "typescript";
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(directory, "../..");
 const registryPath = path.join(root, "src/app/data/page-seo.ts");
-let date = "2026-10-17";
+let date = "2026-11-01";
 let check = false;
 const args = process.argv.slice(2);
 for (let index = 0; index < args.length; index++) {
   if (args[index] === "--date") date = args[++index] || "";
   else if (args[index] === "--check") check = true;
   else if (args[index] === "--help") {
-    console.log("Usage: node docs/seo/export-page-td.mjs [--date YYYY-MM-DD] [--check]\nDefault snapshot date: 2026-10-17. --check compares both exports without writing.");
+    console.log("Usage: node docs/seo/export-page-td.mjs [--date YYYY-MM-DD] [--check]\nDefault snapshot date: 2026-11-01. --check compares both exports without writing.");
     process.exit(0);
   } else throw new Error(`Unknown argument: ${args[index]}`);
 }
@@ -92,7 +92,7 @@ const markdown = [
   `node docs/seo/export-page-td.mjs --date ${date} --check`,
   "```",
   "",
-  "The exporter is independent of the working directory. It requires the project's installed TypeScript dependency; on PowerShell use `node.exe` if a shell shim is restricted. Change `--date` for a new snapshot. The default date remains `2026-10-17` so the initial delivery can be regenerated deterministically.",
+  "The exporter is independent of the working directory. It requires the project's installed TypeScript dependency; on PowerShell use `node.exe` if a shell shim is restricted. Change `--date` for a new snapshot. The default date remains `2026-11-01` so the current review can be regenerated deterministically.",
   "",
   "## Google Search Central references",
   "",

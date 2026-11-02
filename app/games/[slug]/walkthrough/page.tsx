@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const game = getGameBySlug(slug);
   if (!game || !WALKTHROUGH_GAMES.includes(slug)) notFound();
   const desc = slug === "all-the-gold-in-fort-locks"
-    ? `Step-by-step walkthrough for ${game.shortTitle}: Blue, Green, Orange, Red, Purple, and Yellow key stages. Developer-confirmed solutions.`
+    ? `Step-by-step walkthrough for ${game.shortTitle}: Blue, Green, Orange, Red, Purple, and Yellow key stages, with screenshots and an accompanying video.`
     : `Step-by-step survival walkthrough for ${game.shortTitle}: ship evacuation, Days 1-10, mid-game events, and rescue conditions.`;
   return createPageMetadata({ title: `${game.shortTitle} Walkthrough`, description: desc, path: `${game.canonicalPath}walkthrough/`, image: game.ogImage });
 }
@@ -31,7 +31,7 @@ const fortLocksStages = [
   },
   {
     key: "Green Key", time: "0:30–2:00", img: "https://img.zowgame.com/all-the-gold-in-fort-locks/keyframe_015.webp",
-    steps: ["Find the green key in the green room.","Trap the green key inside the east chamber.","This feels wrong but sets up a later puzzle. Developer confirmed this is correct."],
+    steps: ["Find the green key in the green room.","Trap the green key inside the east chamber.","This guide uses the east-chamber arrangement as preparation for a later puzzle; it is an editorial route note, not an official solution certification."],
   },
   {
     key: "Orange Key", time: "2:00–4:00", img: "https://img.zowgame.com/all-the-gold-in-fort-locks/keyframe_082.webp",
@@ -47,7 +47,7 @@ const fortLocksStages = [
   },
   {
     key: "Yellow Key & Finale", time: "8:00–12:34", img: "https://img.zowgame.com/all-the-gold-in-fort-locks/keyframe_125.webp",
-    steps: ["Use rescued keys to reach the yellow key in the red room.","All previous keys work together for this final puzzle.","Collect remaining gold. Average completion: ~1 hour."],
+    steps: ["Use rescued keys to reach the yellow key in the red room.","All previous keys work together for this final puzzle.","Collect the remaining gold, using undo to revisit a key position if needed. Completion time varies."],
   },
 ];
 

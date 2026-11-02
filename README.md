@@ -157,11 +157,11 @@ To update metadata:
 4. Regenerate the delivery exports and check they match the registry:
 
 ```sh
-node docs/seo/export-page-td.mjs --date 2026-10-17
-node docs/seo/export-page-td.mjs --date 2026-10-17 --check
+node docs/seo/export-page-td.mjs --date 2026-11-01
+node docs/seo/export-page-td.mjs --date 2026-11-01 --check
 ```
 
-The exporter reads the registry directly and counts code points with `Array.from(text).length`. It creates the [complete Markdown table](docs/seo/page-td-2026-10-17.md) and [UTF-8 BOM CSV](docs/seo/page-td-2026-10-17.csv), including keywords, lengths, landing evidence and cautions. Use a new `--date` for a later snapshot; do not edit generated files or the historical draft JSON files as a substitute for updating the registry.
+The exporter reads the registry directly and counts code points with `Array.from(text).length`. It creates the [complete Markdown table](docs/seo/page-td-2026-11-01.md) and [UTF-8 BOM CSV](docs/seo/page-td-2026-11-01.csv), including keywords, lengths, landing evidence and cautions. Use a new `--date` for a later snapshot; do not edit generated files or the historical draft JSON files as a substitute for updating the registry.
 
 ## Game Embed
 

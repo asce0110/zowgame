@@ -1,7 +1,8 @@
 import type { GameFaqItem, GameRecord } from "./games";
 
 export const KRILLION_PATH = "/games/krillion/";
-export const KRILLION_CHECKED = "2026-10-12";
+export const KRILLION_CHECKED = "2026-11-01";
+export const KRILLION_SCORE_CHECKED = "2026-10-12";
 
 export type KrillionSource = { label: string; url: string };
 export const krillionSources = {
@@ -10,7 +11,22 @@ export const krillionSources = {
   unlimited: { label: "Krillion · Unlimited Classic", url: "https://krillion.io/unlimited/classic" },
   packs: { label: "Krillion · themed packs", url: "https://krillion.io/packs" },
   archive: { label: "Krillion · daily archive", url: "https://krillion.io/archive" },
+  party: { label: "Krillion · Puffer Party beta", url: "https://krillion.io/party" },
 } satisfies Record<string, KrillionSource>;
+
+export const krillionParty = {
+  title: "Puffer Party",
+  status: "Beta · limited time",
+  checked: KRILLION_CHECKED,
+  intro: "A separate multiplayer category game on Krillion. Give a valid answer, pass the puffer and avoid being the player holding it when it bursts. The last surviving player wins.",
+  rules: [
+    { title: "Answer, then pass the puffer.", body: "Name something that fits the current question before the puffer bursts on you. Follow the room’s countdown; the Daily Dive’s 25-second rule does not define this mode." },
+    { title: "Keep answers fresh within the question.", body: "An answer already used for the current question cannot be reused. Listen to the other players and prepare another valid choice." },
+    { title: "Rarity can help you survive.", body: "Rarer answers move you closer to an extra heart. The official landing rules do not publish a fixed heart threshold or promise a heart for every rare answer." },
+  ],
+  entry: "The official page offers rated matchmaking, unrated Quick Play, hosting, joining by code and a public room list. Choose the entry that suits your group and check its current availability.",
+  boundary: "The homepage labels this a limited-time beta. Its availability and rules may change. ZowGame explains the official entry screen and rules; play, matchmaking and rooms stay on krillion.io.",
+} as const;
 
 export type KrillionScoreTier = { label: string; points: number; description: string };
 export const krillionScoreTiers: KrillionScoreTier[] = [
@@ -32,6 +48,8 @@ export const krillionFaqs: GameFaqItem[] = [
   { q: "What if a valid answer is missing?", a: "The curated set can omit a valid answer. Send the prompt, submitted answer and supporting source through Krillion’s official support channel. ZowGame cannot change the set or restore a score." },
   { q: "Can I play on mobile, and do I need an account?", a: "Play on the official website in a desktop or mobile browser. An account is optional for the daily game. Account linking supports features such as carrying purchased unlocks between devices." },
   { q: "Is Unlimited free, and can I replay older questions?", a: "The daily game is free. Unlimited Classic, themed packs and the archive offer additional play, with some access requiring a paid unlock. Check the official pages for current access and prices." },
+  { q: "Has Puffer Party replaced Krillion’s Daily Dive?", a: "No. Puffer Party is a separate multiplayer category game, listed as a limited-time beta when checked November 1, 2026. Daily Dive still has seven shared prompts, 25 seconds per answer and one daily attempt. Daily scoring and the depth calculator describe Daily Dive." },
+  { q: "How do I play Puffer Party with other people?", a: "Open the official Puffer Party page. It offers rated play, unrated Quick Play, hosted rooms, room-code entry and public rooms. Answer the current category before the puffer bursts on you; do not reuse an answer within that question. Rarer answers progress toward an extra heart, and the last surviving player wins." },
   { q: "Is this the official game or an embedded copy?", a: "This is an independent ZowGame guide. Play at krillion.io, the developer’s official site. Krillion prohibits iframe embedding, so this page does not contain a playable copy." },
   { q: "Does ZowGame provide today’s Krillion answers?", a: "Today’s answers have not been verified by ZowGame. This guide explains the rules and a way to choose answers; its daily entry points to the official puzzle and does not claim a checked answer list." },
 ];

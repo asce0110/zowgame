@@ -26,6 +26,8 @@ export function Hero({ onPlayRef, onExitRef, onPlayingChange, onFocusModeChange 
   const titleHead = titleParts.slice(0, -1).join(" ");
   const titleTail = titleParts[titleParts.length - 1] || "";
   const isBrowserGame = game.accessMode !== "download";
+  const session = content.avgSession.trim() || "Varies";
+  const sessionSuffix = /^\d+(?:\.\d+)?$/.test(session) ? " min" : "";
 
   useEffect(() => {
     if (!isBrowserGame || playing) return;
@@ -130,8 +132,8 @@ export function Hero({ onPlayRef, onExitRef, onPlayingChange, onFocusModeChange 
             </div>
             <div className="w-px h-12 bg-white/20" />
             <div>
-              <div className="flex items-center gap-2 mb-1"><Zap className="w-4 h-4 text-yellow-300" /><span className="text-amber-400/60 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{isBrowserGame ? "AVG. SESSION" : "TYPE"}</span></div>
-              <div className="text-amber-200" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "30px" }}>{isBrowserGame ? content.avgSession : "Download"}<span className="text-amber-400/50" style={{ fontSize: "16px" }}>{isBrowserGame ? "min" : ""}</span></div>
+              <div className="flex items-center gap-2 mb-1"><Zap className="w-4 h-4 text-yellow-300" /><span className="text-amber-400/60 tracking-widest" style={{ fontFamily: "JetBrains Mono", fontSize: "10px" }}>{isBrowserGame ? "SESSION" : "TYPE"}</span></div>
+              <div className="text-amber-200" style={{ fontFamily: "Fredoka", fontWeight: 900, fontSize: "30px" }}>{isBrowserGame ? session : "Download"}<span className="text-amber-400/50" style={{ fontSize: "16px" }}>{isBrowserGame ? sessionSuffix : ""}</span></div>
             </div>
             {game.changelog && game.changelog.length > 0 && (
               <>

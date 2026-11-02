@@ -10,6 +10,8 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
   const { content, game } = useContent();
   const [showSticky, setShowSticky] = useState(false);
   const isBrowserGame = game.accessMode !== "download";
+  const session = content.avgSession.trim() || "Varies";
+  const sessionSuffix = /^\d+(?:\.\d+)?$/.test(session) ? " min" : "";
 
   useEffect(() => {
     const onScroll = () => setShowSticky(window.scrollY > 400);
@@ -51,7 +53,7 @@ export function ActivityPanel({ onPlay }: { onPlay?: () => void }) {
       {/* Stats Row */}
       <div className="grid grid-cols-2 gap-3">
         <StatBox icon={Star} label="RATING" value={content.rating} color="text-yellow-500" suffix="/5" />
-        <StatBox icon={Clock} label={isBrowserGame ? "AVG SESSION" : "TYPE"} value={isBrowserGame ? content.avgSession : "DL"} color="text-primary" suffix={isBrowserGame ? "min" : ""} />
+        <StatBox icon={Clock} label={isBrowserGame ? "SESSION" : "TYPE"} value={isBrowserGame ? session : "DL"} color="text-primary" suffix={isBrowserGame ? sessionSuffix : ""} />
       </div>
 
       {/* Quick Facts */}
